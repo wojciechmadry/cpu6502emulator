@@ -27,6 +27,11 @@ namespace cpu6502::registers
         {
             _reg = NewRegValue;
         }
+
+        void increment() noexcept
+        {
+            ++_reg;
+        }
     };
 }
 #endif

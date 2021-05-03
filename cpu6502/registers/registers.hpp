@@ -1,12 +1,12 @@
 #ifndef CPU_6502_registers
 #define CPU_6502_registers
 
-#include "registers/accumulator.hpp"
-#include "registers/indexregisterx.hpp"
-#include "registers/indexregistery.hpp"
-#include "registers/processorstatus.hpp"
-#include "registers/programcounter.hpp"
-#include "registers/stackpointer.hpp"
+#include "accumulator.hpp"
+#include "indexregisterx.hpp"
+#include "indexregistery.hpp"
+#include "processorstatus.hpp"
+#include "programcounter.hpp"
+#include "stackpointer.hpp"
 
 namespace cpu6502{
     struct Registers

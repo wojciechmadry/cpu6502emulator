@@ -154,6 +154,32 @@ cpu6502/fast:
 	$(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/build
 .PHONY : cpu6502/fast
 
+#=============================================================================
+# Target rules for targets named cpu6502_registers
+
+# Build rule for target.
+cpu6502_registers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502_registers
+.PHONY : cpu6502_registers
+
+# fast build rule for target.
+cpu6502_registers/fast:
+	$(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/build
+.PHONY : cpu6502_registers/fast
+
+#=============================================================================
+# Target rules for targets named cpu6502_tests
+
+# Build rule for target.
+cpu6502_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502_tests
+.PHONY : cpu6502_tests
+
+# fast build rule for target.
+cpu6502_tests/fast:
+	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\cpu6502_tests.dir\build.make tests/CMakeFiles/cpu6502_tests.dir/build
+.PHONY : cpu6502_tests/fast
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -190,6 +216,8 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cpu6502
+	@echo ... cpu6502_registers
+	@echo ... cpu6502_tests
 	@echo ... cpu_6502_emulator
 	@echo ... main.obj
 	@echo ... main.i

@@ -1,0 +1,4 @@
+#ifndef CPU_6502_Instruction_Set_Load_Accumulator
+#define CPU_6502_Instruction_Set_Load_Accumulator
+
+#endif

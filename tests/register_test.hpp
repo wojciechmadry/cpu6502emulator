@@ -1,7 +1,7 @@
 #ifndef CPU_6502_TEST_register
 #define CPU_6502_TEST_register
 #include <cassert>
-#include "../cpu6502/registers.hpp"
+#include "../cpu6502/registers/registers.hpp"
 namespace CPU6502_TEST::inner
 {
     void RUN_REGISTER_TEST() noexcept

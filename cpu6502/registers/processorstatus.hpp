@@ -37,6 +37,11 @@ namespace cpu6502::registers
             else
                 _reg = static_cast<decltype(_reg)>(_reg & (~FlagChar));
         }
+
+        void put_byte(const Byte NewRegValue) noexcept
+        {
+            _reg = NewRegValue;
+        }
     };
 
 }
