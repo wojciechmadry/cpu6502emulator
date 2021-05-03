@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cpu_6502_emulator"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cpu6502\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpu_6502_emulator">
+				<Option output="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu_6502_emulator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/x86_64-w64-mingw32"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/backward"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include-fixed"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpu_6502_emulator"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpu_6502_emulator/fast">
+				<Option output="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu_6502_emulator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/x86_64-w64-mingw32"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/backward"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include-fixed"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpu_6502_emulator/fast"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpu6502">
+				<Option output="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/libcpu6502.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/x86_64-w64-mingw32"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/backward"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include-fixed"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 cpu6502"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpu6502/fast">
+				<Option output="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/libcpu6502.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/x86_64-w64-mingw32"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include/c++/11.1.0/backward"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../include"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/include-fixed"/>
+					<Add directory="c:\program files\mingw64\bin\../lib/gcc/x86_64-w64-mingw32/11.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 cpu6502/fast"/>
+					<CompileFile command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/cpu.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers/accumulator.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers/indexregisterx.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers/indexregistery.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers/processorstatus.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers/programcounter.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers/stackpointer.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/required.hpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/main.cpp">
+			<Option target="cpu_6502_emulator"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cpu6502\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

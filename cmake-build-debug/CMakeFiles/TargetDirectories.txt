@@ -1,0 +1,6 @@
+C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/CMakeFiles/cpu_6502_emulator.dir
+C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502.dir
+C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/edit_cache.dir
+C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/rebuild_cache.dir
