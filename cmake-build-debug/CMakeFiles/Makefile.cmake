@@ -58,7 +58,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cpu_6502_emulator.dir/DependInfo.cmake"
-  "cpu6502/CMakeFiles/cpu6502.dir/DependInfo.cmake"
+  "cpu6502/CMakeFiles/cpu6502_main.dir/DependInfo.cmake"
   "cpu6502/registers/CMakeFiles/cpu6502_registers.dir/DependInfo.cmake"
   "tests/CMakeFiles/cpu6502_tests.dir/DependInfo.cmake"
   )

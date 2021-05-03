@@ -2,7 +2,6 @@
 #define CPU_6502_registers_accumulator
 
 #include "required.hpp"
-
 namespace cpu6502::registers
 {
     class Accumulator

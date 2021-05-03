@@ -1,1 +1,1 @@
- cpu6502/libcpu6502.a tests/libcpu6502_tests.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+ tests/libcpu6502_tests.a cpu6502/registers/libcpu6502_registers.a cpu6502/libcpu6502_main.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

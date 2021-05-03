@@ -8,8 +8,7 @@ add_library(
         processorstatus.hpp
         programcounter.hpp
         stackpointer.hpp
-        test.hpp
-        test.cpp
+        ../required.hpp
 )
 set_target_properties(cpu6502_registers PROPERTIES LINKER_LANGUAGE CXX)
 target_include_directories(cpu6502_registers PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")

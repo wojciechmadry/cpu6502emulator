@@ -75,31 +75,15 @@ include cpu6502/registers/CMakeFiles/cpu6502_registers.dir/progress.make
 # Include the compile flags for this target's objects.
 include cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
 
-cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
-cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/includes_CXX.rsp
-cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.obj: ../cpu6502/registers/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.obj"
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_registers.dir\test.cpp.obj -c C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cpu6502\registers\test.cpp
-
-cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_registers.dir/test.cpp.i"
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cpu6502\registers\test.cpp > CMakeFiles\cpu6502_registers.dir\test.cpp.i
-
-cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_registers.dir/test.cpp.s"
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\PROGRA~1\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cpu6502\registers\test.cpp -o CMakeFiles\cpu6502_registers.dir\test.cpp.s
-
 # Object files for target cpu6502_registers
-cpu6502_registers_OBJECTS = \
-"CMakeFiles/cpu6502_registers.dir/test.cpp.obj"
+cpu6502_registers_OBJECTS =
 
 # External object files for target cpu6502_registers
 cpu6502_registers_EXTERNAL_OBJECTS =
 
-cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.obj
 cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/build.make
 cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcpu6502_registers.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcpu6502_registers.a"
 	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && $(CMAKE_COMMAND) -P CMakeFiles\cpu6502_registers.dir\cmake_clean_target.cmake
 	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\cpu6502_registers.dir\link.txt --verbose=$(VERBOSE)
 

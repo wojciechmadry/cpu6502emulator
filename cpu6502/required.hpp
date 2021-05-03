@@ -5,6 +5,7 @@
 #include <utility>
 #include <functional>
 #include <cassert>
+#include <cstdint>
 
 namespace cpu6502
 {

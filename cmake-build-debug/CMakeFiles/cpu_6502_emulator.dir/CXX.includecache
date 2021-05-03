@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
+../cpu6502/InstructionSet/opcode.hpp
+
 ../cpu6502/cpu.hpp
-required.hpp
-../cpu6502/required.hpp
 registers.hpp
 ../cpu6502/registers.hpp
 memory.hpp
 ../cpu6502/memory.hpp
+InstructionSet/opcode.hpp
+../cpu6502/InstructionSet/opcode.hpp
+iostream
+-
 
 ../cpu6502/memory.hpp
 required.hpp
@@ -56,10 +60,6 @@ stackpointer.hpp
 required.hpp
 ../cpu6502/registers/required.hpp
 
-../cpu6502/registers/test.hpp
-iostream
--
-
 ../cpu6502/required.hpp
 vector
 -
@@ -69,10 +69,20 @@ functional
 -
 cassert
 -
+cstdint
+-
 
-../tests/ALL_TEST.hpp
+../tests/ALL_TEST.HPP
 register_test.hpp
 ../tests/register_test.hpp
+cpu_test.hpp
+../tests/cpu_test.hpp
+
+../tests/cpu_test.hpp
+cassert
+-
+../cpu6502/cpu.hpp
+../cpu6502/cpu.hpp
 
 ../tests/register_test.hpp
 cassert
@@ -85,8 +95,6 @@ iostream
 -
 cpu.hpp
 C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu.hpp
-ALL_TEST.hpp
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/ALL_TEST.hpp
-test.hpp
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/test.hpp
+ALL_TEST.HPP
+C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/ALL_TEST.HPP
 

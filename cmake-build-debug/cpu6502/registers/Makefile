@@ -143,33 +143,6 @@ cpu6502_registers/fast:
 	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/build
 .PHONY : cpu6502_registers/fast
 
-test.obj: test.cpp.obj
-
-.PHONY : test.obj
-
-# target to build an object file
-test.cpp.obj:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.obj
-.PHONY : test.cpp.obj
-
-test.i: test.cpp.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.cpp.i:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.i
-.PHONY : test.cpp.i
-
-test.s: test.cpp.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.cpp.s:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/test.cpp.s
-.PHONY : test.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -179,9 +152,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cpu6502_registers
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
 .PHONY : help
 
 

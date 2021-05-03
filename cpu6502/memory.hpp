@@ -18,16 +18,28 @@ namespace cpu6502{
                 MemoryChain = 0;
         }
 
-        [[nodiscard]] Byte operator[](const u64 Index) const noexcept
+        [[nodiscard]] Word read_word(const u64 Address) const noexcept
         {
-            assert(Index < data.size());
-            return data[Index];
+            Word Data = data[Address];
+            Data = static_cast<Word>(Data | (data[Address + 1] << 8));
+            return Data;
+        }
+        void write_word(const Word Data, const u64 Address) noexcept
+        {
+            data[Address] = static_cast<Byte>(Data & 0x00FF);
+            data[Address+1] = static_cast<Byte>(Data >> 8);
         }
 
-        [[nodiscard]] Byte& operator[](const u64 Index) noexcept
+        [[nodiscard]] Byte operator[](const u64 Address) const noexcept
         {
-            assert(Index < data.size());
-            return data[Index];
+            assert(Address < data.size());
+            return data[Address];
+        }
+
+        [[nodiscard]] Byte& operator[](const u64 Address) noexcept
+        {
+            assert(Address < data.size());
+            return data[Address];
         }
     };
 }

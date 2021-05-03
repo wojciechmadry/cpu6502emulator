@@ -8,8 +8,10 @@ Additional guides:
 2. https://sta.c64.org/cbm64mem.html
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
 
-Full implementation to 24 minutes 03 seconds.
+Episode 1 - https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s - Done
+Episode 2 - https://www.youtube.com/watch?v=L7J1pPokEyw
+Full implementation to 0 minutes 0 seconds.
 
 Now working on :
- - Work on CMake
  - Adding instruction set
+ - Jump instruction set
