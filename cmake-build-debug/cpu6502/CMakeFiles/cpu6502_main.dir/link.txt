@@ -1,2 +1,2 @@
-C:\PROGRA~1\mingw64\bin\ar.exe qc libcpu6502_main.a CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.obj CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.obj CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.obj
-C:\PROGRA~1\mingw64\bin\ranlib.exe libcpu6502_main.a
+C:\msys64\mingw64\bin\ar.exe qc libcpu6502_main.a CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.obj CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.obj CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.obj CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libcpu6502_main.a

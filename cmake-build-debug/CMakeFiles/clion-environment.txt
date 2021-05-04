@@ -1,4 +1,4 @@
-ToolSet: w64 8.0 (local)@C:\Program Files\mingw64
+ToolSet: 5.4 (local)@C:\MinGW
 Options: 
 
-Options:
+Options:-DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/clang++.exe

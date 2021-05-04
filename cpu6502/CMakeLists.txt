@@ -8,6 +8,7 @@ add_library(
         InstructionSet/LoadStoreOperations/LDA.cpp
         InstructionSet/JumpsCalls/JSR.cpp
         InstructionSet/JumpsCalls/JMP.cpp
+        InstructionSet/JumpsCalls/RTS.cpp
         InstructionSet/opcode.hpp
         required.hpp
         memory.hpp
@@ -21,7 +22,6 @@ add_library(
         cpu6502 INTERFACE
 )
 
-set_target_properties(cpu6502 PROPERTIES LINKER_LANGUAGE CXX)
 
 target_link_libraries(cpu6502 INTERFACE
         cpu6502_registers

@@ -14,4 +14,4 @@ Full implementation to 0 minutes 0 seconds.
 
 Now working on :
  - Adding instruction set
- - Jump instruction set
+ - Implementing RTS

@@ -1,1 +1,1 @@
--IC:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502 -IC:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers -IC:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/tests
+-IF:/CPU6502/cpu-6502-emulator/cpu6502 -IF:/CPU6502/cpu-6502-emulator/cpu6502/registers -IF:/CPU6502/cpu-6502-emulator/tests

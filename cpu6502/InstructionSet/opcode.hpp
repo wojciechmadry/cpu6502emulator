@@ -21,8 +21,13 @@ namespace cpu6502::opcode{
 
     //Jump to to another location opcode
     enum class JMP : Byte{
-        Absolute = 0x4C, // 3 cycles
-        Indirect = 0x6C // 5 cycles
+        Absolute = 0x4C, // 3 cycles - Implemented
+        Indirect = 0x6C // 5 cycles - Implemented
+    };
+
+    //Return from Subroutine
+    enum class RTS : Byte{
+        Implied = 0x60, // 6 cycles
     };
 }
 #endif

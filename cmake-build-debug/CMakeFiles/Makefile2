@@ -53,19 +53,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator
+CMAKE_SOURCE_DIR = F:\CPU6502\cpu-6502-emulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug
+CMAKE_BINARY_DIR = F:\CPU6502\cpu-6502-emulator\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -155,14 +155,14 @@ CMakeFiles/cpu_6502_emulator.dir/all: cpu6502/registers/CMakeFiles/cpu6502_regis
 CMakeFiles/cpu_6502_emulator.dir/all: tests/CMakeFiles/cpu6502_tests.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpu_6502_emulator.dir\build.make CMakeFiles/cpu_6502_emulator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpu_6502_emulator.dir\build.make CMakeFiles/cpu_6502_emulator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target cpu_6502_emulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=8,9 "Built target cpu_6502_emulator"
 .PHONY : CMakeFiles/cpu_6502_emulator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cpu_6502_emulator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/cpu_6502_emulator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/cpu_6502_emulator.dir/rule
 
 # Convenience name for target.
@@ -182,14 +182,14 @@ CMakeFiles/cpu_6502_emulator.dir/clean:
 cpu6502/CMakeFiles/cpu6502_main.dir/all:
 	$(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target cpu6502_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target cpu6502_main"
 .PHONY : cpu6502/CMakeFiles/cpu6502_main.dir/all
 
 # Build rule for subdir invocation for target.
 cpu6502/CMakeFiles/cpu6502_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/CMakeFiles/cpu6502_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
 .PHONY : cpu6502/CMakeFiles/cpu6502_main.dir/rule
 
 # Convenience name for target.
@@ -209,14 +209,14 @@ cpu6502/CMakeFiles/cpu6502_main.dir/clean:
 cpu6502/registers/CMakeFiles/cpu6502_registers.dir/all:
 	$(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/depend
 	$(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=5 "Built target cpu6502_registers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=6 "Built target cpu6502_registers"
 .PHONY : cpu6502/registers/CMakeFiles/cpu6502_registers.dir/all
 
 # Build rule for subdir invocation for target.
 cpu6502/registers/CMakeFiles/cpu6502_registers.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/registers/CMakeFiles/cpu6502_registers.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
 .PHONY : cpu6502/registers/CMakeFiles/cpu6502_registers.dir/rule
 
 # Convenience name for target.
@@ -236,14 +236,14 @@ cpu6502/registers/CMakeFiles/cpu6502_registers.dir/clean:
 tests/CMakeFiles/cpu6502_tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\cpu6502_tests.dir\build.make tests/CMakeFiles/cpu6502_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\cpu6502_tests.dir\build.make tests/CMakeFiles/cpu6502_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=6 "Built target cpu6502_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=7 "Built target cpu6502_tests"
 .PHONY : tests/CMakeFiles/cpu6502_tests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/cpu6502_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/CMakeFiles/cpu6502_tests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
 .PHONY : tests/CMakeFiles/cpu6502_tests.dir/rule
 
 # Convenience name for target.

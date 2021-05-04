@@ -274,6 +274,28 @@ namespace CPU6502_TEST::inner
         cpu.execute(9);
         assert(cpu.get_registers().ACU.get() == 84);
         //END ASSERT JSR - Absolute
+
+        //ASSERT JMP - Absolute
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute);
+        cpu.reset();
+        mem[PC] = opcode;
+        mem[PC+1] = 0x42;
+        mem[PC+2] = 0x42;
+        cpu.execute(3);
+        assert(cpu.get_registers().PC.get() == 0x4242);
+        //END ASSERT JMP - Absolute
+
+        //ASSERT JMP - Indirect
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Indirect);
+        cpu.reset();
+        mem[PC] = opcode;
+        mem[PC+1] = 0x42;
+        mem[PC+2] = 0x42;
+        mem[0x4242] = 0x20;
+        mem[0x4242+1] = 0x20;
+        cpu.execute(5);
+        assert(cpu.get_registers().PC.get() == 0x2020);
+        //END ASSERT JMP - Indirect
     }
 }
 #endif

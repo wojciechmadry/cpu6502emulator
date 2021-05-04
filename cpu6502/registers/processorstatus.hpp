@@ -32,7 +32,7 @@ namespace cpu6502::registers
         void set(const Flags flag, const bool NewFlagValue) noexcept
         {
             auto FlagChar = static_cast<uint8_t>(flag);
-            if (NewFlagValue) [[likely]]
+            if (NewFlagValue)
                 _reg |= FlagChar;
             else
                 _reg = static_cast<decltype(_reg)>(_reg & (~FlagChar));

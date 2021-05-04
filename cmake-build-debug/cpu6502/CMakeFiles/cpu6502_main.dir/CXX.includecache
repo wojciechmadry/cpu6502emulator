@@ -72,15 +72,7 @@ cassert
 cstdint
 -
 
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/JMP.cpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/RTS.cpp
 cpu.hpp
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/cpu.hpp
-
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/JSR.cpp
-cpu.hpp
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/cpu.hpp
-
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/LoadStoreOperations/LDA.cpp
-cpu.hpp
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/LoadStoreOperations/cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/cpu.hpp
 

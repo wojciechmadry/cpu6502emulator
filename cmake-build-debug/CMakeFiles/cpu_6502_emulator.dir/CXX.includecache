@@ -90,11 +90,11 @@ cassert
 ../cpu6502/registers/registers.hpp
 ../cpu6502/registers/registers.hpp
 
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/main.cpp
+F:/CPU6502/cpu-6502-emulator/main.cpp
 iostream
 -
 cpu.hpp
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu.hpp
 ALL_TEST.HPP
-C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/ALL_TEST.HPP
+F:/CPU6502/cpu-6502-emulator/ALL_TEST.HPP
 

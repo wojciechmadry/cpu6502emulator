@@ -4,11 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/JMP.cpp" "C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.obj"
-  "C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/JSR.cpp" "C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.obj"
-  "C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/LoadStoreOperations/LDA.cpp" "C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/JMP.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/JSR.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/JumpsCalls/RTS.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/InstructionSet/LoadStoreOperations/LDA.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -61,6 +61,7 @@ namespace cpu6502
         // Jumps & Calls
         [[nodiscard]] bool JSR(Byte Opcode, u32& Cycles) noexcept; // Jump to a subroutine
         [[nodiscard]] bool JMP(Byte Opcode, u32& Cycles) noexcept; // Jump to another location
+        [[nodiscard]] bool RTS(Byte Opcode, u32& Cycles) noexcept; // Jump to another location
 
     public:
         CPU() = delete;
@@ -94,6 +95,8 @@ namespace cpu6502
                 if (LDA(ins, Cycles))
                     continue;
                 if (JSR(ins, Cycles))
+                    continue;
+                if (JMP(ins, Cycles))
                     continue;
 
                 assert(Cycles < OldCycles);

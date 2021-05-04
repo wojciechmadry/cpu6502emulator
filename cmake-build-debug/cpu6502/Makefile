@@ -57,19 +57,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator
+CMAKE_SOURCE_DIR = F:\CPU6502\cpu-6502-emulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug
+CMAKE_BINARY_DIR = F:\CPU6502\cpu-6502-emulator\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,7 +77,7 @@ CMAKE_BINARY_DIR = C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -98,14 +98,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\\CMakeFiles\progress.marks
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\\CMakeFiles\progress.marks
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/all
+	$(CMAKE_COMMAND) -E cmake_progress_start F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/clean
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/clean
 .PHONY : clean
 
 # The main clean target
@@ -115,22 +115,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/preinstall
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/preinstall
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 cpu6502/CMakeFiles/cpu6502_main.dir/rule:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/CMakeFiles/cpu6502_main.dir/rule
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/CMakeFiles/cpu6502_main.dir/rule
 .PHONY : cpu6502/CMakeFiles/cpu6502_main.dir/rule
 
 # Convenience name for target.
@@ -140,7 +140,7 @@ cpu6502_main: cpu6502/CMakeFiles/cpu6502_main.dir/rule
 
 # fast build rule for target.
 cpu6502_main/fast:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/build
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/build
 .PHONY : cpu6502_main/fast
 
 InstructionSet/JumpsCalls/JMP.obj: InstructionSet/JumpsCalls/JMP.cpp.obj
@@ -149,7 +149,7 @@ InstructionSet/JumpsCalls/JMP.obj: InstructionSet/JumpsCalls/JMP.cpp.obj
 
 # target to build an object file
 InstructionSet/JumpsCalls/JMP.cpp.obj:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.obj
 .PHONY : InstructionSet/JumpsCalls/JMP.cpp.obj
 
 InstructionSet/JumpsCalls/JMP.i: InstructionSet/JumpsCalls/JMP.cpp.i
@@ -158,7 +158,7 @@ InstructionSet/JumpsCalls/JMP.i: InstructionSet/JumpsCalls/JMP.cpp.i
 
 # target to preprocess a source file
 InstructionSet/JumpsCalls/JMP.cpp.i:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.i
 .PHONY : InstructionSet/JumpsCalls/JMP.cpp.i
 
 InstructionSet/JumpsCalls/JMP.s: InstructionSet/JumpsCalls/JMP.cpp.s
@@ -167,7 +167,7 @@ InstructionSet/JumpsCalls/JMP.s: InstructionSet/JumpsCalls/JMP.cpp.s
 
 # target to generate assembly for a file
 InstructionSet/JumpsCalls/JMP.cpp.s:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.s
 .PHONY : InstructionSet/JumpsCalls/JMP.cpp.s
 
 InstructionSet/JumpsCalls/JSR.obj: InstructionSet/JumpsCalls/JSR.cpp.obj
@@ -176,7 +176,7 @@ InstructionSet/JumpsCalls/JSR.obj: InstructionSet/JumpsCalls/JSR.cpp.obj
 
 # target to build an object file
 InstructionSet/JumpsCalls/JSR.cpp.obj:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.obj
 .PHONY : InstructionSet/JumpsCalls/JSR.cpp.obj
 
 InstructionSet/JumpsCalls/JSR.i: InstructionSet/JumpsCalls/JSR.cpp.i
@@ -185,7 +185,7 @@ InstructionSet/JumpsCalls/JSR.i: InstructionSet/JumpsCalls/JSR.cpp.i
 
 # target to preprocess a source file
 InstructionSet/JumpsCalls/JSR.cpp.i:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.i
 .PHONY : InstructionSet/JumpsCalls/JSR.cpp.i
 
 InstructionSet/JumpsCalls/JSR.s: InstructionSet/JumpsCalls/JSR.cpp.s
@@ -194,8 +194,35 @@ InstructionSet/JumpsCalls/JSR.s: InstructionSet/JumpsCalls/JSR.cpp.s
 
 # target to generate assembly for a file
 InstructionSet/JumpsCalls/JSR.cpp.s:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.s
 .PHONY : InstructionSet/JumpsCalls/JSR.cpp.s
+
+InstructionSet/JumpsCalls/RTS.obj: InstructionSet/JumpsCalls/RTS.cpp.obj
+
+.PHONY : InstructionSet/JumpsCalls/RTS.obj
+
+# target to build an object file
+InstructionSet/JumpsCalls/RTS.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.obj
+.PHONY : InstructionSet/JumpsCalls/RTS.cpp.obj
+
+InstructionSet/JumpsCalls/RTS.i: InstructionSet/JumpsCalls/RTS.cpp.i
+
+.PHONY : InstructionSet/JumpsCalls/RTS.i
+
+# target to preprocess a source file
+InstructionSet/JumpsCalls/RTS.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.i
+.PHONY : InstructionSet/JumpsCalls/RTS.cpp.i
+
+InstructionSet/JumpsCalls/RTS.s: InstructionSet/JumpsCalls/RTS.cpp.s
+
+.PHONY : InstructionSet/JumpsCalls/RTS.s
+
+# target to generate assembly for a file
+InstructionSet/JumpsCalls/RTS.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.s
+.PHONY : InstructionSet/JumpsCalls/RTS.cpp.s
 
 InstructionSet/LoadStoreOperations/LDA.obj: InstructionSet/LoadStoreOperations/LDA.cpp.obj
 
@@ -203,7 +230,7 @@ InstructionSet/LoadStoreOperations/LDA.obj: InstructionSet/LoadStoreOperations/L
 
 # target to build an object file
 InstructionSet/LoadStoreOperations/LDA.cpp.obj:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.obj
 .PHONY : InstructionSet/LoadStoreOperations/LDA.cpp.obj
 
 InstructionSet/LoadStoreOperations/LDA.i: InstructionSet/LoadStoreOperations/LDA.cpp.i
@@ -212,7 +239,7 @@ InstructionSet/LoadStoreOperations/LDA.i: InstructionSet/LoadStoreOperations/LDA
 
 # target to preprocess a source file
 InstructionSet/LoadStoreOperations/LDA.cpp.i:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.i
 .PHONY : InstructionSet/LoadStoreOperations/LDA.cpp.i
 
 InstructionSet/LoadStoreOperations/LDA.s: InstructionSet/LoadStoreOperations/LDA.cpp.s
@@ -221,7 +248,7 @@ InstructionSet/LoadStoreOperations/LDA.s: InstructionSet/LoadStoreOperations/LDA
 
 # target to generate assembly for a file
 InstructionSet/LoadStoreOperations/LDA.cpp.s:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.s
 .PHONY : InstructionSet/LoadStoreOperations/LDA.cpp.s
 
 # Help Target
@@ -239,6 +266,9 @@ help:
 	@echo ... InstructionSet/JumpsCalls/JSR.obj
 	@echo ... InstructionSet/JumpsCalls/JSR.i
 	@echo ... InstructionSet/JumpsCalls/JSR.s
+	@echo ... InstructionSet/JumpsCalls/RTS.obj
+	@echo ... InstructionSet/JumpsCalls/RTS.i
+	@echo ... InstructionSet/JumpsCalls/RTS.s
 	@echo ... InstructionSet/LoadStoreOperations/LDA.obj
 	@echo ... InstructionSet/LoadStoreOperations/LDA.i
 	@echo ... InstructionSet/LoadStoreOperations/LDA.s
@@ -253,6 +283,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\woity\Desktop\CPU6502\cpu-6502-emulator\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

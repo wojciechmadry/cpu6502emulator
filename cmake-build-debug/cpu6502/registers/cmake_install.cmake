@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/woity/Desktop/CPU6502/cpu-6502-emulator/cpu6502/registers
+# Install script for directory: F:/CPU6502/cpu-6502-emulator/cpu6502/registers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/mingw64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/msys64/mingw64/bin/objdump.exe")
 endif()
 

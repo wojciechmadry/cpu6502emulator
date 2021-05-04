@@ -7,12 +7,13 @@ namespace cpu6502 {
         {
             case JMPop::Absolute:
             {
-
+                cpu_reg.PC.set(fetch_word(Cycles));
             }
                 break;
             case JMPop::Indirect:
             {
-
+                Word Address = fetch_word(Cycles);
+                cpu_reg.PC.set(read_word(Address, Cycles));
             }
             break;
             default:

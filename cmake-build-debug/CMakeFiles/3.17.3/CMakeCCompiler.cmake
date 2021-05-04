@@ -17,7 +17,6 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-
 set(CMAKE_AR "C:/msys64/mingw64/bin/ar.exe")
 set(CMAKE_C_COMPILER_AR "C:/msys64/mingw64/bin/llvm-ar.exe")
 set(CMAKE_RANLIB "C:/msys64/mingw64/bin/ranlib.exe")
