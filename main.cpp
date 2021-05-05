@@ -8,7 +8,6 @@ int main(){
     cpu6502::Memory memory(1024 * 64);
     cpu6502::CPU cpu(memory);
     cpu.reset();
-
     //Program
     memory[0xFFFC] = 0xA9;
     memory[0xFFFD] = 39;

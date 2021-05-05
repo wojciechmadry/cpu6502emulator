@@ -143,113 +143,167 @@ cpu6502_main/fast:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/build
 .PHONY : cpu6502_main/fast
 
-InstructionSet/JumpsCalls/JMP.obj: InstructionSet/JumpsCalls/JMP.cpp.obj
+cpu/InstructionSet/JumpsCalls/JMP.obj: cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 
-.PHONY : InstructionSet/JumpsCalls/JMP.obj
-
-# target to build an object file
-InstructionSet/JumpsCalls/JMP.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.obj
-.PHONY : InstructionSet/JumpsCalls/JMP.cpp.obj
-
-InstructionSet/JumpsCalls/JMP.i: InstructionSet/JumpsCalls/JMP.cpp.i
-
-.PHONY : InstructionSet/JumpsCalls/JMP.i
-
-# target to preprocess a source file
-InstructionSet/JumpsCalls/JMP.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.i
-.PHONY : InstructionSet/JumpsCalls/JMP.cpp.i
-
-InstructionSet/JumpsCalls/JMP.s: InstructionSet/JumpsCalls/JMP.cpp.s
-
-.PHONY : InstructionSet/JumpsCalls/JMP.s
-
-# target to generate assembly for a file
-InstructionSet/JumpsCalls/JMP.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JMP.cpp.s
-.PHONY : InstructionSet/JumpsCalls/JMP.cpp.s
-
-InstructionSet/JumpsCalls/JSR.obj: InstructionSet/JumpsCalls/JSR.cpp.obj
-
-.PHONY : InstructionSet/JumpsCalls/JSR.obj
+.PHONY : cpu/InstructionSet/JumpsCalls/JMP.obj
 
 # target to build an object file
-InstructionSet/JumpsCalls/JSR.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.obj
-.PHONY : InstructionSet/JumpsCalls/JSR.cpp.obj
+cpu/InstructionSet/JumpsCalls/JMP.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
+.PHONY : cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 
-InstructionSet/JumpsCalls/JSR.i: InstructionSet/JumpsCalls/JSR.cpp.i
+cpu/InstructionSet/JumpsCalls/JMP.i: cpu/InstructionSet/JumpsCalls/JMP.cpp.i
 
-.PHONY : InstructionSet/JumpsCalls/JSR.i
+.PHONY : cpu/InstructionSet/JumpsCalls/JMP.i
 
 # target to preprocess a source file
-InstructionSet/JumpsCalls/JSR.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.i
-.PHONY : InstructionSet/JumpsCalls/JSR.cpp.i
+cpu/InstructionSet/JumpsCalls/JMP.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.i
+.PHONY : cpu/InstructionSet/JumpsCalls/JMP.cpp.i
 
-InstructionSet/JumpsCalls/JSR.s: InstructionSet/JumpsCalls/JSR.cpp.s
+cpu/InstructionSet/JumpsCalls/JMP.s: cpu/InstructionSet/JumpsCalls/JMP.cpp.s
 
-.PHONY : InstructionSet/JumpsCalls/JSR.s
+.PHONY : cpu/InstructionSet/JumpsCalls/JMP.s
 
 # target to generate assembly for a file
-InstructionSet/JumpsCalls/JSR.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/JSR.cpp.s
-.PHONY : InstructionSet/JumpsCalls/JSR.cpp.s
+cpu/InstructionSet/JumpsCalls/JMP.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.s
+.PHONY : cpu/InstructionSet/JumpsCalls/JMP.cpp.s
 
-InstructionSet/JumpsCalls/RTS.obj: InstructionSet/JumpsCalls/RTS.cpp.obj
+cpu/InstructionSet/JumpsCalls/JSR.obj: cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
 
-.PHONY : InstructionSet/JumpsCalls/RTS.obj
+.PHONY : cpu/InstructionSet/JumpsCalls/JSR.obj
 
 # target to build an object file
-InstructionSet/JumpsCalls/RTS.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.obj
-.PHONY : InstructionSet/JumpsCalls/RTS.cpp.obj
+cpu/InstructionSet/JumpsCalls/JSR.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
+.PHONY : cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
 
-InstructionSet/JumpsCalls/RTS.i: InstructionSet/JumpsCalls/RTS.cpp.i
+cpu/InstructionSet/JumpsCalls/JSR.i: cpu/InstructionSet/JumpsCalls/JSR.cpp.i
 
-.PHONY : InstructionSet/JumpsCalls/RTS.i
+.PHONY : cpu/InstructionSet/JumpsCalls/JSR.i
 
 # target to preprocess a source file
-InstructionSet/JumpsCalls/RTS.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.i
-.PHONY : InstructionSet/JumpsCalls/RTS.cpp.i
+cpu/InstructionSet/JumpsCalls/JSR.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.i
+.PHONY : cpu/InstructionSet/JumpsCalls/JSR.cpp.i
 
-InstructionSet/JumpsCalls/RTS.s: InstructionSet/JumpsCalls/RTS.cpp.s
+cpu/InstructionSet/JumpsCalls/JSR.s: cpu/InstructionSet/JumpsCalls/JSR.cpp.s
 
-.PHONY : InstructionSet/JumpsCalls/RTS.s
+.PHONY : cpu/InstructionSet/JumpsCalls/JSR.s
 
 # target to generate assembly for a file
-InstructionSet/JumpsCalls/RTS.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/JumpsCalls/RTS.cpp.s
-.PHONY : InstructionSet/JumpsCalls/RTS.cpp.s
+cpu/InstructionSet/JumpsCalls/JSR.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.s
+.PHONY : cpu/InstructionSet/JumpsCalls/JSR.cpp.s
 
-InstructionSet/LoadStoreOperations/LDA.obj: InstructionSet/LoadStoreOperations/LDA.cpp.obj
+cpu/InstructionSet/JumpsCalls/RTS.obj: cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
 
-.PHONY : InstructionSet/LoadStoreOperations/LDA.obj
+.PHONY : cpu/InstructionSet/JumpsCalls/RTS.obj
 
 # target to build an object file
-InstructionSet/LoadStoreOperations/LDA.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.obj
-.PHONY : InstructionSet/LoadStoreOperations/LDA.cpp.obj
+cpu/InstructionSet/JumpsCalls/RTS.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
+.PHONY : cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
 
-InstructionSet/LoadStoreOperations/LDA.i: InstructionSet/LoadStoreOperations/LDA.cpp.i
+cpu/InstructionSet/JumpsCalls/RTS.i: cpu/InstructionSet/JumpsCalls/RTS.cpp.i
 
-.PHONY : InstructionSet/LoadStoreOperations/LDA.i
+.PHONY : cpu/InstructionSet/JumpsCalls/RTS.i
 
 # target to preprocess a source file
-InstructionSet/LoadStoreOperations/LDA.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.i
-.PHONY : InstructionSet/LoadStoreOperations/LDA.cpp.i
+cpu/InstructionSet/JumpsCalls/RTS.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.i
+.PHONY : cpu/InstructionSet/JumpsCalls/RTS.cpp.i
 
-InstructionSet/LoadStoreOperations/LDA.s: InstructionSet/LoadStoreOperations/LDA.cpp.s
+cpu/InstructionSet/JumpsCalls/RTS.s: cpu/InstructionSet/JumpsCalls/RTS.cpp.s
 
-.PHONY : InstructionSet/LoadStoreOperations/LDA.s
+.PHONY : cpu/InstructionSet/JumpsCalls/RTS.s
 
 # target to generate assembly for a file
-InstructionSet/LoadStoreOperations/LDA.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/InstructionSet/LoadStoreOperations/LDA.cpp.s
-.PHONY : InstructionSet/LoadStoreOperations/LDA.cpp.s
+cpu/InstructionSet/JumpsCalls/RTS.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.s
+.PHONY : cpu/InstructionSet/JumpsCalls/RTS.cpp.s
+
+cpu/InstructionSet/LoadStoreOperations/LDA.obj: cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.obj
+
+# target to build an object file
+cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj
+
+cpu/InstructionSet/LoadStoreOperations/LDA.i: cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.i
+
+# target to preprocess a source file
+cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i
+
+cpu/InstructionSet/LoadStoreOperations/LDA.s: cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
+
+cpu/WriteRead/read.obj: cpu/WriteRead/read.cpp.obj
+
+.PHONY : cpu/WriteRead/read.obj
+
+# target to build an object file
+cpu/WriteRead/read.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj
+.PHONY : cpu/WriteRead/read.cpp.obj
+
+cpu/WriteRead/read.i: cpu/WriteRead/read.cpp.i
+
+.PHONY : cpu/WriteRead/read.i
+
+# target to preprocess a source file
+cpu/WriteRead/read.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.i
+.PHONY : cpu/WriteRead/read.cpp.i
+
+cpu/WriteRead/read.s: cpu/WriteRead/read.cpp.s
+
+.PHONY : cpu/WriteRead/read.s
+
+# target to generate assembly for a file
+cpu/WriteRead/read.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.s
+.PHONY : cpu/WriteRead/read.cpp.s
+
+cpu/WriteRead/write.obj: cpu/WriteRead/write.cpp.obj
+
+.PHONY : cpu/WriteRead/write.obj
+
+# target to build an object file
+cpu/WriteRead/write.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj
+.PHONY : cpu/WriteRead/write.cpp.obj
+
+cpu/WriteRead/write.i: cpu/WriteRead/write.cpp.i
+
+.PHONY : cpu/WriteRead/write.i
+
+# target to preprocess a source file
+cpu/WriteRead/write.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.i
+.PHONY : cpu/WriteRead/write.cpp.i
+
+cpu/WriteRead/write.s: cpu/WriteRead/write.cpp.s
+
+.PHONY : cpu/WriteRead/write.s
+
+# target to generate assembly for a file
+cpu/WriteRead/write.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.s
+.PHONY : cpu/WriteRead/write.cpp.s
 
 # Help Target
 help:
@@ -260,18 +314,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cpu6502_main
-	@echo ... InstructionSet/JumpsCalls/JMP.obj
-	@echo ... InstructionSet/JumpsCalls/JMP.i
-	@echo ... InstructionSet/JumpsCalls/JMP.s
-	@echo ... InstructionSet/JumpsCalls/JSR.obj
-	@echo ... InstructionSet/JumpsCalls/JSR.i
-	@echo ... InstructionSet/JumpsCalls/JSR.s
-	@echo ... InstructionSet/JumpsCalls/RTS.obj
-	@echo ... InstructionSet/JumpsCalls/RTS.i
-	@echo ... InstructionSet/JumpsCalls/RTS.s
-	@echo ... InstructionSet/LoadStoreOperations/LDA.obj
-	@echo ... InstructionSet/LoadStoreOperations/LDA.i
-	@echo ... InstructionSet/LoadStoreOperations/LDA.s
+	@echo ... cpu/InstructionSet/JumpsCalls/JMP.obj
+	@echo ... cpu/InstructionSet/JumpsCalls/JMP.i
+	@echo ... cpu/InstructionSet/JumpsCalls/JMP.s
+	@echo ... cpu/InstructionSet/JumpsCalls/JSR.obj
+	@echo ... cpu/InstructionSet/JumpsCalls/JSR.i
+	@echo ... cpu/InstructionSet/JumpsCalls/JSR.s
+	@echo ... cpu/InstructionSet/JumpsCalls/RTS.obj
+	@echo ... cpu/InstructionSet/JumpsCalls/RTS.i
+	@echo ... cpu/InstructionSet/JumpsCalls/RTS.s
+	@echo ... cpu/InstructionSet/LoadStoreOperations/LDA.obj
+	@echo ... cpu/InstructionSet/LoadStoreOperations/LDA.i
+	@echo ... cpu/InstructionSet/LoadStoreOperations/LDA.s
+	@echo ... cpu/WriteRead/read.obj
+	@echo ... cpu/WriteRead/read.i
+	@echo ... cpu/WriteRead/read.s
+	@echo ... cpu/WriteRead/write.obj
+	@echo ... cpu/WriteRead/write.i
+	@echo ... cpu/WriteRead/write.s
 .PHONY : help
 
 

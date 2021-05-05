@@ -42,3 +42,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/registers/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/memory/cmake_install.cmake")
+endif()
+

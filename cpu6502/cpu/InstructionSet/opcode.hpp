@@ -27,7 +27,7 @@ namespace cpu6502::opcode{
 
     //Return from Subroutine
     enum class RTS : Byte{
-        Implied = 0x60, // 6 cycles
+        Implied = 0x60, // 6 cycles - Implemented im not sure if its working good.
     };
 }
 #endif

@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-../cpu6502/InstructionSet/opcode.hpp
-
 ../cpu6502/cpu.hpp
-registers.hpp
-../cpu6502/registers.hpp
-memory.hpp
-../cpu6502/memory.hpp
-InstructionSet/opcode.hpp
-../cpu6502/InstructionSet/opcode.hpp
+registers/registers.hpp
+../cpu6502/registers/registers.hpp
+memory/memory.hpp
+../cpu6502/memory/memory.hpp
+cpu/InstructionSet/opcode.hpp
+../cpu6502/cpu/InstructionSet/opcode.hpp
 iostream
 -
 
-../cpu6502/memory.hpp
+../cpu6502/cpu/InstructionSet/opcode.hpp
+
+../cpu6502/memory/memory.hpp
 required.hpp
-../cpu6502/required.hpp
+../cpu6502/memory/required.hpp
 
 ../cpu6502/registers/accumulator.hpp
 required.hpp

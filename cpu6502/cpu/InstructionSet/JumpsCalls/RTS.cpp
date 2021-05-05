@@ -8,8 +8,7 @@ namespace cpu6502{
             case RTSop::Implied: // 6 cycles
             {
                 // 5 cycles
-                Word PC = read_word(cpu_reg.SP.get() - 2,Cycles);
-                cpu_reg.SP.decrement(2);
+                Word PC = fetch_word_from_stack(Cycles);
                 cpu_reg.PC.set(PC + 1);
                 Cycles -= 3;
 

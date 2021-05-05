@@ -10,8 +10,7 @@ namespace cpu6502 {
                 // 5 cycles
                 Word SubRoutineAddress = fetch_word(Cycles);
                 // 3 cycles
-                write_word(cpu_reg.PC.get() - 1, cpu_reg.SP.get(), Cycles);
-                cpu_reg.SP.increment(2);
+                push_word_to_stack(cpu_reg.PC.get() - 1 , Cycles);
                 // 1 cycles
                 cpu_reg.PC.set(SubRoutineAddress);
                 --Cycles;

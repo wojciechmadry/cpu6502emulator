@@ -1,11 +1,12 @@
 #ifndef CPU_6502_processor
 #define CPU_6502_processor
 
-#include "registers.hpp"
-#include "memory.hpp"
-#include "InstructionSet/opcode.hpp"
+#include "registers/registers.hpp"
+#include "memory/memory.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
-#include <iostream>
+#include <iostream> // REMEMBER TO DELETE
+
 namespace cpu6502
 {
     class CPU
@@ -19,41 +20,22 @@ namespace cpu6502
         //Processor Status flags
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
 
-        [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept
-        {
-            Byte Data = mem.get()[cpu_reg.PC.get()];
-            cpu_reg.PC.increment();
-            --Cycles;
-            return Data;
-        }
+        // Read CPU
+        [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;
+        [[nodiscard]] Byte read_byte(u32 Address, u32& Cycles) const noexcept;
+        [[nodiscard]] Word fetch_word(u32& Cycles) noexcept;
+        [[nodiscard]] Word read_word(u32 Address, u32& Cycles) noexcept;
+        [[nodiscard]] Word fetch_word_from_stack(u32& Cycles) noexcept;
+        [[nodiscard]] Byte fetch_byte_from_stack(u32& Cycles) noexcept;
 
-        [[nodiscard]] Byte read_byte(const u32 Address, u32& Cycles) const noexcept
-        {
-            --Cycles;
-            return mem.get()[Address];
-        }
+        // Write CPU
+        void write_word(Word Data, u32 Address, u32& Cycles) noexcept;
+        void write_byte(Byte Data, u32 Address, u32& Cycles) noexcept;
+        void push_word_to_stack(Word Data, u32& Cycles) noexcept;
+        void push_byte_to_stack(Byte Data, u32& Cycles) noexcept;
 
-        [[nodiscard]] Word fetch_word(u32& Cycles) noexcept {
-            //little endian
-            Word Data = mem.get()[cpu_reg.PC.get()];
-            cpu_reg.PC.increment();
-            Data = static_cast<Word>(Data | (mem.get()[cpu_reg.PC.get()] << 8));
-            cpu_reg.PC.increment();
-            Cycles -= 2;
-            return Data;
-        }
 
-        [[nodiscard]] Word read_word(const u32 Address, u32& Cycles) noexcept
-        {
-            //little endian
-            Cycles -= 2;
-            return mem.get().read_word(Address);
-        }
-        void write_word(Word Data, u32 Address, u32& Cycles) noexcept
-        {
-            mem.get().write_word(Data, Address);
-            Cycles -= 2;
-        }
+        //Instruction Set
 
         // Load/Store Operations
         [[nodiscard]] bool LDA(Byte Opcode, u32& Cycles) noexcept; // LOAD ACCUMULATOR
@@ -62,6 +44,8 @@ namespace cpu6502
         [[nodiscard]] bool JSR(Byte Opcode, u32& Cycles) noexcept; // Jump to a subroutine
         [[nodiscard]] bool JMP(Byte Opcode, u32& Cycles) noexcept; // Jump to another location
         [[nodiscard]] bool RTS(Byte Opcode, u32& Cycles) noexcept; // Return from Subroutine
+
+        // END - Instruction Set
 
     public:
         CPU() = delete;
@@ -92,6 +76,7 @@ namespace cpu6502
                 u32 OldCycles = Cycles;
 
                 Byte ins = fetch_byte(Cycles);
+
                 if (LDA(ins, Cycles))
                     continue;
                 if (JSR(ins, Cycles))

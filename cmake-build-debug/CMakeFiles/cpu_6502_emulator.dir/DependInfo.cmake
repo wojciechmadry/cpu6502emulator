@@ -12,12 +12,15 @@ set(CMAKE_CXX_COMPILER_ID "Clang")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../cpu6502"
   "../cpu6502/registers"
+  "../cpu6502/memory/.."
+  "../cpu6502/memory"
   "../tests"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/tests/CMakeFiles/cpu6502_tests.dir/DependInfo.cmake"
+  "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/memory/CMakeFiles/cpu6502_memory.dir/DependInfo.cmake"
   "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/registers/CMakeFiles/cpu6502_registers.dir/DependInfo.cmake"
   "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/DependInfo.cmake"
   )
