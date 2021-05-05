@@ -28,9 +28,14 @@ namespace cpu6502::registers
             _reg = NewRegValue;
         }
 
-        void increment() noexcept
+        void increment(const Byte i = 1) noexcept
         {
-            ++_reg;
+            _reg += i;
+        }
+
+        void decrement(const Byte i = 1) noexcept
+        {
+            _reg -= i;
         }
     };
 }

@@ -5,8 +5,14 @@ namespace cpu6502{
         using RTSop = cpu6502::opcode::RTS;
         switch(static_cast<RTSop>(Opcode))
         {
-            case RTSop::Implied:
+            case RTSop::Implied: // 6 cycles
             {
+                // 5 cycles
+                Word PC = read_word(cpu_reg.SP.get() - 2,Cycles);
+                cpu_reg.SP.decrement(2);
+                cpu_reg.PC.set(PC + 1);
+                Cycles -= 3;
+
             }
                 break;
             default:

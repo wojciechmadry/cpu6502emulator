@@ -263,17 +263,25 @@ namespace CPU6502_TEST::inner
                && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Indirect Y
 
-        //ASSERT JSR - Absolute
+        //ASSERT RTS - Implied
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::JSR::Absolute);
         cpu.reset();
-        mem[PC] = opcode;
+        mem[PC] = opcode; // 6cycles
         mem[PC+1] = 0x42;
         mem[PC+2] = 0x42;
-        mem[0x4242] = static_cast<cpu6502::Byte>(cpu6502::opcode::LDA::Immediate);
+        mem[0x4242] = static_cast<cpu6502::Byte>(cpu6502::opcode::LDA::Immediate); //2 cycles
         mem[0x4243] = 84;
-        cpu.execute(9);
+        mem[0x4244] = opcode; // 6cycles
+        mem[0x4245] = 0x20;
+        mem[0x4246] = 0x20;
+        mem[0x2020] = static_cast<cpu6502::Byte>(cpu6502::opcode::RTS::Implied); // 6 cycles;
+        mem[0x4244 + 3] = static_cast<cpu6502::Byte>(cpu6502::opcode::RTS::Implied); // 6 cycles;
+
+
+        cpu.execute(26);
         assert(cpu.get_registers().ACU.get() == 84);
-        //END ASSERT JSR - Absolute
+        assert(cpu.get_registers().PC.get() == PC + 3);
+        //END ASSERT RTS - Implied
 
         //ASSERT JMP - Absolute
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute);
