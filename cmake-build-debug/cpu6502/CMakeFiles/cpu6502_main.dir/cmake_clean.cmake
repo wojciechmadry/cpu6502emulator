@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj"

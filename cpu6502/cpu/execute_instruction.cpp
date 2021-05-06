@@ -10,12 +10,10 @@ namespace cpu6502{
             Byte ins = fetch_byte(Cycles);
             bool FunctionCalled = false;
 
-            for(const auto& Function : InstructionSetArray)
-                if (Function(ins, Cycles))
-                {
-                    FunctionCalled = true;
-                    break;
-                }
+            if(LDA(ins, Cycles) ||
+               JSR(ins, Cycles) || JMP(ins, Cycles) || RTS(ins, Cycles) )
+                FunctionCalled = true;
+
 
 
             assert(Cycles < OldCycles);

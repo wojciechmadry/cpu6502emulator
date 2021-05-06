@@ -271,9 +271,6 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu.hpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
-		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet.cpp">
-			<Option target="cpu6502_main"/>
-		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/JMP.cpp">
 			<Option target="cpu6502_main"/>
 		</Unit>

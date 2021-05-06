@@ -18,8 +18,6 @@ namespace cpu6502
         //Processor Status flags
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
 
-        //Array of instruction set.
-        std::array<std::function<bool(Byte, u32&)>, 4> InstructionSetArray;
 
         // Read CPU
         [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;
@@ -47,7 +45,6 @@ namespace cpu6502
         [[nodiscard]] bool RTS(Byte Opcode, u32& Cycles) noexcept; // Return from Subroutine
 
         // END - Instruction Set
-        void make_instruction_set() noexcept; // Bind isntruction set to array InstructionSetArray
     public:
         CPU() = delete;
         CPU(const CPU&) = delete;
@@ -56,7 +53,6 @@ namespace cpu6502
         explicit CPU(cpu6502::Memory& memory) noexcept : mem(memory)
         {
             reset();
-            make_instruction_set();
         }
 
         ~CPU() = default;

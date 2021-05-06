@@ -143,33 +143,6 @@ cpu6502_main/fast:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/build
 .PHONY : cpu6502_main/fast
 
-cpu/InstructionSet.obj: cpu/InstructionSet.cpp.obj
-
-.PHONY : cpu/InstructionSet.obj
-
-# target to build an object file
-cpu/InstructionSet.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet.cpp.obj
-.PHONY : cpu/InstructionSet.cpp.obj
-
-cpu/InstructionSet.i: cpu/InstructionSet.cpp.i
-
-.PHONY : cpu/InstructionSet.i
-
-# target to preprocess a source file
-cpu/InstructionSet.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet.cpp.i
-.PHONY : cpu/InstructionSet.cpp.i
-
-cpu/InstructionSet.s: cpu/InstructionSet.cpp.s
-
-.PHONY : cpu/InstructionSet.s
-
-# target to generate assembly for a file
-cpu/InstructionSet.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet.cpp.s
-.PHONY : cpu/InstructionSet.cpp.s
-
 cpu/InstructionSet/JumpsCalls/JMP.obj: cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 
 .PHONY : cpu/InstructionSet/JumpsCalls/JMP.obj
@@ -368,9 +341,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cpu6502_main
-	@echo ... cpu/InstructionSet.obj
-	@echo ... cpu/InstructionSet.i
-	@echo ... cpu/InstructionSet.s
 	@echo ... cpu/InstructionSet/JumpsCalls/JMP.obj
 	@echo ... cpu/InstructionSet/JumpsCalls/JMP.i
 	@echo ... cpu/InstructionSet/JumpsCalls/JMP.s

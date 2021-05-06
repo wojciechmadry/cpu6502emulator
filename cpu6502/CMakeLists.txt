@@ -14,7 +14,6 @@ add_library(
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
         cpu/execute_instruction.cpp
-        cpu/InstructionSet.cpp
         required.hpp
 )
 
