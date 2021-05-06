@@ -15,4 +15,5 @@ Full implementation to 0 minutes 0 seconds.
 Now working on :
  - Adding instruction set
  - Implementing RTS - Working - But i think something is wrong
--  Working on implement LDX
+ - Im not sure about page crossing
+ - Working on STA

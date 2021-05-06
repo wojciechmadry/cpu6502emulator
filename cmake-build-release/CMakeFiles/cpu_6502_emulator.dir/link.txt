@@ -1,0 +1,3 @@
+"F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cpu_6502_emulator.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\cpu_6502_emulator.dir/objects.a @CMakeFiles\cpu_6502_emulator.dir\objects1.rsp
+C:\msys64\mingw64\bin\clang++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\cpu_6502_emulator.dir/objects.a -Wl,--no-whole-archive -o cpu_6502_emulator.exe -Wl,--out-implib,libcpu_6502_emulator.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cpu_6502_emulator.dir\linklibs.rsp

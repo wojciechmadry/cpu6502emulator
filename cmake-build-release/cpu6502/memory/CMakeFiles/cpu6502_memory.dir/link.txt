@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libcpu6502_memory.a CMakeFiles/cpu6502_memory.dir/memory.cpp.obj
+C:\msys64\mingw64\bin\ranlib.exe libcpu6502_memory.a

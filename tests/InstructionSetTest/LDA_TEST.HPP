@@ -9,6 +9,8 @@ namespace CPU6502_TEST::inner{
     {
 
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
+        auto p = PSFlags::BreakCommand;
+        (void)p;
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;

@@ -1,6 +1,8 @@
 #ifndef CPU_6502_TEST_CPU
 #define CPU_6502_TEST_CPU
 #include "InstructionSetTest/LDA_TEST.HPP"
+#include "InstructionSetTest/LDX_TEST.HPP"
+#include "InstructionSetTest/LDY_TEST.HPP"
 #include "InstructionSetTest/RTS_JSR_TEST.HPP"
 #include "InstructionSetTest/JMP_TEST.HPP"
 #include "time.hpp"
@@ -13,9 +15,13 @@ namespace CPU6502_TEST::inner
 
         all_pass &= LDA_TEST();
 
+        all_pass &= LDX_TEST();
+
         all_pass &= RTS_JSR_TEST();
 
         all_pass &= JMP_TEST();
+
+        all_pass &= LDY_TEST();
 
         return all_pass;
     }

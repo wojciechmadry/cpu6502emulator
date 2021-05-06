@@ -6,6 +6,8 @@ add_library(
         cpu_test.hpp
         InstructionSetTest/JMP_TEST.HPP
         InstructionSetTest/LDA_TEST.HPP
+        InstructionSetTest/LDX_TEST.HPP
+        InstructionSetTest/LDY_TEST.HPP
         InstructionSetTest/RTS_JSR_TEST.HPP
         time.hpp
 )

@@ -2,8 +2,10 @@
 
 #include "cpu.hpp"
 #include "ALL_TEST.HPP"
+
 int main(){
-    CPU6502_TEST::RUN_ALL_TEST();
+
+    CPU6502_TEST::RUN_ALL_TEST(1);
 
     cpu6502::Memory memory(1024 * 64);
     cpu6502::CPU cpu(memory);

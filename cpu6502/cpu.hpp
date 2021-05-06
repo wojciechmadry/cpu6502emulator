@@ -19,7 +19,10 @@ namespace cpu6502
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
 
         //Look up table to all instruction function
+        // ON STACK
         std::array<std::function<void(u32&)>, 256> LookUpTable;
+        // ON HEAP
+        //std::vector<std::function<void(u32&)>> LookUpTable {256} ;
 
         // Read CPU
         [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;
@@ -41,6 +44,8 @@ namespace cpu6502
         // Load/Store Operations
         void LDA() noexcept; // Load Accumulator
         void LDX() noexcept; // Load X Register
+        void LDY() noexcept; // Load Y Register
+        void STA() noexcept; // Store Accumulator
 
         // Jumps & Calls
         void JSR() noexcept; // Jump to a subroutine
@@ -52,10 +57,15 @@ namespace cpu6502
         CPU() = delete;
         CPU(const CPU&) = delete;
         CPU(CPU&&) = delete;
-
         explicit CPU(cpu6502::Memory& memory) noexcept : mem(memory)
         {
             reset();
+            LDA();
+            LDX();
+            JSR();
+            JMP();
+            RTS();
+            LDY();
         }
 
         ~CPU() = default;

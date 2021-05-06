@@ -1,0 +1,15 @@
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/CMakeFiles/cpu_6502_emulator.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/CMakeFiles/edit_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/CMakeFiles/rebuild_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502_main.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/edit_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/rebuild_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/registers/CMakeFiles/cpu6502_registers.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/registers/CMakeFiles/edit_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/registers/CMakeFiles/rebuild_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/memory/CMakeFiles/cpu6502_memory.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/memory/CMakeFiles/edit_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/memory/CMakeFiles/rebuild_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/tests/CMakeFiles/cpu6502_tests.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/tests/CMakeFiles/edit_cache.dir
+F:/CPU6502/cpu-6502-emulator/cmake-build-release/tests/CMakeFiles/rebuild_cache.dir

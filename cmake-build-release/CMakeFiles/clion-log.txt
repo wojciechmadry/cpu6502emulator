@@ -1,0 +1,4 @@
+"F:\CLion\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/clang++.exe -G "CodeBlocks - MinGW Makefiles" F:\CPU6502\cpu-6502-emulator
+-- Configuring done
+-- Generating done
+-- Build files have been written to: F:/CPU6502/cpu-6502-emulator/cmake-build-release

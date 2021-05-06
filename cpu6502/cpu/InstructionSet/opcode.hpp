@@ -14,13 +14,37 @@ namespace cpu6502::opcode{
         IndirectY = 0xB1 // 5 cycles (+1 if page crossed) - Implemented
     };
 
+    // Load X register opcode
     enum class LDX : Byte
     {
-        Immediate = 0xA2, // 2 cycles
-        ZeroPage = 0xA6, // 3 cycles
-        ZeroPageY = 0xB6, // 4 cycles
-        Absolute = 0xAE, // 4 cycles
-        AbsoluteY = 0xBE, // 4 cycles (+1 if page crossed)
+        Immediate = 0xA2, // 2 cycles - Implemented
+        ZeroPage = 0xA6, // 3 cycles - Implemented
+        ZeroPageY = 0xB6, // 4 cycles - Implemented
+        Absolute = 0xAE, // 4 cycles - Implemented
+        AbsoluteY = 0xBE, // 4 cycles (+1 if page crossed) - Implemented
+    };
+
+
+    //Load Y register opcode
+    enum class LDY : Byte
+    {
+        Immediate = 0xA0, // 2 cycles - Implemented
+        ZeroPage = 0xA4, // 3 cycles - Implemented
+        ZeroPageX = 0xB4, // 4 cycles - Implemented
+        Absolute = 0xAC, // 4 cycles - Implemented
+        AbsoluteX = 0xBC, // 4 cycles (+1 if page crossed) - Implemented
+    };
+
+    //Store Accumulator opcode
+    enum class STA : Byte
+    {
+        ZeroPage = 0x85, // 3 cycles
+        ZeroPageX = 0x95, // 4 cycles
+        Absolute = 0x8D, // 4 cycles
+        AbsoluteX = 0x9D, // 5 cycles
+        AbsoluteY = 0x99, // 5 cycles
+        IndircetX = 0x81, // 6 cycles
+        IndircetY = 0x91, // 6 cycles
     };
 
     //Jump to Subroutine opcode

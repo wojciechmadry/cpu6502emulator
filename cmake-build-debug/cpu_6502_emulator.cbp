@@ -286,6 +286,12 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDX.cpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDY.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STA.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/opcode.hpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
@@ -358,6 +364,12 @@
 			<Option target="cpu6502_tests"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/LDA_TEST.HPP">
+			<Option target="cpu6502_tests"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/LDX_TEST.HPP">
+			<Option target="cpu6502_tests"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/LDY_TEST.HPP">
 			<Option target="cpu6502_tests"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/RTS_JSR_TEST.HPP">

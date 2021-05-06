@@ -1,24 +1,23 @@
 #include "cpu.hpp"
 namespace cpu6502 {
-    [[nodiscard]] bool CPU::JMP(Byte Opcode, u32& Cycles) noexcept
+    void CPU::JMP() noexcept
     {
-        using JMPop = cpu6502::opcode::JMP;
-        switch(static_cast<JMPop>(Opcode))
+        using op = cpu6502::opcode::JMP;
+
+        auto cast = [](op Opcode) -> Byte {
+            return static_cast<Byte>(Opcode);
+        };
+
+        LookUpTable[cast(op::Absolute)] = [this](u32& Cycles) -> void
         {
-            case JMPop::Absolute:
-            {
-                cpu_reg.PC.set(fetch_word(Cycles));
-            }
-                break;
-            case JMPop::Indirect:
-            {
-                Word Address = fetch_word(Cycles);
-                cpu_reg.PC.set(read_word(Address, Cycles));
-            }
-            break;
-            default:
-                return false;
-        }
-        return true;
+            cpu_reg.PC.set(fetch_word(Cycles));
+        };
+
+        LookUpTable[cast(op::Indirect)] = [this](u32& Cycles) -> void
+        {
+            Word Address = fetch_word(Cycles);
+            cpu_reg.PC.set(read_word(Address, Cycles));
+        };
+
     }
 }

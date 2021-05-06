@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/RTS.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDA.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDX.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDY.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDY.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STA.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/read.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/write.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/execute_instruction.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-debug/cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj"

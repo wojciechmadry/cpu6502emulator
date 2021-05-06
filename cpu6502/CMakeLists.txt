@@ -8,6 +8,8 @@ add_library(
         cpu.hpp
         cpu/InstructionSet/LoadStoreOperations/LDA.cpp
         cpu/InstructionSet/LoadStoreOperations/LDX.cpp
+        cpu/InstructionSet/LoadStoreOperations/LDY.cpp
+        cpu/InstructionSet/LoadStoreOperations/STA.cpp
         cpu/InstructionSet/JumpsCalls/JSR.cpp
         cpu/InstructionSet/JumpsCalls/JMP.cpp
         cpu/InstructionSet/JumpsCalls/RTS.cpp

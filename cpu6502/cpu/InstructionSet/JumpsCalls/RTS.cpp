@@ -1,22 +1,19 @@
 #include "cpu.hpp"
 namespace cpu6502{
-    [[nodiscard]] bool CPU::RTS(Byte Opcode, u32 &Cycles) noexcept
+    void CPU::RTS() noexcept
     {
-        using RTSop = cpu6502::opcode::RTS;
-        switch(static_cast<RTSop>(Opcode))
-        {
-            case RTSop::Implied: // 6 cycles
-            {
-                // 5 cycles
-                Word PC = fetch_word_from_stack(Cycles);
-                cpu_reg.PC.set(PC + 1);
-                Cycles -= 3;
+        using op = cpu6502::opcode::RTS;
 
-            }
-                break;
-            default:
-                return false;
-        }
-        return true;
+        auto cast = [](op Opcode) -> Byte {
+            return static_cast<Byte>(Opcode);
+        };
+
+        LookUpTable[cast(op::Implied)] = [this](u32& Cycles) -> void
+        {
+            // 5 cycles
+            Word PC = fetch_word_from_stack(Cycles);
+            cpu_reg.PC.set(PC + 1);
+            Cycles -= 3;
+        };
     }
 }

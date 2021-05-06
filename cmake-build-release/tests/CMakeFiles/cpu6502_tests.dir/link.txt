@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libcpu6502_tests.a 
+C:\msys64\mingw64\bin\ranlib.exe libcpu6502_tests.a
