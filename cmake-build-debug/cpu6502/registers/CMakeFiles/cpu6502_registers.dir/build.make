@@ -75,15 +75,111 @@ include cpu6502/registers/CMakeFiles/cpu6502_registers.dir/progress.make
 # Include the compile flags for this target's objects.
 include cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
 
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/includes_CXX.rsp
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj: ../cpu6502/registers/accumulator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_registers.dir\accumulator.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\registers\accumulator.cpp
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_registers.dir/accumulator.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\registers\accumulator.cpp > CMakeFiles\cpu6502_registers.dir\accumulator.cpp.i
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_registers.dir/accumulator.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\registers\accumulator.cpp -o CMakeFiles\cpu6502_registers.dir\accumulator.cpp.s
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/includes_CXX.rsp
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj: ../cpu6502/registers/indexregisterx.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_registers.dir\indexregisterx.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\registers\indexregisterx.cpp
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\registers\indexregisterx.cpp > CMakeFiles\cpu6502_registers.dir\indexregisterx.cpp.i
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\registers\indexregisterx.cpp -o CMakeFiles\cpu6502_registers.dir\indexregisterx.cpp.s
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/includes_CXX.rsp
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj: ../cpu6502/registers/indexregistery.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_registers.dir\indexregistery.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\registers\indexregistery.cpp
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\registers\indexregistery.cpp > CMakeFiles\cpu6502_registers.dir\indexregistery.cpp.i
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\registers\indexregistery.cpp -o CMakeFiles\cpu6502_registers.dir\indexregistery.cpp.s
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/includes_CXX.rsp
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj: ../cpu6502/registers/processorstatus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_registers.dir\processorstatus.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\registers\processorstatus.cpp
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\registers\processorstatus.cpp > CMakeFiles\cpu6502_registers.dir\processorstatus.cpp.i
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\registers\processorstatus.cpp -o CMakeFiles\cpu6502_registers.dir\processorstatus.cpp.s
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/includes_CXX.rsp
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj: ../cpu6502/registers/programcounter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_registers.dir\programcounter.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\registers\programcounter.cpp
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_registers.dir/programcounter.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\registers\programcounter.cpp > CMakeFiles\cpu6502_registers.dir\programcounter.cpp.i
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_registers.dir/programcounter.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\registers\programcounter.cpp -o CMakeFiles\cpu6502_registers.dir\programcounter.cpp.s
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/flags.make
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/includes_CXX.rsp
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj: ../cpu6502/registers/stackpointer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_registers.dir\stackpointer.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\registers\stackpointer.cpp
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\registers\stackpointer.cpp > CMakeFiles\cpu6502_registers.dir\stackpointer.cpp.i
+
+cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\registers\stackpointer.cpp -o CMakeFiles\cpu6502_registers.dir\stackpointer.cpp.s
+
 # Object files for target cpu6502_registers
-cpu6502_registers_OBJECTS =
+cpu6502_registers_OBJECTS = \
+"CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj" \
+"CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj" \
+"CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj" \
+"CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj" \
+"CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj" \
+"CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj"
 
 # External object files for target cpu6502_registers
 cpu6502_registers_EXTERNAL_OBJECTS =
 
+cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj
+cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj
+cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj
+cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj
+cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj
+cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj
 cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/build.make
 cpu6502/registers/libcpu6502_registers.a: cpu6502/registers/CMakeFiles/cpu6502_registers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcpu6502_registers.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libcpu6502_registers.a"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && $(CMAKE_COMMAND) -P CMakeFiles\cpu6502_registers.dir\cmake_clean_target.cmake
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug\cpu6502\registers && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\cpu6502_registers.dir\link.txt --verbose=$(VERBOSE)
 

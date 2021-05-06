@@ -4,7 +4,7 @@
 #include "../cpu6502/registers/registers.hpp"
 namespace CPU6502_TEST::inner
 {
-    void RUN_REGISTER_TEST() noexcept
+    bool RUN_REGISTER_TEST() noexcept
     {
         cpu6502::registers::ProcessorStatus ps;
         using flags = cpu6502::registers::ProcessorStatus::Flags;
@@ -57,6 +57,7 @@ namespace CPU6502_TEST::inner
                 ps.get(flags::NegativeFlag) == false &&
                 ps.get(flags::ZeroFlag) == false
         );
+        return true;
     }
 }
 #endif

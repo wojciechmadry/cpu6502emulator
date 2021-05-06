@@ -1,7 +1,7 @@
 #ifndef CPU_6502_registers_processorstatus
 #define CPU_6502_registers_processorstatus
 
-#include "required.hpp"
+#include "../required.hpp"
 
 namespace cpu6502::registers
 {
@@ -23,25 +23,11 @@ namespace cpu6502::registers
             NegativeFlag = 64
         };
 
-        [[nodiscard]] bool get(const Flags flag) const noexcept
-        {
-            auto FlagChar = static_cast<uint8_t>(flag);
-            return _reg & FlagChar;
-        }
+        [[nodiscard]] bool get(Flags flag) const noexcept;
 
-        void set(const Flags flag, const bool NewFlagValue) noexcept
-        {
-            auto FlagChar = static_cast<uint8_t>(flag);
-            if (NewFlagValue)
-                _reg |= FlagChar;
-            else
-                _reg = static_cast<decltype(_reg)>(_reg & (~FlagChar));
-        }
+        void set(Flags flag,  bool NewFlagValue) noexcept;
 
-        void put_byte(const Byte NewRegValue) noexcept
-        {
-            _reg = NewRegValue;
-        }
+        void put_byte(Byte NewRegValue) noexcept;
     };
 
 }

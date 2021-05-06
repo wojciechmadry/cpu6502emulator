@@ -13,8 +13,6 @@ memory/memory.hpp
 ../cpu6502/memory/memory.hpp
 cpu/InstructionSet/opcode.hpp
 ../cpu6502/cpu/InstructionSet/opcode.hpp
-iostream
--
 
 ../cpu6502/cpu/InstructionSet/opcode.hpp
 
@@ -23,24 +21,24 @@ required.hpp
 ../cpu6502/memory/required.hpp
 
 ../cpu6502/registers/accumulator.hpp
-required.hpp
-../cpu6502/registers/required.hpp
+../required.hpp
+../cpu6502/required.hpp
 
 ../cpu6502/registers/indexregisterx.hpp
-required.hpp
-../cpu6502/registers/required.hpp
+../required.hpp
+../cpu6502/required.hpp
 
 ../cpu6502/registers/indexregistery.hpp
-required.hpp
-../cpu6502/registers/required.hpp
+../required.hpp
+../cpu6502/required.hpp
 
 ../cpu6502/registers/processorstatus.hpp
-required.hpp
-../cpu6502/registers/required.hpp
+../required.hpp
+../cpu6502/required.hpp
 
 ../cpu6502/registers/programcounter.hpp
-required.hpp
-../cpu6502/registers/required.hpp
+../required.hpp
+../cpu6502/required.hpp
 
 ../cpu6502/registers/registers.hpp
 accumulator.hpp
@@ -57,8 +55,8 @@ stackpointer.hpp
 ../cpu6502/registers/stackpointer.hpp
 
 ../cpu6502/registers/stackpointer.hpp
-required.hpp
-../cpu6502/registers/required.hpp
+../required.hpp
+../cpu6502/required.hpp
 
 ../cpu6502/required.hpp
 vector
@@ -71,8 +69,10 @@ cassert
 -
 cstdint
 -
+iostream
+-
 
-F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/read.cpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet.cpp
 cpu.hpp
-F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/cpu.hpp
 

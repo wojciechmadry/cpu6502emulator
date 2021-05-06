@@ -143,6 +143,168 @@ cpu6502_registers/fast:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/build
 .PHONY : cpu6502_registers/fast
 
+accumulator.obj: accumulator.cpp.obj
+
+.PHONY : accumulator.obj
+
+# target to build an object file
+accumulator.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj
+.PHONY : accumulator.cpp.obj
+
+accumulator.i: accumulator.cpp.i
+
+.PHONY : accumulator.i
+
+# target to preprocess a source file
+accumulator.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.i
+.PHONY : accumulator.cpp.i
+
+accumulator.s: accumulator.cpp.s
+
+.PHONY : accumulator.s
+
+# target to generate assembly for a file
+accumulator.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/accumulator.cpp.s
+.PHONY : accumulator.cpp.s
+
+indexregisterx.obj: indexregisterx.cpp.obj
+
+.PHONY : indexregisterx.obj
+
+# target to build an object file
+indexregisterx.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj
+.PHONY : indexregisterx.cpp.obj
+
+indexregisterx.i: indexregisterx.cpp.i
+
+.PHONY : indexregisterx.i
+
+# target to preprocess a source file
+indexregisterx.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.i
+.PHONY : indexregisterx.cpp.i
+
+indexregisterx.s: indexregisterx.cpp.s
+
+.PHONY : indexregisterx.s
+
+# target to generate assembly for a file
+indexregisterx.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.s
+.PHONY : indexregisterx.cpp.s
+
+indexregistery.obj: indexregistery.cpp.obj
+
+.PHONY : indexregistery.obj
+
+# target to build an object file
+indexregistery.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj
+.PHONY : indexregistery.cpp.obj
+
+indexregistery.i: indexregistery.cpp.i
+
+.PHONY : indexregistery.i
+
+# target to preprocess a source file
+indexregistery.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.i
+.PHONY : indexregistery.cpp.i
+
+indexregistery.s: indexregistery.cpp.s
+
+.PHONY : indexregistery.s
+
+# target to generate assembly for a file
+indexregistery.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.s
+.PHONY : indexregistery.cpp.s
+
+processorstatus.obj: processorstatus.cpp.obj
+
+.PHONY : processorstatus.obj
+
+# target to build an object file
+processorstatus.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj
+.PHONY : processorstatus.cpp.obj
+
+processorstatus.i: processorstatus.cpp.i
+
+.PHONY : processorstatus.i
+
+# target to preprocess a source file
+processorstatus.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.i
+.PHONY : processorstatus.cpp.i
+
+processorstatus.s: processorstatus.cpp.s
+
+.PHONY : processorstatus.s
+
+# target to generate assembly for a file
+processorstatus.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.s
+.PHONY : processorstatus.cpp.s
+
+programcounter.obj: programcounter.cpp.obj
+
+.PHONY : programcounter.obj
+
+# target to build an object file
+programcounter.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj
+.PHONY : programcounter.cpp.obj
+
+programcounter.i: programcounter.cpp.i
+
+.PHONY : programcounter.i
+
+# target to preprocess a source file
+programcounter.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.i
+.PHONY : programcounter.cpp.i
+
+programcounter.s: programcounter.cpp.s
+
+.PHONY : programcounter.s
+
+# target to generate assembly for a file
+programcounter.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/programcounter.cpp.s
+.PHONY : programcounter.cpp.s
+
+stackpointer.obj: stackpointer.cpp.obj
+
+.PHONY : stackpointer.obj
+
+# target to build an object file
+stackpointer.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj
+.PHONY : stackpointer.cpp.obj
+
+stackpointer.i: stackpointer.cpp.i
+
+.PHONY : stackpointer.i
+
+# target to preprocess a source file
+stackpointer.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.i
+.PHONY : stackpointer.cpp.i
+
+stackpointer.s: stackpointer.cpp.s
+
+.PHONY : stackpointer.s
+
+# target to generate assembly for a file
+stackpointer.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\registers\CMakeFiles\cpu6502_registers.dir\build.make cpu6502/registers/CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.s
+.PHONY : stackpointer.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -152,6 +314,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cpu6502_registers
+	@echo ... accumulator.obj
+	@echo ... accumulator.i
+	@echo ... accumulator.s
+	@echo ... indexregisterx.obj
+	@echo ... indexregisterx.i
+	@echo ... indexregisterx.s
+	@echo ... indexregistery.obj
+	@echo ... indexregistery.i
+	@echo ... indexregistery.s
+	@echo ... processorstatus.obj
+	@echo ... processorstatus.i
+	@echo ... processorstatus.s
+	@echo ... programcounter.obj
+	@echo ... programcounter.i
+	@echo ... programcounter.s
+	@echo ... stackpointer.obj
+	@echo ... stackpointer.i
+	@echo ... stackpointer.s
 .PHONY : help
 
 

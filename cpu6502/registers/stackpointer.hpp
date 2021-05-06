@@ -1,7 +1,7 @@
 #ifndef CPU_6502_registers_stackpointer
 #define CPU_6502_registers_stackpointer
 
-#include "required.hpp"
+#include "../required.hpp"
 
 namespace cpu6502::registers
 {
@@ -13,30 +13,15 @@ namespace cpu6502::registers
         StackPointer() = default;
         ~StackPointer() = default;
 
-        [[nodiscard]] RegisterStroedType get() const noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType get() const noexcept;
 
-        [[nodiscard]] RegisterStroedType& get() noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType& get() noexcept;
 
-        void set(const RegisterStroedType NewRegValue) noexcept
-        {
-            _reg = NewRegValue;
-        }
+        void set(RegisterStroedType NewRegValue) noexcept;
 
-        void increment(const Byte i = 1) noexcept
-        {
-            _reg += i;
-        }
+        void increment(Byte i = 1) noexcept;
 
-        void decrement(const Byte i = 1) noexcept
-        {
-            _reg -= i;
-        }
+        void decrement(Byte i = 1) noexcept;
     };
 }
 

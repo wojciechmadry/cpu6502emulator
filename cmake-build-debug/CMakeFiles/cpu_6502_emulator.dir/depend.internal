@@ -14,6 +14,10 @@ CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj
  ../cpu6502/registers/stackpointer.hpp
  ../cpu6502/required.hpp
  ../tests/ALL_TEST.HPP
+ ../tests/InstructionSetTest/JMP_TEST.HPP
+ ../tests/InstructionSetTest/LDA_TEST.HPP
+ ../tests/InstructionSetTest/RTS_JSR_TEST.HPP
  ../tests/cpu_test.hpp
  ../tests/register_test.hpp
+ ../tests/time.hpp
  F:/CPU6502/cpu-6502-emulator/main.cpp

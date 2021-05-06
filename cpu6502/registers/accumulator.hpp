@@ -1,7 +1,8 @@
 #ifndef CPU_6502_registers_accumulator
 #define CPU_6502_registers_accumulator
 
-#include "required.hpp"
+#include "../required.hpp"
+
 namespace cpu6502::registers
 {
     class Accumulator
@@ -12,20 +13,11 @@ namespace cpu6502::registers
         Accumulator() = default;
         ~Accumulator() = default;
 
-        [[nodiscard]] RegisterStroedType get() const noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType get() const noexcept;
 
-        [[nodiscard]] RegisterStroedType& get() noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType& get() noexcept;
 
-        void set(const RegisterStroedType NewRegValue) noexcept
-        {
-            _reg = NewRegValue;
-        }
+        void set(RegisterStroedType NewRegValue) noexcept;
     };
 }
 

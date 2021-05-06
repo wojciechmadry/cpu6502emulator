@@ -1,7 +1,7 @@
 #ifndef CPU_6502_registers_programcounter
 #define CPU_6502_registers_programcounter
 
-#include "required.hpp"
+#include "../required.hpp"
 
 namespace cpu6502::registers
 {
@@ -13,25 +13,13 @@ namespace cpu6502::registers
         ProgramCounter() = default;
         ~ProgramCounter() = default;
 
-        [[nodiscard]] RegisterStroedType get() const noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType get() const noexcept;
 
-        [[nodiscard]] RegisterStroedType& get() noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType& get() noexcept;
 
-        void set(const RegisterStroedType NewRegValue) noexcept
-        {
-            _reg = NewRegValue;
-        }
+        void set(RegisterStroedType NewRegValue) noexcept;
 
-        void increment() noexcept
-        {
-            ++_reg;
-        }
+        void increment() noexcept;
     };
 }
 #endif

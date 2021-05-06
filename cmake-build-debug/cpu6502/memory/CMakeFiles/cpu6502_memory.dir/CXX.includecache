@@ -17,6 +17,8 @@ cassert
 -
 cstdint
 -
+iostream
+-
 
 F:/CPU6502/cpu-6502-emulator/cpu6502/memory/memory.cpp
 memory.hpp

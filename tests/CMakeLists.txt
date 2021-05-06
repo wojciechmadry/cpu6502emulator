@@ -4,6 +4,10 @@ add_library(
         ALL_TEST.HPP
         register_test.hpp
         cpu_test.hpp
+        InstructionSetTest/JMP_TEST.HPP
+        InstructionSetTest/LDA_TEST.HPP
+        InstructionSetTest/RTS_JSR_TEST.HPP
+        time.hpp
 )
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)
 target_include_directories(cpu6502_tests PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")

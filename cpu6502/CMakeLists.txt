@@ -13,6 +13,8 @@ add_library(
         cpu/InstructionSet/opcode.hpp
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
+        cpu/execute_instruction.cpp
+        cpu/InstructionSet.cpp
         required.hpp
 )
 

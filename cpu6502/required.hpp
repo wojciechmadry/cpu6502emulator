@@ -7,6 +7,8 @@
 #include <cassert>
 #include <cstdint>
 
+#include <iostream> // REMEMBER TO DELETE
+
 namespace cpu6502
 {
     using Byte = uint8_t;

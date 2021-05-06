@@ -271,6 +271,9 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu.hpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/JMP.cpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
@@ -292,28 +295,49 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/write.cpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/execute_instruction.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/memory/memory.cpp">
 			<Option target="cpu6502_memory"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/memory/memory.hpp">
 			<Option target="cpu6502_memory"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/accumulator.cpp">
+			<Option target="cpu6502_registers"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/accumulator.hpp">
+			<Option target="cpu6502_registers"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/indexregisterx.cpp">
 			<Option target="cpu6502_registers"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/indexregisterx.hpp">
 			<Option target="cpu6502_registers"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/indexregistery.cpp">
+			<Option target="cpu6502_registers"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/indexregistery.hpp">
 			<Option target="cpu6502_registers"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/processorstatus.cpp">
+			<Option target="cpu6502_registers"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/processorstatus.hpp">
+			<Option target="cpu6502_registers"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/programcounter.cpp">
 			<Option target="cpu6502_registers"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/programcounter.hpp">
 			<Option target="cpu6502_registers"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/registers.hpp">
+			<Option target="cpu6502_registers"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/stackpointer.cpp">
 			<Option target="cpu6502_registers"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/registers/stackpointer.hpp">
@@ -330,10 +354,22 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/ALL_TEST.HPP">
 			<Option target="cpu6502_tests"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/JMP_TEST.HPP">
+			<Option target="cpu6502_tests"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/LDA_TEST.HPP">
+			<Option target="cpu6502_tests"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/RTS_JSR_TEST.HPP">
+			<Option target="cpu6502_tests"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/cpu_test.hpp">
 			<Option target="cpu6502_tests"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/register_test.hpp">
+			<Option target="cpu6502_tests"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/time.hpp">
 			<Option target="cpu6502_tests"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/CMakeLists.txt">

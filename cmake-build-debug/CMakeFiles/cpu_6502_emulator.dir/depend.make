@@ -13,7 +13,11 @@ CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../cpu6502/registers/registers.hp
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../cpu6502/registers/stackpointer.hpp
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../cpu6502/required.hpp
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/ALL_TEST.HPP
+CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/JMP_TEST.HPP
+CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/LDA_TEST.HPP
+CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/RTS_JSR_TEST.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/cpu_test.hpp
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/register_test.hpp
+CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/time.hpp
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../main.cpp
 

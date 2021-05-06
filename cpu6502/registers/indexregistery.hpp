@@ -1,7 +1,7 @@
 #ifndef CPU_6502_registers_indexregistery
 #define CPU_6502_registers_indexregistery
 
-#include "required.hpp"
+#include "../required.hpp"
 
 namespace cpu6502::registers
 {
@@ -13,20 +13,11 @@ namespace cpu6502::registers
         IndexRegisterY() = default;
         ~IndexRegisterY() = default;
 
-        [[nodiscard]] RegisterStroedType get() const noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType get() const noexcept;
 
-        [[nodiscard]] RegisterStroedType& get() noexcept
-        {
-            return _reg;
-        }
+        [[nodiscard]] RegisterStroedType& get() noexcept;
 
-        void set(const RegisterStroedType NewRegValue) noexcept
-        {
-            _reg = NewRegValue;
-        }
+        void set(RegisterStroedType NewRegValue) noexcept;
     };
 
 }

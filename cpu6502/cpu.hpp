@@ -5,8 +5,6 @@
 #include "memory/memory.hpp"
 #include "cpu/InstructionSet/opcode.hpp"
 
-#include <iostream> // REMEMBER TO DELETE
-
 namespace cpu6502
 {
     class CPU
@@ -19,6 +17,9 @@ namespace cpu6502
 
         //Processor Status flags
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
+
+        //Array of instruction set.
+        std::array<std::function<bool(Byte, u32&)>, 4> InstructionSetArray;
 
         // Read CPU
         [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;
@@ -46,11 +47,18 @@ namespace cpu6502
         [[nodiscard]] bool RTS(Byte Opcode, u32& Cycles) noexcept; // Return from Subroutine
 
         // END - Instruction Set
-
+        void make_instruction_set() noexcept; // Bind isntruction set to array InstructionSetArray
     public:
         CPU() = delete;
+        CPU(const CPU&) = delete;
+        CPU(CPU&&) = delete;
+
         explicit CPU(cpu6502::Memory& memory) noexcept : mem(memory)
-        {}
+        {
+            reset();
+            make_instruction_set();
+        }
+
         ~CPU() = default;
 
         [[nodiscard]] const cpu6502::Registers& get_registers() const noexcept
@@ -69,26 +77,7 @@ namespace cpu6502
             mem.get().initialise();
         }
 
-        void execute(u32 Cycles) noexcept
-        {
-            while( Cycles > 0)
-            {
-                u32 OldCycles = Cycles;
-
-                Byte ins = fetch_byte(Cycles);
-
-                if (LDA(ins, Cycles))
-                    continue;
-                if (JSR(ins, Cycles))
-                    continue;
-                if (JMP(ins, Cycles))
-                    continue;
-                if (RTS(ins, Cycles))
-                    continue;
-
-                assert(Cycles < OldCycles);
-            }
-        }
+        void execute(u32 Cycles) noexcept;
     };
 }
 
