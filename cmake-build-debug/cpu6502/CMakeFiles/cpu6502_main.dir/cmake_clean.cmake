@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj"
+  "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj"
   "CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj"

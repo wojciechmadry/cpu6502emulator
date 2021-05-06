@@ -72,7 +72,35 @@ cstdint
 iostream
 -
 
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/JMP.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/JSR.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/RTS.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/JumpsCalls/cpu.hpp
+
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDA.cpp
 cpu.hpp
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDX.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/read.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/write.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/execute_instruction.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/cpu.hpp
 

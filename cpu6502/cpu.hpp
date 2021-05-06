@@ -18,6 +18,8 @@ namespace cpu6502
         //Processor Status flags
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
 
+        //Look up table to all instruction function
+        std::array<std::function<void(u32&)>, 256> LookUpTable;
 
         // Read CPU
         [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;
@@ -34,15 +36,16 @@ namespace cpu6502
         void push_byte_to_stack(Byte Data, u32& Cycles) noexcept;
 
 
-        //Instruction Set
+        //Initialise Instruction Set in LookUpTable
 
         // Load/Store Operations
-        [[nodiscard]] bool LDA(Byte Opcode, u32& Cycles) noexcept; // LOAD ACCUMULATOR
+        void LDA() noexcept; // Load Accumulator
+        void LDX() noexcept; // Load X Register
 
         // Jumps & Calls
-        [[nodiscard]] bool JSR(Byte Opcode, u32& Cycles) noexcept; // Jump to a subroutine
-        [[nodiscard]] bool JMP(Byte Opcode, u32& Cycles) noexcept; // Jump to another location
-        [[nodiscard]] bool RTS(Byte Opcode, u32& Cycles) noexcept; // Return from Subroutine
+        void JSR() noexcept; // Jump to a subroutine
+        void JMP() noexcept; // Jump to another location
+        void RTS() noexcept; // Return from Subroutine
 
         // END - Instruction Set
     public:

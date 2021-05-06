@@ -14,6 +14,15 @@ namespace cpu6502::opcode{
         IndirectY = 0xB1 // 5 cycles (+1 if page crossed) - Implemented
     };
 
+    enum class LDX : Byte
+    {
+        Immediate = 0xA2, // 2 cycles
+        ZeroPage = 0xA6, // 3 cycles
+        ZeroPageY = 0xB6, // 4 cycles
+        Absolute = 0xAE, // 4 cycles
+        AbsoluteY = 0xBE, // 4 cycles (+1 if page crossed)
+    };
+
     //Jump to Subroutine opcode
     enum class JSR : Byte{
         Absolute = 0x20 // 6 cycles - Implemented

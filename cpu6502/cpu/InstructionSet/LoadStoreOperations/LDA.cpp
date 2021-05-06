@@ -1,8 +1,23 @@
 #include "cpu.hpp"
 
 namespace cpu6502 {
-    [[nodiscard]] bool CPU::LDA(Byte Opcode, u32 &Cycles) noexcept {
-        using LDAop = cpu6502::opcode::LDA;
+    void CPU::LDA() noexcept {
+        using op = cpu6502::opcode::LDA;
+        //cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        //cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        auto cast = [](op Opcode) -> Byte {
+            return static_cast<Byte>(Opcode);
+        };
+
+        auto InitFlag = [&]()->void{
+            cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+            cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        };
+        LookUpTable[cast(op::Immediate)] = [](u32& Cycles) -> void
+        {
+
+        };
+        /*
         switch (static_cast<LDAop>(Opcode)) {
             case LDAop::Immediate: {
                 cpu_reg.ACU.set(fetch_byte(Cycles));
@@ -61,9 +76,8 @@ namespace cpu6502 {
             default:
                 return false;
         };
+        */
 
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
 
         return true;
     }

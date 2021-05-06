@@ -251,6 +251,33 @@ cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
 
+cpu/InstructionSet/LoadStoreOperations/LDX.obj: cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.obj
+
+# target to build an object file
+cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj
+
+cpu/InstructionSet/LoadStoreOperations/LDX.i: cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.i
+
+# target to preprocess a source file
+cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i
+
+cpu/InstructionSet/LoadStoreOperations/LDX.s: cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s
+.PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s
+
 cpu/WriteRead/read.obj: cpu/WriteRead/read.cpp.obj
 
 .PHONY : cpu/WriteRead/read.obj
@@ -353,6 +380,9 @@ help:
 	@echo ... cpu/InstructionSet/LoadStoreOperations/LDA.obj
 	@echo ... cpu/InstructionSet/LoadStoreOperations/LDA.i
 	@echo ... cpu/InstructionSet/LoadStoreOperations/LDA.s
+	@echo ... cpu/InstructionSet/LoadStoreOperations/LDX.obj
+	@echo ... cpu/InstructionSet/LoadStoreOperations/LDX.i
+	@echo ... cpu/InstructionSet/LoadStoreOperations/LDX.s
 	@echo ... cpu/WriteRead/read.obj
 	@echo ... cpu/WriteRead/read.i
 	@echo ... cpu/WriteRead/read.s

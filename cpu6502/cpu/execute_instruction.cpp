@@ -8,16 +8,17 @@ namespace cpu6502{
             u32 OldCycles = Cycles;
 
             Byte ins = fetch_byte(Cycles);
-            bool FunctionCalled = false;
+           // bool FunctionCalled = false;
 
-            if(LDA(ins, Cycles) ||
-               JSR(ins, Cycles) || JMP(ins, Cycles) || RTS(ins, Cycles) )
-                FunctionCalled = true;
+           LookUpTable[ins](Cycles);
+           // if(LDA(ins, Cycles) || LDX(ins, Cycles) ||
+           //    JSR(ins, Cycles) || JMP(ins, Cycles) || RTS(ins, Cycles) )
+           //     FunctionCalled = true;
 
 
 
             assert(Cycles < OldCycles);
-            assert(FunctionCalled);
+           // assert(FunctionCalled);
         }
     }
 }

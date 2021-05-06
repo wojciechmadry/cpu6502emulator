@@ -7,6 +7,7 @@ add_library(
         cpu6502_main STATIC
         cpu.hpp
         cpu/InstructionSet/LoadStoreOperations/LDA.cpp
+        cpu/InstructionSet/LoadStoreOperations/LDX.cpp
         cpu/InstructionSet/JumpsCalls/JSR.cpp
         cpu/InstructionSet/JumpsCalls/JMP.cpp
         cpu/InstructionSet/JumpsCalls/RTS.cpp
