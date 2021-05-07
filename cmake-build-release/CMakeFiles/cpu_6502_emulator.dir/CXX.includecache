@@ -126,6 +126,12 @@ cassert
 ../../cpu6502/cpu.hpp
 ../cpu6502/cpu.hpp
 
+../tests/InstructionSetTest/StatusFlagChanges.HPP
+cassert
+-
+../../cpu6502/cpu.hpp
+../cpu6502/cpu.hpp
+
 ../tests/cpu_test.hpp
 InstructionSetTest/LDA_TEST.HPP
 ../tests/InstructionSetTest/LDA_TEST.HPP
@@ -143,6 +149,8 @@ InstructionSetTest/RTS_JSR_TEST.HPP
 ../tests/InstructionSetTest/RTS_JSR_TEST.HPP
 InstructionSetTest/JMP_TEST.HPP
 ../tests/InstructionSetTest/JMP_TEST.HPP
+InstructionSetTest/StatusFlagChanges.HPP
+../tests/InstructionSetTest/StatusFlagChanges.HPP
 time.hpp
 ../tests/time.hpp
 

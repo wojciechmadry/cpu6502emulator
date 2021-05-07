@@ -18,4 +18,4 @@ Now working on :
  - Adding instruction set
  - Implementing RTS - Working - But i think something is wrong
  - Im not sure about page crossing
- - Working on Status Flag Changes
+ - Need to add test to Register Transfers

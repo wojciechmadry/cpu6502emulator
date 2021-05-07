@@ -12,6 +12,7 @@ add_library(
         InstructionSetTest/STX_TEST.HPP
         InstructionSetTest/STY_TEST.HPP
         InstructionSetTest/RTS_JSR_TEST.HPP
+        InstructionSetTest/StatusFlagChanges.HPP
         time.hpp
 )
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)

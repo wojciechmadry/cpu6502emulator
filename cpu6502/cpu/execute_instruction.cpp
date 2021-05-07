@@ -21,6 +21,10 @@ namespace cpu6502{
         SEC();
         SED();
         SEI();
+        TAX();
+        TAY();
+        TXA();
+        TYA();
     }
 
     void CPU::execute(u32 Cycles) noexcept

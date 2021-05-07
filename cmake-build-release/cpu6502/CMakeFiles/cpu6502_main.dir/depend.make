@@ -118,6 +118,58 @@ cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.c
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj: ../cpu6502/required.hpp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj: ../cpu6502/cpu/InstructionSet/LoadStoreOperations/STY.cpp
 
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/cpu.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/cpu/InstructionSet/opcode.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/memory/memory.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/registers/accumulator.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/registers/indexregisterx.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/registers/indexregistery.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/registers/processorstatus.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/registers/programcounter.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/registers/registers.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/registers/stackpointer.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/required.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj: ../cpu6502/cpu/InstructionSet/RegisterTransfers/TAX.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/cpu.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/cpu/InstructionSet/opcode.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/memory/memory.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/registers/accumulator.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/registers/indexregisterx.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/registers/indexregistery.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/registers/processorstatus.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/registers/programcounter.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/registers/registers.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/registers/stackpointer.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/required.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj: ../cpu6502/cpu/InstructionSet/RegisterTransfers/TAY.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/cpu.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/cpu/InstructionSet/opcode.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/memory/memory.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/registers/accumulator.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/registers/indexregisterx.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/registers/indexregistery.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/registers/processorstatus.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/registers/programcounter.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/registers/registers.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/registers/stackpointer.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/required.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj: ../cpu6502/cpu/InstructionSet/RegisterTransfers/TXA.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/cpu.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/cpu/InstructionSet/opcode.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/memory/memory.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/registers/accumulator.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/registers/indexregisterx.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/registers/indexregistery.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/registers/processorstatus.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/registers/programcounter.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/registers/registers.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/registers/stackpointer.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/required.hpp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj: ../cpu6502/cpu/InstructionSet/RegisterTransfers/TYA.cpp
+
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj: ../cpu6502/cpu.hpp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj: ../cpu6502/cpu/InstructionSet/opcode.hpp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj: ../cpu6502/memory/memory.hpp

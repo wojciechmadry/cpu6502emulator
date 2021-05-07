@@ -298,6 +298,18 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STY.cpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TAX.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TAY.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TXA.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TYA.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLC.cpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
@@ -409,6 +421,9 @@
 			<Option target="cpu6502_tests"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/STY_TEST.HPP">
+			<Option target="cpu6502_tests"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/StatusFlagChanges.HPP">
 			<Option target="cpu6502_tests"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/cpu_test.hpp">

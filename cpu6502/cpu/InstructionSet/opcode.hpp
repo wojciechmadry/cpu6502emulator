@@ -81,37 +81,61 @@ namespace cpu6502::opcode{
 
     //Clear carry flag
     enum class CLC : Byte{
-        Implied = 0x18 // 2 cycles
+        Implied = 0x18 // 2 cycles - implemented
     };
 
     //Clear decimal mode flag
     enum class CLD : Byte{
-        Implied = 0xD8 // 2 cycles
+        Implied = 0xD8 // 2 cycles - implemented
     };
 
     //Clear interrupt disable flag
     enum class CLI : Byte{
-        Implied = 0x58 // 2 cycles
+        Implied = 0x58 // 2 cycles - implemented
     };
 
     //Clear overflow flag
     enum class CLV : Byte{
-        Implied = 0xB8 // 2 cycles
+        Implied = 0xB8 // 2 cycles - implemented
     };
 
     //Set carry flag
     enum class SEC : Byte{
-        Implied = 0x38 // 2 cycles
+        Implied = 0x38 // 2 cycles - implemented
     };
 
     //Set decimal mode flag
     enum class SED : Byte{
-        Implied = 0xF8 // 2 cycles
+        Implied = 0xF8 // 2 cycles - implemented
     };
 
     //Set interrupt disable flag
     enum class SEI : Byte{
-        Implied = 0x78 // 2 cycles
+        Implied = 0x78 // 2 cycles - implemented
+    };
+
+    // Transfer Accumulator to X
+    enum class TAX : Byte
+    {
+        Implied = 0xAA // 2 cycles - Implemented
+    };
+
+    // Transfer Accumulator to Y
+    enum class TAY : Byte
+    {
+        Implied = 0xA8 // 2 cycles - Implemented
+    };
+
+    // Transfer X to Accumulator
+    enum class TXA : Byte
+    {
+        Implied = 0x8A // 2 cycles - Implemented
+    };
+
+    // Transfer Y to Accumulator
+    enum class TYA : Byte
+    {
+        Implied = 0x98 // 2 cycles - Implemented
     };
 }
 #endif

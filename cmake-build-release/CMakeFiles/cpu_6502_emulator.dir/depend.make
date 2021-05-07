@@ -21,6 +21,7 @@ CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/RTS_J
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/STA_TEST.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/STX_TEST.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/STY_TEST.HPP
+CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/StatusFlagChanges.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/cpu_test.hpp
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/register_test.hpp
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/time.hpp

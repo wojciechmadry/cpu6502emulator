@@ -8,6 +8,7 @@
 #include "InstructionSetTest/STY_TEST.HPP"
 #include "InstructionSetTest/RTS_JSR_TEST.HPP"
 #include "InstructionSetTest/JMP_TEST.HPP"
+#include "InstructionSetTest/StatusFlagChanges.HPP"
 #include "time.hpp"
 
 namespace CPU6502_TEST::inner
@@ -60,6 +61,10 @@ namespace CPU6502_TEST::inner
         if(!temp)
             std::cout << "STY_TEST not pass ! \n";
 
+        temp = STATUS_FLAG_CHANGES_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "STATUS_FLAG_CHANGES_TEST not pass ! \n";
 
         return all_pass;
     }

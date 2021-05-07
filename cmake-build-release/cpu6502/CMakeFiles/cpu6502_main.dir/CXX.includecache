@@ -108,6 +108,22 @@ F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STY.
 cpu.hpp
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/cpu.hpp
 
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TAX.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TAY.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TXA.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TYA.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/cpu.hpp
+
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLC.cpp
 cpu.hpp
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/cpu.hpp

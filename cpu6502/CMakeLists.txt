@@ -19,6 +19,10 @@ add_library(
         cpu/InstructionSet/StatusFlagChanges/SEC.cpp
         cpu/InstructionSet/StatusFlagChanges/SED.cpp
         cpu/InstructionSet/StatusFlagChanges/SEI.cpp
+        cpu/InstructionSet/RegisterTransfers/TAX.cpp
+        cpu/InstructionSet/RegisterTransfers/TAY.cpp
+        cpu/InstructionSet/RegisterTransfers/TXA.cpp
+        cpu/InstructionSet/RegisterTransfers/TYA.cpp
         cpu/InstructionSet/JumpsCalls/JSR.cpp
         cpu/InstructionSet/JumpsCalls/JMP.cpp
         cpu/InstructionSet/JumpsCalls/RTS.cpp

@@ -386,6 +386,114 @@ cpu/InstructionSet/LoadStoreOperations/STY.cpp.s:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
 
+cpu/InstructionSet/RegisterTransfers/TAX.obj: cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAX.obj
+
+# target to build an object file
+cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj
+
+cpu/InstructionSet/RegisterTransfers/TAX.i: cpu/InstructionSet/RegisterTransfers/TAX.cpp.i
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAX.i
+
+# target to preprocess a source file
+cpu/InstructionSet/RegisterTransfers/TAX.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.i
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAX.cpp.i
+
+cpu/InstructionSet/RegisterTransfers/TAX.s: cpu/InstructionSet/RegisterTransfers/TAX.cpp.s
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAX.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/RegisterTransfers/TAX.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.s
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAX.cpp.s
+
+cpu/InstructionSet/RegisterTransfers/TAY.obj: cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAY.obj
+
+# target to build an object file
+cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj
+
+cpu/InstructionSet/RegisterTransfers/TAY.i: cpu/InstructionSet/RegisterTransfers/TAY.cpp.i
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAY.i
+
+# target to preprocess a source file
+cpu/InstructionSet/RegisterTransfers/TAY.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.i
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAY.cpp.i
+
+cpu/InstructionSet/RegisterTransfers/TAY.s: cpu/InstructionSet/RegisterTransfers/TAY.cpp.s
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAY.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/RegisterTransfers/TAY.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.s
+.PHONY : cpu/InstructionSet/RegisterTransfers/TAY.cpp.s
+
+cpu/InstructionSet/RegisterTransfers/TXA.obj: cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TXA.obj
+
+# target to build an object file
+cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj
+.PHONY : cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj
+
+cpu/InstructionSet/RegisterTransfers/TXA.i: cpu/InstructionSet/RegisterTransfers/TXA.cpp.i
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TXA.i
+
+# target to preprocess a source file
+cpu/InstructionSet/RegisterTransfers/TXA.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.i
+.PHONY : cpu/InstructionSet/RegisterTransfers/TXA.cpp.i
+
+cpu/InstructionSet/RegisterTransfers/TXA.s: cpu/InstructionSet/RegisterTransfers/TXA.cpp.s
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TXA.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/RegisterTransfers/TXA.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.s
+.PHONY : cpu/InstructionSet/RegisterTransfers/TXA.cpp.s
+
+cpu/InstructionSet/RegisterTransfers/TYA.obj: cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TYA.obj
+
+# target to build an object file
+cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj
+.PHONY : cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj
+
+cpu/InstructionSet/RegisterTransfers/TYA.i: cpu/InstructionSet/RegisterTransfers/TYA.cpp.i
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TYA.i
+
+# target to preprocess a source file
+cpu/InstructionSet/RegisterTransfers/TYA.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.i
+.PHONY : cpu/InstructionSet/RegisterTransfers/TYA.cpp.i
+
+cpu/InstructionSet/RegisterTransfers/TYA.s: cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
+
+.PHONY : cpu/InstructionSet/RegisterTransfers/TYA.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/RegisterTransfers/TYA.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
+.PHONY : cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
+
 cpu/InstructionSet/StatusFlagChanges/CLC.obj: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
 
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.obj
@@ -692,6 +800,18 @@ help:
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.obj
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.i
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.s
+	@echo ... cpu/InstructionSet/RegisterTransfers/TAX.obj
+	@echo ... cpu/InstructionSet/RegisterTransfers/TAX.i
+	@echo ... cpu/InstructionSet/RegisterTransfers/TAX.s
+	@echo ... cpu/InstructionSet/RegisterTransfers/TAY.obj
+	@echo ... cpu/InstructionSet/RegisterTransfers/TAY.i
+	@echo ... cpu/InstructionSet/RegisterTransfers/TAY.s
+	@echo ... cpu/InstructionSet/RegisterTransfers/TXA.obj
+	@echo ... cpu/InstructionSet/RegisterTransfers/TXA.i
+	@echo ... cpu/InstructionSet/RegisterTransfers/TXA.s
+	@echo ... cpu/InstructionSet/RegisterTransfers/TYA.obj
+	@echo ... cpu/InstructionSet/RegisterTransfers/TYA.i
+	@echo ... cpu/InstructionSet/RegisterTransfers/TYA.s
 	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.obj
 	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.i
 	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.s

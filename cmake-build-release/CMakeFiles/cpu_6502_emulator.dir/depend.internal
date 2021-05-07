@@ -22,6 +22,7 @@ CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj
  ../tests/InstructionSetTest/STA_TEST.HPP
  ../tests/InstructionSetTest/STX_TEST.HPP
  ../tests/InstructionSetTest/STY_TEST.HPP
+ ../tests/InstructionSetTest/StatusFlagChanges.HPP
  ../tests/cpu_test.hpp
  ../tests/register_test.hpp
  ../tests/time.hpp

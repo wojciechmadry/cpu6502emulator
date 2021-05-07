@@ -11,8 +11,8 @@ int main(){
     cpu6502::CPU cpu(memory);
     cpu.reset();
     //Program
-    memory[0xFFFC] = 0xA9;
-    memory[0xFFFD] = 39;
+    memory[cpu.get_registers().PC.get()] = 0xA9;
+    memory[cpu.get_registers().PC.get() + 1] = 39;
     //END program
     cpu.execute(2);
     std::cout << sizeof(cpu) << std::endl;

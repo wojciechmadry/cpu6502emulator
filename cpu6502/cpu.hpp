@@ -62,6 +62,13 @@ namespace cpu6502
         void SEC() noexcept; // Set carry flag
         void SED() noexcept; // Set decimal mode flag
         void SEI() noexcept; // Set interrupt disable flag
+
+        // Register Transfers
+        void TAX() noexcept; // Transfer Accumulator to X
+        void TAY() noexcept; // Trnasfer Accumulator to Y
+        void TXA() noexcept; // Trnasfer X to Accumulator
+        void TYA() noexcept; // Trnasfer Y to Accumulator
+
         // END - Instruction Set
     public:
         CPU() = delete;
@@ -78,7 +85,7 @@ namespace cpu6502
 
         void reset() noexcept
         {
-            cpu_reg.PC.set(0xFFFC);
+            cpu_reg.PC.set(0xFFFA);
             cpu_reg.SP.set(0x00);
             cpu_reg.PS.put_byte(0x00);
             cpu_reg.ACU.set(0);
