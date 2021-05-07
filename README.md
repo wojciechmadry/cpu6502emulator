@@ -9,10 +9,13 @@ Additional guides:
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
 
 Episode 1 - https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s - Done
+
 Episode 2 - https://www.youtube.com/watch?v=L7J1pPokEyw
+
 Full implementation to 0 minutes 0 seconds.
 
 Now working on :
  - Adding instruction set
  - Implementing RTS - Working - But i think something is wrong
  - Im not sure about page crossing
+ - Working on Status Flag Changes

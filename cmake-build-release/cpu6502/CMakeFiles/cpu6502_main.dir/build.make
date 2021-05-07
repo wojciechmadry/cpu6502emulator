@@ -159,10 +159,108 @@ cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.s"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\LoadStoreOperations\STY.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\LoadStoreOperations\STY.cpp.s
 
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj: ../cpu6502/cpu/InstructionSet/StatusFlagChanges/CLC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLC.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLC.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLC.cpp > CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLC.cpp.i
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLC.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLC.cpp.s
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj: ../cpu6502/cpu/InstructionSet/StatusFlagChanges/CLD.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLD.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLD.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLD.cpp > CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLD.cpp.i
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLD.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLD.cpp.s
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj: ../cpu6502/cpu/InstructionSet/StatusFlagChanges/CLI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLI.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLI.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLI.cpp > CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLI.cpp.i
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLI.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLI.cpp.s
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj: ../cpu6502/cpu/InstructionSet/StatusFlagChanges/CLV.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLV.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLV.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLV.cpp > CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLV.cpp.i
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\CLV.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\CLV.cpp.s
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj: ../cpu6502/cpu/InstructionSet/StatusFlagChanges/SEC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SEC.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SEC.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SEC.cpp > CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SEC.cpp.i
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SEC.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SEC.cpp.s
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj: ../cpu6502/cpu/InstructionSet/StatusFlagChanges/SED.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SED.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SED.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SED.cpp > CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SED.cpp.i
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SED.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SED.cpp.s
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj: ../cpu6502/cpu/InstructionSet/StatusFlagChanges/SEI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SEI.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SEI.cpp
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SEI.cpp > CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SEI.cpp.i
+
+cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s"
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\StatusFlagChanges\SEI.cpp -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\StatusFlagChanges\SEI.cpp.s
+
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj: ../cpu6502/cpu/InstructionSet/JumpsCalls/JSR.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\JumpsCalls\JSR.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\JumpsCalls\JSR.cpp
 
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.i: cmake_force
@@ -176,7 +274,7 @@ cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.s: cma
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj: ../cpu6502/cpu/InstructionSet/JumpsCalls/JMP.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\JumpsCalls\JMP.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\JumpsCalls\JMP.cpp
 
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.i: cmake_force
@@ -190,7 +288,7 @@ cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.s: cma
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj: ../cpu6502/cpu/InstructionSet/JumpsCalls/RTS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\InstructionSet\JumpsCalls\RTS.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\InstructionSet\JumpsCalls\RTS.cpp
 
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.i: cmake_force
@@ -204,7 +302,7 @@ cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.s: cma
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj: ../cpu6502/cpu/WriteRead/read.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\WriteRead\read.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\WriteRead\read.cpp
 
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.i: cmake_force
@@ -218,7 +316,7 @@ cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.s: cmake_force
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj: ../cpu6502/cpu/WriteRead/write.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\WriteRead\write.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\WriteRead\write.cpp
 
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.i: cmake_force
@@ -232,7 +330,7 @@ cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.s: cmake_force
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/flags.make
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj: cpu6502/CMakeFiles/cpu6502_main.dir/includes_CXX.rsp
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj: ../cpu6502/cpu/execute_instruction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && C:\msys64\mingw64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\cpu6502_main.dir\cpu\execute_instruction.cpp.obj -c F:\CPU6502\cpu-6502-emulator\cpu6502\cpu\execute_instruction.cpp
 
 cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.i: cmake_force
@@ -251,6 +349,13 @@ cpu6502_main_OBJECTS = \
 "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj" \
 "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj" \
 "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj" \
+"CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj" \
+"CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj" \
+"CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj" \
+"CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj" \
+"CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj" \
+"CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj" \
+"CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj" \
 "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj" \
 "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj" \
 "CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj" \
@@ -267,6 +372,13 @@ cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSe
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
+cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
+cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
+cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
+cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
+cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
+cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
+cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
@@ -275,7 +387,7 @@ cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/wri
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/build.make
 cpu6502/libcpu6502_main.a: cpu6502/CMakeFiles/cpu6502_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library libcpu6502_main.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\CPU6502\cpu-6502-emulator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX static library libcpu6502_main.a"
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && $(CMAKE_COMMAND) -P CMakeFiles\cpu6502_main.dir\cmake_clean_target.cmake
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release\cpu6502 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\cpu6502_main.dir\link.txt --verbose=$(VERBOSE)
 

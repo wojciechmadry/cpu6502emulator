@@ -54,24 +54,20 @@ namespace cpu6502
         void JMP() noexcept; // Jump to another location
         void RTS() noexcept; // Return from Subroutine
 
+        // Status Flag Changes
+        void CLC() noexcept; // Clear carry flag
+        void CLD() noexcept; // Clear decimal mode flag
+        void CLI() noexcept; // Clear interrupt disable flag
+        void CLV() noexcept; // Clear overflow flag
+        void SEC() noexcept; // Set carry flag
+        void SED() noexcept; // Set decimal mode flag
+        void SEI() noexcept; // Set interrupt disable flag
         // END - Instruction Set
     public:
         CPU() = delete;
         CPU(const CPU&) = delete;
         CPU(CPU&&) = delete;
-        explicit CPU(cpu6502::Memory& memory) noexcept : mem(memory)
-        {
-            reset();
-            LDA();
-            LDX();
-            JSR();
-            JMP();
-            RTS();
-            LDY();
-            STA();
-            STX();
-            STY();
-        }
+        explicit CPU(cpu6502::Memory& memory) noexcept;
 
         ~CPU() = default;
 

@@ -386,6 +386,195 @@ cpu/InstructionSet/LoadStoreOperations/STY.cpp.s:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
 
+cpu/InstructionSet/StatusFlagChanges/CLC.obj: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.obj
+
+# target to build an object file
+cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
+
+cpu/InstructionSet/StatusFlagChanges/CLC.i: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i
+
+cpu/InstructionSet/StatusFlagChanges/CLC.s: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s
+
+cpu/InstructionSet/StatusFlagChanges/CLD.obj: cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.obj
+
+# target to build an object file
+cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
+
+cpu/InstructionSet/StatusFlagChanges/CLD.i: cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i
+
+cpu/InstructionSet/StatusFlagChanges/CLD.s: cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s
+
+cpu/InstructionSet/StatusFlagChanges/CLI.obj: cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.obj
+
+# target to build an object file
+cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
+
+cpu/InstructionSet/StatusFlagChanges/CLI.i: cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i
+
+cpu/InstructionSet/StatusFlagChanges/CLI.s: cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s
+
+cpu/InstructionSet/StatusFlagChanges/CLV.obj: cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.obj
+
+# target to build an object file
+cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
+
+cpu/InstructionSet/StatusFlagChanges/CLV.i: cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i
+
+cpu/InstructionSet/StatusFlagChanges/CLV.s: cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s
+.PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s
+
+cpu/InstructionSet/StatusFlagChanges/SEC.obj: cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.obj
+
+# target to build an object file
+cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
+
+cpu/InstructionSet/StatusFlagChanges/SEC.i: cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i
+
+cpu/InstructionSet/StatusFlagChanges/SEC.s: cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s
+
+cpu/InstructionSet/StatusFlagChanges/SED.obj: cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SED.obj
+
+# target to build an object file
+cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
+
+cpu/InstructionSet/StatusFlagChanges/SED.i: cpu/InstructionSet/StatusFlagChanges/SED.cpp.i
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SED.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StatusFlagChanges/SED.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.i
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SED.cpp.i
+
+cpu/InstructionSet/StatusFlagChanges/SED.s: cpu/InstructionSet/StatusFlagChanges/SED.cpp.s
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SED.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StatusFlagChanges/SED.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.s
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SED.cpp.s
+
+cpu/InstructionSet/StatusFlagChanges/SEI.obj: cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.obj
+
+# target to build an object file
+cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
+
+cpu/InstructionSet/StatusFlagChanges/SEI.i: cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i
+
+cpu/InstructionSet/StatusFlagChanges/SEI.s: cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s
+
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s
+.PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s
+
 cpu/WriteRead/read.obj: cpu/WriteRead/read.cpp.obj
 
 .PHONY : cpu/WriteRead/read.obj
@@ -503,6 +692,27 @@ help:
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.obj
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.i
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.s
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.obj
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.i
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.s
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLD.obj
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLD.i
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLD.s
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLI.obj
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLI.i
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLI.s
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLV.obj
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLV.i
+	@echo ... cpu/InstructionSet/StatusFlagChanges/CLV.s
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SEC.obj
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SEC.i
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SEC.s
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SED.obj
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SED.i
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SED.s
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SEI.obj
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SEI.i
+	@echo ... cpu/InstructionSet/StatusFlagChanges/SEI.s
 	@echo ... cpu/WriteRead/read.obj
 	@echo ... cpu/WriteRead/read.i
 	@echo ... cpu/WriteRead/read.s

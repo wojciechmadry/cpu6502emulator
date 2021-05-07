@@ -12,6 +12,13 @@ add_library(
         cpu/InstructionSet/LoadStoreOperations/STA.cpp
         cpu/InstructionSet/LoadStoreOperations/STX.cpp
         cpu/InstructionSet/LoadStoreOperations/STY.cpp
+        cpu/InstructionSet/StatusFlagChanges/CLC.cpp
+        cpu/InstructionSet/StatusFlagChanges/CLD.cpp
+        cpu/InstructionSet/StatusFlagChanges/CLI.cpp
+        cpu/InstructionSet/StatusFlagChanges/CLV.cpp
+        cpu/InstructionSet/StatusFlagChanges/SEC.cpp
+        cpu/InstructionSet/StatusFlagChanges/SED.cpp
+        cpu/InstructionSet/StatusFlagChanges/SEI.cpp
         cpu/InstructionSet/JumpsCalls/JSR.cpp
         cpu/InstructionSet/JumpsCalls/JMP.cpp
         cpu/InstructionSet/JumpsCalls/RTS.cpp

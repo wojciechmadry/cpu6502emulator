@@ -78,5 +78,40 @@ namespace cpu6502::opcode{
     enum class RTS : Byte{
         Implied = 0x60 // 6 cycles - Implemented im not sure if its working good.
     };
+
+    //Clear carry flag
+    enum class CLC : Byte{
+        Implied = 0x18 // 2 cycles
+    };
+
+    //Clear decimal mode flag
+    enum class CLD : Byte{
+        Implied = 0xD8 // 2 cycles
+    };
+
+    //Clear interrupt disable flag
+    enum class CLI : Byte{
+        Implied = 0x58 // 2 cycles
+    };
+
+    //Clear overflow flag
+    enum class CLV : Byte{
+        Implied = 0xB8 // 2 cycles
+    };
+
+    //Set carry flag
+    enum class SEC : Byte{
+        Implied = 0x38 // 2 cycles
+    };
+
+    //Set decimal mode flag
+    enum class SED : Byte{
+        Implied = 0xF8 // 2 cycles
+    };
+
+    //Set interrupt disable flag
+    enum class SEI : Byte{
+        Implied = 0x78 // 2 cycles
+    };
 }
 #endif

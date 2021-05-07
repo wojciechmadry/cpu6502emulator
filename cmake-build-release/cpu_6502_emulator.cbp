@@ -298,6 +298,27 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STY.cpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLC.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLD.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLI.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLV.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/SEC.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/SED.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/SEI.cpp">
+			<Option target="cpu6502_main"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/opcode.hpp">
 			<Option target="cpu6502_main"/>
 		</Unit>
