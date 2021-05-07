@@ -10,15 +10,20 @@ namespace CPU6502_TEST
     {
         babel::TIME::timer T;
         T.start();
+        bool ALL_GOOD = true;
         for(size_t i = 0 ; i < Times ; ++i)
         {
             bool tests = true;
             tests &= CPU6502_TEST::inner::RUN_REGISTER_TEST();
             tests &= CPU6502_TEST::inner::RUN_CPU_TEST();
-            assert(tests);
+            ALL_GOOD &= tests;
         }
         auto Time = T.get_time();
-        std::cout << "All test pass in : " << Time << " seconds.\n";
+
+       if (ALL_GOOD)
+            std::cout << "All test pass in : " << Time << " seconds.\n";
+       else
+            std::cout << "Test failed in : " << Time << " seconds.\n";
     }
 }
 

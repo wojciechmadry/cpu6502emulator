@@ -46,6 +46,8 @@ namespace cpu6502
         void LDX() noexcept; // Load X Register
         void LDY() noexcept; // Load Y Register
         void STA() noexcept; // Store Accumulator
+        void STX() noexcept; // Store X Register
+        void STY() noexcept; // Store Y Register
 
         // Jumps & Calls
         void JSR() noexcept; // Jump to a subroutine
@@ -66,6 +68,9 @@ namespace cpu6502
             JMP();
             RTS();
             LDY();
+            STA();
+            STX();
+            STY();
         }
 
         ~CPU() = default;

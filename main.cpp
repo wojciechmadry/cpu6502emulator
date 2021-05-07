@@ -15,6 +15,6 @@ int main(){
     memory[0xFFFD] = 39;
     //END program
     cpu.execute(2);
-    std::cout << (int)cpu.get_registers().ACU.get() << std::endl;
+    std::cout << sizeof(cpu) << std::endl;
     return 0;
 }

@@ -21,7 +21,7 @@ namespace cpu6502::opcode{
         ZeroPage = 0xA6, // 3 cycles - Implemented
         ZeroPageY = 0xB6, // 4 cycles - Implemented
         Absolute = 0xAE, // 4 cycles - Implemented
-        AbsoluteY = 0xBE, // 4 cycles (+1 if page crossed) - Implemented
+        AbsoluteY = 0xBE // 4 cycles (+1 if page crossed) - Implemented
     };
 
 
@@ -32,19 +32,35 @@ namespace cpu6502::opcode{
         ZeroPage = 0xA4, // 3 cycles - Implemented
         ZeroPageX = 0xB4, // 4 cycles - Implemented
         Absolute = 0xAC, // 4 cycles - Implemented
-        AbsoluteX = 0xBC, // 4 cycles (+1 if page crossed) - Implemented
+        AbsoluteX = 0xBC // 4 cycles (+1 if page crossed) - Implemented
     };
 
     //Store Accumulator opcode
     enum class STA : Byte
     {
-        ZeroPage = 0x85, // 3 cycles
-        ZeroPageX = 0x95, // 4 cycles
-        Absolute = 0x8D, // 4 cycles
-        AbsoluteX = 0x9D, // 5 cycles
-        AbsoluteY = 0x99, // 5 cycles
-        IndircetX = 0x81, // 6 cycles
-        IndircetY = 0x91, // 6 cycles
+        ZeroPage = 0x85, // 3 cycles - Implemented
+        ZeroPageX = 0x95, // 4 cycles - Implemented
+        Absolute = 0x8D, // 4 cycles - Implemented
+        AbsoluteX = 0x9D, // 5 cycles - Implemented
+        AbsoluteY = 0x99, // 5 cycles - Implemented
+        IndircetX = 0x81, // 6 cycles - Implemented
+        IndircetY = 0x91 // 6 cycles - Implemented
+    };
+
+    // Store X Register opcode
+    enum class STX : Byte
+    {
+        ZeroPage = 0x86, // 3 cycles
+        ZeroPageY = 0x96, // 4 cycles
+        Absolute = 0x8E // 4 cycles
+    };
+
+    // Store Y Register opcode
+    enum class STY : Byte
+    {
+        ZeroPage = 0x84, // 3 cycles
+        ZeroPageX = 0x94, // 4 cycles
+        Absolute = 0x8C // 4 cycles
     };
 
     //Jump to Subroutine opcode
@@ -60,7 +76,7 @@ namespace cpu6502::opcode{
 
     //Return from Subroutine
     enum class RTS : Byte{
-        Implied = 0x60, // 6 cycles - Implemented im not sure if its working good.
+        Implied = 0x60 // 6 cycles - Implemented im not sure if its working good.
     };
 }
 #endif

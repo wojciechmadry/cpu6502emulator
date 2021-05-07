@@ -108,6 +108,24 @@ cassert
 ../../cpu6502/cpu.hpp
 ../cpu6502/cpu.hpp
 
+../tests/InstructionSetTest/STA_TEST.HPP
+cassert
+-
+../../cpu6502/cpu.hpp
+../cpu6502/cpu.hpp
+
+../tests/InstructionSetTest/STX_TEST.HPP
+cassert
+-
+../../cpu6502/cpu.hpp
+../cpu6502/cpu.hpp
+
+../tests/InstructionSetTest/STY_TEST.HPP
+cassert
+-
+../../cpu6502/cpu.hpp
+../cpu6502/cpu.hpp
+
 ../tests/cpu_test.hpp
 InstructionSetTest/LDA_TEST.HPP
 ../tests/InstructionSetTest/LDA_TEST.HPP
@@ -115,6 +133,12 @@ InstructionSetTest/LDX_TEST.HPP
 ../tests/InstructionSetTest/LDX_TEST.HPP
 InstructionSetTest/LDY_TEST.HPP
 ../tests/InstructionSetTest/LDY_TEST.HPP
+InstructionSetTest/STA_TEST.HPP
+../tests/InstructionSetTest/STA_TEST.HPP
+InstructionSetTest/STX_TEST.HPP
+../tests/InstructionSetTest/STX_TEST.HPP
+InstructionSetTest/STY_TEST.HPP
+../tests/InstructionSetTest/STY_TEST.HPP
 InstructionSetTest/RTS_JSR_TEST.HPP
 ../tests/InstructionSetTest/RTS_JSR_TEST.HPP
 InstructionSetTest/JMP_TEST.HPP

@@ -12,8 +12,10 @@ namespace cpu6502{
         {
             // 5 cycles
             Word PC = fetch_word_from_stack(Cycles);
+            // 3 cycles
             cpu_reg.PC.set(PC + 1);
-            Cycles -= 3;
+            Cycles -= 3; // ?????????
+            // 0 cycles
         };
     }
 }

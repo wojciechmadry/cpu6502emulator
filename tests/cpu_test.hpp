@@ -3,6 +3,9 @@
 #include "InstructionSetTest/LDA_TEST.HPP"
 #include "InstructionSetTest/LDX_TEST.HPP"
 #include "InstructionSetTest/LDY_TEST.HPP"
+#include "InstructionSetTest/STA_TEST.HPP"
+#include "InstructionSetTest/STX_TEST.HPP"
+#include "InstructionSetTest/STY_TEST.HPP"
 #include "InstructionSetTest/RTS_JSR_TEST.HPP"
 #include "InstructionSetTest/JMP_TEST.HPP"
 #include "time.hpp"
@@ -12,16 +15,51 @@ namespace CPU6502_TEST::inner
     bool RUN_CPU_TEST() noexcept
     {
         bool all_pass = true;
+        bool temp;
 
-        all_pass &= LDA_TEST();
+        temp = LDA_TEST();
+        all_pass &= temp;
 
-        all_pass &= LDX_TEST();
+        if(!temp)
+            std::cout << "LDA_TEST not pass ! \n";
 
-        all_pass &= RTS_JSR_TEST();
+        temp = LDX_TEST();
+        all_pass &= temp;
 
-        all_pass &= JMP_TEST();
+        if(!temp)
+            std::cout << "LDX_TEST not pass ! \n";
 
-        all_pass &= LDY_TEST();
+        temp = LDY_TEST();
+        all_pass &= temp;
+
+        if(!temp)
+            std::cout << "LDY_TEST not pass ! \n";
+
+        temp = RTS_JSR_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "RTS_JSR not pass ! \n";
+
+        temp = JMP_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "JMP_TEST not pass ! \n";
+
+        temp = STA_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "STA_TEST not pass ! \n";
+
+        temp = STX_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "STX_TEST not pass ! \n";
+
+        temp = STY_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "STY_TEST not pass ! \n";
+
 
         return all_pass;
     }

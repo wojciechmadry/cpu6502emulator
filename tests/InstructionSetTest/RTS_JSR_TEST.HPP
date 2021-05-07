@@ -7,7 +7,7 @@
 namespace CPU6502_TEST::inner{
     bool RTS_JSR_TEST() noexcept
     {
-       ////NOLINT using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
+        bool all_good = true;
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
@@ -29,10 +29,10 @@ namespace CPU6502_TEST::inner{
 
 
         cpu.execute(26);
-        assert(cpu.get_registers().ACU.get() == 84);
-        assert(cpu.get_registers().PC.get() == PC + 3);
+        all_good &= (cpu.get_registers().ACU.get() == 84);
+        all_good &= (cpu.get_registers().PC.get() == PC + 3);
         //END ASSERT RTS - Implied
-        return true;
+        return all_good;
     }
 }
 #endif

@@ -8,6 +8,7 @@ namespace CPU6502_TEST::inner{
     bool LDA_TEST() noexcept
     {
 
+        bool all_good = true;
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
         auto p = PSFlags::BreakCommand;
         (void)p;
@@ -21,23 +22,26 @@ namespace CPU6502_TEST::inner{
         mem[PC] = opcode;
         mem[PC + 1] = 40;
         cpu.execute(2);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0;
         cpu.execute(2);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 128;
         cpu.execute(2);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Immediate
 
 //ASSERT LDA - Zero Page
@@ -48,25 +52,28 @@ namespace CPU6502_TEST::inner{
         mem[PC + 1] = 0xFF;
         mem[0xFF] = 40;
         cpu.execute(3);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0xFF;
         mem[0xFF] = 0x0;
         cpu.execute(3);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0xFF;
         mem[0xFF] = 128;
         cpu.execute(3);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Zero Page
 
 
@@ -78,25 +85,28 @@ namespace CPU6502_TEST::inner{
         mem[PC + 1] = 0xFF;
         mem[0xFF] = 40;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0xFF;
         mem[0xFF] = 0x0;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0xFF;
         mem[0xFF] = 128;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Zero Page X
 
         //ASSERT LDA - Absolute
@@ -108,27 +118,30 @@ namespace CPU6502_TEST::inner{
         mem[PC + 2] = 0x47;
         mem[0x4741] = 40;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x41;
         mem[PC + 2] = 0x47;
         mem[0x4741] = 0x0;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x41;
         mem[PC + 2] = 0x47;
         mem[0x4741] = 128;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Absolute
 
         //ASSERT LDA - Absolute X
@@ -140,27 +153,30 @@ namespace CPU6502_TEST::inner{
         mem[PC + 2] = 0x47;
         mem[0x4741] = 40;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x41;
         mem[PC + 2] = 0x47;
         mem[0x4741] = 0x0;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x41;
         mem[PC + 2] = 0x47;
         mem[0x4741] = 128;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Absolute X
 
         //ASSERT LDA - Absolute Y
@@ -172,27 +188,30 @@ namespace CPU6502_TEST::inner{
         mem[PC + 2] = 0x47;
         mem[0x4741] = 40;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x41;
         mem[PC + 2] = 0x47;
         mem[0x4741] = 0x0;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x41;
         mem[PC + 2] = 0x47;
         mem[0x4741] = 128;
         cpu.execute(4);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Absolute Y
 
 
@@ -206,9 +225,9 @@ namespace CPU6502_TEST::inner{
         mem[0x21] = 0x47;
         mem[0x4741] = 40;
         cpu.execute(6);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x20;
@@ -216,9 +235,9 @@ namespace CPU6502_TEST::inner{
         mem[0x21] = 0x47;
         mem[0x4741] = 0x0;
         cpu.execute(6);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x20;
@@ -226,9 +245,10 @@ namespace CPU6502_TEST::inner{
         mem[0x21] = 0x47;
         mem[0x4741] = 128;
         cpu.execute(6);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Indirect X
 
         //ASSERT LDA - Indirect Y
@@ -241,9 +261,9 @@ namespace CPU6502_TEST::inner{
         mem[0x87] = 0x40;
         mem[0x4028] = 40;
         cpu.execute(5);
-        assert(cpu.get_registers().ACU.get() == 40
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+        all_good &=(cpu.get_registers().ACU.get() == 40
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x86;
@@ -251,9 +271,9 @@ namespace CPU6502_TEST::inner{
         mem[0x87] = 0x40;
         mem[0x4028] = 0x0;
         cpu.execute(5);
-        assert(cpu.get_registers().ACU.get() == 0
-               && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+        all_good &=(cpu.get_registers().ACU.get() == 0
+                    && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         cpu.reset();
         mem[PC] = opcode;
         mem[PC + 1] = 0x86;
@@ -261,11 +281,11 @@ namespace CPU6502_TEST::inner{
         mem[0x87] = 0x40;
         mem[0x4028] = 128;
         cpu.execute(5);
-        assert(cpu.get_registers().ACU.get() == 128
-               && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
-               && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
+        all_good &=(cpu.get_registers().ACU.get() == 128
+                    && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
+                    && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Indirect Y
-        return true;
+        return all_good;
     }
 }
 #endif

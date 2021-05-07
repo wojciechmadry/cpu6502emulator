@@ -10,6 +10,8 @@ add_library(
         cpu/InstructionSet/LoadStoreOperations/LDX.cpp
         cpu/InstructionSet/LoadStoreOperations/LDY.cpp
         cpu/InstructionSet/LoadStoreOperations/STA.cpp
+        cpu/InstructionSet/LoadStoreOperations/STX.cpp
+        cpu/InstructionSet/LoadStoreOperations/STY.cpp
         cpu/InstructionSet/JumpsCalls/JSR.cpp
         cpu/InstructionSet/JumpsCalls/JMP.cpp
         cpu/InstructionSet/JumpsCalls/RTS.cpp

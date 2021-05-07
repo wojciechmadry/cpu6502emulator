@@ -96,6 +96,18 @@ F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/LDY.
 cpu.hpp
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/cpu.hpp
 
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STA.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STX.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/cpu.hpp
+
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/STY.cpp
+cpu.hpp
+F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/LoadStoreOperations/cpu.hpp
+
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/read.cpp
 cpu.hpp
 F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/cpu.hpp

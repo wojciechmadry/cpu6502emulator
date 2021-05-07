@@ -6,9 +6,10 @@ namespace CPU6502_TEST::inner
 {
     bool RUN_REGISTER_TEST() noexcept
     {
+        bool all_good = true;
         cpu6502::registers::ProcessorStatus ps;
         using flags = cpu6502::registers::ProcessorStatus::Flags;
-        assert(
+        all_good &= (
                 ps.get(flags::OverflowFlag) == false &&
                 ps.get(flags::BreakCommand) == false &&
                 ps.get(flags::InterruptDisable) == false &&
@@ -16,9 +17,9 @@ namespace CPU6502_TEST::inner
                 ps.get(flags::DecimalMode) == false &&
                 ps.get(flags::NegativeFlag) == false &&
                 ps.get(flags::ZeroFlag) == false
-                );
+        );
         ps.set(flags::ZeroFlag, true);
-        assert(
+        all_good &=(
                 ps.get(flags::OverflowFlag) == false &&
                 ps.get(flags::BreakCommand) == false &&
                 ps.get(flags::InterruptDisable) == false &&
@@ -27,8 +28,9 @@ namespace CPU6502_TEST::inner
                 ps.get(flags::NegativeFlag) == false &&
                 ps.get(flags::ZeroFlag) == true
         );
+
         ps.set(flags::OverflowFlag, true);
-        assert(
+        all_good &=(
                 ps.get(flags::OverflowFlag) == true &&
                 ps.get(flags::BreakCommand) == false &&
                 ps.get(flags::InterruptDisable) == false &&
@@ -38,7 +40,7 @@ namespace CPU6502_TEST::inner
                 ps.get(flags::ZeroFlag) == true
         );
         ps.set(flags::ZeroFlag, false);
-        assert(
+        all_good &= (
                 ps.get(flags::OverflowFlag) == true &&
                 ps.get(flags::BreakCommand) == false &&
                 ps.get(flags::InterruptDisable) == false &&
@@ -48,7 +50,7 @@ namespace CPU6502_TEST::inner
                 ps.get(flags::ZeroFlag) == false
         );
         ps.set(flags::OverflowFlag, false);
-        assert(
+        all_good &=(
                 ps.get(flags::OverflowFlag) == false &&
                 ps.get(flags::BreakCommand) == false &&
                 ps.get(flags::InterruptDisable) == false &&
@@ -57,7 +59,9 @@ namespace CPU6502_TEST::inner
                 ps.get(flags::NegativeFlag) == false &&
                 ps.get(flags::ZeroFlag) == false
         );
-        return true;
+        if (!all_good)
+            std::cout << "register_test fail!\n";
+        return all_good;
     }
 }
 #endif

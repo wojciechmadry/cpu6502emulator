@@ -8,6 +8,9 @@ add_library(
         InstructionSetTest/LDA_TEST.HPP
         InstructionSetTest/LDX_TEST.HPP
         InstructionSetTest/LDY_TEST.HPP
+        InstructionSetTest/STA_TEST.HPP
+        InstructionSetTest/STX_TEST.HPP
+        InstructionSetTest/STY_TEST.HPP
         InstructionSetTest/RTS_JSR_TEST.HPP
         time.hpp
 )

@@ -332,6 +332,60 @@ cpu/InstructionSet/LoadStoreOperations/STA.cpp.s:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STA.cpp.s
 
+cpu/InstructionSet/LoadStoreOperations/STX.obj: cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STX.obj
+
+# target to build an object file
+cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
+
+cpu/InstructionSet/LoadStoreOperations/STX.i: cpu/InstructionSet/LoadStoreOperations/STX.cpp.i
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STX.i
+
+# target to preprocess a source file
+cpu/InstructionSet/LoadStoreOperations/STX.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.i
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STX.cpp.i
+
+cpu/InstructionSet/LoadStoreOperations/STX.s: cpu/InstructionSet/LoadStoreOperations/STX.cpp.s
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STX.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/LoadStoreOperations/STX.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.s
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STX.cpp.s
+
+cpu/InstructionSet/LoadStoreOperations/STY.obj: cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STY.obj
+
+# target to build an object file
+cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
+
+cpu/InstructionSet/LoadStoreOperations/STY.i: cpu/InstructionSet/LoadStoreOperations/STY.cpp.i
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STY.i
+
+# target to preprocess a source file
+cpu/InstructionSet/LoadStoreOperations/STY.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.i
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.i
+
+cpu/InstructionSet/LoadStoreOperations/STY.s: cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
+
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STY.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/LoadStoreOperations/STY.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-debug && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
+.PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
+
 cpu/WriteRead/read.obj: cpu/WriteRead/read.cpp.obj
 
 .PHONY : cpu/WriteRead/read.obj
@@ -443,6 +497,12 @@ help:
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STA.obj
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STA.i
 	@echo ... cpu/InstructionSet/LoadStoreOperations/STA.s
+	@echo ... cpu/InstructionSet/LoadStoreOperations/STX.obj
+	@echo ... cpu/InstructionSet/LoadStoreOperations/STX.i
+	@echo ... cpu/InstructionSet/LoadStoreOperations/STX.s
+	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.obj
+	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.i
+	@echo ... cpu/InstructionSet/LoadStoreOperations/STY.s
 	@echo ... cpu/WriteRead/read.obj
 	@echo ... cpu/WriteRead/read.i
 	@echo ... cpu/WriteRead/read.s
