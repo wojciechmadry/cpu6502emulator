@@ -5,8 +5,10 @@
 #include "memory/memory.hpp"
 #include "cpu/InstructionSet/opcode.hpp"
 
+
 namespace cpu6502
 {
+
     class CPU
     {
         //CPU registers
@@ -18,13 +20,11 @@ namespace cpu6502
         //Processor Status flags
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
 
+
         //Look up table to all instruction function
         using Func = void(u32&, CPU&);
-        // ON STACK
-       // std::array<std::function<void(u32&)>, 256> LookUpTable;
-        std::array<Func* , 256> LookUpTable;
-        // ON HEAP
-        //std::vector<Func*> LookUpTable {256} ;
+        static std::array<Func* , 256> LookUpTable;
+        static bool LookUpTableInit;
 
         // Read CPU
         [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;
@@ -98,6 +98,9 @@ namespace cpu6502
 
         void execute(u32 Cycles) noexcept;
     };
+
+
 }
+
 
 #endif
