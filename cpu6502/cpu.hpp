@@ -19,10 +19,12 @@ namespace cpu6502
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
 
         //Look up table to all instruction function
+        using Func = void(u32&, CPU&);
         // ON STACK
-        std::array<std::function<void(u32&)>, 256> LookUpTable;
+       // std::array<std::function<void(u32&)>, 256> LookUpTable;
+        std::array<Func* , 256> LookUpTable;
         // ON HEAP
-        //std::vector<std::function<void(u32&)>> LookUpTable {256} ;
+        //std::vector<Func*> LookUpTable {256} ;
 
         // Read CPU
         [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;

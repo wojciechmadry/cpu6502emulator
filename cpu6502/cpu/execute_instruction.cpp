@@ -34,7 +34,7 @@ namespace cpu6502{
             u32 OldCycles = Cycles;
 
             Byte ins = fetch_byte(Cycles);
-            LookUpTable[ins](Cycles);
+            LookUpTable[ins](Cycles, *this);
 
             assert(Cycles < OldCycles);
         }

@@ -8,12 +8,12 @@ namespace cpu6502{
             return static_cast<Byte>(Opcode);
         };
 
-        LookUpTable[cast(op::Implied)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::Implied)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 5 cycles
-            Word PC = fetch_word_from_stack(Cycles);
+            Word PC = cpu.fetch_word_from_stack(Cycles);
             // 3 cycles
-            cpu_reg.PC.set(PC + 1);
+            cpu.cpu_reg.PC.set(PC + 1);
             Cycles -= 3; // ?????????
             // 0 cycles
         };

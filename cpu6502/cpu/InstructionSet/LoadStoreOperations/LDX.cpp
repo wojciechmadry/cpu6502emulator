@@ -8,67 +8,67 @@ namespace cpu6502 {
         auto cast = [](op Opcode) -> Byte {
             return static_cast<Byte>(Opcode);
         };
+        
 
-        auto InitFlag = [this]()->void{
-            cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.IRX.get()));
-            cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.IRX.get() & 0x80);
-        };
-
-
-        LookUpTable[cast(op::Immediate)] = [this, InitFlag](u32& Cycles) -> void
+        LookUpTable[cast(op::Immediate)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 1 cycles
-            cpu_reg.IRX.set(fetch_byte(Cycles));
+            cpu.cpu_reg.IRX.set(cpu.fetch_byte(Cycles));
             // 0 cycles
 
-            InitFlag();
+            cpu.cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu.cpu_reg.IRX.get()));
+            cpu.cpu_reg.PS.set(PSFlags::NegativeFlag, cpu.cpu_reg.IRX.get() & 0x80);
         };
 
-        LookUpTable[cast(op::ZeroPage)] = [this, InitFlag](u32& Cycles) -> void
+        LookUpTable[cast(op::ZeroPage)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 2 cycles
-            Byte ZeroPageAddress = fetch_byte(Cycles);
+            Byte ZeroPageAddress = cpu.fetch_byte(Cycles);
             // 1 cycles
-            cpu_reg.IRX.set(read_byte(ZeroPageAddress, Cycles));
+            cpu.cpu_reg.IRX.set(cpu.read_byte(ZeroPageAddress, Cycles));
             // 0 cycles
-            InitFlag();
+            cpu.cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu.cpu_reg.IRX.get()));
+            cpu.cpu_reg.PS.set(PSFlags::NegativeFlag, cpu.cpu_reg.IRX.get() & 0x80);
         };
 
-        LookUpTable[cast(op::ZeroPageY)] = [this, InitFlag](u32& Cycles) -> void
+        LookUpTable[cast(op::ZeroPageY)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 3 cycles
-            Byte ZeroPageAddress = fetch_byte(Cycles);
+            Byte ZeroPageAddress = cpu.fetch_byte(Cycles);
             // 2 cycles
-            ZeroPageAddress += cpu_reg.IRY.get();
+            ZeroPageAddress += cpu.cpu_reg.IRY.get();
             --Cycles;
             // 1 cycles
-            cpu_reg.IRX.set(read_byte(ZeroPageAddress, Cycles));
+            cpu.cpu_reg.IRX.set(cpu.read_byte(ZeroPageAddress, Cycles));
             // 0 cycles
 
-            InitFlag();
+            cpu.cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu.cpu_reg.IRX.get()));
+            cpu.cpu_reg.PS.set(PSFlags::NegativeFlag, cpu.cpu_reg.IRX.get() & 0x80);
         };
 
-        LookUpTable[cast(op::Absolute)] = [this, InitFlag](u32& Cycles) -> void
+        LookUpTable[cast(op::Absolute)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 3 cycles
-            Word address = fetch_word(Cycles);
+            Word address = cpu.fetch_word(Cycles);
             // 1 cycles
-            cpu_reg.IRX.set(read_byte(address, Cycles));
+            cpu.cpu_reg.IRX.set(cpu.read_byte(address, Cycles));
             // 0 cycles
-            InitFlag();
+            cpu.cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu.cpu_reg.IRX.get()));
+            cpu.cpu_reg.PS.set(PSFlags::NegativeFlag, cpu.cpu_reg.IRX.get() & 0x80);
         };
 
-        LookUpTable[cast(op::AbsoluteY)] = [this, InitFlag](u32& Cycles) -> void
+        LookUpTable[cast(op::AbsoluteY)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 4 cycles
-            Word address = fetch_word(Cycles);
+            Word address = cpu.fetch_word(Cycles);
             // 2 cycles
-            address += cpu_reg.IRY.get();
-            if (cpu_reg.IRY.get() != 0)
+            address += cpu.cpu_reg.IRY.get();
+            if (cpu.cpu_reg.IRY.get() != 0)
                 --Cycles;  // 1 cycles if page crossed
-            cpu_reg.IRX.set(read_byte(address, Cycles));
+            cpu.cpu_reg.IRX.set(cpu.read_byte(address, Cycles));
             // 0 cycles
-            InitFlag();
+            cpu.cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu.cpu_reg.IRX.get()));
+            cpu.cpu_reg.PS.set(PSFlags::NegativeFlag, cpu.cpu_reg.IRX.get() & 0x80);
         };
     }
 }

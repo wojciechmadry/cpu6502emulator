@@ -9,33 +9,33 @@ namespace cpu6502{
             return static_cast<Byte>(Opcode);
         };
 
-        LookUpTable[cast(op::ZeroPage)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::ZeroPage)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 2 cycles
-            Byte ZeroPageAddress = fetch_byte(Cycles);
+            Byte ZeroPageAddress = cpu.fetch_byte(Cycles);
             // 1 cycle
-            write_byte(cpu_reg.IRX.get(), ZeroPageAddress, Cycles);
+            cpu.write_byte(cpu.cpu_reg.IRX.get(), ZeroPageAddress, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::ZeroPageY)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::ZeroPageY)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 3 cycles
-            Byte ZeroPageAddress = fetch_byte(Cycles);
+            Byte ZeroPageAddress = cpu.fetch_byte(Cycles);
             // 2 cycle
-            ZeroPageAddress += cpu_reg.IRY.get();
+            ZeroPageAddress += cpu.cpu_reg.IRY.get();
             --Cycles;
             // 1 cycle
-            write_byte(cpu_reg.IRX.get(), ZeroPageAddress, Cycles);
+            cpu.write_byte(cpu.cpu_reg.IRX.get(), ZeroPageAddress, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::Absolute)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::Absolute)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 3 cycles
-            Word Address = fetch_word(Cycles);
+            Word Address = cpu.fetch_word(Cycles);
             // 1 cycle
-            write_byte(cpu_reg.IRX.get(), Address, Cycles);
+            cpu.write_byte(cpu.cpu_reg.IRX.get(), Address, Cycles);
             // 0 cycles
         };
 

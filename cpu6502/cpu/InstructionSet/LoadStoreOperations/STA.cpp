@@ -9,85 +9,85 @@ namespace cpu6502{
             return static_cast<Byte>(Opcode);
         };
 
-        LookUpTable[cast(op::ZeroPage)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::ZeroPage)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 2 cycles
-            Byte ZeroPageAddress = fetch_byte(Cycles);
+            Byte ZeroPageAddress = cpu.fetch_byte(Cycles);
             // 1 cycle
-            write_byte(cpu_reg.ACU.get(), ZeroPageAddress, Cycles);
+            cpu.write_byte(cpu.cpu_reg.ACU.get(), ZeroPageAddress, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::ZeroPageX)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::ZeroPageX)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 3 cycles
-            Byte ZeroPageAddress = fetch_byte(Cycles);
+            Byte ZeroPageAddress = cpu.fetch_byte(Cycles);
             // 2 cycle
-            ZeroPageAddress += cpu_reg.IRX.get();
+            ZeroPageAddress += cpu.cpu_reg.IRX.get();
             --Cycles;
             // 1 cycle
-            write_byte(cpu_reg.ACU.get(), ZeroPageAddress, Cycles);
+            cpu.write_byte(cpu.cpu_reg.ACU.get(), ZeroPageAddress, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::Absolute)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::Absolute)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 3 cycles
-            Word Address = fetch_word(Cycles);
+            Word Address = cpu.fetch_word(Cycles);
             // 1 cycle
-            write_byte(cpu_reg.ACU.get(), Address, Cycles);
+            cpu.write_byte(cpu.cpu_reg.ACU.get(), Address, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::AbsoluteX)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::AbsoluteX)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 4 cycles
-            Word Address = fetch_word(Cycles);
+            Word Address = cpu.fetch_word(Cycles);
             // 2 cycle
-            Address += cpu_reg.IRX.get();
+            Address += cpu.cpu_reg.IRX.get();
             --Cycles;
             //1 Cycles
-            write_byte(cpu_reg.ACU.get(), Address, Cycles);
+            cpu.write_byte(cpu.cpu_reg.ACU.get(), Address, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::AbsoluteY)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::AbsoluteY)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 4 cycles
-            Word Address = fetch_word(Cycles);
+            Word Address = cpu.fetch_word(Cycles);
             // 2 cycle
-            Address += cpu_reg.IRY.get();
+            Address += cpu.cpu_reg.IRY.get();
             --Cycles;
             //1 Cycles
-            write_byte(cpu_reg.ACU.get(), Address, Cycles);
+            cpu.write_byte(cpu.cpu_reg.ACU.get(), Address, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::IndircetX)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::IndircetX)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 5 cycles
-            Byte address = fetch_byte(Cycles);
+            Byte address = cpu.fetch_byte(Cycles);
             // 4 cycles
-            address += cpu_reg.IRX.get();
+            address += cpu.cpu_reg.IRX.get();
             --Cycles;
             //3 cycles
-            Word TargetAddress = read_word(address, Cycles);
+            Word TargetAddress = cpu.read_word(address, Cycles);
             //1 cycles
-            write_byte(cpu_reg.ACU.get(), TargetAddress, Cycles);
+            cpu.write_byte(cpu.cpu_reg.ACU.get(), TargetAddress, Cycles);
             // 0 cycles
         };
 
-        LookUpTable[cast(op::IndircetY)] = [this](u32& Cycles) -> void
+        LookUpTable[cast(op::IndircetY)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 5 cycles
-            Byte address = fetch_byte(Cycles);
+            Byte address = cpu.fetch_byte(Cycles);
             // 4 cycles
-            address += cpu_reg.IRY.get();
+            address += cpu.cpu_reg.IRY.get();
             --Cycles;
             //3 cycles
-            Word TargetAddress = read_word(address, Cycles);
+            Word TargetAddress = cpu.read_word(address, Cycles);
             //1 cycles
-            write_byte(cpu_reg.ACU.get(), TargetAddress, Cycles);
+            cpu.write_byte(cpu.cpu_reg.ACU.get(), TargetAddress, Cycles);
             // 0 cycles
         };
     }
