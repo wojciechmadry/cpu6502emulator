@@ -22,5 +22,6 @@ int main(){
     // size - 8208
     // after - 2064
     std::cout << sizeof(cpu) << std::endl;
+
     return 0;
 }
