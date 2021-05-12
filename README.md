@@ -1,6 +1,9 @@
+General info
+---
 Emulator processor 6502 in c++20
 
 Tutorial (I am suggesting this tutorial)
+
 https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s
 
 Additional guides:
@@ -8,14 +11,20 @@ Additional guides:
 2. https://sta.c64.org/cbm64mem.html
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
 
-Episode 1 - https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s - Done
+Progress in tutorial
+---
+-[x] Episode 1 - https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s
+-[ ] Episode 2 - https://www.youtube.com/watch?v=L7J1pPokEyw `0m 0sec`
 
-Episode 2 - https://www.youtube.com/watch?v=L7J1pPokEyw
-
-Full implementation to 0 minutes 0 seconds.
-
-Now working on :
- - Adding instruction set
- - Implementing RTS - Working - But i think something is wrong
- - Im not sure about page crossing
- - Need to add test to Register Transfers
+TODO
+---
+-[ ] Add all `instruction set`
+-[ ] Implementing `RTS` - Working - But I think something is wrong
+-[ ] I'm not sure about `page crossing` (need to check that)
+-[ ] Add test to `Register Transfers`
+-[x] `Jump Calls` instruction set (`JMP`, `JSR`, `RTS`)
+-[x] All `registers`
+-[x] Memory
+-[x] `Load & Store` instruction set (`LDA`, `LDX`, `LDY`, `STA`, `STX`, `STY`)
+-[x] `Register Transfers` instruction set (`TAX`, `TAY`, `TXA`, `TYA`)
+-[x] `Status Flag Changes` instruction set (`CLC`, `CLD`, `CLI`, `CLV`, `SEC`, `SED`, `SEI`)
