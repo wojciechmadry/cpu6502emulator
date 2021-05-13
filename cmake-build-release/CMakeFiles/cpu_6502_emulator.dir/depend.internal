@@ -18,6 +18,7 @@ CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj
  ../tests/InstructionSetTest/LDA_TEST.HPP
  ../tests/InstructionSetTest/LDX_TEST.HPP
  ../tests/InstructionSetTest/LDY_TEST.HPP
+ ../tests/InstructionSetTest/REGISTER_TRANSFER.HPP
  ../tests/InstructionSetTest/RTS_JSR_TEST.HPP
  ../tests/InstructionSetTest/STA_TEST.HPP
  ../tests/InstructionSetTest/STX_TEST.HPP

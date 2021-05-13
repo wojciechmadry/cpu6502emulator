@@ -40,6 +40,7 @@ namespace cpu6502{
         while ( Cycles > 0 )
         {
             u32 OldCycles = Cycles;
+            (void) OldCycles; // REMEMBER TO DELETE THIS!!
 
             Byte ins = fetch_byte(Cycles);
             LookUpTable[ins](Cycles, *this);

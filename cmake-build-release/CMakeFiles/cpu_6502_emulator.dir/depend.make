@@ -17,6 +17,7 @@ CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/JMP_T
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/LDA_TEST.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/LDX_TEST.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/LDY_TEST.HPP
+CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/REGISTER_TRANSFER.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/RTS_JSR_TEST.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/STA_TEST.HPP
 CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj: ../tests/InstructionSetTest/STX_TEST.HPP

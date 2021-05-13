@@ -411,6 +411,9 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/LDY_TEST.HPP">
 			<Option target="cpu6502_tests"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/REGISTER_TRANSFER.HPP">
+			<Option target="cpu6502_tests"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/tests/InstructionSetTest/RTS_JSR_TEST.HPP">
 			<Option target="cpu6502_tests"/>
 		</Unit>

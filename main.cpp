@@ -5,11 +5,9 @@
 
 int main(){
 
-    CPU6502_TEST::RUN_ALL_TEST(1);
-    // 100 DEBUG - 3.19775
-    // 100 DEBUG NEW - 3.30985
-    // 100 RELEASE - 0.0110093
-    // 100 RELEASE NEW - 0.010509
+    CPU6502_TEST::RUN_ALL_TEST(1000);
+    // 1000 DEBUG - 0.1076s.
+    // 1000 RELEASE - 0.1
     cpu6502::Memory memory(1024 * 64);
     cpu6502::CPU cpu(memory);
     cpu6502::CPU cpu2(memory);
@@ -19,8 +17,6 @@ int main(){
     //END program
     cpu.execute(2);
     cpu2.execute(2);
-    // size - 8208
-    // after - 2064
     std::cout << sizeof(cpu) << std::endl;
 
     return 0;

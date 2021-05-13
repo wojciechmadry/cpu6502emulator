@@ -9,6 +9,7 @@
 #include "InstructionSetTest/RTS_JSR_TEST.HPP"
 #include "InstructionSetTest/JMP_TEST.HPP"
 #include "InstructionSetTest/StatusFlagChanges.HPP"
+#include "InstructionSetTest/REGISTER_TRANSFER.HPP"
 #include "time.hpp"
 
 namespace CPU6502_TEST::inner
@@ -65,6 +66,11 @@ namespace CPU6502_TEST::inner
         all_pass &= temp;
         if(!temp)
             std::cout << "STATUS_FLAG_CHANGES_TEST not pass ! \n";
+
+        temp = REGISTER_TRANSFER_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "REGISTER_TRANSFER_TEST not pass ! \n";
 
         return all_pass;
     }

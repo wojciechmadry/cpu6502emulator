@@ -13,18 +13,19 @@ Additional guides:
 
 Progress in tutorial
 ---
--[x] Episode 1 - https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s
--[ ] Episode 2 - https://www.youtube.com/watch?v=L7J1pPokEyw `0m 0sec`
+- [x] Episode 1 - https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s
+- [ ] Episode 2 - https://www.youtube.com/watch?v=L7J1pPokEyw `0m 0sec`
 
 TODO
 ---
--[ ] Add all `instruction set`
--[ ] Implementing `RTS` - Working - But I think something is wrong
--[ ] I'm not sure about `page crossing` (need to check that)
--[ ] Add test to `Register Transfers`
--[x] `Jump Calls` instruction set (`JMP`, `JSR`, `RTS`)
--[x] All `registers`
--[x] Memory
--[x] `Load & Store` instruction set (`LDA`, `LDX`, `LDY`, `STA`, `STX`, `STY`)
--[x] `Register Transfers` instruction set (`TAX`, `TAY`, `TXA`, `TYA`)
--[x] `Status Flag Changes` instruction set (`CLC`, `CLD`, `CLI`, `CLV`, `SEC`, `SED`, `SEI`)
+- [ ] Upgrade all tests (They dont look good)
+- [ ] Add all `instruction set`
+- [ ] Implementing `RTS` - Working - But I think something is wrong
+- [ ] I'm not sure about `page crossing` (need to check that)
+- [x] Add test to `Register Transfers`
+- [x] `Jump Calls` instruction set (`JMP`, `JSR`, `RTS`)
+- [x] All `registers`
+- [x] Memory
+- [x] `Load & Store` instruction set (`LDA`, `LDX`, `LDY`, `STA`, `STX`, `STY`)
+- [x] `Register Transfers` instruction set (`TAX`, `TAY`, `TXA`, `TYA`)
+- [x] `Status Flag Changes` instruction set (`CLC`, `CLD`, `CLI`, `CLV`, `SEC`, `SED`, `SEI`)
