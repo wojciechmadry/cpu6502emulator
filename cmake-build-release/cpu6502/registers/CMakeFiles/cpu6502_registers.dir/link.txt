@@ -1,2 +1,0 @@
-C:\msys64\mingw64\bin\ar.exe qc libcpu6502_registers.a CMakeFiles/cpu6502_registers.dir/accumulator.cpp.obj CMakeFiles/cpu6502_registers.dir/indexregisterx.cpp.obj CMakeFiles/cpu6502_registers.dir/indexregistery.cpp.obj CMakeFiles/cpu6502_registers.dir/processorstatus.cpp.obj CMakeFiles/cpu6502_registers.dir/programcounter.cpp.obj CMakeFiles/cpu6502_registers.dir/stackpointer.cpp.obj
-C:\msys64\mingw64\bin\ranlib.exe libcpu6502_registers.a
