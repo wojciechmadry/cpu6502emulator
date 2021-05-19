@@ -15,6 +15,7 @@ namespace CPU6502_TEST::inner{
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
+        (void) opcode;
         auto PC = cpu.get_registers().PC.get();
         mem[PC] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
         mem[PC + 1] = 0x20;

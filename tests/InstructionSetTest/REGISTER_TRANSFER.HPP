@@ -17,25 +17,28 @@ namespace CPU6502_TEST::inner{
            return static_cast<cpu6502::Byte>(opcode);
         };
 
-        //ASSERT TAX
-        cpu.reset();
         mem[PC] = cast(cpu6502::opcode::JMP::Absolute); // 3 cycles
         mem[PC+1] = 0x42;
         mem[PC+2] = 0x42;
-        PC = static_cast<unsigned short>(0x4242);
+        cpu.execute(3);
+        PC = cpu.get_registers().PC.get();
+
+        //ASSERT TAX
         mem[PC++] = cast(cpu6502::opcode::LDA::Immediate); //2 cycles
         mem[PC++] = 84;
-        cpu.execute(5);
+        cpu.execute(2);
         all_good &= (cpu.get_registers().ACU.get() == 84);
         mem[PC++] = cast(cpu6502::opcode::TAX::Implied); // 2 cycles
         cpu.execute(2);
         all_good &= (cpu.get_registers().ACU.get() == cpu.get_registers().IRX.get());
         //END ASSERT TAX
+
         //ASSERT TAY
         mem[PC++] = cast(cpu6502::opcode::TAY::Implied); // 2 cycles
         cpu.execute(2);
         all_good &= (cpu.get_registers().ACU.get() == cpu.get_registers().IRY.get());
         //END TAY
+
         //ASSERT TXA
         mem[PC++] = cast(cpu6502::opcode::LDA::Immediate); // 2 cycles
         mem[PC++] = 0x12;
@@ -43,6 +46,7 @@ namespace CPU6502_TEST::inner{
         cpu.execute(4);
         all_good &= (cpu.get_registers().ACU.get() == cpu.get_registers().IRX.get() && cpu.get_registers().IRX.get() == 84);
         //END ASSERT TXA
+
         //ASSERT TYA
         mem[PC++] = cast(cpu6502::opcode::LDA::Immediate); // 2 cycles
         mem[PC++] = 0x12;
@@ -50,6 +54,7 @@ namespace CPU6502_TEST::inner{
         cpu.execute(4);
         all_good &= (cpu.get_registers().ACU.get() == cpu.get_registers().IRY.get() && cpu.get_registers().IRY.get() == 84);
         //END ASSERT TYA
+
         return all_good;
     }
 }

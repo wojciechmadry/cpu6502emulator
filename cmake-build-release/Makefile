@@ -142,17 +142,17 @@ cpu_6502_emulator/fast:
 .PHONY : cpu_6502_emulator/fast
 
 #=============================================================================
-# Target rules for targets named cpu6502_main
+# Target rules for targets named cpu6502
 
 # Build rule for target.
-cpu6502_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502_main
-.PHONY : cpu6502_main
+cpu6502: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502
+.PHONY : cpu6502
 
 # fast build rule for target.
-cpu6502_main/fast:
-	$(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/build
-.PHONY : cpu6502_main/fast
+cpu6502/fast:
+	$(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/build
+.PHONY : cpu6502/fast
 
 #=============================================================================
 # Target rules for targets named cpu6502_registers
@@ -228,7 +228,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... cpu6502_main
+	@echo ... cpu6502
 	@echo ... cpu6502_memory
 	@echo ... cpu6502_registers
 	@echo ... cpu6502_tests

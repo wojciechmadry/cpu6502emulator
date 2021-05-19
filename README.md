@@ -18,13 +18,13 @@ Progress in tutorial
 
 TODO
 ---
-- [ ] Upgrade all tests (They dont look good)
 - [ ] Add all `instruction set`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
 - [ ] I'm not sure about `page crossing` (need to check that)
+- [X] Upgrade all tests (They don't look good)
 - [x] Add test to `Register Transfers`
 - [x] `Jump Calls` instruction set (`JMP`, `JSR`, `RTS`)
-- [x] All `registers`
+- [x] Add all `registers`
 - [x] Memory
 - [x] `Load & Store` instruction set (`LDA`, `LDX`, `LDY`, `STA`, `STX`, `STY`)
 - [x] `Register Transfers` instruction set (`TAX`, `TAY`, `TXA`, `TYA`)

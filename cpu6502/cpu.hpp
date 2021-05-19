@@ -85,16 +85,7 @@ namespace cpu6502
             return cpu_reg;
         }
 
-        void reset() noexcept
-        {
-            cpu_reg.PC.set(0xFFFA);
-            cpu_reg.SP.set(0x00);
-            cpu_reg.PS.put_byte(0x00);
-            cpu_reg.ACU.set(0);
-            cpu_reg.IRX.set(0);
-            cpu_reg.IRY.set(0);
-            mem.get().initialise();
-        }
+        void reset() noexcept;
 
         void execute(u32 Cycles) noexcept;
     };

@@ -15,28 +15,36 @@ namespace CPU6502_TEST::inner{
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
+
+
+        auto PC = cpu.get_registers().PC.get();
+        mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute);
+        mem[PC++] = 0x20;
+        mem[PC++] = 0x20;
+
+        PC = cpu.get_registers().PC.get();
+
         //ASSERT LDA - Immediate
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::Immediate);
-        cpu.reset();
-        auto PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 40;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 40;
         cpu.execute(2);
 
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0;
         cpu.execute(2);
 
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 128;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 128;
         cpu.execute(2);
 
         all_good &=(cpu.get_registers().ACU.get() == 128
@@ -46,28 +54,28 @@ namespace CPU6502_TEST::inner{
 
 //ASSERT LDA - Zero Page
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::ZeroPage);
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0xFF;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
         mem[0xFF] = 40;
         cpu.execute(3);
 
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0xFF;
+
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
         mem[0xFF] = 0x0;
         cpu.execute(3);
 
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0xFF;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
         mem[0xFF] = 128;
         cpu.execute(3);
 
@@ -79,28 +87,27 @@ namespace CPU6502_TEST::inner{
 
         //ASSERT LDA - Zero Page X
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::ZeroPageX);
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0xFF;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
         mem[0xFF] = 40;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0xFF;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
         mem[0xFF] = 0x0;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0xFF;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
         mem[0xFF] = 128;
         cpu.execute(4);
 
@@ -111,31 +118,30 @@ namespace CPU6502_TEST::inner{
 
         //ASSERT LDA - Absolute
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::Absolute);
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 40;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 0x0;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 128;
         cpu.execute(4);
 
@@ -146,31 +152,30 @@ namespace CPU6502_TEST::inner{
 
         //ASSERT LDA - Absolute X
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::AbsoluteX);
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 40;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 0x0;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 128;
         cpu.execute(4);
 
@@ -181,31 +186,30 @@ namespace CPU6502_TEST::inner{
 
         //ASSERT LDA - Absolute Y
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::AbsoluteY);
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 40;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 0x0;
         cpu.execute(4);
 
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x41;
-        mem[PC + 2] = 0x47;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
         mem[0x4741] = 128;
         cpu.execute(4);
 
@@ -217,10 +221,9 @@ namespace CPU6502_TEST::inner{
 
         //ASSERT LDA - Indirect X
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::IndirectX);
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x20;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
         mem[0x20] = 0x41;
         mem[0x21] = 0x47;
         mem[0x4741] = 40;
@@ -228,9 +231,9 @@ namespace CPU6502_TEST::inner{
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x20;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
         mem[0x20] = 0x41;
         mem[0x21] = 0x47;
         mem[0x4741] = 0x0;
@@ -238,9 +241,9 @@ namespace CPU6502_TEST::inner{
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x20;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
         mem[0x20] = 0x41;
         mem[0x21] = 0x47;
         mem[0x4741] = 128;
@@ -253,10 +256,9 @@ namespace CPU6502_TEST::inner{
 
         //ASSERT LDA - Indirect Y
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::IndirectY);
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x86;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x86;
         mem[0x86] = 0x28;
         mem[0x87] = 0x40;
         mem[0x4028] = 40;
@@ -264,9 +266,9 @@ namespace CPU6502_TEST::inner{
         all_good &=(cpu.get_registers().ACU.get() == 40
                     && !cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x86;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x86;
         mem[0x86] = 0x28;
         mem[0x87] = 0x40;
         mem[0x4028] = 0x0;
@@ -274,9 +276,9 @@ namespace CPU6502_TEST::inner{
         all_good &=(cpu.get_registers().ACU.get() == 0
                     && cpu.get_registers().PS.get(PSFlags::ZeroFlag)
                     && !cpu.get_registers().PS.get(PSFlags::NegativeFlag));
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC + 1] = 0x86;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x86;
         mem[0x86] = 0x28;
         mem[0x87] = 0x40;
         mem[0x4028] = 128;

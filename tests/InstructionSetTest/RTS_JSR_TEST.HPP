@@ -15,7 +15,6 @@ namespace CPU6502_TEST::inner{
 
         //ASSERT RTS - Implied && JSR
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::JSR::Absolute);
-        cpu.reset();
         mem[PC] = opcode; // 6cycles
         mem[PC+1] = 0x42;
         mem[PC+2] = 0x42;

@@ -16,13 +16,23 @@ namespace CPU6502_TEST::inner{
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
 
-        // STX - Zero Page
-        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate); // 2 cycles
-        cpu.reset();
         auto PC = cpu.get_registers().PC.get();
-        mem[PC] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
-        mem[PC + 1] = 0x42;
-        mem[PC + 2] = 0x42;
+        auto JUMP_TO_2020 = [&]() mutable
+        {
+            PC = cpu.get_registers().PC.get();
+            mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute);
+            mem[PC++] = 0x20;
+            mem[PC++] = 0x20;
+            cpu.execute(3);
+            PC = cpu.get_registers().PC.get();
+        };
+
+        // STX - Zero Page
+        JUMP_TO_2020();
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate); // 2 cycles
+        mem[PC++] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
+        mem[PC++] = 0x42;
+        mem[PC++] = 0x42;
         mem[0x4242] = opcode;
         mem[0x4242 + 1] = 40; // X = 40
         mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::STX::ZeroPage); // 3 cycles
@@ -32,12 +42,11 @@ namespace CPU6502_TEST::inner{
         // END STX - Zero Page
 
         // STX - Zero Page Y
+        JUMP_TO_2020();
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate); // 2 cycles
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
-        mem[PC + 1] = 0x42;
-        mem[PC + 2] = 0x42;
+        mem[PC++] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
+        mem[PC++] = 0x42;
+        mem[PC++] = 0x42;
         mem[0x4242] = opcode;
         mem[0x4242 + 1] = 40; // ACU = 40
         mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::LDY::Immediate);  // 2 cycles
@@ -49,12 +58,11 @@ namespace CPU6502_TEST::inner{
         // END STX - Zero Page Y
 
         // STX - Absolute
+        JUMP_TO_2020();
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate); // 2 cycles
-        cpu.reset();
-        PC = cpu.get_registers().PC.get();
-        mem[PC] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
-        mem[PC + 1] = 0x42;
-        mem[PC + 2] = 0x42;
+        mem[PC++] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
+        mem[PC++] = 0x42;
+        mem[PC++] = 0x42;
         mem[0x4242] = opcode;
         mem[0x4242 + 1] = 40; // ACU = 40
         mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::STX::Absolute); // 4 cycles

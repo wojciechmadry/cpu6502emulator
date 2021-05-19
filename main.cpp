@@ -5,10 +5,13 @@
 
 int main(){
 
+
+
     CPU6502_TEST::RUN_ALL_TEST(1000);
-    // 1000 DEBUG - 0.1076s.
-    // 1000 RELEASE - 0.1
+    // 1000 DEBUG -   0.0268642
+    // 1000 RELEASE - 0.0263349
     cpu6502::Memory memory(1024 * 64);
+
     cpu6502::CPU cpu(memory);
     cpu6502::CPU cpu2(memory);
     //Program

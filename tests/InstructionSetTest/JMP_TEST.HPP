@@ -13,28 +13,37 @@ namespace CPU6502_TEST::inner{
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
 
+
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute);
 
         auto PC = cpu.get_registers().PC.get();
-        //ASSERT JMP - Absolute
-        mem[PC] = opcode;
-        mem[PC+1] = 0x42;
-        mem[PC+2] = 0x42;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[PC++] = 0x20;
         cpu.execute(3);
-        all_good &= (cpu.get_registers().PC.get() == 0x4242);
+        PC = 0x2020;
+        //ASSERT JMP - Absolute
+        mem[PC++] = opcode;
+        mem[PC++] = 0x25;
+        mem[PC++] = 0x25;
+        cpu.execute(3);
+        all_good &= (cpu.get_registers().PC.get() == 0x2525);
+        PC = cpu.get_registers().PC.get();
         //END ASSERT JMP - Absolute
+
 
         //ASSERT JMP - Indirect
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Indirect);
-        cpu.reset();
-        mem[PC] = opcode;
-        mem[PC+1] = 0x42;
-        mem[PC+2] = 0x42;
+        mem[PC++] = opcode;
+        mem[PC++] = 0x42;
+        mem[PC++] = 0x42;
         mem[0x4242] = 0x20;
         mem[0x4242+1] = 0x20;
         cpu.execute(5);
         all_good &= (cpu.get_registers().PC.get() == 0x2020);
         //END ASSERT JMP - Indirect
+
         return all_good;
     }
 }

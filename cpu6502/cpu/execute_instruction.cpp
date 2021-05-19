@@ -6,6 +6,18 @@ namespace cpu6502{
     std::array<CPU::Func* , 256> CPU::LookUpTable;
     bool CPU::LookUpTableInit = false;
 
+    void CPU::reset() noexcept
+    {
+        cpu_reg.PC.set(0xFFFA);
+        cpu_reg.SP.set(0x00);
+        cpu_reg.PS.put_byte(0x00);
+        cpu_reg.ACU.set(0);
+        cpu_reg.IRX.set(0);
+        cpu_reg.IRY.set(0);
+        mem.get().initialise();
+    }
+
+
     CPU::CPU(cpu6502::Memory &memory) noexcept: mem(memory)
     {
         reset();

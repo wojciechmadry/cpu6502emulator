@@ -129,19 +129,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-cpu6502/CMakeFiles/cpu6502_main.dir/rule:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/CMakeFiles/cpu6502_main.dir/rule
-.PHONY : cpu6502/CMakeFiles/cpu6502_main.dir/rule
+cpu6502/CMakeFiles/cpu6502.dir/rule:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cpu6502/CMakeFiles/cpu6502.dir/rule
+.PHONY : cpu6502/CMakeFiles/cpu6502.dir/rule
 
 # Convenience name for target.
-cpu6502_main: cpu6502/CMakeFiles/cpu6502_main.dir/rule
+cpu6502: cpu6502/CMakeFiles/cpu6502.dir/rule
 
-.PHONY : cpu6502_main
+.PHONY : cpu6502
 
 # fast build rule for target.
-cpu6502_main/fast:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/build
-.PHONY : cpu6502_main/fast
+cpu6502/fast:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/build
+.PHONY : cpu6502/fast
 
 cpu/InstructionSet/JumpsCalls/JMP.obj: cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 
@@ -149,7 +149,7 @@ cpu/InstructionSet/JumpsCalls/JMP.obj: cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 
 # target to build an object file
 cpu/InstructionSet/JumpsCalls/JMP.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 .PHONY : cpu/InstructionSet/JumpsCalls/JMP.cpp.obj
 
 cpu/InstructionSet/JumpsCalls/JMP.i: cpu/InstructionSet/JumpsCalls/JMP.cpp.i
@@ -158,7 +158,7 @@ cpu/InstructionSet/JumpsCalls/JMP.i: cpu/InstructionSet/JumpsCalls/JMP.cpp.i
 
 # target to preprocess a source file
 cpu/InstructionSet/JumpsCalls/JMP.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.i
 .PHONY : cpu/InstructionSet/JumpsCalls/JMP.cpp.i
 
 cpu/InstructionSet/JumpsCalls/JMP.s: cpu/InstructionSet/JumpsCalls/JMP.cpp.s
@@ -167,7 +167,7 @@ cpu/InstructionSet/JumpsCalls/JMP.s: cpu/InstructionSet/JumpsCalls/JMP.cpp.s
 
 # target to generate assembly for a file
 cpu/InstructionSet/JumpsCalls/JMP.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/JMP.cpp.s
 .PHONY : cpu/InstructionSet/JumpsCalls/JMP.cpp.s
 
 cpu/InstructionSet/JumpsCalls/JSR.obj: cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
@@ -176,7 +176,7 @@ cpu/InstructionSet/JumpsCalls/JSR.obj: cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
 
 # target to build an object file
 cpu/InstructionSet/JumpsCalls/JSR.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
 .PHONY : cpu/InstructionSet/JumpsCalls/JSR.cpp.obj
 
 cpu/InstructionSet/JumpsCalls/JSR.i: cpu/InstructionSet/JumpsCalls/JSR.cpp.i
@@ -185,7 +185,7 @@ cpu/InstructionSet/JumpsCalls/JSR.i: cpu/InstructionSet/JumpsCalls/JSR.cpp.i
 
 # target to preprocess a source file
 cpu/InstructionSet/JumpsCalls/JSR.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.i
 .PHONY : cpu/InstructionSet/JumpsCalls/JSR.cpp.i
 
 cpu/InstructionSet/JumpsCalls/JSR.s: cpu/InstructionSet/JumpsCalls/JSR.cpp.s
@@ -194,7 +194,7 @@ cpu/InstructionSet/JumpsCalls/JSR.s: cpu/InstructionSet/JumpsCalls/JSR.cpp.s
 
 # target to generate assembly for a file
 cpu/InstructionSet/JumpsCalls/JSR.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/JSR.cpp.s
 .PHONY : cpu/InstructionSet/JumpsCalls/JSR.cpp.s
 
 cpu/InstructionSet/JumpsCalls/RTS.obj: cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
@@ -203,7 +203,7 @@ cpu/InstructionSet/JumpsCalls/RTS.obj: cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
 
 # target to build an object file
 cpu/InstructionSet/JumpsCalls/RTS.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
 .PHONY : cpu/InstructionSet/JumpsCalls/RTS.cpp.obj
 
 cpu/InstructionSet/JumpsCalls/RTS.i: cpu/InstructionSet/JumpsCalls/RTS.cpp.i
@@ -212,7 +212,7 @@ cpu/InstructionSet/JumpsCalls/RTS.i: cpu/InstructionSet/JumpsCalls/RTS.cpp.i
 
 # target to preprocess a source file
 cpu/InstructionSet/JumpsCalls/RTS.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.i
 .PHONY : cpu/InstructionSet/JumpsCalls/RTS.cpp.i
 
 cpu/InstructionSet/JumpsCalls/RTS.s: cpu/InstructionSet/JumpsCalls/RTS.cpp.s
@@ -221,7 +221,7 @@ cpu/InstructionSet/JumpsCalls/RTS.s: cpu/InstructionSet/JumpsCalls/RTS.cpp.s
 
 # target to generate assembly for a file
 cpu/InstructionSet/JumpsCalls/RTS.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/JumpsCalls/RTS.cpp.s
 .PHONY : cpu/InstructionSet/JumpsCalls/RTS.cpp.s
 
 cpu/InstructionSet/LoadStoreOperations/LDA.obj: cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj
@@ -230,7 +230,7 @@ cpu/InstructionSet/LoadStoreOperations/LDA.obj: cpu/InstructionSet/LoadStoreOper
 
 # target to build an object file
 cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.cpp.obj
 
 cpu/InstructionSet/LoadStoreOperations/LDA.i: cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i
@@ -239,7 +239,7 @@ cpu/InstructionSet/LoadStoreOperations/LDA.i: cpu/InstructionSet/LoadStoreOperat
 
 # target to preprocess a source file
 cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.cpp.i
 
 cpu/InstructionSet/LoadStoreOperations/LDA.s: cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
@@ -248,7 +248,7 @@ cpu/InstructionSet/LoadStoreOperations/LDA.s: cpu/InstructionSet/LoadStoreOperat
 
 # target to generate assembly for a file
 cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDA.cpp.s
 
 cpu/InstructionSet/LoadStoreOperations/LDX.obj: cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj
@@ -257,7 +257,7 @@ cpu/InstructionSet/LoadStoreOperations/LDX.obj: cpu/InstructionSet/LoadStoreOper
 
 # target to build an object file
 cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.cpp.obj
 
 cpu/InstructionSet/LoadStoreOperations/LDX.i: cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i
@@ -266,7 +266,7 @@ cpu/InstructionSet/LoadStoreOperations/LDX.i: cpu/InstructionSet/LoadStoreOperat
 
 # target to preprocess a source file
 cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.cpp.i
 
 cpu/InstructionSet/LoadStoreOperations/LDX.s: cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s
@@ -275,7 +275,7 @@ cpu/InstructionSet/LoadStoreOperations/LDX.s: cpu/InstructionSet/LoadStoreOperat
 
 # target to generate assembly for a file
 cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDX.cpp.s
 
 cpu/InstructionSet/LoadStoreOperations/LDY.obj: cpu/InstructionSet/LoadStoreOperations/LDY.cpp.obj
@@ -284,7 +284,7 @@ cpu/InstructionSet/LoadStoreOperations/LDY.obj: cpu/InstructionSet/LoadStoreOper
 
 # target to build an object file
 cpu/InstructionSet/LoadStoreOperations/LDY.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDY.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDY.cpp.obj
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDY.cpp.obj
 
 cpu/InstructionSet/LoadStoreOperations/LDY.i: cpu/InstructionSet/LoadStoreOperations/LDY.cpp.i
@@ -293,7 +293,7 @@ cpu/InstructionSet/LoadStoreOperations/LDY.i: cpu/InstructionSet/LoadStoreOperat
 
 # target to preprocess a source file
 cpu/InstructionSet/LoadStoreOperations/LDY.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDY.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDY.cpp.i
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDY.cpp.i
 
 cpu/InstructionSet/LoadStoreOperations/LDY.s: cpu/InstructionSet/LoadStoreOperations/LDY.cpp.s
@@ -302,7 +302,7 @@ cpu/InstructionSet/LoadStoreOperations/LDY.s: cpu/InstructionSet/LoadStoreOperat
 
 # target to generate assembly for a file
 cpu/InstructionSet/LoadStoreOperations/LDY.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/LDY.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/LDY.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/LDY.cpp.s
 
 cpu/InstructionSet/LoadStoreOperations/STA.obj: cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj
@@ -311,7 +311,7 @@ cpu/InstructionSet/LoadStoreOperations/STA.obj: cpu/InstructionSet/LoadStoreOper
 
 # target to build an object file
 cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STA.cpp.obj
 
 cpu/InstructionSet/LoadStoreOperations/STA.i: cpu/InstructionSet/LoadStoreOperations/STA.cpp.i
@@ -320,7 +320,7 @@ cpu/InstructionSet/LoadStoreOperations/STA.i: cpu/InstructionSet/LoadStoreOperat
 
 # target to preprocess a source file
 cpu/InstructionSet/LoadStoreOperations/STA.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.i
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STA.cpp.i
 
 cpu/InstructionSet/LoadStoreOperations/STA.s: cpu/InstructionSet/LoadStoreOperations/STA.cpp.s
@@ -329,7 +329,7 @@ cpu/InstructionSet/LoadStoreOperations/STA.s: cpu/InstructionSet/LoadStoreOperat
 
 # target to generate assembly for a file
 cpu/InstructionSet/LoadStoreOperations/STA.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STA.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STA.cpp.s
 
 cpu/InstructionSet/LoadStoreOperations/STX.obj: cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
@@ -338,7 +338,7 @@ cpu/InstructionSet/LoadStoreOperations/STX.obj: cpu/InstructionSet/LoadStoreOper
 
 # target to build an object file
 cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STX.cpp.obj
 
 cpu/InstructionSet/LoadStoreOperations/STX.i: cpu/InstructionSet/LoadStoreOperations/STX.cpp.i
@@ -347,7 +347,7 @@ cpu/InstructionSet/LoadStoreOperations/STX.i: cpu/InstructionSet/LoadStoreOperat
 
 # target to preprocess a source file
 cpu/InstructionSet/LoadStoreOperations/STX.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.i
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STX.cpp.i
 
 cpu/InstructionSet/LoadStoreOperations/STX.s: cpu/InstructionSet/LoadStoreOperations/STX.cpp.s
@@ -356,7 +356,7 @@ cpu/InstructionSet/LoadStoreOperations/STX.s: cpu/InstructionSet/LoadStoreOperat
 
 # target to generate assembly for a file
 cpu/InstructionSet/LoadStoreOperations/STX.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STX.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STX.cpp.s
 
 cpu/InstructionSet/LoadStoreOperations/STY.obj: cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
@@ -365,7 +365,7 @@ cpu/InstructionSet/LoadStoreOperations/STY.obj: cpu/InstructionSet/LoadStoreOper
 
 # target to build an object file
 cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.obj
 
 cpu/InstructionSet/LoadStoreOperations/STY.i: cpu/InstructionSet/LoadStoreOperations/STY.cpp.i
@@ -374,7 +374,7 @@ cpu/InstructionSet/LoadStoreOperations/STY.i: cpu/InstructionSet/LoadStoreOperat
 
 # target to preprocess a source file
 cpu/InstructionSet/LoadStoreOperations/STY.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.i
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.i
 
 cpu/InstructionSet/LoadStoreOperations/STY.s: cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
@@ -383,7 +383,7 @@ cpu/InstructionSet/LoadStoreOperations/STY.s: cpu/InstructionSet/LoadStoreOperat
 
 # target to generate assembly for a file
 cpu/InstructionSet/LoadStoreOperations/STY.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
 .PHONY : cpu/InstructionSet/LoadStoreOperations/STY.cpp.s
 
 cpu/InstructionSet/RegisterTransfers/TAX.obj: cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj
@@ -392,7 +392,7 @@ cpu/InstructionSet/RegisterTransfers/TAX.obj: cpu/InstructionSet/RegisterTransfe
 
 # target to build an object file
 cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj
 .PHONY : cpu/InstructionSet/RegisterTransfers/TAX.cpp.obj
 
 cpu/InstructionSet/RegisterTransfers/TAX.i: cpu/InstructionSet/RegisterTransfers/TAX.cpp.i
@@ -401,7 +401,7 @@ cpu/InstructionSet/RegisterTransfers/TAX.i: cpu/InstructionSet/RegisterTransfers
 
 # target to preprocess a source file
 cpu/InstructionSet/RegisterTransfers/TAX.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.i
 .PHONY : cpu/InstructionSet/RegisterTransfers/TAX.cpp.i
 
 cpu/InstructionSet/RegisterTransfers/TAX.s: cpu/InstructionSet/RegisterTransfers/TAX.cpp.s
@@ -410,7 +410,7 @@ cpu/InstructionSet/RegisterTransfers/TAX.s: cpu/InstructionSet/RegisterTransfers
 
 # target to generate assembly for a file
 cpu/InstructionSet/RegisterTransfers/TAX.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TAX.cpp.s
 .PHONY : cpu/InstructionSet/RegisterTransfers/TAX.cpp.s
 
 cpu/InstructionSet/RegisterTransfers/TAY.obj: cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj
@@ -419,7 +419,7 @@ cpu/InstructionSet/RegisterTransfers/TAY.obj: cpu/InstructionSet/RegisterTransfe
 
 # target to build an object file
 cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj
 .PHONY : cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj
 
 cpu/InstructionSet/RegisterTransfers/TAY.i: cpu/InstructionSet/RegisterTransfers/TAY.cpp.i
@@ -428,7 +428,7 @@ cpu/InstructionSet/RegisterTransfers/TAY.i: cpu/InstructionSet/RegisterTransfers
 
 # target to preprocess a source file
 cpu/InstructionSet/RegisterTransfers/TAY.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.i
 .PHONY : cpu/InstructionSet/RegisterTransfers/TAY.cpp.i
 
 cpu/InstructionSet/RegisterTransfers/TAY.s: cpu/InstructionSet/RegisterTransfers/TAY.cpp.s
@@ -437,7 +437,7 @@ cpu/InstructionSet/RegisterTransfers/TAY.s: cpu/InstructionSet/RegisterTransfers
 
 # target to generate assembly for a file
 cpu/InstructionSet/RegisterTransfers/TAY.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.s
 .PHONY : cpu/InstructionSet/RegisterTransfers/TAY.cpp.s
 
 cpu/InstructionSet/RegisterTransfers/TXA.obj: cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj
@@ -446,7 +446,7 @@ cpu/InstructionSet/RegisterTransfers/TXA.obj: cpu/InstructionSet/RegisterTransfe
 
 # target to build an object file
 cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj
 .PHONY : cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj
 
 cpu/InstructionSet/RegisterTransfers/TXA.i: cpu/InstructionSet/RegisterTransfers/TXA.cpp.i
@@ -455,7 +455,7 @@ cpu/InstructionSet/RegisterTransfers/TXA.i: cpu/InstructionSet/RegisterTransfers
 
 # target to preprocess a source file
 cpu/InstructionSet/RegisterTransfers/TXA.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.i
 .PHONY : cpu/InstructionSet/RegisterTransfers/TXA.cpp.i
 
 cpu/InstructionSet/RegisterTransfers/TXA.s: cpu/InstructionSet/RegisterTransfers/TXA.cpp.s
@@ -464,7 +464,7 @@ cpu/InstructionSet/RegisterTransfers/TXA.s: cpu/InstructionSet/RegisterTransfers
 
 # target to generate assembly for a file
 cpu/InstructionSet/RegisterTransfers/TXA.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.s
 .PHONY : cpu/InstructionSet/RegisterTransfers/TXA.cpp.s
 
 cpu/InstructionSet/RegisterTransfers/TYA.obj: cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj
@@ -473,7 +473,7 @@ cpu/InstructionSet/RegisterTransfers/TYA.obj: cpu/InstructionSet/RegisterTransfe
 
 # target to build an object file
 cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj
 .PHONY : cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj
 
 cpu/InstructionSet/RegisterTransfers/TYA.i: cpu/InstructionSet/RegisterTransfers/TYA.cpp.i
@@ -482,7 +482,7 @@ cpu/InstructionSet/RegisterTransfers/TYA.i: cpu/InstructionSet/RegisterTransfers
 
 # target to preprocess a source file
 cpu/InstructionSet/RegisterTransfers/TYA.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.i
 .PHONY : cpu/InstructionSet/RegisterTransfers/TYA.cpp.i
 
 cpu/InstructionSet/RegisterTransfers/TYA.s: cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
@@ -491,7 +491,7 @@ cpu/InstructionSet/RegisterTransfers/TYA.s: cpu/InstructionSet/RegisterTransfers
 
 # target to generate assembly for a file
 cpu/InstructionSet/RegisterTransfers/TYA.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
 .PHONY : cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
 
 cpu/InstructionSet/StatusFlagChanges/CLC.obj: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
@@ -500,7 +500,7 @@ cpu/InstructionSet/StatusFlagChanges/CLC.obj: cpu/InstructionSet/StatusFlagChang
 
 # target to build an object file
 cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
 
 cpu/InstructionSet/StatusFlagChanges/CLC.i: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i
@@ -509,7 +509,7 @@ cpu/InstructionSet/StatusFlagChanges/CLC.i: cpu/InstructionSet/StatusFlagChanges
 
 # target to preprocess a source file
 cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.cpp.i
 
 cpu/InstructionSet/StatusFlagChanges/CLC.s: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s
@@ -518,7 +518,7 @@ cpu/InstructionSet/StatusFlagChanges/CLC.s: cpu/InstructionSet/StatusFlagChanges
 
 # target to generate assembly for a file
 cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.cpp.s
 
 cpu/InstructionSet/StatusFlagChanges/CLD.obj: cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
@@ -527,7 +527,7 @@ cpu/InstructionSet/StatusFlagChanges/CLD.obj: cpu/InstructionSet/StatusFlagChang
 
 # target to build an object file
 cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj
 
 cpu/InstructionSet/StatusFlagChanges/CLD.i: cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i
@@ -536,7 +536,7 @@ cpu/InstructionSet/StatusFlagChanges/CLD.i: cpu/InstructionSet/StatusFlagChanges
 
 # target to preprocess a source file
 cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.cpp.i
 
 cpu/InstructionSet/StatusFlagChanges/CLD.s: cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s
@@ -545,7 +545,7 @@ cpu/InstructionSet/StatusFlagChanges/CLD.s: cpu/InstructionSet/StatusFlagChanges
 
 # target to generate assembly for a file
 cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLD.cpp.s
 
 cpu/InstructionSet/StatusFlagChanges/CLI.obj: cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
@@ -554,7 +554,7 @@ cpu/InstructionSet/StatusFlagChanges/CLI.obj: cpu/InstructionSet/StatusFlagChang
 
 # target to build an object file
 cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj
 
 cpu/InstructionSet/StatusFlagChanges/CLI.i: cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i
@@ -563,7 +563,7 @@ cpu/InstructionSet/StatusFlagChanges/CLI.i: cpu/InstructionSet/StatusFlagChanges
 
 # target to preprocess a source file
 cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.cpp.i
 
 cpu/InstructionSet/StatusFlagChanges/CLI.s: cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s
@@ -572,7 +572,7 @@ cpu/InstructionSet/StatusFlagChanges/CLI.s: cpu/InstructionSet/StatusFlagChanges
 
 # target to generate assembly for a file
 cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLI.cpp.s
 
 cpu/InstructionSet/StatusFlagChanges/CLV.obj: cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
@@ -581,7 +581,7 @@ cpu/InstructionSet/StatusFlagChanges/CLV.obj: cpu/InstructionSet/StatusFlagChang
 
 # target to build an object file
 cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.cpp.obj
 
 cpu/InstructionSet/StatusFlagChanges/CLV.i: cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i
@@ -590,7 +590,7 @@ cpu/InstructionSet/StatusFlagChanges/CLV.i: cpu/InstructionSet/StatusFlagChanges
 
 # target to preprocess a source file
 cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.cpp.i
 
 cpu/InstructionSet/StatusFlagChanges/CLV.s: cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s
@@ -599,7 +599,7 @@ cpu/InstructionSet/StatusFlagChanges/CLV.s: cpu/InstructionSet/StatusFlagChanges
 
 # target to generate assembly for a file
 cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLV.cpp.s
 
 cpu/InstructionSet/StatusFlagChanges/SEC.obj: cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
@@ -608,7 +608,7 @@ cpu/InstructionSet/StatusFlagChanges/SEC.obj: cpu/InstructionSet/StatusFlagChang
 
 # target to build an object file
 cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.cpp.obj
 
 cpu/InstructionSet/StatusFlagChanges/SEC.i: cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i
@@ -617,7 +617,7 @@ cpu/InstructionSet/StatusFlagChanges/SEC.i: cpu/InstructionSet/StatusFlagChanges
 
 # target to preprocess a source file
 cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.cpp.i
 
 cpu/InstructionSet/StatusFlagChanges/SEC.s: cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s
@@ -626,7 +626,7 @@ cpu/InstructionSet/StatusFlagChanges/SEC.s: cpu/InstructionSet/StatusFlagChanges
 
 # target to generate assembly for a file
 cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SEC.cpp.s
 
 cpu/InstructionSet/StatusFlagChanges/SED.obj: cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
@@ -635,7 +635,7 @@ cpu/InstructionSet/StatusFlagChanges/SED.obj: cpu/InstructionSet/StatusFlagChang
 
 # target to build an object file
 cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SED.cpp.obj
 
 cpu/InstructionSet/StatusFlagChanges/SED.i: cpu/InstructionSet/StatusFlagChanges/SED.cpp.i
@@ -644,7 +644,7 @@ cpu/InstructionSet/StatusFlagChanges/SED.i: cpu/InstructionSet/StatusFlagChanges
 
 # target to preprocess a source file
 cpu/InstructionSet/StatusFlagChanges/SED.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.i
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SED.cpp.i
 
 cpu/InstructionSet/StatusFlagChanges/SED.s: cpu/InstructionSet/StatusFlagChanges/SED.cpp.s
@@ -653,7 +653,7 @@ cpu/InstructionSet/StatusFlagChanges/SED.s: cpu/InstructionSet/StatusFlagChanges
 
 # target to generate assembly for a file
 cpu/InstructionSet/StatusFlagChanges/SED.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SED.cpp.s
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SED.cpp.s
 
 cpu/InstructionSet/StatusFlagChanges/SEI.obj: cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
@@ -662,7 +662,7 @@ cpu/InstructionSet/StatusFlagChanges/SEI.obj: cpu/InstructionSet/StatusFlagChang
 
 # target to build an object file
 cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj
 
 cpu/InstructionSet/StatusFlagChanges/SEI.i: cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i
@@ -671,7 +671,7 @@ cpu/InstructionSet/StatusFlagChanges/SEI.i: cpu/InstructionSet/StatusFlagChanges
 
 # target to preprocess a source file
 cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.cpp.i
 
 cpu/InstructionSet/StatusFlagChanges/SEI.s: cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s
@@ -680,7 +680,7 @@ cpu/InstructionSet/StatusFlagChanges/SEI.s: cpu/InstructionSet/StatusFlagChanges
 
 # target to generate assembly for a file
 cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s
 .PHONY : cpu/InstructionSet/StatusFlagChanges/SEI.cpp.s
 
 cpu/WriteRead/read.obj: cpu/WriteRead/read.cpp.obj
@@ -689,7 +689,7 @@ cpu/WriteRead/read.obj: cpu/WriteRead/read.cpp.obj
 
 # target to build an object file
 cpu/WriteRead/read.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/read.cpp.obj
 .PHONY : cpu/WriteRead/read.cpp.obj
 
 cpu/WriteRead/read.i: cpu/WriteRead/read.cpp.i
@@ -698,7 +698,7 @@ cpu/WriteRead/read.i: cpu/WriteRead/read.cpp.i
 
 # target to preprocess a source file
 cpu/WriteRead/read.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/read.cpp.i
 .PHONY : cpu/WriteRead/read.cpp.i
 
 cpu/WriteRead/read.s: cpu/WriteRead/read.cpp.s
@@ -707,7 +707,7 @@ cpu/WriteRead/read.s: cpu/WriteRead/read.cpp.s
 
 # target to generate assembly for a file
 cpu/WriteRead/read.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/read.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/read.cpp.s
 .PHONY : cpu/WriteRead/read.cpp.s
 
 cpu/WriteRead/write.obj: cpu/WriteRead/write.cpp.obj
@@ -716,7 +716,7 @@ cpu/WriteRead/write.obj: cpu/WriteRead/write.cpp.obj
 
 # target to build an object file
 cpu/WriteRead/write.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/write.cpp.obj
 .PHONY : cpu/WriteRead/write.cpp.obj
 
 cpu/WriteRead/write.i: cpu/WriteRead/write.cpp.i
@@ -725,7 +725,7 @@ cpu/WriteRead/write.i: cpu/WriteRead/write.cpp.i
 
 # target to preprocess a source file
 cpu/WriteRead/write.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/write.cpp.i
 .PHONY : cpu/WriteRead/write.cpp.i
 
 cpu/WriteRead/write.s: cpu/WriteRead/write.cpp.s
@@ -734,7 +734,7 @@ cpu/WriteRead/write.s: cpu/WriteRead/write.cpp.s
 
 # target to generate assembly for a file
 cpu/WriteRead/write.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/WriteRead/write.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/write.cpp.s
 .PHONY : cpu/WriteRead/write.cpp.s
 
 cpu/execute_instruction.obj: cpu/execute_instruction.cpp.obj
@@ -743,7 +743,7 @@ cpu/execute_instruction.obj: cpu/execute_instruction.cpp.obj
 
 # target to build an object file
 cpu/execute_instruction.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.obj
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/execute_instruction.cpp.obj
 .PHONY : cpu/execute_instruction.cpp.obj
 
 cpu/execute_instruction.i: cpu/execute_instruction.cpp.i
@@ -752,7 +752,7 @@ cpu/execute_instruction.i: cpu/execute_instruction.cpp.i
 
 # target to preprocess a source file
 cpu/execute_instruction.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.i
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/execute_instruction.cpp.i
 .PHONY : cpu/execute_instruction.cpp.i
 
 cpu/execute_instruction.s: cpu/execute_instruction.cpp.s
@@ -761,7 +761,7 @@ cpu/execute_instruction.s: cpu/execute_instruction.cpp.s
 
 # target to generate assembly for a file
 cpu/execute_instruction.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502_main.dir\build.make cpu6502/CMakeFiles/cpu6502_main.dir/cpu/execute_instruction.cpp.s
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/execute_instruction.cpp.s
 .PHONY : cpu/execute_instruction.cpp.s
 
 # Help Target
@@ -772,7 +772,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... cpu6502_main
+	@echo ... cpu6502
 	@echo ... cpu/InstructionSet/JumpsCalls/JMP.obj
 	@echo ... cpu/InstructionSet/JumpsCalls/JMP.i
 	@echo ... cpu/InstructionSet/JumpsCalls/JMP.s

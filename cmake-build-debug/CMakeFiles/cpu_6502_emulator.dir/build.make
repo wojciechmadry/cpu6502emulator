@@ -98,10 +98,10 @@ cpu_6502_emulator_EXTERNAL_OBJECTS =
 
 cpu_6502_emulator.exe: CMakeFiles/cpu_6502_emulator.dir/main.cpp.obj
 cpu_6502_emulator.exe: CMakeFiles/cpu_6502_emulator.dir/build.make
+cpu_6502_emulator.exe: cpu6502/libcpu6502.a
 cpu_6502_emulator.exe: tests/libcpu6502_tests.a
 cpu_6502_emulator.exe: cpu6502/memory/libcpu6502_memory.a
 cpu_6502_emulator.exe: cpu6502/registers/libcpu6502_registers.a
-cpu_6502_emulator.exe: cpu6502/libcpu6502_main.a
 cpu_6502_emulator.exe: CMakeFiles/cpu_6502_emulator.dir/linklibs.rsp
 cpu_6502_emulator.exe: CMakeFiles/cpu_6502_emulator.dir/objects1.rsp
 cpu_6502_emulator.exe: CMakeFiles/cpu_6502_emulator.dir/link.txt
