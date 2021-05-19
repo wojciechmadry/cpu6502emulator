@@ -23,4 +23,9 @@ namespace cpu6502::registers{
         _reg = NewRegValue;
     }
 
+    [[nodiscard]] Byte ProcessorStatus::pull_byte() const noexcept
+    {
+        return _reg;
+    }
+
 }

@@ -3,10 +3,9 @@ set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(registers)
 add_subdirectory(memory)
 
-
 add_library(
         cpu6502 STATIC
-        cpu/execute_instruction.cpp
+        cpu/cpu.cpp
         cpu.hpp
         cpu/InstructionSet/LoadStoreOperations/LDA.cpp
         cpu/InstructionSet/LoadStoreOperations/LDX.cpp
@@ -28,13 +27,21 @@ add_library(
         cpu/InstructionSet/JumpsCalls/JSR.cpp
         cpu/InstructionSet/JumpsCalls/JMP.cpp
         cpu/InstructionSet/JumpsCalls/RTS.cpp
-        cpu/InstructionSet/opcode.hpp
+        cpu/InstructionSet/StackOperations/PHA.cpp
+        cpu/InstructionSet/StackOperations/PHP.cpp
+        cpu/InstructionSet/StackOperations/PLA.cpp
+        cpu/InstructionSet/StackOperations/PLP.cpp
+        cpu/InstructionSet/StackOperations/TSX.cpp
+        cpu/InstructionSet/StackOperations/TXS.cpp
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
         required.hpp
+        cpu/InstructionSet/opcode.hpp
 )
 
-target_link_libraries(cpu6502 cpu6502_memory cpu6502_registers)
+target_link_libraries(cpu6502
+        cpu6502_memory
+        cpu6502_registers)
 
 set_target_properties(cpu6502 PROPERTIES LINKER_LANGUAGE CXX)
 target_compile_options(cpu6502 PRIVATE -O3 -Wextra -Werror -W -Wshadow -Wdouble-promotion -Wformat=2 -Wundef -fno-common -Wconversion -pedantic -Wall)

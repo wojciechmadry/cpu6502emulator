@@ -494,6 +494,168 @@ cpu/InstructionSet/RegisterTransfers/TYA.cpp.s:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
 .PHONY : cpu/InstructionSet/RegisterTransfers/TYA.cpp.s
 
+cpu/InstructionSet/StackOperations/PHA.obj: cpu/InstructionSet/StackOperations/PHA.cpp.obj
+
+.PHONY : cpu/InstructionSet/StackOperations/PHA.obj
+
+# target to build an object file
+cpu/InstructionSet/StackOperations/PHA.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHA.cpp.obj
+.PHONY : cpu/InstructionSet/StackOperations/PHA.cpp.obj
+
+cpu/InstructionSet/StackOperations/PHA.i: cpu/InstructionSet/StackOperations/PHA.cpp.i
+
+.PHONY : cpu/InstructionSet/StackOperations/PHA.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StackOperations/PHA.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHA.cpp.i
+.PHONY : cpu/InstructionSet/StackOperations/PHA.cpp.i
+
+cpu/InstructionSet/StackOperations/PHA.s: cpu/InstructionSet/StackOperations/PHA.cpp.s
+
+.PHONY : cpu/InstructionSet/StackOperations/PHA.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StackOperations/PHA.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHA.cpp.s
+.PHONY : cpu/InstructionSet/StackOperations/PHA.cpp.s
+
+cpu/InstructionSet/StackOperations/PHP.obj: cpu/InstructionSet/StackOperations/PHP.cpp.obj
+
+.PHONY : cpu/InstructionSet/StackOperations/PHP.obj
+
+# target to build an object file
+cpu/InstructionSet/StackOperations/PHP.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHP.cpp.obj
+.PHONY : cpu/InstructionSet/StackOperations/PHP.cpp.obj
+
+cpu/InstructionSet/StackOperations/PHP.i: cpu/InstructionSet/StackOperations/PHP.cpp.i
+
+.PHONY : cpu/InstructionSet/StackOperations/PHP.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StackOperations/PHP.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHP.cpp.i
+.PHONY : cpu/InstructionSet/StackOperations/PHP.cpp.i
+
+cpu/InstructionSet/StackOperations/PHP.s: cpu/InstructionSet/StackOperations/PHP.cpp.s
+
+.PHONY : cpu/InstructionSet/StackOperations/PHP.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StackOperations/PHP.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHP.cpp.s
+.PHONY : cpu/InstructionSet/StackOperations/PHP.cpp.s
+
+cpu/InstructionSet/StackOperations/PLA.obj: cpu/InstructionSet/StackOperations/PLA.cpp.obj
+
+.PHONY : cpu/InstructionSet/StackOperations/PLA.obj
+
+# target to build an object file
+cpu/InstructionSet/StackOperations/PLA.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLA.cpp.obj
+.PHONY : cpu/InstructionSet/StackOperations/PLA.cpp.obj
+
+cpu/InstructionSet/StackOperations/PLA.i: cpu/InstructionSet/StackOperations/PLA.cpp.i
+
+.PHONY : cpu/InstructionSet/StackOperations/PLA.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StackOperations/PLA.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLA.cpp.i
+.PHONY : cpu/InstructionSet/StackOperations/PLA.cpp.i
+
+cpu/InstructionSet/StackOperations/PLA.s: cpu/InstructionSet/StackOperations/PLA.cpp.s
+
+.PHONY : cpu/InstructionSet/StackOperations/PLA.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StackOperations/PLA.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLA.cpp.s
+.PHONY : cpu/InstructionSet/StackOperations/PLA.cpp.s
+
+cpu/InstructionSet/StackOperations/PLP.obj: cpu/InstructionSet/StackOperations/PLP.cpp.obj
+
+.PHONY : cpu/InstructionSet/StackOperations/PLP.obj
+
+# target to build an object file
+cpu/InstructionSet/StackOperations/PLP.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLP.cpp.obj
+.PHONY : cpu/InstructionSet/StackOperations/PLP.cpp.obj
+
+cpu/InstructionSet/StackOperations/PLP.i: cpu/InstructionSet/StackOperations/PLP.cpp.i
+
+.PHONY : cpu/InstructionSet/StackOperations/PLP.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StackOperations/PLP.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLP.cpp.i
+.PHONY : cpu/InstructionSet/StackOperations/PLP.cpp.i
+
+cpu/InstructionSet/StackOperations/PLP.s: cpu/InstructionSet/StackOperations/PLP.cpp.s
+
+.PHONY : cpu/InstructionSet/StackOperations/PLP.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StackOperations/PLP.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLP.cpp.s
+.PHONY : cpu/InstructionSet/StackOperations/PLP.cpp.s
+
+cpu/InstructionSet/StackOperations/TSX.obj: cpu/InstructionSet/StackOperations/TSX.cpp.obj
+
+.PHONY : cpu/InstructionSet/StackOperations/TSX.obj
+
+# target to build an object file
+cpu/InstructionSet/StackOperations/TSX.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TSX.cpp.obj
+.PHONY : cpu/InstructionSet/StackOperations/TSX.cpp.obj
+
+cpu/InstructionSet/StackOperations/TSX.i: cpu/InstructionSet/StackOperations/TSX.cpp.i
+
+.PHONY : cpu/InstructionSet/StackOperations/TSX.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StackOperations/TSX.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TSX.cpp.i
+.PHONY : cpu/InstructionSet/StackOperations/TSX.cpp.i
+
+cpu/InstructionSet/StackOperations/TSX.s: cpu/InstructionSet/StackOperations/TSX.cpp.s
+
+.PHONY : cpu/InstructionSet/StackOperations/TSX.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StackOperations/TSX.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TSX.cpp.s
+.PHONY : cpu/InstructionSet/StackOperations/TSX.cpp.s
+
+cpu/InstructionSet/StackOperations/TXS.obj: cpu/InstructionSet/StackOperations/TXS.cpp.obj
+
+.PHONY : cpu/InstructionSet/StackOperations/TXS.obj
+
+# target to build an object file
+cpu/InstructionSet/StackOperations/TXS.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TXS.cpp.obj
+.PHONY : cpu/InstructionSet/StackOperations/TXS.cpp.obj
+
+cpu/InstructionSet/StackOperations/TXS.i: cpu/InstructionSet/StackOperations/TXS.cpp.i
+
+.PHONY : cpu/InstructionSet/StackOperations/TXS.i
+
+# target to preprocess a source file
+cpu/InstructionSet/StackOperations/TXS.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TXS.cpp.i
+.PHONY : cpu/InstructionSet/StackOperations/TXS.cpp.i
+
+cpu/InstructionSet/StackOperations/TXS.s: cpu/InstructionSet/StackOperations/TXS.cpp.s
+
+.PHONY : cpu/InstructionSet/StackOperations/TXS.s
+
+# target to generate assembly for a file
+cpu/InstructionSet/StackOperations/TXS.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TXS.cpp.s
+.PHONY : cpu/InstructionSet/StackOperations/TXS.cpp.s
+
 cpu/InstructionSet/StatusFlagChanges/CLC.obj: cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj
 
 .PHONY : cpu/InstructionSet/StatusFlagChanges/CLC.obj
@@ -737,32 +899,32 @@ cpu/WriteRead/write.cpp.s:
 	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/write.cpp.s
 .PHONY : cpu/WriteRead/write.cpp.s
 
-cpu/execute_instruction.obj: cpu/execute_instruction.cpp.obj
+cpu/cpu.obj: cpu/cpu.cpp.obj
 
-.PHONY : cpu/execute_instruction.obj
+.PHONY : cpu/cpu.obj
 
 # target to build an object file
-cpu/execute_instruction.cpp.obj:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/execute_instruction.cpp.obj
-.PHONY : cpu/execute_instruction.cpp.obj
+cpu/cpu.cpp.obj:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/cpu.cpp.obj
+.PHONY : cpu/cpu.cpp.obj
 
-cpu/execute_instruction.i: cpu/execute_instruction.cpp.i
+cpu/cpu.i: cpu/cpu.cpp.i
 
-.PHONY : cpu/execute_instruction.i
+.PHONY : cpu/cpu.i
 
 # target to preprocess a source file
-cpu/execute_instruction.cpp.i:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/execute_instruction.cpp.i
-.PHONY : cpu/execute_instruction.cpp.i
+cpu/cpu.cpp.i:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/cpu.cpp.i
+.PHONY : cpu/cpu.cpp.i
 
-cpu/execute_instruction.s: cpu/execute_instruction.cpp.s
+cpu/cpu.s: cpu/cpu.cpp.s
 
-.PHONY : cpu/execute_instruction.s
+.PHONY : cpu/cpu.s
 
 # target to generate assembly for a file
-cpu/execute_instruction.cpp.s:
-	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/execute_instruction.cpp.s
-.PHONY : cpu/execute_instruction.cpp.s
+cpu/cpu.cpp.s:
+	cd /d F:\CPU6502\cpu-6502-emulator\cmake-build-release && $(MAKE) $(MAKESILENT) -f cpu6502\CMakeFiles\cpu6502.dir\build.make cpu6502/CMakeFiles/cpu6502.dir/cpu/cpu.cpp.s
+.PHONY : cpu/cpu.cpp.s
 
 # Help Target
 help:
@@ -812,6 +974,24 @@ help:
 	@echo ... cpu/InstructionSet/RegisterTransfers/TYA.obj
 	@echo ... cpu/InstructionSet/RegisterTransfers/TYA.i
 	@echo ... cpu/InstructionSet/RegisterTransfers/TYA.s
+	@echo ... cpu/InstructionSet/StackOperations/PHA.obj
+	@echo ... cpu/InstructionSet/StackOperations/PHA.i
+	@echo ... cpu/InstructionSet/StackOperations/PHA.s
+	@echo ... cpu/InstructionSet/StackOperations/PHP.obj
+	@echo ... cpu/InstructionSet/StackOperations/PHP.i
+	@echo ... cpu/InstructionSet/StackOperations/PHP.s
+	@echo ... cpu/InstructionSet/StackOperations/PLA.obj
+	@echo ... cpu/InstructionSet/StackOperations/PLA.i
+	@echo ... cpu/InstructionSet/StackOperations/PLA.s
+	@echo ... cpu/InstructionSet/StackOperations/PLP.obj
+	@echo ... cpu/InstructionSet/StackOperations/PLP.i
+	@echo ... cpu/InstructionSet/StackOperations/PLP.s
+	@echo ... cpu/InstructionSet/StackOperations/TSX.obj
+	@echo ... cpu/InstructionSet/StackOperations/TSX.i
+	@echo ... cpu/InstructionSet/StackOperations/TSX.s
+	@echo ... cpu/InstructionSet/StackOperations/TXS.obj
+	@echo ... cpu/InstructionSet/StackOperations/TXS.i
+	@echo ... cpu/InstructionSet/StackOperations/TXS.s
 	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.obj
 	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.i
 	@echo ... cpu/InstructionSet/StatusFlagChanges/CLC.s
@@ -839,9 +1019,9 @@ help:
 	@echo ... cpu/WriteRead/write.obj
 	@echo ... cpu/WriteRead/write.i
 	@echo ... cpu/WriteRead/write.s
-	@echo ... cpu/execute_instruction.obj
-	@echo ... cpu/execute_instruction.i
-	@echo ... cpu/execute_instruction.s
+	@echo ... cpu/cpu.obj
+	@echo ... cpu/cpu.i
+	@echo ... cpu/cpu.s
 .PHONY : help
 
 

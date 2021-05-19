@@ -11,10 +11,10 @@ namespace cpu6502{
         LookUpTable[cast(op::Implied)] = [](u32& Cycles, CPU& cpu) -> void
         {
             // 5 cycles
-            Word PC = cpu.fetch_word_from_stack(Cycles);
-            // 3 cycles
+            Word PC = cpu.pop_word_from_stack(Cycles);
+            // 2 cycles
             cpu.cpu_reg.PC.set(PC + 1);
-            Cycles -= 3; // ?????????
+            Cycles -= 2; // ?????????
             // 0 cycles
         };
     }

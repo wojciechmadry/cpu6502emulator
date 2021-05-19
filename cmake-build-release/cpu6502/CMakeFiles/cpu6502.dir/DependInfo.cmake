@@ -17,6 +17,12 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TAY.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TAY.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TXA.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TXA.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TYA.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/RegisterTransfers/TYA.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PHA.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHA.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PHP.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PHP.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PLA.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLA.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PLP.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/PLP.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/TSX.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TSX.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/TXS.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StackOperations/TXS.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLC.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLC.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLD.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLD.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLI.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/CLI.cpp.obj"
@@ -26,7 +32,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/SEI.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/InstructionSet/StatusFlagChanges/SEI.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/read.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/read.cpp.obj"
   "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/write.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/WriteRead/write.cpp.obj"
-  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/execute_instruction.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/execute_instruction.cpp.obj"
+  "F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/cpu.cpp" "F:/CPU6502/cpu-6502-emulator/cmake-build-release/cpu6502/CMakeFiles/cpu6502.dir/cpu/cpu.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

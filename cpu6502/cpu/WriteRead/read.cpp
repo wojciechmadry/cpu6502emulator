@@ -31,17 +31,19 @@ namespace cpu6502{
         return mem.get().read_word(Address);
     }
 
-    [[nodiscard]] Word CPU::fetch_word_from_stack(u32& Cycles) noexcept
+    [[nodiscard]] Word CPU::pop_word_from_stack(u32& Cycles) noexcept
     {
         Word Data = read_word(cpu_reg.SP.get() - 2,Cycles);
         cpu_reg.SP.decrement(2);
+        --Cycles;
         return Data;
     }
 
-    [[nodiscard]] Byte CPU::fetch_byte_from_stack(u32& Cycles) noexcept
+    [[nodiscard]] Byte CPU::pop_byte_from_stack(u32& Cycles) noexcept
     {
         Byte Data = read_byte(cpu_reg.SP.get() - 1,Cycles);
         cpu_reg.SP.decrement();
+        --Cycles;
         return Data;
     }
 }

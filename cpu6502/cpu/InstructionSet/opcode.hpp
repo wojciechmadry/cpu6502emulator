@@ -2,6 +2,9 @@
 #define CPU_6502_processor_opcode
 
 namespace cpu6502::opcode{
+
+    // *** Load/Store Operations ***
+
     //Load Accumulator opcode
     enum class LDA : Byte {
         Immediate = 0xA9, // 2 cycles - Implemented
@@ -50,18 +53,22 @@ namespace cpu6502::opcode{
     // Store X Register opcode
     enum class STX : Byte
     {
-        ZeroPage = 0x86, // 3 cycles
-        ZeroPageY = 0x96, // 4 cycles
-        Absolute = 0x8E // 4 cycles
+        ZeroPage = 0x86, // 3 cycles - Implemented
+        ZeroPageY = 0x96, // 4 cycles - Implemented
+        Absolute = 0x8E // 4 cycles - Implemented
     };
 
     // Store Y Register opcode
     enum class STY : Byte
     {
-        ZeroPage = 0x84, // 3 cycles
-        ZeroPageX = 0x94, // 4 cycles
-        Absolute = 0x8C // 4 cycles
+        ZeroPage = 0x84, // 3 cycles - Implemented
+        ZeroPageX = 0x94, // 4 cycles- Implemented
+        Absolute = 0x8C // 4 cycles- Implemented
     };
+
+    // *** Load/Store Operations ***
+
+    // *** Jump & Calls ***
 
     //Jump to Subroutine opcode
     enum class JSR : Byte{
@@ -78,6 +85,10 @@ namespace cpu6502::opcode{
     enum class RTS : Byte{
         Implied = 0x60 // 6 cycles - Implemented im not sure if its working good.
     };
+
+    // *** Jump & Calls ***
+
+    // *** Status Flag Changes ***
 
     //Clear carry flag
     enum class CLC : Byte{
@@ -114,6 +125,10 @@ namespace cpu6502::opcode{
         Implied = 0x78 // 2 cycles - implemented
     };
 
+    // *** Status Flag Changes ***
+
+    // *** Register Transfers ***
+
     // Transfer Accumulator to X
     enum class TAX : Byte
     {
@@ -137,5 +152,54 @@ namespace cpu6502::opcode{
     {
         Implied = 0x98 // 2 cycles - Implemented
     };
+
+    // *** Register Transfers ***
+
+    // *** Stack Operations ***
+
+    // Transfer stack pointer to X
+
+    enum class TSX : Byte
+    {
+        Implied = 0xBA // 2 cycles - Implemented
+    };
+
+    // Transfer X to stack pointer
+
+    enum class TXS : Byte
+    {
+        Implied = 0x9A // 2 cycles - Implemented
+    };
+
+    // Push accumulator on stack
+
+    enum class PHA : Byte
+    {
+        Implied = 0xBA // 3 cycles - Implemented
+    };
+
+    // Push processor status on stack
+
+    enum class PHP : Byte
+    {
+        Implied = 0x08 // 3 cycles - Implemented
+    };
+
+    // Pull accumulator from stack
+
+    enum class PLA : Byte
+    {
+        Implied = 0x68 // 4 cycles - Implemented
+    };
+
+    // Pull processor status from stack
+
+    enum class PLP : Byte
+    {
+        Implied = 0x28 // 4 cycles - Implemented
+    };
+
+    // *** Stack Operations ***
+
 }
 #endif

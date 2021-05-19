@@ -43,6 +43,12 @@ namespace cpu6502{
             TAY();
             TXA();
             TYA();
+            TSX();
+            TXS();
+            PHA();
+            PHP();
+            PLA();
+            PLP();
             LookUpTableInit = true;
         }
     }

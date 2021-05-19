@@ -28,6 +28,8 @@ namespace cpu6502::registers
         void set(Flags flag,  bool NewFlagValue) noexcept;
 
         void put_byte(Byte NewRegValue) noexcept;
+
+        [[nodiscard]] Byte pull_byte() const noexcept;
     };
 
 }

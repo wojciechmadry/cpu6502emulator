@@ -316,6 +316,24 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/RegisterTransfers/TYA.cpp">
 			<Option target="cpu6502"/>
 		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PHA.cpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PHP.cpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PLA.cpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/PLP.cpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/TSX.cpp">
+			<Option target="cpu6502"/>
+		</Unit>
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StackOperations/TXS.cpp">
+			<Option target="cpu6502"/>
+		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/InstructionSet/StatusFlagChanges/CLC.cpp">
 			<Option target="cpu6502"/>
 		</Unit>
@@ -346,7 +364,7 @@
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/WriteRead/write.cpp">
 			<Option target="cpu6502"/>
 		</Unit>
-		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/execute_instruction.cpp">
+		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/cpu/cpu.cpp">
 			<Option target="cpu6502"/>
 		</Unit>
 		<Unit filename="F:/CPU6502/cpu-6502-emulator/cpu6502/memory/memory.cpp">
