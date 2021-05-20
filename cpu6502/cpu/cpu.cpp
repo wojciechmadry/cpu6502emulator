@@ -17,42 +17,12 @@ namespace cpu6502{
         mem.get().initialise();
     }
 
-
     CPU::CPU(cpu6502::Memory &memory) noexcept: mem(memory)
     {
         reset();
         if (!LookUpTableInit)
         {
-            LDA();
-            LDX();
-            JSR();
-            JMP();
-            RTS();
-            LDY();
-            STA();
-            STX();
-            STY();
-            CLC();
-            CLD();
-            CLI();
-            CLV();
-            SEC();
-            SED();
-            SEI();
-            TAX();
-            TAY();
-            TXA();
-            TYA();
-            TSX();
-            TXS();
-            PHA();
-            PHP();
-            PLA();
-            PLP();
-            AND();
-            EOR();
-            ORA();
-            BIT();
+            _init();
             LookUpTableInit = true;
         }
     }
@@ -69,5 +39,40 @@ namespace cpu6502{
 
             assert(Cycles < OldCycles);
         }
+    }
+
+
+    void CPU::_init() noexcept
+    {
+        LDA();
+        LDX();
+        JSR();
+        JMP();
+        RTS();
+        LDY();
+        STA();
+        STX();
+        STY();
+        CLC();
+        CLD();
+        CLI();
+        CLV();
+        SEC();
+        SED();
+        SEI();
+        TAX();
+        TAY();
+        TXA();
+        TYA();
+        TSX();
+        TXS();
+        PHA();
+        PHP();
+        PLA();
+        PLP();
+        AND();
+        EOR();
+        ORA();
+        BIT();
     }
 }

@@ -206,44 +206,44 @@ namespace cpu6502::opcode{
 
     enum class AND : Byte
     {
-        Immediate = 0x29, // 2 Cycles
-        ZeroPage = 0x25,  // 3 Cycles
-        ZeroPageX = 0x35, // 4 Cycles
-        Absolute = 0x2D,  // 4 Cycles
-        AbsoluteX = 0x3D, // 4 (+1 if page crossed) Cycles
-        AbsoluteY = 0x39, // 4 (+1 if page crossed)  Cycles
-        IndirectX = 0x21, // 6 Cycles
-        IndirectY = 0x31  // 5 (+1 if page crossed)  Cycles
+        Immediate = 0x29, // 2 Cycles - Implemented
+        ZeroPage = 0x25,  // 3 Cycles - Implemented
+        ZeroPageX = 0x35, // 4 Cycles - Implemented
+        Absolute = 0x2D,  // 4 Cycles - Implemented
+        AbsoluteX = 0x3D, // 4 (+1 if page crossed) Cycles - Implemented
+        AbsoluteY = 0x39, // 4 (+1 if page crossed)  Cycles - Implemented
+        IndirectX = 0x21, // 6 Cycles - Implemented
+        IndirectY = 0x31  // 5 (+1 if page crossed)  Cycles - Implemented
     };
 
     enum class EOR : Byte
     {
-        Immediate = 0x49, // 2 Cycles
-        ZeroPage = 0x45,  // 3 Cycles
-        ZeroPageX = 0x55, // 4 Cycles
-        Absolute = 0x4D,  // 4 Cycles
-        AbsoluteX = 0x5D, // 4 (+1 if page crossed) Cycles
-        AbsoluteY = 0x59, // 4 (+1 if page crossed)  Cycles
-        IndirectX = 0x41, // 6 Cycles
-        IndirectY = 0x51  // 5 (+1 if page crossed)  Cycles
+        Immediate = 0x49, // 2 Cycles - Implemented
+        ZeroPage = 0x45,  // 3 Cycles - Implemented
+        ZeroPageX = 0x55, // 4 Cycles - Implemented
+        Absolute = 0x4D,  // 4 Cycles - Implemented
+        AbsoluteX = 0x5D, // 4 (+1 if page crossed) Cycles - Implemented
+        AbsoluteY = 0x59, // 4 (+1 if page crossed) Cycles - Implemented
+        IndirectX = 0x41, // 6 Cycles - Implemented
+        IndirectY = 0x51  // 5 (+1 if page crossed)  Cycles - Implemented
     };
 
     enum class ORA : Byte
     {
-        Immediate = 0x09, // 2 Cycles
-        ZeroPage = 0x05,  // 3 Cycles
-        ZeroPageX = 0x15, // 4 Cycles
-        Absolute = 0x0D,  // 4 Cycles
-        AbsoluteX = 0x1D, // 4 (+1 if page crossed) Cycles
-        AbsoluteY = 0x19, // 4 (+1 if page crossed)  Cycles
-        IndirectX = 0x01, // 6 Cycles
-        IndirectY = 0x11  // 5 (+1 if page crossed)  Cycles
+        Immediate = 0x09, // 2 Cycles - Implemented
+        ZeroPage = 0x05,  // 3 Cycles - Implemented
+        ZeroPageX = 0x15, // 4 Cycles - Implemented
+        Absolute = 0x0D,  // 4 Cycles - Implemented
+        AbsoluteX = 0x1D, // 4 (+1 if page crossed) Cycles - Implemented
+        AbsoluteY = 0x19, // 4 (+1 if page crossed)  Cycles - Implemented
+        IndirectX = 0x01, // 6 Cycles - Implemented
+        IndirectY = 0x11  // 5 (+1 if page crossed)  Cycles - Implemented
     };
 
     enum class BIT : Byte
     {
-        ZeroPage = 0x24,  // 3 Cycles
-        Absolute = 0x2C,  // 4 Cycles
+        ZeroPage = 0x24,  // 3 Cycles - Implemented
+        Absolute = 0x2C,  // 4 Cycles - Implemented
     };
 
     // *** Logical ***

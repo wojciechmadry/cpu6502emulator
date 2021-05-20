@@ -44,49 +44,50 @@ namespace cpu6502
         //Initialise Instruction Set in LookUpTable
 
         // Load/Store Operations
-        void LDA() noexcept; // Load Accumulator
-        void LDX() noexcept; // Load X Register
-        void LDY() noexcept; // Load Y Register
-        void STA() noexcept; // Store Accumulator
-        void STX() noexcept; // Store X Register
-        void STY() noexcept; // Store Y Register
+        static void LDA() noexcept; // Load Accumulator
+        static void LDX() noexcept; // Load X Register
+        static void LDY() noexcept; // Load Y Register
+        static void STA() noexcept; // Store Accumulator
+        static void STX() noexcept; // Store X Register
+        static void STY() noexcept; // Store Y Register
 
         // Jumps & Calls
-        void JSR() noexcept; // Jump to a subroutine
-        void JMP() noexcept; // Jump to another location
-        void RTS() noexcept; // Return from Subroutine
+        static void JSR() noexcept; // Jump to a subroutine
+        static void JMP() noexcept; // Jump to another location
+        static void RTS() noexcept; // Return from Subroutine
 
         // Status Flag Changes
-        void CLC() noexcept; // Clear carry flag
-        void CLD() noexcept; // Clear decimal mode flag
-        void CLI() noexcept; // Clear interrupt disable flag
-        void CLV() noexcept; // Clear overflow flag
-        void SEC() noexcept; // Set carry flag
-        void SED() noexcept; // Set decimal mode flag
-        void SEI() noexcept; // Set interrupt disable flag
+        static void CLC() noexcept; // Clear carry flag
+        static void CLD() noexcept; // Clear decimal mode flag
+        static void CLI() noexcept; // Clear interrupt disable flag
+        static void CLV() noexcept; // Clear overflow flag
+        static void SEC() noexcept; // Set carry flag
+        static void SED() noexcept; // Set decimal mode flag
+        static void SEI() noexcept; // Set interrupt disable flag
 
         // Register Transfers
-        void TAX() noexcept; // Transfer Accumulator to X
-        void TAY() noexcept; // Trnasfer Accumulator to Y
-        void TXA() noexcept; // Trnasfer X to Accumulator
-        void TYA() noexcept; // Trnasfer Y to Accumulator
+        static void TAX() noexcept; // Transfer Accumulator to X
+        static void TAY() noexcept; // Transfer Accumulator to Y
+        static void TXA() noexcept; // Transfer X to Accumulator
+        static void TYA() noexcept; // Transfer Y to Accumulator
 
 
         // Stack Operations
-        void TSX() noexcept;
-        void TXS() noexcept;
-        void PHA() noexcept;
-        void PHP() noexcept;
-        void PLA() noexcept;
-        void PLP() noexcept;
+        static void TSX() noexcept; // Transfer stack pointer to X
+        static void TXS() noexcept; // Transfer X to stack pointer
+        static void PHA() noexcept; // Push accumulator on stack
+        static void PHP() noexcept; // Push processor status on stack
+        static void PLA() noexcept; // Pull accumulator from stack
+        static void PLP() noexcept; // Pull processor status from stack
 
         // LOGICAL
-        void AND() noexcept;
-        void EOR() noexcept;
-        void ORA() noexcept;
-        void BIT() noexcept;
-
+        static void AND() noexcept; // Logical AND
+        static void EOR() noexcept; // Exclusive OR
+        static void ORA() noexcept; // Logical Inclusive OR
+        static void BIT() noexcept; // Bit Test
         // END - Instruction Set
+
+        static void _init() noexcept;
     public:
         CPU() = delete;
         CPU(const CPU&) = delete;
