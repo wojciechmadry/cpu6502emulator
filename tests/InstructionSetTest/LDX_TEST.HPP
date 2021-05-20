@@ -7,7 +7,6 @@
 namespace CPU6502_TEST::inner{
     bool LDX_TEST() noexcept
     {
-/*
         bool all_good = true;
 
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
@@ -180,8 +179,6 @@ namespace CPU6502_TEST::inner{
         //END ASSERT LDX - Absolute Y
 
         return all_good;
-        */
-     return true;
     }
 }
 #endif
