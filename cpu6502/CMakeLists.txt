@@ -33,6 +33,10 @@ add_library(
         cpu/InstructionSet/StackOperations/PLP.cpp
         cpu/InstructionSet/StackOperations/TSX.cpp
         cpu/InstructionSet/StackOperations/TXS.cpp
+        cpu/InstructionSet/Logical/AND.cpp
+        cpu/InstructionSet/Logical/EOR.cpp
+        cpu/InstructionSet/Logical/ORA.cpp
+        cpu/InstructionSet/Logical/BIT.cpp
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
         required.hpp

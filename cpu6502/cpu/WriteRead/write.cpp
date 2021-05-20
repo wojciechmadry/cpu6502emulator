@@ -13,13 +13,16 @@ namespace cpu6502{
     }
     void CPU::push_word_to_stack(const Word Data, u32& Cycles) noexcept
     {
+        assert(cpu_reg.SP.get() > 1);
         write_word(Data, cpu_reg.SP.get(), Cycles);
-        cpu_reg.SP.increment(2);
+        cpu_reg.SP.decrement(2);
     }
 
     void CPU::push_byte_to_stack(const Byte Data, u32& Cycles) noexcept
     {
+        assert(cpu_reg.SP.get() != 0);
         write_byte(Data, cpu_reg.SP.get(), Cycles);
-        cpu_reg.SP.increment();
+        cpu_reg.SP.decrement();
+        --Cycles;
     }
 }

@@ -21,7 +21,9 @@ TODO
 - [ ] Add all `instruction set`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
 - [ ] I'm not sure about `page crossing` (need to check that)
-- [ ] Add test to `Stack Operations`
+- [ ] Implement `Logical` instruction set (`AND`, `EOR`, `ORA`, `BIT`)
+- [ ] Add test to `Logical`
+- [X] Add test to `Stack Operations`
 - [X] Implement `Stack Operations` instruction set (`TSX`, `TXS`, `PHA`, `PHP`, `PLA`, `PLP`)
 - [X] Upgrade all tests (They don't look good)
 - [x] Add test to `Register Transfers`

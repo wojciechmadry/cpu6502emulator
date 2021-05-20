@@ -80,6 +80,12 @@ namespace cpu6502
         void PLA() noexcept;
         void PLP() noexcept;
 
+        // LOGICAL
+        void AND() noexcept;
+        void EOR() noexcept;
+        void ORA() noexcept;
+        void BIT() noexcept;
+
         // END - Instruction Set
     public:
         CPU() = delete;

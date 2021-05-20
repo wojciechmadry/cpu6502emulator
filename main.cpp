@@ -20,6 +20,7 @@ int main(){
     //END program
     cpu.execute(2);
     cpu2.execute(2);
+
     std::cout << sizeof(cpu) << std::endl;
 
     return 0;

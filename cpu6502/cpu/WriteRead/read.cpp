@@ -33,16 +33,18 @@ namespace cpu6502{
 
     [[nodiscard]] Word CPU::pop_word_from_stack(u32& Cycles) noexcept
     {
-        Word Data = read_word(cpu_reg.SP.get() - 2,Cycles);
-        cpu_reg.SP.decrement(2);
+        assert(cpu_reg.SP.get() < 254);
+        Word Data = read_word(cpu_reg.SP.get() + 2,Cycles);
+        cpu_reg.SP.increment(2);
         --Cycles;
         return Data;
     }
 
     [[nodiscard]] Byte CPU::pop_byte_from_stack(u32& Cycles) noexcept
     {
-        Byte Data = read_byte(cpu_reg.SP.get() - 1,Cycles);
-        cpu_reg.SP.decrement();
+        assert(cpu_reg.SP.get() != 255);
+        Byte Data = read_byte(cpu_reg.SP.get() + 1,Cycles);
+        cpu_reg.SP.increment();
         --Cycles;
         return Data;
     }
