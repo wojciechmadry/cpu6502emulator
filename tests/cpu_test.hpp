@@ -11,6 +11,11 @@
 #include "InstructionSetTest/StatusFlagChanges.HPP"
 #include "InstructionSetTest/REGISTER_TRANSFER.HPP"
 #include "InstructionSetTest/STACK_OPERATIONS.HPP"
+#include "InstructionSetTest/AND.HPP"
+#include "InstructionSetTest/BIT.HPP"
+#include "InstructionSetTest/EOR.HPP"
+#include "InstructionSetTest/ORA.HPP"
+
 #include "time.hpp"
 
 namespace CPU6502_TEST::inner
@@ -77,6 +82,26 @@ namespace CPU6502_TEST::inner
         all_pass &= temp;
         if(!temp)
             std::cout << "STACK_OPERATIONS_TEST not pass ! \n";
+
+        temp = AND_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "AND_TEST not pass ! \n";
+
+        temp = BIT_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "BIT_TEST not pass ! \n";
+
+        temp = EOR_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "EOR_TEST not pass ! \n";
+
+        temp = ORA_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "ORA_TEST not pass ! \n";
         return all_pass;
     }
 }

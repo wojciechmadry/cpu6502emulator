@@ -6,7 +6,7 @@ namespace cpu6502{
         using op = cpu6502::opcode::AND;
         LookUpTable[static_cast<Byte>(op::Immediate)] = [](u32 &Cycles, CPU &cpu) -> void {
             //1 Cycles
-            cpu.cpu_reg.ACU.set(cpu.fetch_byte(Cycles) & cpu.cpu_reg.ACU.get());
+            cpu.cpu_reg.ACU.set( cpu.fetch_byte(Cycles) & cpu.cpu_reg.ACU.get());
             //0 Cycles
 
             //Flag set

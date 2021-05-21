@@ -15,6 +15,10 @@ add_library(
         InstructionSetTest/StatusFlagChanges.HPP
         InstructionSetTest/REGISTER_TRANSFER.HPP
         InstructionSetTest/STACK_OPERATIONS.HPP
+        InstructionSetTest/AND.HPP
+        InstructionSetTest/BIT.HPP
+        InstructionSetTest/EOR.HPP
+        InstructionSetTest/EOR.HPP
         time.hpp
 )
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)
