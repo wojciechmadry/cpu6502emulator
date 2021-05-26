@@ -44,6 +44,7 @@ namespace cpu6502{
 
     void CPU::_init() noexcept
     {
+        BRANCHES();
         LDA();
         LDX();
         JSR();

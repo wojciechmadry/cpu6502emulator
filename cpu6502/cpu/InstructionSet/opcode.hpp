@@ -11,10 +11,10 @@ namespace cpu6502::opcode{
         ZeroPage = 0xA5, // 3 cycles - Implemented
         ZeroPageX = 0xB5, // 4 cycles - Implemented
         Absolute = 0xAD, // 4 cycles - Implemented
-        AbsoluteX = 0xBD, // 4 cycles (+1 if page crossed) - Implemented
-        AbsoluteY = 0xB9, // 4 cycles (+1 if page crossed) - Implemented
+        AbsoluteX = 0xBD, // 4 cycles (+1 if page crossed) - Implemented - Page Cross
+        AbsoluteY = 0xB9, // 4 cycles (+1 if page crossed) - Implemented - Page Cross
         IndirectX = 0xA1, // 6 cycles - Implemented
-        IndirectY = 0xB1 // 5 cycles (+1 if page crossed) - Implemented
+        IndirectY = 0xB1 // 5 cycles (+1 if page crossed) - Implemented - Page Cross
     };
 
     // Load X register opcode
@@ -24,7 +24,7 @@ namespace cpu6502::opcode{
         ZeroPage = 0xA6, // 3 cycles - Implemented
         ZeroPageY = 0xB6, // 4 cycles - Implemented
         Absolute = 0xAE, // 4 cycles - Implemented
-        AbsoluteY = 0xBE // 4 cycles (+1 if page crossed) - Implemented
+        AbsoluteY = 0xBE // 4 cycles (+1 if page crossed) - Implemented - Page Cross
     };
 
 
@@ -35,7 +35,7 @@ namespace cpu6502::opcode{
         ZeroPage = 0xA4, // 3 cycles - Implemented
         ZeroPageX = 0xB4, // 4 cycles - Implemented
         Absolute = 0xAC, // 4 cycles - Implemented
-        AbsoluteX = 0xBC // 4 cycles (+1 if page crossed) - Implemented
+        AbsoluteX = 0xBC // 4 cycles (+1 if page crossed) - Implemented - Page cross
     };
 
     //Store Accumulator opcode
@@ -210,10 +210,10 @@ namespace cpu6502::opcode{
         ZeroPage = 0x25,  // 3 Cycles - Implemented
         ZeroPageX = 0x35, // 4 Cycles - Implemented
         Absolute = 0x2D,  // 4 Cycles - Implemented
-        AbsoluteX = 0x3D, // 4 (+1 if page crossed) Cycles - Implemented
-        AbsoluteY = 0x39, // 4 (+1 if page crossed)  Cycles - Implemented
+        AbsoluteX = 0x3D, // 4 (+1 if page crossed) Cycles - Implemented - Page cross
+        AbsoluteY = 0x39, // 4 (+1 if page crossed)  Cycles - Implemented - Page cross
         IndirectX = 0x21, // 6 Cycles - Implemented
-        IndirectY = 0x31  // 5 (+1 if page crossed)  Cycles - Implemented
+        IndirectY = 0x31  // 5 (+1 if page crossed)  Cycles - Implemented - Page cross
     };
 
     enum class EOR : Byte
@@ -222,10 +222,10 @@ namespace cpu6502::opcode{
         ZeroPage = 0x45,  // 3 Cycles - Implemented
         ZeroPageX = 0x55, // 4 Cycles - Implemented
         Absolute = 0x4D,  // 4 Cycles - Implemented
-        AbsoluteX = 0x5D, // 4 (+1 if page crossed) Cycles - Implemented
-        AbsoluteY = 0x59, // 4 (+1 if page crossed) Cycles - Implemented
+        AbsoluteX = 0x5D, // 4 (+1 if page crossed) Cycles - Implemented - Page cross
+        AbsoluteY = 0x59, // 4 (+1 if page crossed) Cycles - Implemented - Page cross
         IndirectX = 0x41, // 6 Cycles - Implemented
-        IndirectY = 0x51  // 5 (+1 if page crossed)  Cycles - Implemented
+        IndirectY = 0x51  // 5 (+1 if page crossed)  Cycles - Implemented - Page cross
     };
 
     enum class ORA : Byte
@@ -234,10 +234,10 @@ namespace cpu6502::opcode{
         ZeroPage = 0x05,  // 3 Cycles - Implemented
         ZeroPageX = 0x15, // 4 Cycles - Implemented
         Absolute = 0x0D,  // 4 Cycles - Implemented
-        AbsoluteX = 0x1D, // 4 (+1 if page crossed) Cycles - Implemented
-        AbsoluteY = 0x19, // 4 (+1 if page crossed)  Cycles - Implemented
+        AbsoluteX = 0x1D, // 4 (+1 if page crossed) Cycles - Implemented - Page cross
+        AbsoluteY = 0x19, // 4 (+1 if page crossed)  Cycles - Implemented - Page cross
         IndirectX = 0x01, // 6 Cycles - Implemented
-        IndirectY = 0x11  // 5 (+1 if page crossed)  Cycles - Implemented
+        IndirectY = 0x11  // 5 (+1 if page crossed)  Cycles - Implemented - Page cross
     };
 
     enum class BIT : Byte
@@ -248,5 +248,48 @@ namespace cpu6502::opcode{
 
     // *** Logical ***
 
+    // *** Branches ***
+
+    enum class BCC : Byte
+    {
+        Relative = 0x90 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    enum class BCS : Byte
+    {
+        Relative = 0xB0 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    enum class BEQ : Byte
+    {
+        Relative = 0xF0 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    enum class BMI : Byte
+    {
+        Relative = 0x30 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    enum class BNE : Byte
+    {
+        Relative = 0xD0 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    enum class BPL : Byte
+    {
+        Relative = 0x10 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    enum class BVC : Byte
+    {
+        Relative = 0x50 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    enum class BVS : Byte
+    {
+        Relative = 0x70 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
+    };
+
+    // *** Branches ***
 }
 #endif

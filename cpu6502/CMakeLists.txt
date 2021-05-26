@@ -37,6 +37,7 @@ add_library(
         cpu/InstructionSet/Logical/EOR.cpp
         cpu/InstructionSet/Logical/ORA.cpp
         cpu/InstructionSet/Logical/BIT.cpp
+        cpu/InstructionSet/Branches/BRANCHES.cpp
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
         required.hpp

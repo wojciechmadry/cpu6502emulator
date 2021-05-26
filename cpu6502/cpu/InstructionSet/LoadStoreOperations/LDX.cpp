@@ -62,8 +62,9 @@ namespace cpu6502 {
             // 4 cycles
             Word address = cpu.fetch_word(Cycles);
             // 2 cycles
+            const auto OldAddress = address;
             address += cpu.cpu_reg.IRY.get();
-            if (cpu.cpu_reg.IRY.get() != 0)
+            if ((address >> 8) != (OldAddress>>8))
                 --Cycles;  // 1 cycles if page crossed
             cpu.cpu_reg.IRX.set(cpu.read_byte(address, Cycles));
             // 0 cycles

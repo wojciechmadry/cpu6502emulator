@@ -106,7 +106,7 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = 0x30;
         mem[PC++] = 0x30;
         mem[0x3030 + IRX] = ORA;
-        cpu.execute(5);
+        cpu.execute(4);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
@@ -119,7 +119,7 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = 0x30;
         mem[PC++] = 0x30;
         mem[0x3030 + IRY] = ORA;
-        cpu.execute(5);
+        cpu.execute(4);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
@@ -147,7 +147,7 @@ namespace CPU6502_TEST::inner{
         mem[0x15] = 0x35;
         mem[0x16] = 0x35;
         mem[0x3535 + IRY] = ORA;
-        cpu.execute(6);
+        cpu.execute(5);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;

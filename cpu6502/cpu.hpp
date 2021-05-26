@@ -85,7 +85,22 @@ namespace cpu6502
         static void EOR() noexcept; // Exclusive OR
         static void ORA() noexcept; // Logical Inclusive OR
         static void BIT() noexcept; // Bit Test
+
+        // BRANCHES
+        /*  BCC - Branch if carry flag clear
+         *  BCS - Branch if carry flag set
+         *  BEQ - Branch if zero flag set
+         *  BMI - Branch if negative flag set
+         *  BNE - Branch if zero flag clear
+         *  BPL - Branch if negative flag clear
+         *  BVC - Branch if overflow flag clear
+         *  BVS - Branch if overflow flag set
+         */
+        static void BRANCHES() noexcept;
+        void branch_if(u32& Cycles, bool If) noexcept;
         // END - Instruction Set
+
+
 
         static void _init() noexcept;
     public:

@@ -18,19 +18,22 @@ Progress in tutorial
 
 TODO
 ---
+
 - [ ] Add all `instruction set`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
-- [ ] I'm not sure about `page crossing` (need to check that)
-- [ ] Not sure about `IndirectX/Y`
-- [X] Add test to `Logical`
+- [X] Impement `Branches`
+    - [ ] Add test to `Branches`
+- [X] Not sure about `IndirectX/Y`
+- [X] I'm not sure about `page crossing` (need to check that)
 - [X] Implement `Logical` instruction set (`AND`, `EOR`, `ORA`, `BIT`)
-- [X] Add test to `Stack Operations`
+    - [X] Add test to `Logical`
 - [X] Implement `Stack Operations` instruction set (`TSX`, `TXS`, `PHA`, `PHP`, `PLA`, `PLP`)
+    - [X] Add test to `Stack Operations`
 - [X] Upgrade all tests (They don't look good)
-- [x] Add test to `Register Transfers`
-- [x] `Jump Calls` instruction set (`JMP`, `JSR`, `RTS`)
 - [x] Add all `registers`
 - [x] Memory
+- [x] `Jump Calls` instruction set (`JMP`, `JSR`, `RTS`)
 - [x] `Load & Store` instruction set (`LDA`, `LDX`, `LDY`, `STA`, `STX`, `STY`)
 - [x] `Register Transfers` instruction set (`TAX`, `TAY`, `TXA`, `TYA`)
+    - [x] Add test to `Register Transfers`
 - [x] `Status Flag Changes` instruction set (`CLC`, `CLD`, `CLI`, `CLV`, `SEC`, `SED`, `SEI`)
