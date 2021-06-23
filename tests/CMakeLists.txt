@@ -19,6 +19,7 @@ add_library(
         InstructionSetTest/BIT.HPP
         InstructionSetTest/EOR.HPP
         InstructionSetTest/EOR.HPP
+        InstructionSetTest/BRANCHES_TEST.HPP
         time.hpp
 )
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)

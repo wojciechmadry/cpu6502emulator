@@ -75,5 +75,10 @@ namespace cpu6502{
         EOR();
         ORA();
         BIT();
+        ADC();
+        CMP();
+        CPX();
+        CPY();
+        SBC();
     }
 }

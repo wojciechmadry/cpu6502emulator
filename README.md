@@ -20,9 +20,15 @@ TODO
 ---
 
 - [ ] Add all `instruction set`
+- [ ] Implement `Arithmetic` set
+    - [ ] Add test to `ADC`
+    - [ ] Add test to `SBC`
+    - [ ] Add test to `CMP`
+    - [ ] Add test to `CPX`
+    - [ ] Add test to `CPY`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
 - [X] Impement `Branches`
-    - [ ] Add test to `Branches`
+    - [X] Add test to `Branches`
 - [X] Not sure about `IndirectX/Y`
 - [X] I'm not sure about `page crossing` (need to check that)
 - [X] Implement `Logical` instruction set (`AND`, `EOR`, `ORA`, `BIT`)

@@ -15,6 +15,7 @@
 #include "InstructionSetTest/BIT.HPP"
 #include "InstructionSetTest/EOR.HPP"
 #include "InstructionSetTest/ORA.HPP"
+#include "InstructionSetTest/BRANCHES_TEST.HPP"
 
 #include "time.hpp"
 
@@ -102,6 +103,12 @@ namespace CPU6502_TEST::inner
         all_pass &= temp;
         if(!temp)
             std::cout << "ORA_TEST not pass ! \n";
+
+        temp = BRANCHES_TEST();
+        all_pass &= temp;
+        if(!temp)
+            std::cout << "BRANCHES_TEST not pass ! \n";
+
         return all_pass;
     }
 }

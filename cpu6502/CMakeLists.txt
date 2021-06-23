@@ -38,6 +38,11 @@ add_library(
         cpu/InstructionSet/Logical/ORA.cpp
         cpu/InstructionSet/Logical/BIT.cpp
         cpu/InstructionSet/Branches/BRANCHES.cpp
+        cpu/InstructionSet/Arithmetic/ADC.cpp
+        cpu/InstructionSet/Arithmetic/SBC.cpp
+        cpu/InstructionSet/Arithmetic/CMP.cpp
+        cpu/InstructionSet/Arithmetic/CPX.cpp
+        cpu/InstructionSet/Arithmetic/CPY.cpp
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
         required.hpp

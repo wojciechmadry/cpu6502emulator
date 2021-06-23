@@ -3,10 +3,67 @@
 
 namespace cpu6502::opcode{
 
+    // *** ARITHMETIC ***
+
+    // Add with Carry
+    enum class ADC : Byte
+    {
+        Immediate = 0x69, // 2 cycles
+        ZeroPage = 0x65, // 3 cycles
+        ZeroPageX = 0x75, // 4 cycles
+        Absolute = 0x6D, // 4 cycles
+        AbsoluteX = 0x7D, // 4 cycles (+1 if page crossed)
+        AbsoluteY = 0x79, // 4 cycles (+1 if page crossed)
+        IndirectX = 0x61, // 6 cycles
+        IndirectY = 0x71 // 5 cycles (+1 if page crossed)
+    };
+
+    // Subtrack with Carry
+    enum class SBC : Byte
+    {
+        Immediate = 0xE9, // 2 cycles
+        ZeroPage = 0xE5, // 3 cycles
+        ZeroPageX = 0xF5, // 4 cycles
+        Absolute = 0xED, // 4 cycles
+        AbsoluteX = 0xFD, // 4 cycles (+1 if page crossed)
+        AbsoluteY = 0xF9, // 4 cycles (+1 if page crossed)
+        IndirectX = 0xE1, // 6 cycles
+        IndirectY = 0xF1 // 5 cycles (+1 if page crossed)
+    };
+
+    // Compare
+    enum class CMP : Byte {
+        Immediate = 0xC9, // 2 cycles
+        ZeroPage = 0xC5, // 3 cycles
+        ZeroPageX = 0xD5, // 4 cycles
+        Absolute = 0xCD, // 4 cycles
+        AbsoluteX = 0xDD, // 4 cycles (+1 if page crossed)
+        AbsoluteY = 0xD9, // 4 cycles (+1 if page crossed)
+        IndirectX = 0xC1, // 6 cycles
+        IndirectY = 0xD1 // 5 cycles (+1 if page crossed)
+    };
+
+    // Compare X register
+    enum class CPX : Byte {
+        Immediate = 0xE0, // 2 cycles
+        ZeroPage = 0xE4, // 3 cycles
+        Absolute = 0xEC, // 4 cycles
+    };
+
+    // Compare Y register
+    enum class CPY : Byte {
+        Immediate = 0xC0, // 2 cycles
+        ZeroPage = 0xC4, // 3 cycles
+        Absolute = 0xCC, // 4 cycles
+    };
+
+    // *** ARITHMETIC ***
+
     // *** Load/Store Operations ***
 
     //Load Accumulator opcode
-    enum class LDA : Byte {
+    enum class LDA : Byte
+    {
         Immediate = 0xA9, // 2 cycles - Implemented
         ZeroPage = 0xA5, // 3 cycles - Implemented
         ZeroPageX = 0xB5, // 4 cycles - Implemented
@@ -71,18 +128,21 @@ namespace cpu6502::opcode{
     // *** Jump & Calls ***
 
     //Jump to Subroutine opcode
-    enum class JSR : Byte{
+    enum class JSR : Byte
+    {
         Absolute = 0x20 // 6 cycles - Implemented
     };
 
     //Jump to to another location opcode
-    enum class JMP : Byte{
+    enum class JMP : Byte
+    {
         Absolute = 0x4C, // 3 cycles - Implemented
         Indirect = 0x6C // 5 cycles - Implemented
     };
 
     //Return from Subroutine
-    enum class RTS : Byte{
+    enum class RTS : Byte
+    {
         Implied = 0x60 // 6 cycles - Implemented im not sure if its working good.
     };
 
@@ -91,37 +151,44 @@ namespace cpu6502::opcode{
     // *** Status Flag Changes ***
 
     //Clear carry flag
-    enum class CLC : Byte{
+    enum class CLC : Byte
+    {
         Implied = 0x18 // 2 cycles - implemented
     };
 
     //Clear decimal mode flag
-    enum class CLD : Byte{
+    enum class CLD : Byte
+    {
         Implied = 0xD8 // 2 cycles - implemented
     };
 
     //Clear interrupt disable flag
-    enum class CLI : Byte{
+    enum class CLI : Byte
+    {
         Implied = 0x58 // 2 cycles - implemented
     };
 
     //Clear overflow flag
-    enum class CLV : Byte{
+    enum class CLV : Byte
+    {
         Implied = 0xB8 // 2 cycles - implemented
     };
 
     //Set carry flag
-    enum class SEC : Byte{
+    enum class SEC : Byte
+    {
         Implied = 0x38 // 2 cycles - implemented
     };
 
     //Set decimal mode flag
-    enum class SED : Byte{
+    enum class SED : Byte
+    {
         Implied = 0xF8 // 2 cycles - implemented
     };
 
     //Set interrupt disable flag
-    enum class SEI : Byte{
+    enum class SEI : Byte
+    {
         Implied = 0x78 // 2 cycles - implemented
     };
 

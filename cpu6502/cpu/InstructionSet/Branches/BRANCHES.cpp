@@ -12,7 +12,7 @@ namespace cpu6502{
             --Cycles;
 
             // 1 Cycles
-            if ( (cpu_reg.PC.get() >> 8) != (PC>>8) )
+            if ( (cpu_reg.PC.get() >> 8) != (PC>>8) ) // Page cross
             {
                 --Cycles;
                 // 0 Cycles

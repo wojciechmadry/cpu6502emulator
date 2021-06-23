@@ -1,10 +1,13 @@
 #ifndef CPU_6502_processor
 #define CPU_6502_processor
 
-#include "registers/registers.hpp"
 #include "memory/memory.hpp"
+#include "registers/registers.hpp"
 #include "cpu/InstructionSet/opcode.hpp"
 
+namespace CPU6502_TEST::inner{
+    bool BRANCHES_TEST() noexcept;
+}
 
 namespace cpu6502
 {
@@ -100,9 +103,18 @@ namespace cpu6502
         void branch_if(u32& Cycles, bool If) noexcept;
         // END - Instruction Set
 
-
+        // ARITHMETIC
+        static void ADC() noexcept; // Add with Carry
+        static void SBC() noexcept; // Subtract with Carry
+        static void CMP() noexcept; // Compare accumulator
+        static void CPX() noexcept; // Compare X register
+        static void CPY() noexcept; // Compare Y register
 
         static void _init() noexcept;
+
+        //FIREND'S FUNCTION
+        friend bool CPU6502_TEST::inner::BRANCHES_TEST() noexcept;
+
     public:
         CPU() = delete;
         CPU(const CPU&) = delete;
