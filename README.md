@@ -1,6 +1,6 @@
 General info
 ---
-Emulator processor 6502 in c++20
+Emulator processor 6502 in C++20
 
 Tutorial (I am suggesting this tutorial)
 
@@ -10,11 +10,6 @@ Additional guides:
 1. http://www.obelisk.me.uk/6502/
 2. https://sta.c64.org/cbm64mem.html
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
-
-Progress in tutorial
----
-- [x] Episode 1 - https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s
-- [ ] Episode 2 - https://www.youtube.com/watch?v=L7J1pPokEyw `0m 0sec`
 
 TODO
 ---
