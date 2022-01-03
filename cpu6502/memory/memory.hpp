@@ -6,21 +6,26 @@
 namespace cpu6502{
     class Memory
     {
-        std::vector<Byte> data;
+        std::vector<Byte> m_memory;
+
+        void throw_out_of_range(const u64 Address) const;
+
     public:
         Memory() = delete;
-        explicit Memory(u64 MAX_MEM) noexcept : data(MAX_MEM) {}
+        
+        explicit Memory(const u64 BYTES_MEMORY) noexcept : m_memory(BYTES_MEMORY) {}
+
         ~Memory() = default;
 
         void initialise() noexcept;
 
-        [[nodiscard]] Word read_word(u64 Address) const noexcept;
+        [[nodiscard]] Word read_word(u64 Address) const;
 
-        void write_word(Word Data, u64 Address) noexcept;
+        void write_word(Word Data, u64 Address);
 
-        [[nodiscard]] Byte operator[](u64 Address) const noexcept;
+        [[nodiscard]] Byte operator[](u64 Address) const;
 
-        [[nodiscard]] Byte& operator[](u64 Address) noexcept;
+        [[nodiscard]] Byte& operator[](u64 Address);
 
     };
 }

@@ -1,4 +1,5 @@
 #include "cpu.hpp"
+#include "exceptions/cpu_except.hpp"
 
 namespace cpu6502{
 
@@ -31,18 +32,24 @@ namespace cpu6502{
         return mem.get().read_word(Address);
     }
 
-    [[nodiscard]] Word CPU::pop_word_from_stack(u32& Cycles) noexcept
+    [[nodiscard]] Word CPU::pop_word_from_stack(u32& Cycles)
     {
-        assert(cpu_reg.SP.get() < 254);
+        if (cpu_reg.SP.get() >= 254)
+        {
+            throw std::out_of_range("Cant pop word from stack. (stack empty).");
+        }
         Word Data = read_word(cpu_reg.SP.get() + 2,Cycles);
         cpu_reg.SP.increment(2);
         --Cycles;
         return Data;
     }
 
-    [[nodiscard]] Byte CPU::pop_byte_from_stack(u32& Cycles) noexcept
+    [[nodiscard]] Byte CPU::pop_byte_from_stack(u32& Cycles)
     {
-        assert(cpu_reg.SP.get() != 255);
+        if (cpu_reg.SP.get() == 255)
+        {
+            throw std::out_of_range("Cant pop byte from stack. (stack empty).");
+        }
         Byte Data = read_byte(cpu_reg.SP.get() + 1,Cycles);
         cpu_reg.SP.increment();
         --Cycles;

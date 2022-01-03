@@ -10,7 +10,6 @@ int main(){
     CPU6502_TEST::RUN_ALL_TEST();
     
     cpu6502::Memory memory(1024 * 64);
-
     cpu6502::CPU cpu(memory);
     //Program
     auto pc = cpu.get_registers().PC.get();

@@ -1,5 +1,5 @@
 #include "cpu.hpp"
-
+#include "exceptions/cpu_except.hpp"
 
 namespace cpu6502{
     //Look up table to all instruction function
@@ -27,17 +27,21 @@ namespace cpu6502{
         }
     }
 
-    void CPU::execute(u32 Cycles) noexcept
+    void CPU::execute(u32 Cycles)
     {
         while ( Cycles > 0 )
         {
             u32 OldCycles = Cycles;
-            (void) OldCycles; // REMEMBER TO DELETE THIS!!
 
             Byte ins = fetch_byte(Cycles);
+
             LookUpTable[ins](Cycles, *this);
 
-            assert(Cycles < OldCycles);
+            if (Cycles >= OldCycles)
+            {
+                throw cpu6502::exceptions::infinite_loop{};
+            }
+
         }
     }
 

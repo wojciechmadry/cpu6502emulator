@@ -34,14 +34,14 @@ namespace cpu6502
         [[nodiscard]] Byte read_byte(u32 Address, u32& Cycles) const noexcept;
         [[nodiscard]] Word fetch_word(u32& Cycles) noexcept;
         [[nodiscard]] Word read_word(u32 Address, u32& Cycles) noexcept;
-        [[nodiscard]] Word pop_word_from_stack(u32& Cycles) noexcept;
-        [[nodiscard]] Byte pop_byte_from_stack(u32& Cycles) noexcept;
+        [[nodiscard]] Word pop_word_from_stack(u32& Cycles);
+        [[nodiscard]] Byte pop_byte_from_stack(u32& Cycles);
 
         // Write CPU
         void write_word(Word Data, u32 Address, u32& Cycles) noexcept;
         void write_byte(Byte Data, u32 Address, u32& Cycles) noexcept;
-        void push_word_to_stack(Word Data, u32& Cycles) noexcept;
-        void push_byte_to_stack(Byte Data, u32& Cycles) noexcept;
+        void push_word_to_stack(Word Data, u32& Cycles);
+        void push_byte_to_stack(Byte Data, u32& Cycles);
 
 
         //Initialise Instruction Set in LookUpTable
@@ -130,7 +130,7 @@ namespace cpu6502
 
         void reset() noexcept;
 
-        void execute(u32 Cycles) noexcept;
+        void execute(u32 Cycles);
     };
 
 

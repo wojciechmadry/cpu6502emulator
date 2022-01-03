@@ -15,6 +15,7 @@ TODO
 ---
 
 - [ ] Add all `instruction set`
+- [ ] Remove `LUT`
 - [ ] Implement `Arithmetic` set
     - [ ] Add test to `ADC`
     - [ ] Add test to `SBC`

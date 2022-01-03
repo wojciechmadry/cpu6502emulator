@@ -4,10 +4,7 @@
 #include <vector>
 #include <utility>
 #include <functional>
-#include <cassert>
 #include <cstdint>
-
-#include <iostream> // REMEMBER TO DELETE
 
 namespace cpu6502
 {
