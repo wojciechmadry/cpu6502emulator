@@ -7,9 +7,8 @@ int main(){
 
 
 
-    CPU6502_TEST::RUN_ALL_TEST(1000);
-    // 1000 DEBUG -   0.0268642
-    // 1000 RELEASE - 0.0263349
+    CPU6502_TEST::RUN_ALL_TEST();
+    
     cpu6502::Memory memory(1024 * 64);
 
     cpu6502::CPU cpu(memory);
@@ -54,7 +53,7 @@ int main(){
 
 
     //END program
-    cpu.execute(36);
+    cpu.execute(36); // 36
     std::cout << "ACU : " << static_cast<int>(cpu.get_registers().ACU.get()) << '\n';
     std::cout << "LDX : " << static_cast<int>(cpu.get_registers().IRX.get()) << '\n';
     std::cout << "LDY : " << static_cast<int>(cpu.get_registers().IRY.get()) << '\n';

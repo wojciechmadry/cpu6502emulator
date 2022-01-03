@@ -1,8 +1,6 @@
-#ifndef cpu6502_TEST_REGISTER_TRANSFER
-#define cpu6502_TEST_REGISTER_TRANSFER
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
     bool REGISTER_TRANSFER_TEST() noexcept
@@ -58,4 +56,3 @@ namespace CPU6502_TEST::inner{
         return all_good;
     }
 }
-#endif

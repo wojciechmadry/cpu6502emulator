@@ -1,8 +1,6 @@
-#ifndef cpu6502_TEST_RTS_JSR
-#define cpu6502_TEST_RTS_JSR
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
     bool RTS_JSR_TEST() noexcept
@@ -34,4 +32,3 @@ namespace CPU6502_TEST::inner{
         return all_good;
     }
 }
-#endif

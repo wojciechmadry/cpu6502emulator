@@ -1,8 +1,6 @@
-#ifndef cpu6502_TEST_STATUS_FLAG_CHANGES
-#define cpu6502_TEST_STATUS_FLAG_CHANGES
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
     bool STATUS_FLAG_CHANGES_TEST() noexcept
@@ -54,5 +52,3 @@ namespace CPU6502_TEST::inner{
         return all_good;
     }
 }
-
-#endif

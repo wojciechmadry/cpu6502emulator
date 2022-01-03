@@ -1,8 +1,6 @@
-#ifndef cpu6502_TEST_BIT
-#define cpu6502_TEST_BIT
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
     bool BIT_TEST() noexcept
@@ -59,4 +57,3 @@ namespace CPU6502_TEST::inner{
         return all_good;
     }
 }
-#endif

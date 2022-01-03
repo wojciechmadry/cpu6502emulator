@@ -1,11 +1,9 @@
-#ifndef cpu6502_TEST_AND
-#define cpu6502_TEST_AND
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool AND_TEST() noexcept
+    bool ORA_TEST() noexcept
     {
         bool all_good = true;
         //using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
@@ -26,8 +24,8 @@ namespace CPU6502_TEST::inner{
         const cpu6502::Byte ACU = 0x33;
         const cpu6502::Byte IRX = 0x10;
         const cpu6502::Byte IRY = 0x15;
-        const cpu6502::Byte AND = 0xF0;
-        const auto Res = ACU & AND;
+        const cpu6502::Byte ORA = 0xF0;
+        const auto Res = ACU | ORA;
 
         auto LoadACU = [&]() mutable {
             mem[PC++]=cast(cpu6502::opcode::LDA::Immediate); // 2 cycles
@@ -54,20 +52,20 @@ namespace CPU6502_TEST::inner{
         LoadACU();
 
         // Immediate
-        mem[PC++] = cast(cpu6502::opcode::AND::Immediate); // 2 cycles
-        mem[PC++] = AND;
+        mem[PC++] = cast(cpu6502::opcode::ORA::Immediate); // 2 cycles
+        mem[PC++] = ORA;
         cpu.execute(2);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
-                && cpu.get_registers().ACU.get() == Res;
+                    && cpu.get_registers().ACU.get() == Res;
 
         LoadACU();
         // END Immediate
 
         // ZeroPage
-        mem[PC++] = cast(cpu6502::opcode::AND::ZeroPage); // 3 cycles
+        mem[PC++] = cast(cpu6502::opcode::ORA::ZeroPage); // 3 cycles
         mem[PC++] = 0x11;
-        mem[0x11] = AND;
+        mem[0x11] = ORA;
         cpu.execute(3);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
@@ -77,9 +75,9 @@ namespace CPU6502_TEST::inner{
         // END ZeroPage
 
         // ZeroPageX
-        mem[PC++] = cast(cpu6502::opcode::AND::ZeroPageX); // 4 cycles
+        mem[PC++] = cast(cpu6502::opcode::ORA::ZeroPageX); // 4 cycles
         mem[PC++] = 0x11;
-        mem[0x11+IRX] = AND;
+        mem[0x11+IRX] = ORA;
         cpu.execute(4);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
@@ -89,10 +87,10 @@ namespace CPU6502_TEST::inner{
         // END ZeroPageX
 
         // Absolute
-        mem[PC++] = cast(cpu6502::opcode::AND::Absolute); // 4 cycles
+        mem[PC++] = cast(cpu6502::opcode::ORA::Absolute); // 4 cycles
         mem[PC++] = 0x30;
         mem[PC++] = 0x30;
-        mem[0x3030] = AND;
+        mem[0x3030] = ORA;
         cpu.execute(4);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
@@ -102,10 +100,10 @@ namespace CPU6502_TEST::inner{
         // END Absolute
 
         // AbsoluteX
-        mem[PC++] = cast(cpu6502::opcode::AND::AbsoluteX); // 5 cycles
+        mem[PC++] = cast(cpu6502::opcode::ORA::AbsoluteX); // 5 cycles
         mem[PC++] = 0x30;
         mem[PC++] = 0x30;
-        mem[0x3030 + IRX] = AND;
+        mem[0x3030 + IRX] = ORA;
         cpu.execute(4);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
@@ -115,10 +113,10 @@ namespace CPU6502_TEST::inner{
         // END AbsoluteX
 
         // AbsoluteY
-        mem[PC++] = cast(cpu6502::opcode::AND::AbsoluteY); // 5 cycles
+        mem[PC++] = cast(cpu6502::opcode::ORA::AbsoluteY); // 5 cycles
         mem[PC++] = 0x30;
         mem[PC++] = 0x30;
-        mem[0x3030 + IRY] = AND;
+        mem[0x3030 + IRY] = ORA;
         cpu.execute(4);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
@@ -128,11 +126,11 @@ namespace CPU6502_TEST::inner{
         // END AbsoluteY
 
         // IndirectX
-        mem[PC++] = cast(cpu6502::opcode::AND::IndirectX); // 6 cycles
+        mem[PC++] = cast(cpu6502::opcode::ORA::IndirectX); // 6 cycles
         mem[PC++] = 0x15;
         mem[0x15+IRX] = 0x33;
         mem[0x15+IRX+1] = 0x33;
-        mem[0x3333] = AND;
+        mem[0x3333] = ORA;
         cpu.execute(6);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
@@ -142,11 +140,11 @@ namespace CPU6502_TEST::inner{
         // END IndirectX
 
         // IndirectY
-        mem[PC++] = cast(cpu6502::opcode::AND::IndirectY); // 6 cycles
+        mem[PC++] = cast(cpu6502::opcode::ORA::IndirectY); // 6 cycles
         mem[PC++] = 0x15;
         mem[0x15] = 0x35;
         mem[0x16] = 0x35;
-        mem[0x3535 + IRY] = AND;
+        mem[0x3535 + IRY] = ORA;
         cpu.execute(5);
 
         all_good &= cpu.get_registers().ACU.get() != ACU
@@ -156,4 +154,3 @@ namespace CPU6502_TEST::inner{
         return all_good;
     }
 }
-#endif

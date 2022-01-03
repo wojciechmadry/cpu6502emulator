@@ -1,11 +1,9 @@
-#ifndef cpu6502_TEST_STY
-#define cpu6502_TEST_STY
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool STY_TEST() noexcept
+    bool STX_TEST() noexcept
     {
         bool all_good = true;
 
@@ -27,56 +25,51 @@ namespace CPU6502_TEST::inner{
             PC = cpu.get_registers().PC.get();
         };
 
-        // STY - Zero Page
+        // STX - Zero Page
         JUMP_TO_2020();
-        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDY::Immediate); // 2 cycles
-
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate); // 2 cycles
         mem[PC++] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
         mem[PC++] = 0x42;
         mem[PC++] = 0x42;
         mem[0x4242] = opcode;
         mem[0x4242 + 1] = 40; // X = 40
-        mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::STY::ZeroPage); // 3 cycles
+        mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::STX::ZeroPage); // 3 cycles
         mem[0x4242 + 3] = 0x42;
         cpu.execute(8);
         all_good &= (mem[0x42] == 40);
-        // END STY - Zero Page
+        // END STX - Zero Page
 
-        // STY - Zero Page X
+        // STX - Zero Page Y
         JUMP_TO_2020();
-        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDY::Immediate); // 2 cycles
-
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate); // 2 cycles
         mem[PC++] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
         mem[PC++] = 0x42;
         mem[PC++] = 0x42;
         mem[0x4242] = opcode;
         mem[0x4242 + 1] = 40; // ACU = 40
-        mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate);  // 2 cycles
+        mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::LDY::Immediate);  // 2 cycles
         mem[0x4242 + 3] = 0x18; // X register = 0x18
-        mem[0x4242 + 4] = static_cast<decltype(opcode)>(cpu6502::opcode::STY::ZeroPageX); // 4 cycles
+        mem[0x4242 + 4] = static_cast<decltype(opcode)>(cpu6502::opcode::STX::ZeroPageY); // 4 cycles
         mem[0x4242 + 5] = 0x42;
         cpu.execute(11);
         all_good &= (mem[0x42 + 0x18] == 40);
-        // END STY - Zero Page X
+        // END STX - Zero Page Y
 
-        // STY - Absolute
+        // STX - Absolute
         JUMP_TO_2020();
-        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDY::Immediate); // 2 cycles
-
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDX::Immediate); // 2 cycles
         mem[PC++] = static_cast<decltype(opcode)>(cpu6502::opcode::JMP::Absolute); // 3 cycles Jump to 0x4242
         mem[PC++] = 0x42;
         mem[PC++] = 0x42;
         mem[0x4242] = opcode;
         mem[0x4242 + 1] = 40; // ACU = 40
-        mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::STY::Absolute); // 4 cycles
+        mem[0x4242 + 2] = static_cast<decltype(opcode)>(cpu6502::opcode::STX::Absolute); // 4 cycles
         mem[0x4242 + 3] = 0x30;
         mem[0x4242 + 4] = 0x30;
         cpu.execute(9);
         all_good &= (mem[0x3030] == 40);
-        // END STY - Absolute
+        // END STX - Absolute
 
         return all_good;
     }
 }
-
-#endif

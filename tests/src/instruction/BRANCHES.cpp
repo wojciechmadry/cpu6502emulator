@@ -1,8 +1,6 @@
-#ifndef cpu6502_BRANCHES_TEST
-#define cpu6502_BRANCHES_TEST
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
     bool BRANCHES_TEST() noexcept
@@ -162,5 +160,3 @@ namespace CPU6502_TEST::inner{
         return all_good;
     }
 }
-
-#endif

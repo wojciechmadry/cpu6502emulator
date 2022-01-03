@@ -1,8 +1,6 @@
-#ifndef cpu6502_TEST_STACK_OPERATIONS
-#define cpu6502_TEST_STACK_OPERATIONS
+#include "instruction_test.hpp"
 
-#include <cassert>
-#include "../../cpu6502/cpu.hpp"
+#include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
     bool STACK_OPERATIONS_TEST() noexcept
@@ -123,5 +121,3 @@ namespace CPU6502_TEST::inner{
         return all_good;
     }
 }
-
-#endif
