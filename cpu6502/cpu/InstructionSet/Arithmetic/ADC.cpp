@@ -1,6 +1,50 @@
 #include "cpu.hpp"
 
 namespace cpu6502{
+    void CPU::ADCimmediate(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+
+    void CPU::ADCzeropage(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+
+    void CPU::ADCzeropagex(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+
+    void CPU::ADCabsolute(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+
+
+    void CPU::ADCabsolutex(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+
+
+    void CPU::ADCabsolutey(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+
+
+    void CPU::ADCindirectx(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+
+
+    void CPU::ADCindirecty(u32& Cycles) noexcept
+    {
+        (void) Cycles;
+    }
+/*
     void CPU::ADC() noexcept
     {
         using op = cpu6502::opcode::ADC;
@@ -57,4 +101,5 @@ namespace cpu6502{
             (void) cpu;
         };
     }
+    */
 }

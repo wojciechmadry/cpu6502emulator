@@ -20,6 +20,49 @@ namespace cpu6502{
         }
 
     }
+
+    void CPU::BRANCHbcc(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, !cpu_reg.PS.get(PSFlags::CarryFlag));
+    }
+
+    void CPU::BRANCHbcs(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, cpu_reg.PS.get(PSFlags::CarryFlag));
+    }
+
+    void CPU::BRANCHbeq(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, cpu_reg.PS.get(PSFlags::ZeroFlag));
+    }
+
+    void CPU::BRANCHbmi(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, cpu_reg.PS.get(PSFlags::NegativeFlag));
+    }
+
+    void CPU::BRANCHbne(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, !cpu_reg.PS.get(PSFlags::ZeroFlag));
+    }
+
+    void CPU::BRANCHbpl(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, !cpu_reg.PS.get(PSFlags::NegativeFlag));
+    }
+
+    void CPU::BRANCHbvc(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, !cpu_reg.PS.get(PSFlags::OverflowFlag));
+    }
+
+    void CPU::BRANCHbvs(u32& Cycles) noexcept
+    {
+        branch_if(Cycles, cpu_reg.PS.get(PSFlags::OverflowFlag));
+    }
+
+    // remove this
+    /*
     void CPU::BRANCHES() noexcept
     {
         auto cast = []<typename T>(T reg) -> cpu6502::Byte
@@ -67,4 +110,5 @@ namespace cpu6502{
             cpu.branch_if(Cycles, cpu.cpu_reg.PS.get(PSFlags::OverflowFlag));
         };
     }
+    */
 }

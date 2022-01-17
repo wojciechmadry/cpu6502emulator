@@ -6,7 +6,7 @@ namespace cpu6502::opcode{
     // *** ARITHMETIC ***
 
     // Add with Carry
-    enum class ADC : Byte
+    enum class ADC
     {
         Immediate = 0x69, // 2 cycles
         ZeroPage = 0x65, // 3 cycles
@@ -19,7 +19,7 @@ namespace cpu6502::opcode{
     };
 
     // Subtrack with Carry
-    enum class SBC : Byte
+    enum class SBC
     {
         Immediate = 0xE9, // 2 cycles
         ZeroPage = 0xE5, // 3 cycles
@@ -32,7 +32,8 @@ namespace cpu6502::opcode{
     };
 
     // Compare
-    enum class CMP : Byte {
+    enum class CMP 
+    {
         Immediate = 0xC9, // 2 cycles
         ZeroPage = 0xC5, // 3 cycles
         ZeroPageX = 0xD5, // 4 cycles
@@ -44,14 +45,16 @@ namespace cpu6502::opcode{
     };
 
     // Compare X register
-    enum class CPX : Byte {
+    enum class CPX
+    {
         Immediate = 0xE0, // 2 cycles
         ZeroPage = 0xE4, // 3 cycles
         Absolute = 0xEC, // 4 cycles
     };
 
     // Compare Y register
-    enum class CPY : Byte {
+    enum class CPY
+    {
         Immediate = 0xC0, // 2 cycles
         ZeroPage = 0xC4, // 3 cycles
         Absolute = 0xCC, // 4 cycles
@@ -62,7 +65,7 @@ namespace cpu6502::opcode{
     // *** Load/Store Operations ***
 
     //Load Accumulator opcode
-    enum class LDA : Byte
+    enum class LDA
     {
         Immediate = 0xA9, // 2 cycles - Implemented
         ZeroPage = 0xA5, // 3 cycles - Implemented
@@ -75,7 +78,7 @@ namespace cpu6502::opcode{
     };
 
     // Load X register opcode
-    enum class LDX : Byte
+    enum class LDX
     {
         Immediate = 0xA2, // 2 cycles - Implemented
         ZeroPage = 0xA6, // 3 cycles - Implemented
@@ -86,7 +89,7 @@ namespace cpu6502::opcode{
 
 
     //Load Y register opcode
-    enum class LDY : Byte
+    enum class LDY
     {
         Immediate = 0xA0, // 2 cycles - Implemented
         ZeroPage = 0xA4, // 3 cycles - Implemented
@@ -96,7 +99,7 @@ namespace cpu6502::opcode{
     };
 
     //Store Accumulator opcode
-    enum class STA : Byte
+    enum class STA
     {
         ZeroPage = 0x85, // 3 cycles - Implemented
         ZeroPageX = 0x95, // 4 cycles - Implemented
@@ -108,7 +111,7 @@ namespace cpu6502::opcode{
     };
 
     // Store X Register opcode
-    enum class STX : Byte
+    enum class STX
     {
         ZeroPage = 0x86, // 3 cycles - Implemented
         ZeroPageY = 0x96, // 4 cycles - Implemented
@@ -116,7 +119,7 @@ namespace cpu6502::opcode{
     };
 
     // Store Y Register opcode
-    enum class STY : Byte
+    enum class STY
     {
         ZeroPage = 0x84, // 3 cycles - Implemented
         ZeroPageX = 0x94, // 4 cycles- Implemented
@@ -128,20 +131,20 @@ namespace cpu6502::opcode{
     // *** Jump & Calls ***
 
     //Jump to Subroutine opcode
-    enum class JSR : Byte
+    enum class JSR
     {
         Absolute = 0x20 // 6 cycles - Implemented
     };
 
     //Jump to to another location opcode
-    enum class JMP : Byte
+    enum class JMP
     {
         Absolute = 0x4C, // 3 cycles - Implemented
         Indirect = 0x6C // 5 cycles - Implemented
     };
 
     //Return from Subroutine
-    enum class RTS : Byte
+    enum class RTS
     {
         Implied = 0x60 // 6 cycles - Implemented im not sure if its working good.
     };
@@ -151,43 +154,43 @@ namespace cpu6502::opcode{
     // *** Status Flag Changes ***
 
     //Clear carry flag
-    enum class CLC : Byte
+    enum class CLC
     {
         Implied = 0x18 // 2 cycles - implemented
     };
 
     //Clear decimal mode flag
-    enum class CLD : Byte
+    enum class CLD
     {
         Implied = 0xD8 // 2 cycles - implemented
     };
 
     //Clear interrupt disable flag
-    enum class CLI : Byte
+    enum class CLI
     {
         Implied = 0x58 // 2 cycles - implemented
     };
 
     //Clear overflow flag
-    enum class CLV : Byte
+    enum class CLV
     {
         Implied = 0xB8 // 2 cycles - implemented
     };
 
     //Set carry flag
-    enum class SEC : Byte
+    enum class SEC
     {
         Implied = 0x38 // 2 cycles - implemented
     };
 
     //Set decimal mode flag
-    enum class SED : Byte
+    enum class SED
     {
         Implied = 0xF8 // 2 cycles - implemented
     };
 
     //Set interrupt disable flag
-    enum class SEI : Byte
+    enum class SEI
     {
         Implied = 0x78 // 2 cycles - implemented
     };
@@ -197,25 +200,25 @@ namespace cpu6502::opcode{
     // *** Register Transfers ***
 
     // Transfer Accumulator to X
-    enum class TAX : Byte
+    enum class TAX
     {
         Implied = 0xAA // 2 cycles - Implemented
     };
 
     // Transfer Accumulator to Y
-    enum class TAY : Byte
+    enum class TAY
     {
         Implied = 0xA8 // 2 cycles - Implemented
     };
 
     // Transfer X to Accumulator
-    enum class TXA : Byte
+    enum class TXA
     {
         Implied = 0x8A // 2 cycles - Implemented
     };
 
     // Transfer Y to Accumulator
-    enum class TYA : Byte
+    enum class TYA
     {
         Implied = 0x98 // 2 cycles - Implemented
     };
@@ -226,42 +229,42 @@ namespace cpu6502::opcode{
 
     // Transfer stack pointer to X
 
-    enum class TSX : Byte
+    enum class TSX
     {
         Implied = 0xBA // 2 cycles - Implemented
     };
 
     // Transfer X to stack pointer
 
-    enum class TXS : Byte
+    enum class TXS
     {
         Implied = 0x9A // 2 cycles - Implemented
     };
 
     // Push accumulator on stack
 
-    enum class PHA : Byte
+    enum class PHA
     {
         Implied = 0x48 // 3 cycles - Implemented
     };
 
     // Push processor status on stack
 
-    enum class PHP : Byte
+    enum class PHP
     {
         Implied = 0x08 // 3 cycles - Implemented
     };
 
     // Pull accumulator from stack
 
-    enum class PLA : Byte
+    enum class PLA
     {
         Implied = 0x68 // 4 cycles - Implemented
     };
 
     // Pull processor status from stack
 
-    enum class PLP : Byte
+    enum class PLP
     {
         Implied = 0x28 // 4 cycles - Implemented
     };
@@ -271,7 +274,7 @@ namespace cpu6502::opcode{
 
     // *** Logical ***
 
-    enum class AND : Byte
+    enum class AND
     {
         Immediate = 0x29, // 2 Cycles - Implemented
         ZeroPage = 0x25,  // 3 Cycles - Implemented
@@ -283,7 +286,7 @@ namespace cpu6502::opcode{
         IndirectY = 0x31  // 5 (+1 if page crossed)  Cycles - Implemented - Page cross
     };
 
-    enum class EOR : Byte
+    enum class EOR
     {
         Immediate = 0x49, // 2 Cycles - Implemented
         ZeroPage = 0x45,  // 3 Cycles - Implemented
@@ -295,7 +298,7 @@ namespace cpu6502::opcode{
         IndirectY = 0x51  // 5 (+1 if page crossed)  Cycles - Implemented - Page cross
     };
 
-    enum class ORA : Byte
+    enum class ORA
     {
         Immediate = 0x09, // 2 Cycles - Implemented
         ZeroPage = 0x05,  // 3 Cycles - Implemented
@@ -307,7 +310,7 @@ namespace cpu6502::opcode{
         IndirectY = 0x11  // 5 (+1 if page crossed)  Cycles - Implemented - Page cross
     };
 
-    enum class BIT : Byte
+    enum class BIT
     {
         ZeroPage = 0x24,  // 3 Cycles - Implemented
         Absolute = 0x2C,  // 4 Cycles - Implemented
@@ -317,42 +320,42 @@ namespace cpu6502::opcode{
 
     // *** Branches ***
 
-    enum class BCC : Byte
+    enum class BCC
     {
         Relative = 0x90 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };
 
-    enum class BCS : Byte
+    enum class BCS
     {
         Relative = 0xB0 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };
 
-    enum class BEQ : Byte
+    enum class BEQ
     {
         Relative = 0xF0 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };
 
-    enum class BMI : Byte
+    enum class BMI
     {
         Relative = 0x30 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };
 
-    enum class BNE : Byte
+    enum class BNE
     {
         Relative = 0xD0 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };
 
-    enum class BPL : Byte
+    enum class BPL
     {
         Relative = 0x10 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };
 
-    enum class BVC : Byte
+    enum class BVC
     {
         Relative = 0x50 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };
 
-    enum class BVS : Byte
+    enum class BVS
     {
         Relative = 0x70 // 2 ( +1 if branch success, +2 if to a new page) - Implemented
     };

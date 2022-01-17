@@ -6,7 +6,7 @@
 #include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool BRANCHES_TEST() noexcept;
+    bool BRANCHES_TEST() noexcept;  // remove this
 }
 
 namespace cpu6502
@@ -25,9 +25,9 @@ namespace cpu6502
 
 
         //Look up table to all instruction function
-        using Func = void(u32&, CPU&);
-        static std::array<Func* , 256> LookUpTable;
-        static bool LookUpTableInit;
+        //using Func = void(u32&, CPU&);
+        //static std::array<Func* , 256> LookUpTable;
+        //static bool LookUpTableInit;
 
         // Read CPU
         [[nodiscard]] Byte fetch_byte(u32& Cycles) noexcept;
@@ -44,6 +44,8 @@ namespace cpu6502
         void push_byte_to_stack(Byte Data, u32& Cycles);
 
 
+
+/*      // remove this
         //Initialise Instruction Set in LookUpTable
 
         // Load/Store Operations
@@ -88,7 +90,7 @@ namespace cpu6502
         static void EOR() noexcept; // Exclusive OR
         static void ORA() noexcept; // Logical Inclusive OR
         static void BIT() noexcept; // Bit Test
-
+/*
         // BRANCHES
         /*  BCC - Branch if carry flag clear
          *  BCS - Branch if carry flag set
@@ -99,7 +101,7 @@ namespace cpu6502
          *  BVC - Branch if overflow flag clear
          *  BVS - Branch if overflow flag set
          */
-        static void BRANCHES() noexcept;
+       /* static void BRANCHES() noexcept;
         void branch_if(u32& Cycles, bool If) noexcept;
         // END - Instruction Set
 
@@ -110,10 +112,103 @@ namespace cpu6502
         static void CPX() noexcept; // Compare X register
         static void CPY() noexcept; // Compare Y register
 
-        static void _init() noexcept;
+        static void _init() noexcept;*/
 
         //FIREND'S FUNCTION
-        friend bool CPU6502_TEST::inner::BRANCHES_TEST() noexcept;
+        friend bool CPU6502_TEST::inner::BRANCHES_TEST() noexcept; // remove this
+
+        // Instruction set functions
+
+        // --- ARITHMETIC ---
+        //      -- ADC --
+    void ADCimmediate(u32& Cycles) noexcept;
+    void ADCzeropage(u32& Cycles) noexcept;
+    void ADCzeropagex(u32& Cycles) noexcept;
+    void ADCabsolute(u32& Cycles) noexcept;
+    void ADCabsolutex(u32& Cycles) noexcept;
+    void ADCabsolutey(u32& Cycles) noexcept;
+    void ADCindirectx(u32& Cycles) noexcept;
+    void ADCindirecty(u32& Cycles) noexcept;
+        //      -- CMP --
+    void CMPimmediate(u32& Cycles) noexcept;
+    void CMPzeropage(u32& Cycles) noexcept;
+    void CMPzeropagex(u32& Cycles) noexcept;
+    void CMPabsolute(u32& Cycles) noexcept;
+    void CMPabsolutex(u32& Cycles) noexcept;
+    void CMPabsolutey(u32& Cycles) noexcept;
+    void CMPindirectx(u32& Cycles) noexcept;
+    void CMPindirecty(u32& Cycles) noexcept;
+        //      -- CPX  --
+    void CPXimmediate(u32& Cycles) noexcept;
+    void CPXzeropage(u32& Cycles) noexcept;
+    void CPXabsolute(u32& Cycles) noexcept;
+        //      -- CPY  --
+    void CPYimmediate(u32& Cycles) noexcept;
+    void CPYzeropage(u32& Cycles) noexcept;
+    void CPYabsolute(u32& Cycles) noexcept;
+        //      -- SBC --
+    void SBCimmediate(u32& Cycles) noexcept;
+    void SBCzeropage(u32& Cycles) noexcept;
+    void SBCzeropagex(u32& Cycles) noexcept;
+    void SBCabsolute(u32& Cycles) noexcept;
+    void SBCabsolutex(u32& Cycles) noexcept;
+    void SBCabsolutey(u32& Cycles) noexcept;
+    void SBCindirectx(u32& Cycles) noexcept;
+    void SBCindirecty(u32& Cycles) noexcept;
+
+        // --- BRANCHES ---
+    void branch_if(u32& Cycles, bool If) noexcept;
+    void BRANCHbcc(u32& Cycles) noexcept;
+    void BRANCHbcs(u32& Cycles) noexcept;
+    void BRANCHbeq(u32& Cycles) noexcept;
+    void BRANCHbmi(u32& Cycles) noexcept;
+    void BRANCHbne(u32& Cycles) noexcept;
+    void BRANCHbpl(u32& Cycles) noexcept;
+    void BRANCHbvc(u32& Cycles) noexcept;
+    void BRANCHbvs(u32& Cycles) noexcept;
+
+        // --- Jumps Calls --- // 18.01
+        //      -- JMP --
+        //      -- JSR --
+        //      -- RTS --
+
+        // --- Load Store Operations --- // 19.01
+        //      -- LDA --
+        //      -- LDX --
+        //      -- LDY --
+        //      -- STA --
+        //      -- STX --
+        //      -- STY --
+
+        // --- Logical ---   // 20.01
+        //      -- AND --
+        //      -- BIT --
+        //      -- EOR --
+        //      -- ORA --
+
+        // --- Register Transfer ---  // 21.01
+        //      -- TAX --
+        //      -- TAY --
+        //      -- TXA --
+        //      -- TYA --
+
+        // --- Stack operations ---  // 24.01
+        //      -- PHA --
+        //      -- PHP --
+        //      -- PLA --
+        //      -- PLP --
+        //      -- TSX --
+        //      -- TXS --
+
+        // --- Status Flag Changes ---  // 25.01
+        //      -- CLC --
+        //      -- CLD --
+        //      -- CLI --
+        //      -- CLV --
+        //      -- SEC --
+        //      -- SED --
+        //      -- SEI --
+
 
     public:
         CPU() = delete;
