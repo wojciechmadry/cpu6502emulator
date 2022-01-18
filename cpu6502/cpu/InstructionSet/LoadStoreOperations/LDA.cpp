@@ -1,6 +1,122 @@
 #include "cpu.hpp"
 
 namespace cpu6502 {
+
+    void CPU::LDAimmediate(u32& Cycles) noexcept
+    {
+        // 1 cycles
+        cpu_reg.ACU.set(fetch_byte(Cycles));
+        // 0 cycles
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+
+    void CPU::LDAzeropage(u32& Cycles) noexcept
+    {
+        // 2 cycles
+        Byte ZeroPageAddress = fetch_byte(Cycles);
+        // 1 cycles
+        cpu_reg.ACU.set(read_byte(ZeroPageAddress, Cycles));
+        // 0 cycles
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+
+    }
+
+    void CPU::LDAzeropagex(u32& Cycles) noexcept
+    {
+        // 3 cycles
+        Byte ZeroPageAddress = fetch_byte(Cycles);
+        // 2 cycles
+        ZeroPageAddress += cpu_reg.IRX.get();
+        --Cycles;
+        // 1 cycles
+        cpu_reg.ACU.set(read_byte(ZeroPageAddress, Cycles));
+        // 0 cycles
+
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+
+    void CPU::LDAabsolute(u32& Cycles) noexcept
+    {
+        // 3 cycles
+        Word address = fetch_word(Cycles);
+        // 1 cycles
+        cpu_reg.ACU.set(read_byte(address, Cycles));
+        // 0 cycles
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+
+    void CPU::LDAabsolutex(u32& Cycles) noexcept
+    {
+        // 4 cycles
+        Word address = fetch_word(Cycles);
+        //2 cycles
+        const auto OldAddress = address;
+        address += cpu_reg.IRX.get();
+        if ((address >> 8) != (OldAddress>>8))
+            --Cycles; // 1 cycles if page crossed
+        cpu_reg.ACU.set(read_byte(address, Cycles));
+        // 0 cycles
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+
+    void CPU::LDAabsolutey(u32& Cycles) noexcept
+    {
+        // 4 cycles
+        Word address = fetch_word(Cycles);
+        //2 cycles
+        const auto OldAddress = address;
+        address += cpu_reg.IRY.get();
+        if ((address >> 8) != (OldAddress>>8))
+            --Cycles; // 1 cycles if page crossed
+        cpu_reg.ACU.set(read_byte(address, Cycles));
+        // 0 cycles
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+
+    void CPU::LDAindirectx(u32& Cycles) noexcept
+    {
+        // 5 cycles
+        Byte address = fetch_byte(Cycles);
+        // 4 cycles
+        address += cpu_reg.IRX.get();
+        --Cycles;
+        // 3 cycles
+        Word TargetAddress = read_word(address, Cycles);
+        // 1 cycles
+        cpu_reg.ACU.set(read_byte(TargetAddress, Cycles));
+        // 0 cycles
+
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+
+    void CPU::LDAindirecty(u32& Cycles) noexcept
+    {
+        // 5 cycles
+        Byte address = fetch_byte(Cycles);
+        // 4 cycles
+        Word TargetAddress = read_word(address, Cycles);
+        // 2 cycles
+        const auto OldAddress = TargetAddress;
+        TargetAddress += cpu_reg.IRY.get();
+        if ((TargetAddress >> 8) != (OldAddress>>8))
+            --Cycles; // 1 cycles if page crossed
+
+        cpu_reg.ACU.set(read_byte(TargetAddress, Cycles));
+        // 0 cycles
+
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+
+    // remove this
+    /*
     void CPU::LDA() noexcept {
         using op = cpu6502::opcode::LDA;
 
@@ -122,5 +238,5 @@ namespace cpu6502 {
             cpu.cpu_reg.PS.set(PSFlags::NegativeFlag, cpu.cpu_reg.ACU.get() & 0x80);
         };
 
-    }
+    }*/
 }

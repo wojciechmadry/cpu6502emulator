@@ -235,6 +235,181 @@ namespace cpu6502{
                     BRANCHbvs(Cycles);
                     break;
                 }
+                case op(opcode::JMP::Absolute):
+                {
+                    JMPabsolute(Cycles);
+                    break;
+                }
+                case op(opcode::JMP::Indirect):
+                {
+                    JMPindirect(Cycles);
+                    break;
+                }
+                case op(opcode::JSR::Absolute):
+                {
+                    JSRabsolute(Cycles);
+                    break;
+                }
+                case op(opcode::RTS::Implied):
+                {
+                    RTSimplied(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::Immediate):
+                {
+                    LDAimmediate(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::ZeroPage):
+                {
+                    LDAzeropage(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::ZeroPageX):
+                {
+                    LDAzeropagex(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::Absolute):
+                {
+                    LDAabsolute(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::AbsoluteX):
+                {
+                    LDAabsolutex(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::AbsoluteY):
+                {
+                    LDAabsolutey(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::IndirectX):
+                {
+                    LDAindirectx(Cycles);
+                    break;
+                }
+                case op(opcode::LDA::IndirectY):
+                {
+                    LDAindirecty(Cycles);
+                    break;
+                }
+                case op(opcode::LDX::Immediate):
+                {
+                    LDXimmediate(Cycles);
+                    break;
+                }
+                case op(opcode::LDX::ZeroPage):
+                {
+                    LDXzeropage(Cycles);
+                    break;
+                }
+                case op(opcode::LDX::ZeroPageY):
+                {
+                    LDXzeropagey(Cycles);
+                    break;
+                }       
+                case op(opcode::LDX::Absolute):
+                {
+                    LDXabsolute(Cycles);
+                    break;
+                }  
+                case op(opcode::LDX::AbsoluteY):
+                {
+                    LDXabsolutey(Cycles);
+                    break;
+                }          
+                case op(opcode::LDY::Immediate):
+                {
+                    LDYimmediate(Cycles);
+                    break;
+                }          
+                case op(opcode::LDY::ZeroPage):
+                {
+                    LDYzeropage(Cycles);
+                    break;
+                }       
+                case op(opcode::LDY::ZeroPageX):
+                {
+                    LDYzeropagex(Cycles);
+                    break;
+                }      
+                case op(opcode::LDY::Absolute):
+                {
+                    LDYabsolute(Cycles);
+                    break;
+                }      
+                case op(opcode::LDY::AbsoluteX):
+                {
+                    LDYabsolutex(Cycles);
+                    break;
+                }   
+                case op(opcode::STA::ZeroPage):
+                {
+                    STAzeropage(Cycles);
+                    break;
+                } 
+                case op(opcode::STA::ZeroPageX):
+                {
+                    STAzeropagex(Cycles);
+                    break;
+                }     
+                case op(opcode::STA::Absolute):
+                {
+                    STAabsolute(Cycles);
+                    break;
+                }    
+                case op(opcode::STA::AbsoluteX):
+                {
+                    STAabsolutex(Cycles);
+                    break;
+                }           
+                case op(opcode::STA::AbsoluteY):
+                {
+                    STAabsolutey(Cycles);
+                    break;
+                }            
+                case op(opcode::STA::IndircetX):
+                {
+                    STAindirectx(Cycles);
+                    break;
+                }       
+                case op(opcode::STA::IndircetY):
+                {
+                    STAindirecty(Cycles);
+                    break;
+                }    
+                case op(opcode::STX::ZeroPage):
+                {
+                    STXzeropage(Cycles);
+                    break;
+                }     
+                case op(opcode::STX::ZeroPageY):
+                {
+                    STXzeropagey(Cycles);
+                    break;
+                }      
+                case op(opcode::STX::Absolute):
+                {
+                    STXabsolute(Cycles);
+                    break;
+                }    
+                case op(opcode::STY::ZeroPage):
+                {
+                    STYzeropage(Cycles);
+                    break;
+                }     
+                case op(opcode::STY::ZeroPageX):
+                {
+                    STYzeropagex(Cycles);
+                    break;
+                }      
+                case op(opcode::STY::Absolute):
+                {
+                    STYabsolute(Cycles);
+                    break;
+                }                                                                 
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};
@@ -244,7 +419,7 @@ namespace cpu6502{
 
             if (Cycles >= OldCycles)
             {
-                throw cpu6502::exceptions::infinite_loop{};
+                throw cpu6502::exceptions::infinite_loop{ins};
             }
 
         }

@@ -167,32 +167,73 @@ namespace cpu6502
     void BRANCHbvc(u32& Cycles) noexcept;
     void BRANCHbvs(u32& Cycles) noexcept;
 
-        // --- Jumps Calls --- // 18.01
+        // --- Jumps Calls --- 
         //      -- JMP --
+    void JMPabsolute(u32& Cycles) noexcept;
+    void JMPindirect(u32& Cycles) noexcept;
         //      -- JSR --
+    void JSRabsolute(u32& Cycles) noexcept;
         //      -- RTS --
+    void RTSimplied(u32& Cycles) noexcept;
 
-        // --- Load Store Operations --- // 19.01
+        // --- Load Store Operations --- 
         //      -- LDA --
+    void LDAimmediate(u32& Cycles) noexcept;
+    void LDAzeropage(u32& Cycles) noexcept;
+    void LDAzeropagex(u32& Cycles) noexcept;
+    void LDAabsolute(u32& Cycles) noexcept;
+    void LDAabsolutex(u32& Cycles) noexcept;
+    void LDAabsolutey(u32& Cycles) noexcept;
+    void LDAindirectx(u32& Cycles) noexcept;
+    void LDAindirecty(u32& Cycles) noexcept;
+
         //      -- LDX --
+    void LDXimmediate(u32& Cycles) noexcept;
+    void LDXzeropage(u32& Cycles) noexcept;
+    void LDXzeropagey(u32& Cycles) noexcept;
+    void LDXabsolute(u32& Cycles) noexcept;
+    void LDXabsolutey(u32& Cycles) noexcept;
+
         //      -- LDY --
+    void LDYimmediate(u32& Cycles) noexcept;
+    void LDYzeropage(u32& Cycles) noexcept;
+    void LDYzeropagex(u32& Cycles) noexcept;
+    void LDYabsolute(u32& Cycles) noexcept;
+    void LDYabsolutex(u32& Cycles) noexcept;
+
         //      -- STA --
+    void STAzeropage(u32& Cycles) noexcept;
+    void STAzeropagex(u32& Cycles) noexcept;
+    void STAabsolute(u32& Cycles) noexcept;
+    void STAabsolutex(u32& Cycles) noexcept;
+    void STAabsolutey(u32& Cycles) noexcept;
+    void STAindirectx(u32& Cycles) noexcept;
+    void STAindirecty(u32& Cycles) noexcept;
+
         //      -- STX --
+    void STXzeropage(u32& Cycles) noexcept;
+    void STXzeropagey(u32& Cycles) noexcept;
+    void STXabsolute(u32& Cycles) noexcept;
+
         //      -- STY --
 
-        // --- Logical ---   // 20.01
+    void STYzeropage(u32& Cycles) noexcept;
+    void STYzeropagex(u32& Cycles) noexcept;
+    void STYabsolute(u32& Cycles) noexcept;
+
+        // --- Logical ---   // 19.01
         //      -- AND --
         //      -- BIT --
         //      -- EOR --
         //      -- ORA --
 
-        // --- Register Transfer ---  // 21.01
+        // --- Register Transfer ---  // 20.01
         //      -- TAX --
         //      -- TAY --
         //      -- TXA --
         //      -- TYA --
 
-        // --- Stack operations ---  // 24.01
+        // --- Stack operations ---  // 21.01
         //      -- PHA --
         //      -- PHP --
         //      -- PLA --
@@ -200,7 +241,7 @@ namespace cpu6502
         //      -- TSX --
         //      -- TXS --
 
-        // --- Status Flag Changes ---  // 25.01
+        // --- Status Flag Changes ---  // 24.01
         //      -- CLC --
         //      -- CLD --
         //      -- CLI --
