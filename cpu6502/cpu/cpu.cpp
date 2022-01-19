@@ -30,16 +30,16 @@ namespace cpu6502{
     void CPU::execute(u32 Cycles)
     {
         // Translate opcode to Byte
-        auto op = []<typename Opcode>(Opcode opcode)
+        auto op = []<typename Opcode>(const Opcode opcode)
         {
             return static_cast<Byte>(opcode);
         };
 
         while ( Cycles > 0 )
         {
-            u32 OldCycles = Cycles;
+            const u32 OldCycles = Cycles;
 
-            Byte ins = fetch_byte(Cycles);
+            const Byte ins = fetch_byte(Cycles);
 
             //LookUpTable[ins](Cycles, *this); // remove this
 
@@ -409,7 +409,137 @@ namespace cpu6502{
                 {
                     STYabsolute(Cycles);
                     break;
-                }                                                                 
+                }                    
+                case op(opcode::AND::Immediate):
+                {
+                    ANDimmediate(Cycles);
+                    break;
+                }        
+                case op(opcode::AND::ZeroPage):
+                {
+                    ANDzeropage(Cycles);
+                    break;
+                }   
+                case op(opcode::AND::ZeroPageX):
+                {
+                    ANDzeropagex(Cycles);
+                    break;
+                }         
+                case op(opcode::AND::Absolute):
+                {
+                    ANDabsolute(Cycles);
+                    break;
+                }     
+                case op(opcode::AND::AbsoluteX):
+                {
+                    ANDabsolutex(Cycles);
+                    break;
+                }        
+                case op(opcode::AND::AbsoluteY):
+                {
+                    ANDabsolutey(Cycles);
+                    break;
+                }       
+                case op(opcode::AND::IndirectX):
+                {
+                    ANDindirectx(Cycles);
+                    break;
+                }   
+                case op(opcode::AND::IndirectY):
+                {
+                    ANDindirecty(Cycles);
+                    break;
+                }      
+                case op(opcode::BIT::ZeroPage):
+                {
+                    BITzeropage(Cycles);
+                    break;
+                }   
+                case op(opcode::BIT::Absolute):
+                {
+                    BITabsolute(Cycles);
+                    break;
+                }   
+                case op(opcode::EOR::Immediate):
+                {
+                    EORimmediate(Cycles);
+                    break;
+                }     
+                case op(opcode::EOR::ZeroPage):
+                {
+                    EORzeropage(Cycles);
+                    break;
+                } 
+                case op(opcode::EOR::ZeroPageX):
+                {
+                    EORzeropagex(Cycles);
+                    break;
+                }      
+                case op(opcode::EOR::Absolute):
+                {
+                    EORabsolute(Cycles);
+                    break;
+                }  
+                case op(opcode::EOR::AbsoluteX):
+                {
+                    EORabsolutex(Cycles);
+                    break;
+                }        
+                case op(opcode::EOR::AbsoluteY):
+                {
+                    EORabsolutey(Cycles);
+                    break;
+                } 
+                case op(opcode::EOR::IndirectX):
+                {
+                    EORindirectx(Cycles);
+                    break;
+                }
+                case op(opcode::EOR::IndirectY):
+                {
+                    EORindirecty(Cycles);
+                    break;
+                }   
+                case op(opcode::ORA::Immediate):
+                {
+                    ORAimmediate(Cycles);
+                    break;
+                }   
+                case op(opcode::ORA::ZeroPage):
+                {
+                    ORAzeropage(Cycles);
+                    break;
+                }  
+                case op(opcode::ORA::ZeroPageX):
+                {
+                    ORAzeropagex(Cycles);
+                    break;
+                }      
+                case op(opcode::ORA::Absolute):
+                {
+                    ORAabsolute(Cycles);
+                    break;
+                } 
+                case op(opcode::ORA::AbsoluteX):
+                {
+                    ORAabsolutex(Cycles);
+                    break;
+                }      
+                case op(opcode::ORA::AbsoluteY):
+                {
+                    ORAabsolutey(Cycles);
+                    break;
+                }        
+                case op(opcode::ORA::IndirectX):
+                {
+                    ORAindirectx(Cycles);
+                    break;
+                } 
+                case op(opcode::ORA::IndirectY):
+                {
+                    ORAindirecty(Cycles);
+                    break;
+                }                                                                                                                             
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};

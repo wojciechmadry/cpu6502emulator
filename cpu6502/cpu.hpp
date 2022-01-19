@@ -221,11 +221,40 @@ namespace cpu6502
     void STYzeropagex(u32& Cycles) noexcept;
     void STYabsolute(u32& Cycles) noexcept;
 
-        // --- Logical ---   // 19.01
+        // --- Logical ---
         //      -- AND --
+    void ANDimmediate(u32& Cycles) noexcept;
+    void ANDzeropage(u32& Cycles) noexcept;
+    void ANDzeropagex(u32& Cycles) noexcept;
+    void ANDabsolute(u32& Cycles) noexcept;
+    void ANDabsolutex(u32& Cycles) noexcept;
+    void ANDabsolutey(u32& Cycles) noexcept;
+    void ANDindirectx(u32& Cycles) noexcept;
+    void ANDindirecty(u32& Cycles) noexcept;
+
         //      -- BIT --
+    void BITzeropage(u32& Cycles) noexcept;
+    void BITabsolute(u32& Cycles) noexcept;
+ 
         //      -- EOR --
+    void EORimmediate(u32& Cycles) noexcept;
+    void EORzeropage(u32& Cycles) noexcept;
+    void EORzeropagex(u32& Cycles) noexcept;
+    void EORabsolute(u32& Cycles) noexcept;
+    void EORabsolutex(u32& Cycles) noexcept;
+    void EORabsolutey(u32& Cycles) noexcept;
+    void EORindirectx(u32& Cycles) noexcept;
+    void EORindirecty(u32& Cycles) noexcept;
+ 
         //      -- ORA --
+    void ORAimmediate(u32& Cycles) noexcept;
+    void ORAzeropage(u32& Cycles) noexcept;
+    void ORAzeropagex(u32& Cycles) noexcept; 
+    void ORAabsolute(u32& Cycles) noexcept;
+    void ORAabsolutex(u32& Cycles) noexcept;    
+    void ORAabsolutey(u32& Cycles) noexcept;      
+    void ORAindirectx(u32& Cycles) noexcept; 
+    void ORAindirecty(u32& Cycles) noexcept;
 
         // --- Register Transfer ---  // 20.01
         //      -- TAX --
