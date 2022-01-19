@@ -1,5 +1,17 @@
 #include "cpu.hpp"
 namespace cpu6502{
+
+    void CPU::TXAimplied(u32& Cycles) noexcept
+    {
+        // 1 Cycles
+        cpu_reg.ACU.set(cpu_reg.IRX.get());
+        --Cycles;
+        // 0 cycles
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+    }
+    // remove this
+    /*
     void CPU::TXA() noexcept
     {
 
@@ -13,5 +25,5 @@ namespace cpu6502{
             cpu.cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu.cpu_reg.ACU.get()));
             cpu.cpu_reg.PS.set(PSFlags::NegativeFlag, cpu.cpu_reg.ACU.get() & 0x80);
         };
-    }
+    }*/
 }

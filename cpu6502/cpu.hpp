@@ -256,21 +256,40 @@ namespace cpu6502
     void ORAindirectx(u32& Cycles) noexcept; 
     void ORAindirecty(u32& Cycles) noexcept;
 
-        // --- Register Transfer ---  // 20.01
+        // --- Register Transfer --- 
         //      -- TAX --
+    void TAXimplied(u32& Cycles) noexcept;
+        
         //      -- TAY --
+    void TAYimplied(u32& Cycles) noexcept;
+
         //      -- TXA --
+    void TXAimplied(u32& Cycles) noexcept;
+
         //      -- TYA --
+    void TYAimplied(u32& Cycles) noexcept;
 
-        // --- Stack operations ---  // 21.01
+        // --- Stack operations --- 
         //      -- PHA --
-        //      -- PHP --
-        //      -- PLA --
-        //      -- PLP --
-        //      -- TSX --
-        //      -- TXS --
+        void PHAimplied(u32& Cycles) noexcept;
 
-        // --- Status Flag Changes ---  // 24.01
+        //      -- PHP --
+        void PHPimplied(u32& Cycles) noexcept;
+
+        //      -- PLA --
+        void PLAimplied(u32& Cycles) noexcept;
+
+        //      -- PLP --
+        void PLPimplied(u32& Cycles) noexcept;
+
+        //      -- TSX --
+        void TSXimplied(u32& Cycles) noexcept;
+
+        //      -- TXS --
+        void TXSimplied(u32& Cycles) noexcept;
+
+
+        // --- Status Flag Changes ---  // 20.01
         //      -- CLC --
         //      -- CLD --
         //      -- CLI --

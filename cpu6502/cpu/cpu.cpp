@@ -539,7 +539,57 @@ namespace cpu6502{
                 {
                     ORAindirecty(Cycles);
                     break;
-                }                                                                                                                             
+                } 
+                case op(opcode::TAX::Implied):
+                {
+                    TAXimplied(Cycles);
+                    break;
+                }
+                case op(opcode::TAY::Implied):
+                {
+                    TAYimplied(Cycles);
+                    break;
+                }
+                case op(opcode::TXA::Implied):
+                {
+                    TXAimplied(Cycles);
+                    break;
+                } 
+                case op(opcode::TYA::Implied):
+                {
+                    TYAimplied(Cycles);
+                    break;
+                }   
+                case op(opcode::PHA::Implied):
+                {
+                    PHAimplied(Cycles);
+                    break;
+                }  
+                case op(opcode::PHP::Implied):
+                {
+                    PHPimplied(Cycles);
+                    break;
+                }
+                case op(opcode::PLA::Implied):
+                {
+                    PLAimplied(Cycles);
+                    break;
+                }  
+                case op(opcode::PLP::Implied):
+                {
+                    PLPimplied(Cycles);
+                    break;
+                }   
+                case op(opcode::TSX::Implied):
+                {
+                    TSXimplied(Cycles);
+                    break;
+                }
+                case op(opcode::TXS::Implied):
+                {
+                    TXSimplied(Cycles);
+                    break;
+                }                                                                                                                                          
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};
