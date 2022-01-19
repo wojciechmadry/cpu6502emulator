@@ -5,7 +5,7 @@ namespace cpu6502{
 
     [[nodiscard]] Byte CPU::fetch_byte(u32 &Cycles) noexcept
     {
-        Byte Data = mem.get()[cpu_reg.PC.get()];
+        const Byte Data = mem.get()[cpu_reg.PC.get()];
         cpu_reg.PC.increment();
         --Cycles;
         return Data;
@@ -38,7 +38,7 @@ namespace cpu6502{
         {
             throw std::out_of_range("Cant pop word from stack. (stack empty).");
         }
-        Word Data = read_word(cpu_reg.SP.get() + 2,Cycles);
+        const Word Data = read_word(cpu_reg.SP.get() + 2,Cycles);
         cpu_reg.SP.increment(2);
         --Cycles;
         return Data;
@@ -50,7 +50,7 @@ namespace cpu6502{
         {
             throw std::out_of_range("Cant pop byte from stack. (stack empty).");
         }
-        Byte Data = read_byte(cpu_reg.SP.get() + 1,Cycles);
+        const Byte Data = read_byte(cpu_reg.SP.get() + 1,Cycles);
         cpu_reg.SP.increment();
         --Cycles;
         return Data;

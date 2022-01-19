@@ -3,7 +3,7 @@
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool STACK_OPERATIONS_TEST() noexcept
+    bool STACK_OPERATIONS_TEST()
     {
         bool all_good = true;
 

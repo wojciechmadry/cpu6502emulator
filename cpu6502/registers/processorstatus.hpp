@@ -7,7 +7,7 @@ namespace cpu6502::registers
 {
     class ProcessorStatus
     {
-        Byte _reg = 0x00;
+        Byte m_reg = 0x00;
     public:
         ProcessorStatus() = default;
         ~ProcessorStatus() = default;

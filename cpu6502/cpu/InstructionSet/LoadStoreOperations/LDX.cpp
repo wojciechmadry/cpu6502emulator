@@ -15,7 +15,7 @@ namespace cpu6502 {
     void CPU::LDXzeropage(u32& Cycles) noexcept
     {
         // 2 cycles
-        Byte ZeroPageAddress = fetch_byte(Cycles);
+        const Byte ZeroPageAddress = fetch_byte(Cycles);
         // 1 cycles
         cpu_reg.IRX.set(read_byte(ZeroPageAddress, Cycles));
         // 0 cycles
@@ -41,7 +41,7 @@ namespace cpu6502 {
     void CPU::LDXabsolute(u32& Cycles) noexcept
     {
         // 3 cycles
-        Word address = fetch_word(Cycles);
+        const Word address = fetch_word(Cycles);
         // 1 cycles
         cpu_reg.IRX.set(read_byte(address, Cycles));
         // 0 cycles

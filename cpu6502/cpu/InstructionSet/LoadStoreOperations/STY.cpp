@@ -5,7 +5,7 @@ namespace cpu6502{
     void CPU::STYzeropage(u32& Cycles) noexcept
     {
         // 2 cycles
-        Byte ZeroPageAddress = fetch_byte(Cycles);
+        const Byte ZeroPageAddress = fetch_byte(Cycles);
         // 1 cycle
         write_byte(cpu_reg.IRY.get(), ZeroPageAddress, Cycles);
         // 0 cycles
@@ -26,7 +26,7 @@ namespace cpu6502{
     void CPU::STYabsolute(u32& Cycles) noexcept
     {
         // 3 cycles
-        Word Address = fetch_word(Cycles);
+        const Word Address = fetch_word(Cycles);
         // 1 cycle
         write_byte(cpu_reg.IRY.get(), Address, Cycles);
         // 0 cycles

@@ -3,7 +3,7 @@
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool STATUS_FLAG_CHANGES_TEST() noexcept
+    bool STATUS_FLAG_CHANGES_TEST()
     {
         bool all_good = true;
 

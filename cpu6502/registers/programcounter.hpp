@@ -7,8 +7,8 @@ namespace cpu6502::registers
 {
     class ProgramCounter
     {
-        Word _reg = 0;
-        using RegisterStroedType = decltype(_reg);
+        Word m_reg = 0;
+        using RegisterStroedType = decltype(m_reg);
     public:
         ProgramCounter() = default;
         ~ProgramCounter() = default;

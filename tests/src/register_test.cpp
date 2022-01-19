@@ -6,7 +6,7 @@
 
 namespace CPU6502_TEST::inner
 {
-    bool RUN_REGISTER_TEST() noexcept
+    bool RUN_REGISTER_TEST()
     {
         bool all_good = true;
         cpu6502::registers::ProcessorStatus ps;

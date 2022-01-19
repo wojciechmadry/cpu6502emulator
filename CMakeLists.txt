@@ -11,4 +11,8 @@ target_link_libraries(cpu_6502_emulator PUBLIC cpu6502)
 
 target_link_libraries(cpu_6502_emulator PUBLIC cpu6502_tests)
 
-target_compile_options(cpu_6502_emulator PRIVATE -O3 -Wextra -Werror -W -Wshadow -Wdouble-promotion -Wformat=2 -Wundef -fno-common -Wconversion -pedantic -Wall)
+target_compile_options(cpu_6502_emulator PRIVATE -O3 -Wextra -Werror -W
+-Wshadow -Wdouble-promotion -Wformat=2 -Wundef -fno-common -Wconversion -pedantic -Wall
+-Wno-unused-result -Wno-unused-variable -Wno-unused-but-set-variable
+-Wno-unused-parameter
+)

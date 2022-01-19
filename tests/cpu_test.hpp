@@ -3,6 +3,6 @@
 
 namespace CPU6502_TEST::inner
 {
-    bool RUN_CPU_TEST() noexcept;
+    bool RUN_CPU_TEST();
 }
 #endif

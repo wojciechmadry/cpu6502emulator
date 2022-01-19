@@ -3,7 +3,7 @@
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool STY_TEST() noexcept
+    bool STY_TEST()
     {
         bool all_good = true;
 

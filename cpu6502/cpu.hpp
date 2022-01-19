@@ -6,7 +6,7 @@
 #include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool BRANCHES_TEST() noexcept;  // remove this
+    bool BRANCHES_TEST();  // remove this
 }
 
 namespace cpu6502
@@ -59,7 +59,7 @@ namespace cpu6502
 
 
         //FIREND'S FUNCTION
-        friend bool CPU6502_TEST::inner::BRANCHES_TEST() noexcept; // remove this
+        friend bool CPU6502_TEST::inner::BRANCHES_TEST(); // remove this
 
         // Instruction set functions
 

@@ -3,7 +3,7 @@
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool ORA_TEST() noexcept
+    bool ORA_TEST()
     {
         bool all_good = true;
         //using PSFlags = cpu6502::registers::ProcessorStatus::Flags;

@@ -3,11 +3,11 @@ namespace cpu6502{
     void CPU::branch_if(u32& Cycles, bool If) noexcept
     {
         // 3 cycles
-        auto Fetched = static_cast<SByte>(fetch_byte(Cycles));
+        const auto Fetched = static_cast<SByte>(fetch_byte(Cycles));
         // 2 Cycles
         if( If )
         {
-            Word PC = cpu_reg.PC.get();
+            const Word PC = cpu_reg.PC.get();
             cpu_reg.PC.set(static_cast<Word>(PC + Fetched));
             --Cycles;
 

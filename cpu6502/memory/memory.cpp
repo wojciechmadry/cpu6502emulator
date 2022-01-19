@@ -6,7 +6,7 @@ namespace cpu6502{
 
     void Memory::throw_out_of_range(const u64 Address) const
     {
-        std::string msg = std::string("Address : ") + std::to_string(Address) + " is out of memory range.";
+        const std::string msg = std::string("Address : ") + std::to_string(Address) + " is out of memory range.";
         throw std::out_of_range(msg);
     }
 

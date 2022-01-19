@@ -4,22 +4,22 @@
 namespace cpu6502::registers{
     [[nodiscard]] ProgramCounter::RegisterStroedType ProgramCounter::get() const noexcept
     {
-        return _reg;
+        return m_reg;
     }
 
     [[nodiscard]] ProgramCounter::RegisterStroedType &ProgramCounter::get() noexcept
     {
-        return _reg;
+        return m_reg;
     }
 
     void ProgramCounter::set(const ProgramCounter::RegisterStroedType NewRegValue) noexcept
     {
-        _reg = NewRegValue;
+        m_reg = NewRegValue;
     }
 
     void ProgramCounter::increment() noexcept
     {
-        ++_reg;
+        ++m_reg;
     }
 
 }

@@ -14,7 +14,7 @@ namespace cpu6502 {
     void CPU::LDAzeropage(u32& Cycles) noexcept
     {
         // 2 cycles
-        Byte ZeroPageAddress = fetch_byte(Cycles);
+        const Byte ZeroPageAddress = fetch_byte(Cycles);
         // 1 cycles
         cpu_reg.ACU.set(read_byte(ZeroPageAddress, Cycles));
         // 0 cycles
@@ -41,7 +41,7 @@ namespace cpu6502 {
     void CPU::LDAabsolute(u32& Cycles) noexcept
     {
         // 3 cycles
-        Word address = fetch_word(Cycles);
+        const Word address = fetch_word(Cycles);
         // 1 cycles
         cpu_reg.ACU.set(read_byte(address, Cycles));
         // 0 cycles
@@ -87,7 +87,7 @@ namespace cpu6502 {
         address += cpu_reg.IRX.get();
         --Cycles;
         // 3 cycles
-        Word TargetAddress = read_word(address, Cycles);
+        const Word TargetAddress = read_word(address, Cycles);
         // 1 cycles
         cpu_reg.ACU.set(read_byte(TargetAddress, Cycles));
         // 0 cycles
@@ -99,7 +99,7 @@ namespace cpu6502 {
     void CPU::LDAindirecty(u32& Cycles) noexcept
     {
         // 5 cycles
-        Byte address = fetch_byte(Cycles);
+        const Byte address = fetch_byte(Cycles);
         // 4 cycles
         Word TargetAddress = read_word(address, Cycles);
         // 2 cycles

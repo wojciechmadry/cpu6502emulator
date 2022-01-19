@@ -6,91 +6,214 @@
 
 namespace CPU6502_TEST::inner
 {
-    bool RUN_CPU_TEST() noexcept
+    bool RUN_CPU_TEST()
     {
         bool all_pass = true;
         bool temp;
 
-        temp = LDA_TEST();
+        try
+        {
+            temp = LDA_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("LDA", temp);
 
-        temp = LDX_TEST();
+        try
+        {
+            temp = LDX_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("LDX", temp);
 
-        temp = LDY_TEST();
+        try
+        {
+            temp = LDY_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("LDY", temp);
 
-        temp = RTS_JSR_TEST();
+        try
+        {
+            temp = RTS_JSR_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("RTS_JSR", temp);
 
+        try
+        {
+            temp = JMP_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
 
-        temp = JMP_TEST();
         all_pass &= temp;
         
         log_test("JMP", temp);
 
-        temp = STA_TEST();
+        try
+        {
+            temp = STA_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
         
         log_test("STA", temp);
 
+        try
+        {
+            temp = STX_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
 
-        temp = STX_TEST();
         all_pass &= temp;
-        
         log_test("STX", temp);
 
+        try
+        {
+            temp = STY_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
 
-        temp = STY_TEST();
         all_pass &= temp;
 
         log_test("STY", temp);
 
-        temp = STATUS_FLAG_CHANGES_TEST();
+        try
+        {
+            temp = STATUS_FLAG_CHANGES_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("STATUS_FLAG_CHANGES", temp);
 
+        try
+        {
+            temp = REGISTER_TRANSFER_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
 
-        temp = REGISTER_TRANSFER_TEST();
         all_pass &= temp;
 
         log_test("REGISTER_TRANSFER", temp);
 
-        temp = STACK_OPERATIONS_TEST();
+        try
+        {
+            temp = STACK_OPERATIONS_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("STACK_OPERATIONS", temp);
 
-        temp = AND_TEST();
+        try
+        {
+            temp = AND_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("AND", temp);
 
-        temp = BIT_TEST();
+        try
+        {
+            temp = BIT_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("BIT", temp);
 
-        temp = EOR_TEST();
+        try
+        {
+            temp = EOR_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("EOR", temp);
 
-        temp = ORA_TEST();
+        try
+        {
+            temp = ORA_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+
         all_pass &= temp;
 
         log_test("ORA", temp);
 
-        temp = BRANCHES_TEST();
+        try
+        {
+            temp = BRANCHES_TEST();
+        }
+        catch(...)
+        {
+            temp = false;
+        }
+        
         all_pass &= temp;
 
         log_test("BRANCHES", temp);

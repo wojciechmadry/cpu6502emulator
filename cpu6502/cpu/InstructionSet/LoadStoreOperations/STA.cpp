@@ -6,7 +6,7 @@ namespace cpu6502{
     void CPU::STAzeropage(u32& Cycles) noexcept
     {
         // 2 cycles
-        Byte ZeroPageAddress = fetch_byte(Cycles);
+        const Byte ZeroPageAddress = fetch_byte(Cycles);
         // 1 cycle
         write_byte(cpu_reg.ACU.get(), ZeroPageAddress, Cycles);
         // 0 cycles
@@ -27,7 +27,7 @@ namespace cpu6502{
     void CPU::STAabsolute(u32& Cycles) noexcept
     {
         // 3 cycles
-        Word Address = fetch_word(Cycles);
+        const Word Address = fetch_word(Cycles);
         // 1 cycle
         write_byte(cpu_reg.ACU.get(), Address, Cycles);
         // 0 cycles
@@ -65,7 +65,7 @@ namespace cpu6502{
         address += cpu_reg.IRX.get();
         --Cycles;
         //3 cycles
-        Word TargetAddress = read_word(address, Cycles);
+        const Word TargetAddress = read_word(address, Cycles);
         //1 cycles
         write_byte(cpu_reg.ACU.get(), TargetAddress, Cycles);
         // 0 cycles
@@ -79,7 +79,7 @@ namespace cpu6502{
         address += cpu_reg.IRY.get();
         --Cycles;
         //3 cycles
-        Word TargetAddress = read_word(address, Cycles);
+        const Word TargetAddress = read_word(address, Cycles);
         //1 cycles
         write_byte(cpu_reg.ACU.get(), TargetAddress, Cycles);
         // 0 cycles

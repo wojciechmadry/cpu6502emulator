@@ -11,7 +11,7 @@ namespace cpu6502 {
     void CPU::JMPindirect(u32& Cycles) noexcept
     {
         // 4 cycles
-        Word Address = fetch_word(Cycles);
+        const Word Address = fetch_word(Cycles);
         // 2 cycles
         cpu_reg.PC.set(read_word(Address, Cycles));
         // 0 cycles

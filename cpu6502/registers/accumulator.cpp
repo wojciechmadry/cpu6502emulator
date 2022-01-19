@@ -3,16 +3,16 @@
 namespace cpu6502::registers{
     [[nodiscard]] Accumulator::RegisterStroedType Accumulator::get() const noexcept
     {
-        return _reg;
+        return m_reg;
     }
 
     [[nodiscard]] Accumulator::RegisterStroedType &Accumulator::get() noexcept
     {
-        return _reg;
+        return m_reg;
     }
 
     void Accumulator::set(const Accumulator::RegisterStroedType NewRegValue) noexcept
     {
-        _reg = NewRegValue;
+        m_reg = NewRegValue;
     }
 }

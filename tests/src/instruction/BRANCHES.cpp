@@ -3,7 +3,7 @@
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool BRANCHES_TEST() noexcept
+    bool BRANCHES_TEST()
     {
         bool all_good = true;
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;

@@ -5,7 +5,7 @@ namespace cpu6502{
     void CPU::PLAimplied(u32& Cycles) noexcept
     {
         // 3 cycles
-        Byte ACU = pop_byte_from_stack(Cycles);
+        const Byte ACU = pop_byte_from_stack(Cycles);
         // 1 cycles
         cpu_reg.ACU.set(ACU);
         --Cycles;

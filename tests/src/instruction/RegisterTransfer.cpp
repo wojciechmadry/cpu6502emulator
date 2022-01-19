@@ -3,7 +3,7 @@
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
-    bool REGISTER_TRANSFER_TEST() noexcept
+    bool REGISTER_TRANSFER_TEST()
     {
         bool all_good = true;
         cpu6502::Memory mem(64 * 1024);

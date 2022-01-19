@@ -4,17 +4,17 @@ namespace cpu6502::registers{
 
     [[nodiscard]] IndexRegisterY::RegisterStroedType IndexRegisterY::get() const noexcept
     {
-        return _reg;
+        return m_reg;
     }
 
     [[nodiscard]] IndexRegisterY::RegisterStroedType &IndexRegisterY::get() noexcept
     {
-        return _reg;
+        return m_reg;
     }
 
     void IndexRegisterY::set(const IndexRegisterY::RegisterStroedType NewRegValue) noexcept
     {
-        _reg = NewRegValue;
+        m_reg = NewRegValue;
     }
 
 
