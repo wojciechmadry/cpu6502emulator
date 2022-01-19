@@ -46,7 +46,7 @@ int main(){
     memory[pc + 18] = 0x8D; // Store ACU in memory ( 4 cycles)
     memory[pc + 19] = static_cast<unsigned char>(pc + 22); // Write ACU value to memory on position pc + 22 // Second eigth bits
     memory[pc + 20] = static_cast<unsigned char>((pc + 22) >> 8); // Write ACU value to memory on position pc + 22 // First eitghs bits
-    memory[pc + 21] = 0xA0; // Load 17 (ACU) to LDY register (2 cycles)
+    memory[pc + 21] = 0xA0; // Load 22 (ACU) to LDY register (2 cycles)
     memory[pc + 23] = 0x68; // Pull accumulator from stack (4 cycles) (ACU == 222)
 
 

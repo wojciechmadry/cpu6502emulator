@@ -8,6 +8,8 @@
 
 namespace cpu6502::exceptions{
 
+std::string to_hex(const std::int64_t ins) noexcept;
+
 class infinite_loop : public std::exception
 {
     std::string m_err_msg;

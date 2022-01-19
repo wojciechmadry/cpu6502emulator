@@ -17,33 +17,4 @@ namespace cpu6502{
         (void) Cycles;
     }
 
-    // remove this
-    /*
-    void CPU::CPX() noexcept
-    {
-        using op = cpu6502::opcode::CPX;
-
-        auto cast = [](op Opcode) -> Byte {
-            return static_cast<Byte>(Opcode);
-        };
-
-        LookUpTable[cast(op::Immediate)] = [](u32& Cycles, CPU& cpu) -> void
-        {
-            (void) Cycles;
-            (void) cpu;
-        };
-
-        LookUpTable[cast(op::ZeroPage)] = [](u32& Cycles, CPU& cpu) -> void
-        {
-            (void) Cycles;
-            (void) cpu;
-        };
-
-        LookUpTable[cast(op::Absolute)] = [](u32& Cycles, CPU& cpu) -> void
-        {
-            (void) Cycles;
-            (void) cpu;
-        };
-
-    }*/
 }

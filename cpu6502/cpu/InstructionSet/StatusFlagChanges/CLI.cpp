@@ -1,13 +1,12 @@
 #include "cpu.hpp"
 namespace cpu6502{
-    void CPU::CLI() noexcept
+
+    void CPU::CLIimplied(u32& Cycles) noexcept
     {
-        using op = cpu6502::opcode::CLI;
-        LookUpTable[static_cast<Byte>(op::Implied)] = [](u32& Cycles, CPU& cpu) -> void {
-            // 1 Cycles
-            cpu.cpu_reg.PS.set(PSFlags::InterruptDisable, false);
-            --Cycles;
-            // 0 cycles
-        };
+        // 1 Cycles
+        cpu_reg.PS.set(PSFlags::InterruptDisable, false);
+        --Cycles;
+        // 0 cycles
     }
+  
 }

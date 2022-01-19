@@ -45,52 +45,7 @@ namespace cpu6502
 
 
 
-/*      // remove this
-        //Initialise Instruction Set in LookUpTable
 
-        // Load/Store Operations
-        static void LDA() noexcept; // Load Accumulator
-        static void LDX() noexcept; // Load X Register
-        static void LDY() noexcept; // Load Y Register
-        static void STA() noexcept; // Store Accumulator
-        static void STX() noexcept; // Store X Register
-        static void STY() noexcept; // Store Y Register
-
-        // Jumps & Calls
-        static void JSR() noexcept; // Jump to a subroutine
-        static void JMP() noexcept; // Jump to another location
-        static void RTS() noexcept; // Return from Subroutine
-
-        // Status Flag Changes
-        static void CLC() noexcept; // Clear carry flag
-        static void CLD() noexcept; // Clear decimal mode flag
-        static void CLI() noexcept; // Clear interrupt disable flag
-        static void CLV() noexcept; // Clear overflow flag
-        static void SEC() noexcept; // Set carry flag
-        static void SED() noexcept; // Set decimal mode flag
-        static void SEI() noexcept; // Set interrupt disable flag
-
-        // Register Transfers
-        static void TAX() noexcept; // Transfer Accumulator to X
-        static void TAY() noexcept; // Transfer Accumulator to Y
-        static void TXA() noexcept; // Transfer X to Accumulator
-        static void TYA() noexcept; // Transfer Y to Accumulator
-
-
-        // Stack Operations
-        static void TSX() noexcept; // Transfer stack pointer to X
-        static void TXS() noexcept; // Transfer X to stack pointer
-        static void PHA() noexcept; // Push accumulator on stack
-        static void PHP() noexcept; // Push processor status on stack
-        static void PLA() noexcept; // Pull accumulator from stack
-        static void PLP() noexcept; // Pull processor status from stack
-
-        // LOGICAL
-        static void AND() noexcept; // Logical AND
-        static void EOR() noexcept; // Exclusive OR
-        static void ORA() noexcept; // Logical Inclusive OR
-        static void BIT() noexcept; // Bit Test
-/*
         // BRANCHES
         /*  BCC - Branch if carry flag clear
          *  BCS - Branch if carry flag set
@@ -101,18 +56,7 @@ namespace cpu6502
          *  BVC - Branch if overflow flag clear
          *  BVS - Branch if overflow flag set
          */
-       /* static void BRANCHES() noexcept;
-        void branch_if(u32& Cycles, bool If) noexcept;
-        // END - Instruction Set
 
-        // ARITHMETIC
-        static void ADC() noexcept; // Add with Carry
-        static void SBC() noexcept; // Subtract with Carry
-        static void CMP() noexcept; // Compare accumulator
-        static void CPX() noexcept; // Compare X register
-        static void CPY() noexcept; // Compare Y register
-
-        static void _init() noexcept;*/
 
         //FIREND'S FUNCTION
         friend bool CPU6502_TEST::inner::BRANCHES_TEST() noexcept; // remove this
@@ -289,14 +233,28 @@ namespace cpu6502
         void TXSimplied(u32& Cycles) noexcept;
 
 
-        // --- Status Flag Changes ---  // 20.01
+        // --- Status Flag Changes ---
         //      -- CLC --
+        void CLCimplied(u32& Cycles) noexcept;
+
         //      -- CLD --
+        void CLDimplied(u32& Cycles) noexcept;
+
         //      -- CLI --
+        void CLIimplied(u32& Cycles) noexcept;
+
         //      -- CLV --
+        void CLVimplied(u32& Cycles) noexcept;
+
         //      -- SEC --
+        void SECimplied(u32& Cycles) noexcept;
+
         //      -- SED --
+        void SEDimplied(u32& Cycles) noexcept;
+
         //      -- SEI --
+        void SEIimplied(u32& Cycles) noexcept;
+
 
 
     public:

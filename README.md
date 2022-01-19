@@ -15,7 +15,6 @@ TODO
 ---
 
 - [ ] Add all `instruction set`
-- [ ] Remove `LUT`
 - [ ] Implement `Arithmetic` set
     - [ ] Add test to `ADC`
     - [ ] Add test to `SBC`
@@ -23,6 +22,7 @@ TODO
     - [ ] Add test to `CPX`
     - [ ] Add test to `CPY`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
+- [X] Remove `LUT`
 - [X] Impement `Branches`
     - [X] Add test to `Branches`
 - [X] Not sure about `IndirectX/Y`

@@ -2,9 +2,6 @@
 #include "exceptions/cpu_except.hpp"
 
 namespace cpu6502{
-    //Look up table to all instruction function
-   // std::array<CPU::Func* , 256> CPU::LookUpTable; // remove this
-   // bool CPU::LookUpTableInit = false;  // remove this
 
     void CPU::reset() noexcept
     {
@@ -20,11 +17,6 @@ namespace cpu6502{
     CPU::CPU(cpu6502::Memory &memory) noexcept: mem(memory)
     {
         reset();
-       /* if (!LookUpTableInit)  // remove this
-        {
-            _init();
-            LookUpTableInit = true;
-        }*/
     }
 
     void CPU::execute(u32 Cycles)
@@ -40,8 +32,6 @@ namespace cpu6502{
             const u32 OldCycles = Cycles;
 
             const Byte ins = fetch_byte(Cycles);
-
-            //LookUpTable[ins](Cycles, *this); // remove this
 
             switch(ins)
             {
@@ -589,7 +579,42 @@ namespace cpu6502{
                 {
                     TXSimplied(Cycles);
                     break;
-                }                                                                                                                                          
+                } 
+                case op(opcode::CLC::Implied):
+                {
+                    CLCimplied(Cycles);
+                    break;
+                }  
+                case op(opcode::CLD::Implied):
+                {
+                    CLDimplied(Cycles);
+                    break;
+                }    
+                case op(opcode::CLI::Implied):
+                {
+                    CLIimplied(Cycles);
+                    break;
+                } 
+                case op(opcode::CLV::Implied):
+                {
+                    CLVimplied(Cycles);
+                    break;
+                } 
+                case op(opcode::SEC::Implied):
+                {
+                    SECimplied(Cycles);
+                    break;
+                }   
+                case op(opcode::SED::Implied):
+                {
+                    SEDimplied(Cycles);
+                    break;
+                }   
+                case op(opcode::SEI::Implied):
+                {
+                    SEIimplied(Cycles);
+                    break;
+                }                                                                                                                                               
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};
@@ -604,46 +629,5 @@ namespace cpu6502{
 
         }
     }
-
-/*  remove this
-    void CPU::_init() noexcept
-    {
-        BRANCHES();
-        LDA();
-        LDX();
-        JSR();
-        JMP();
-        RTS();
-        LDY();
-        STA();
-        STX();
-        STY();
-        CLC();
-        CLD();
-        CLI();
-        CLV();
-        SEC();
-        SED();
-        SEI();
-        TAX();
-        TAY();
-        TXA();
-        TYA();
-        TSX();
-        TXS();
-        PHA();
-        PHP();
-        PLA();
-        PLP();
-        AND();
-        EOR();
-        ORA();
-        BIT();
-        ADC();
-        CMP();
-        CPX();
-        CPY();
-        SBC();
-    }
-    */
+    
 }
