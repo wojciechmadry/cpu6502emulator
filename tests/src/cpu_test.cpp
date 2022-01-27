@@ -9,214 +9,54 @@ namespace CPU6502_TEST::inner
     bool RUN_CPU_TEST()
     {
         bool all_pass = true;
-        bool temp;
 
-        try
+        auto run_test = []<typename Func>(Func func, const std::string& test_name)
         {
-            temp = LDA_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
+            bool test_pass;
+            try
+            {
+                test_pass = func();
+            }
+            catch(std::exception& e)
+            {
+                test_pass = false;
+                log_messages("Test : ", test_name, " -> exception : ", e.what() , "\n");
+            }
+            log_test(test_name, test_pass);
+            return test_pass;
+        };
 
-        all_pass &= temp;
+        all_pass &= run_test(LDA_TEST, "LDA");
 
-        log_test("LDA", temp);
+        all_pass &= run_test(LDX_TEST, "LDX");
 
-        try
-        {
-            temp = LDX_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
+        all_pass &= run_test(LDY_TEST, "LDY");
 
-        all_pass &= temp;
+        all_pass &= run_test(RTS_JSR_TEST, "RTS_JSR");
 
-        log_test("LDX", temp);
-
-        try
-        {
-            temp = LDY_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("LDY", temp);
-
-        try
-        {
-            temp = RTS_JSR_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("RTS_JSR", temp);
-
-        try
-        {
-            temp = JMP_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
+        all_pass &= run_test(JMP_TEST, "JMP");
         
-        log_test("JMP", temp);
+        all_pass &= run_test(STA_TEST, "STA");
 
-        try
-        {
-            temp = STA_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
+        all_pass &= run_test(STX_TEST, "STX");
 
-        all_pass &= temp;
-        
-        log_test("STA", temp);
+        all_pass &= run_test(STY_TEST, "STY");
 
-        try
-        {
-            temp = STX_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
+        all_pass &= run_test(STATUS_FLAG_CHANGES_TEST, "STATUS_FLAG_CHANGES");
 
-        all_pass &= temp;
-        log_test("STX", temp);
+        all_pass &= run_test(REGISTER_TRANSFER_TEST, "REGISTER_TRANSFER");
 
-        try
-        {
-            temp = STY_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
+        all_pass &= run_test(STACK_OPERATIONS_TEST, "STACK_OPERATIONS");
 
-        all_pass &= temp;
+        all_pass &= run_test(AND_TEST, "AND");
 
-        log_test("STY", temp);
+        all_pass &= run_test(BIT_TEST, "BIT");
 
-        try
-        {
-            temp = STATUS_FLAG_CHANGES_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
+        all_pass &= run_test(EOR_TEST, "EOR");
 
-        all_pass &= temp;
+        all_pass &= run_test(ORA_TEST, "ORA");
 
-        log_test("STATUS_FLAG_CHANGES", temp);
-
-        try
-        {
-            temp = REGISTER_TRANSFER_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("REGISTER_TRANSFER", temp);
-
-        try
-        {
-            temp = STACK_OPERATIONS_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("STACK_OPERATIONS", temp);
-
-        try
-        {
-            temp = AND_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("AND", temp);
-
-        try
-        {
-            temp = BIT_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("BIT", temp);
-
-        try
-        {
-            temp = EOR_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("EOR", temp);
-
-        try
-        {
-            temp = ORA_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-
-        all_pass &= temp;
-
-        log_test("ORA", temp);
-
-        try
-        {
-            temp = BRANCHES_TEST();
-        }
-        catch(...)
-        {
-            temp = false;
-        }
-        
-        all_pass &= temp;
-
-        log_test("BRANCHES", temp);
+        all_pass &= run_test(BRANCHES_TEST, "BRANCHES");
 
         return all_pass;
     }

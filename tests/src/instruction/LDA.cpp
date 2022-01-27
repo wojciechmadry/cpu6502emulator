@@ -5,7 +5,6 @@
 namespace CPU6502_TEST::inner{
     bool LDA_TEST()
     {
-
         bool all_good = true;
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
         auto p = PSFlags::BreakCommand;
