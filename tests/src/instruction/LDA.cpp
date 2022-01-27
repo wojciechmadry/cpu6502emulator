@@ -19,6 +19,8 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = 0x20;
         mem[PC++] = 0x20;
 
+        cpu.execute(3);
+        
         PC = cpu.get_registers().PC.get();
 
         //ASSERT LDA - Immediate

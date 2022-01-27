@@ -35,6 +35,7 @@ namespace CPU6502_TEST::inner{
 
     bool STY_TEST();
 
+    bool ADC_TEST();
 }
 
 #endif  // INSTRUCTION_TEST_HPP

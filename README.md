@@ -7,7 +7,7 @@ Tutorial (I am suggesting this tutorial)
 https://www.youtube.com/watch?v=qJgsuQoy9bc&t=2764s
 
 Additional guides:
-1. http://www.obelisk.me.uk/6502/
+1. http://www.obelisk.me.uk/6502/ [ now: https://web.archive.org/web/20210909190432/http://www.obelisk.me.uk/6502/ ]
 2. https://sta.c64.org/cbm64mem.html
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
 

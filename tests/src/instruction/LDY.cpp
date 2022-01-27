@@ -19,6 +19,9 @@ namespace CPU6502_TEST::inner{
         mem[PC] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute); // 3 cycles
         mem[PC + 1] = 0x20;
         mem[PC + 2] = 0x20;
+
+        cpu.execute(3);
+
         PC = cpu.get_registers().PC.get();
 
         //ASSERT LDY - Immediate

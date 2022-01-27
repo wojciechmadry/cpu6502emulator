@@ -22,6 +22,7 @@ add_library(
         src/instruction/StatusFlagChanges.cpp
         src/instruction/STX.cpp
         src/instruction/STY.cpp
+        src/instruction/ADC.cpp
 )
 
 target_include_directories(cpu6502_tests PRIVATE "../cpu6502")

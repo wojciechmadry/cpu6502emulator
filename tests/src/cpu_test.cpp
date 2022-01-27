@@ -58,6 +58,8 @@ namespace CPU6502_TEST::inner
 
         all_pass &= run_test(BRANCHES_TEST, "BRANCHES");
 
+        all_pass &= run_test(ADC_TEST, "ADC");
+
         return all_pass;
     }
 }

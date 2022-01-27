@@ -15,7 +15,7 @@ namespace CPU6502_TEST::inner{
         cpu6502::Byte opcode;
         auto PC = cpu.get_registers().PC.get();
 
-        auto JUMP_TO_2020 = [&]() mutable
+        auto JUMP_TO_2020 = [&]()
         {
             PC = cpu.get_registers().PC.get();
             mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute);
