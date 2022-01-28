@@ -19,6 +19,16 @@ namespace cpu6502{
         reset();
     }
 
+    const cpu6502::Registers& CPU::get_registers() const noexcept
+    {
+        return cpu_reg;
+    }
+
+    cpu6502::Registers& CPU::get_registers() noexcept
+    {
+        return cpu_reg;
+    }
+
     void CPU::execute(u32 Cycles)
     {
         // Translate opcode to Byte
