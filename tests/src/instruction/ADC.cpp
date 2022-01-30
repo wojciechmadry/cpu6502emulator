@@ -184,21 +184,165 @@ namespace CPU6502_TEST::inner{
 
         all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(40 + 30 + 0x5 + 120);
         //END ASSERT ADC - Zero Page X
+
         JUMP_TO_2020();
         
         //ASSERT ADC - Absolute
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::Absolute);
+        
+        load_to_acu(30);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741] = 40;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == 70;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741] = 0x15;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == 70 + 0x15;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741] = 1;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == 70 + 0x15 + 1;
         //END ASSERT ADC - Absolute
 
+        JUMP_TO_2020();
+
         //ASSERT ADC - Absolute X
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::AbsoluteX);
+        load_to_xreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 40;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == 40 + 15;
+        
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
+        mem[PC++] = 0x00;
+        mem[0x00FF + 10] = 5;
+        cpu.execute(5);
+
+        all_good &= cpu.get_registers().ACU.get() == 40 + 15 + 5;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 128;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == 40 + 15 + 5 + 128;
         //END ASSERT ADC - Absolute X
+        
+        JUMP_TO_2020();
 
         //ASSERT ADC - Absolute Y
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::AbsoluteY);
+        load_to_yreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 40;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == 40 + 15;
+        
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
+        mem[PC++] = 0x00;
+        mem[0x00FF + 10] = 5;
+        cpu.execute(5);
+
+        all_good &= cpu.get_registers().ACU.get() == 40 + 15 + 5;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 128;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == 40 + 15 + 5 + 128;
         //END ASSERT ADC - Absolute Y
 
+        JUMP_TO_2020();
+
         //ASSERT ADC - Indirect X
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::IndirectX);
+        load_to_xreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20 + 10] = 0x41;
+        mem[0x21 + 10] = 0x47;
+        mem[0x4741] = 40;
+        cpu.execute(6);
+        all_good &= cpu.get_registers().ACU.get() == 15 + 40;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20 + 10] = 0x41;
+        mem[0x21 + 10] = 0x47;
+        mem[0x4741] = 2;
+        cpu.execute(6);
+        all_good &= cpu.get_registers().ACU.get() == 15 + 40 + 2;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20 + 10] = 0x41;
+        mem[0x21 + 10] = 0x47;
+        mem[0x4741] = 128;
+        cpu.execute(6);
+
+        all_good &= cpu.get_registers().ACU.get() == 15 + 40 + 2 + 128;
         //END ASSERT ADC - Indirect X
 
         //ASSERT ADC - Indirect Y
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::IndirectY);
+        load_to_yreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20] = 0x41;
+        mem[0x21] = 0x47;
+        mem[0x4741 + 10] = 40;
+        cpu.execute(5);
+        all_good &= cpu.get_registers().ACU.get() == 15 + 40;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20] = 0xFF;
+        mem[0x21] = 0x00;
+        mem[0x00FF + 10] = 2;
+        cpu.execute(6);
+        all_good &= cpu.get_registers().ACU.get() == 15 + 40 + 2;
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20] = 0x41;
+        mem[0x21] = 0x47;
+        mem[0x4741 + 10] = 128;
+        cpu.execute(5);
+
+        all_good &= cpu.get_registers().ACU.get() == 15 + 40 + 2 + 128;
         //END ASSERT ADC - Indirect Y
         return all_good;
     }

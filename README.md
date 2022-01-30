@@ -16,7 +16,7 @@ TODO
 
 - [ ] Add all `instruction set`
 - [ ] Implement `Arithmetic` set
-    - [ ] Add test to `ADC`
+    - [X] Add test to `ADC`
     - [ ] Add test to `SBC`
     - [ ] Add test to `CMP`
     - [ ] Add test to `CPX`
