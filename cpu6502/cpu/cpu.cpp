@@ -624,7 +624,7 @@ namespace cpu6502{
                 {
                     SEIimplied(Cycles);
                     break;
-                }                                                                                                                                               
+                }                                                                                                                                             
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};

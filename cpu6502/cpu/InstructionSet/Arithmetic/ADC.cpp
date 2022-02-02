@@ -6,16 +6,14 @@
 #include <iostream> // remove this
 namespace cpu6502{
 
-    template<typename INT1>
-    requires(std::is_integral_v<INT1>)
-    void add_to_acu(CPU& cpu, const INT1 value_to_add) noexcept
+    void CPU::ADC(const Byte value) noexcept
     {
         // Overflow flag -> if ACU is treat as signed
         // Carry flag -> if ACU is treat as unsigned
-        auto& reg = cpu.get_registers();
+        auto& reg = cpu_reg;
         const auto ACU = reg.ACU.get();
         const auto carry_flag = reg.PS.get(CPU::PSFlags::CarryFlag);
-        const auto word_data = static_cast<Word>(value_to_add + ACU + carry_flag);
+        const auto word_data = static_cast<Word>(value + ACU + carry_flag);
         reg.ACU.set(static_cast<Byte>(word_data));
         // 0 cycles
 
@@ -23,7 +21,7 @@ namespace cpu6502{
         reg.PS.set(CPU::PSFlags::NegativeFlag, reg.ACU.get() & 0x80);
 
         const auto signed_ACU = static_cast<SWord>(static_cast<SByte>(ACU));
-        const auto signed_fetched = static_cast<SWord>(static_cast<SByte>(value_to_add));
+        const auto signed_fetched = static_cast<SWord>(static_cast<SByte>(value));
         const auto signed_sum = signed_ACU + signed_fetched + carry_flag;
         reg.PS.set(CPU::PSFlags::OverflowFlag, signed_sum < std::numeric_limits<SByte>::min() || signed_sum > std::numeric_limits<SByte>::max());
         reg.PS.set(CPU::PSFlags::CarryFlag, word_data > std::numeric_limits<Byte>::max());
@@ -33,7 +31,7 @@ namespace cpu6502{
     {
         // 1 cycles
         const auto fetched = fetch_byte(Cycles);
-        add_to_acu(*this, fetched);
+        ADC(fetched);
         // 0 cycles
     }
 
@@ -44,7 +42,7 @@ namespace cpu6502{
         // 1 cycles
         const auto fetched = read_byte(ZeroPageAddress, Cycles);
         // 0 cycles
-        add_to_acu(*this, fetched);
+        ADC(fetched);
     }
 
     void CPU::ADCzeropagex(u32& Cycles) noexcept
@@ -57,7 +55,7 @@ namespace cpu6502{
         // 1 cycles
         const auto fetched = read_byte(ZeroPageAddress, Cycles);
         // 0 cycles
-        add_to_acu(*this, fetched);
+        ADC(fetched);
     }
 
     void CPU::ADCabsolute(u32& Cycles) noexcept
@@ -67,7 +65,7 @@ namespace cpu6502{
         // 1 cycles
         const auto fetched = read_byte(address, Cycles);
         // 0 cycles
-        add_to_acu(*this, fetched);
+        ADC(fetched);
     }
 
 
@@ -82,7 +80,7 @@ namespace cpu6502{
                 --Cycles; // 1 cycles if page crossed
         const auto fetched = read_byte(address, Cycles);
         // 0 cycles
-        add_to_acu(*this, fetched);
+        ADC(fetched);
     }
 
 
@@ -97,7 +95,7 @@ namespace cpu6502{
                 --Cycles; // 1 cycles if page crossed
         const auto fetched = read_byte(address, Cycles);
         // 0 cycles
-        add_to_acu(*this, fetched);
+        ADC(fetched);
     }
 
 
@@ -113,7 +111,7 @@ namespace cpu6502{
         // 1 cycles
         const auto fetched = read_byte(TargetAddress, Cycles);
         // 0 cycles
-        add_to_acu(*this, fetched);
+        ADC(fetched);
     }
 
 
@@ -132,6 +130,6 @@ namespace cpu6502{
         const auto fetched = read_byte(TargetAddress, Cycles);
         // 0 cycles
 
-        add_to_acu(*this, fetched);
+        ADC(fetched);
     }
 }

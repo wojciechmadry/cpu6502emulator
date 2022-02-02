@@ -34,7 +34,9 @@ namespace cpu6502
         void push_word_to_stack(Word Data, u32& Cycles);
         void push_byte_to_stack(Byte Data, u32& Cycles);
 
-
+        // Operation
+        // Add value to  Acumulator
+        void ADC(const Byte value) noexcept;
 
 
         // BRANCHES
