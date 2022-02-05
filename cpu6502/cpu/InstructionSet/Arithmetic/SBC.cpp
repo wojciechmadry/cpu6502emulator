@@ -5,7 +5,7 @@ namespace cpu6502{
     void CPU::SBCimmediate(u32& Cycles) noexcept
     {
         // 1 cycles
-        const auto fetched = static_cast<Byte>(~fetch_byte(Cycles) + 1);
+        const auto fetched = static_cast<Byte>(~fetch_byte(Cycles));
         ADC(fetched);
     }
 
