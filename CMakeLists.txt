@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.17)
 project(cpu_6502_emulator)
 
+set(CXX_COMPILER_FLAGS -O3 -Wextra -Werror -W
+-Wno-unused-parameter
+-Wshadow -Wdouble-promotion -Wformat=2 
+-Wundef -fno-common -Wconversion -Wpedantic -Wall
+-Wno-unused-result -Wno-unused-variable 
+-Wno-unused-but-set-variabl)
+
 set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(cpu6502)
 add_subdirectory(tests)
@@ -11,8 +18,4 @@ target_link_libraries(cpu_6502_emulator PUBLIC cpu6502)
 
 target_link_libraries(cpu_6502_emulator PUBLIC cpu6502_tests)
 
-target_compile_options(cpu_6502_emulator PRIVATE -O3 -Wextra -Werror -W
--Wshadow -Wdouble-promotion -Wformat=2 -Wundef -fno-common -Wconversion -pedantic -Wall
--Wno-unused-result -Wno-unused-variable -Wno-unused-but-set-variable
--Wno-unused-parameter
-)
+target_compile_options(cpu_6502_emulator PRIVATE ${CXX_COMPILER_FLAGS})

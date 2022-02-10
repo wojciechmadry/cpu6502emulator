@@ -54,7 +54,7 @@ target_link_libraries(cpu6502
         cpu6502_exceptions)
 
 set_target_properties(cpu6502 PROPERTIES LINKER_LANGUAGE CXX)
-target_compile_options(cpu6502 PRIVATE -O3 -Wextra -Werror -W -Wshadow -Wdouble-promotion -Wformat=2 -Wundef -fno-common -Wconversion -pedantic -Wall)
+target_compile_options(cpu6502 PRIVATE ${CXX_COMPILER_FLAGS})
 
 target_include_directories(cpu6502 PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(cpu6502 PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/registers")

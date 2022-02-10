@@ -139,6 +139,246 @@ namespace CPU6502_TEST::inner{
 
         //END ASSERT SBC - Immediate
 
+        //ASSERT SBC - Zero Page
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::SBC::ZeroPage); // 3 Cycles
+        turn_on_carry_flag();
+
+        load_to_acu(37);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
+        mem[0xFF] = 40;
+        cpu.execute(3);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(37 - 40);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
+        mem[0xFF] = 0x5;
+        cpu.execute(3);
+
+        all_good &=cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(37 - 40 - 0x5);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
+        mem[0xFF] = 128;
+        cpu.execute(3);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(37 - 40 - 0x5 - 128);
+        //END ASSERT SBC - Zero Page
+
+        JUMP_TO_2020();
+
+        //ASSERT SBC - Zero Page X
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::SBC::ZeroPageX); // 4 Cycles
+        turn_on_carry_flag();
+        load_to_xreg(15);
+        load_to_acu(30);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x0F;
+        mem[0x0F + 15] = 40;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0xAA;
+        mem[0xAA + 15] = 0x5;
+        cpu.execute(4);
+
+        all_good &=cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40 - 0x5);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0xBA;
+        mem[0xBA + 15] = 120;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40 - 0x5 - 120);
+        //END ASSERT SBC - Zero Page X
+
+        JUMP_TO_2020();
+
+        //ASSERT SBC - Absolute
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::SBC::Absolute);
+        turn_on_carry_flag();
+
+        load_to_acu(30);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741] = 40;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
+       
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741] = 0x15;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40 - 0x15);
+        
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741] = 1;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40 - 0x15 - 1);
+        //END ASSERT SBC - Absolute
+
+        JUMP_TO_2020();
+
+        //ASSERT SBC - Absolute X
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::SBC::AbsoluteX);
+        turn_on_carry_flag();
+        load_to_xreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 40;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40);
+        
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
+        mem[PC++] = 0x00;
+        mem[0x00FF + 10] = 5;
+        cpu.execute(5);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 5);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 128;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 5 - 128);
+        //END ASSERT SBC - Absolute X
+
+        JUMP_TO_2020();
+
+        //ASSERT SBC - Absolute Y
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::SBC::AbsoluteY);
+        turn_on_carry_flag();
+        load_to_yreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 40;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40);
+                
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0xFF;
+        mem[PC++] = 0x00;
+        mem[0x00FF + 10] = 5;
+        cpu.execute(5);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 5);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x41;
+        mem[PC++] = 0x47;
+        mem[0x4741 + 10] = 128;
+        cpu.execute(4);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 5 - 128);
+        //END ASSERT SBC - Absolute Y
+
+        JUMP_TO_2020();
+
+
+        //ASSERT SBC - Indirect X
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::SBC::IndirectX);
+        turn_on_carry_flag();
+        load_to_xreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20 + 10] = 0x41;
+        mem[0x21 + 10] = 0x47;
+        mem[0x4741] = 40;
+        cpu.execute(6);
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20 + 10] = 0x41;
+        mem[0x21 + 10] = 0x47;
+        mem[0x4741] = 2;
+        cpu.execute(6);
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 2);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20 + 10] = 0x41;
+        mem[0x21 + 10] = 0x47;
+        mem[0x4741] = 128;
+        cpu.execute(6);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 2 - 128);
+        //END ASSERT SBC - Indirect X
+
+        JUMP_TO_2020();
+
+        //ASSERT SBC - Indirect Y
+        opcode = static_cast<decltype(opcode)>(cpu6502::opcode::SBC::IndirectY);
+        turn_on_carry_flag();
+        load_to_yreg(10);
+        load_to_acu(15);
+
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20] = 0x41;
+        mem[0x21] = 0x47;
+        mem[0x4741 + 10] = 40;
+        cpu.execute(5);
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40);
+        
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20] = 0xFF;
+        mem[0x21] = 0x00;
+        mem[0x00FF + 10] = 2;
+        cpu.execute(6);
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 2);
+
+        turn_on_carry_flag();
+        mem[PC++] = opcode;
+        mem[PC++] = 0x20;
+        mem[0x20] = 0x41;
+        mem[0x21] = 0x47;
+        mem[0x4741 + 10] = 128;
+        cpu.execute(5);
+
+        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(15 - 40 - 2 - 128);
+        //END ASSERT SBC - Indirect Y
+
         return all_good;
     }
 }

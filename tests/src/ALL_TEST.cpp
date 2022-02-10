@@ -14,7 +14,6 @@ namespace CPU6502_TEST
         babel::TIME::timer T;
         T.start();
         bool ALL_GOOD = true;
-        
         ALL_GOOD &= CPU6502_TEST::inner::RUN_REGISTER_TEST();
         ALL_GOOD &= CPU6502_TEST::inner::RUN_CPU_TEST();
         

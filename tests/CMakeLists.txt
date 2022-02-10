@@ -26,8 +26,9 @@ add_library(
         src/instruction/SBC.cpp
 )
 
+target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})
+
 target_include_directories(cpu6502_tests PRIVATE "../cpu6502")
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(cpu6502_tests PRIVATE cpu6502)
-target_compile_options(cpu6502_tests PRIVATE -O3 -Wextra -Werror -W -Wshadow -Wdouble-promotion -Wformat=2 -Wundef -fno-common -Wconversion -pedantic -Wall)
 target_include_directories(cpu6502_tests PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")

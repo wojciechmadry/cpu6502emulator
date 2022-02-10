@@ -314,6 +314,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() == 15 + 40 + 2 + 128;
         //END ASSERT ADC - Indirect X
 
+        JUMP_TO_2020();
+        
         //ASSERT ADC - Indirect Y
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::IndirectY);
         load_to_yreg(10);
