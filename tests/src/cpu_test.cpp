@@ -62,6 +62,8 @@ namespace CPU6502_TEST::inner
 
         all_pass &= run_test(SBC_TEST, "SBC");
 
+        all_pass &= run_test(CMP_TEST, "CMP");
+
         return all_pass;
     }
 }

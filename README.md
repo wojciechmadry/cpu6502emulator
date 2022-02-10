@@ -15,14 +15,15 @@ TODO
 ---
 
 - [ ] Add all `instruction set`
+- [ ] Add implementation of decimal flag
 - [ ] Implement `Arithmetic` set
     - [X] Add test to `ADC`
     - [X] Add test to `SBC`
-    - [ ] Add test to `CMP`
+    - [X] Add test to `CMP`
     - [ ] Add test to `CPX`
     - [ ] Add test to `CPY`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
-- [X] Implement better addressing type
+- [X] Implement better addressing mode
 - [X] Remove `LUT`
 - [X] Impement `Branches`
     - [X] Add test to `Branches`
