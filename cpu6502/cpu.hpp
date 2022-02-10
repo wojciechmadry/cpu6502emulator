@@ -4,6 +4,7 @@
 #include "memory/memory.hpp"
 #include "registers/registers.hpp"
 #include "cpu/InstructionSet/opcode.hpp"
+#include "required.hpp"
 
 namespace CPU6502_TEST::inner{
     bool BRANCHES_TEST();  // remove this
@@ -11,7 +12,6 @@ namespace CPU6502_TEST::inner{
 
 namespace cpu6502
 {
-
     class CPU
     {
         //CPU registers
@@ -38,6 +38,58 @@ namespace cpu6502
         // Add value to  Acumulator
         void ADC(const Byte value) noexcept;
 
+        // Fetch data from memory
+        cpu6502::Byte fetch_immediate(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_absolute(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_absolutex(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_absolutey(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_indirectx(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_indirecty(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_zeropage(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_zeropagex(cpu6502::u32& Cycles) noexcept;
+        cpu6502::Byte fetch_zeropagey(cpu6502::u32& Cycles) noexcept;
+
+        template<AddressingMode mode>
+        cpu6502::Byte fetch(cpu6502::u32& Cycles) noexcept
+        {
+            if constexpr (mode == AddressingMode::Immediate)
+            {
+                return fetch_immediate(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::Absolute)
+            {
+                return fetch_absolute(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::AbsoluteX)
+            {
+                return fetch_absolutex(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::AbsoluteY)
+            {
+                return fetch_absolutey(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::IndirectX)
+            {
+                return fetch_indirectx(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::IndirectY)
+            {
+                return fetch_indirecty(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::ZeroPage)
+            {
+                return fetch_zeropage(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::ZeroPageX)
+            {
+                return fetch_zeropagex(Cycles);
+            }
+            else if constexpr (mode == AddressingMode::ZeroPageY)
+            {
+                return fetch_zeropagey(Cycles);
+            }
+            return static_cast<cpu6502::Byte>(0xFF);
+        }
 
         // BRANCHES
         /*  BCC - Branch if carry flag clear
@@ -51,7 +103,7 @@ namespace cpu6502
          */
 
 
-    //FIREND'S FUNCTION
+        //FIREND'S FUNCTION
         friend bool CPU6502_TEST::inner::BRANCHES_TEST(); // remove this
 
         // Instruction set functions

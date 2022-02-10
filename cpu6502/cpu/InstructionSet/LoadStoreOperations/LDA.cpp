@@ -4,115 +4,79 @@ namespace cpu6502 {
 
     void CPU::LDAimmediate(u32& Cycles) noexcept
     {
+        const auto fetched = fetch<AddressingMode::Immediate>(Cycles);
         // 1 cycles
-        cpu_reg.ACU.set(fetch_byte(Cycles));
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
     }
 
     void CPU::LDAzeropage(u32& Cycles) noexcept
     {
-        // 2 cycles
-        const Byte ZeroPageAddress = fetch_byte(Cycles);
-        // 1 cycles
-        cpu_reg.ACU.set(read_byte(ZeroPageAddress, Cycles));
+        const auto fetched = fetch<AddressingMode::ZeroPage>(Cycles);
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
 
     }
 
     void CPU::LDAzeropagex(u32& Cycles) noexcept
     {
-        // 3 cycles
-        Byte ZeroPageAddress = fetch_byte(Cycles);
-        // 2 cycles
-        ZeroPageAddress += cpu_reg.IRX.get();
-        --Cycles;
-        // 1 cycles
-        cpu_reg.ACU.set(read_byte(ZeroPageAddress, Cycles));
+        const auto fetched = fetch<AddressingMode::ZeroPageX>(Cycles);
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
-
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
     }
 
     void CPU::LDAabsolute(u32& Cycles) noexcept
     {
-        // 3 cycles
-        const Word address = fetch_word(Cycles);
-        // 1 cycles
-        cpu_reg.ACU.set(read_byte(address, Cycles));
+        const auto fetched = fetch<AddressingMode::Absolute>(Cycles);
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
     }
 
     void CPU::LDAabsolutex(u32& Cycles) noexcept
     {
-        // 4 cycles
-        Word address = fetch_word(Cycles);
-        //2 cycles
-        const auto OldAddress = address;
-        address += cpu_reg.IRX.get();
-        if ((address >> 8) != (OldAddress>>8))
-            --Cycles; // 1 cycles if page crossed
-        cpu_reg.ACU.set(read_byte(address, Cycles));
+        const auto fetched = fetch<AddressingMode::AbsoluteX>(Cycles);
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
     }
 
     void CPU::LDAabsolutey(u32& Cycles) noexcept
     {
-        // 4 cycles
-        Word address = fetch_word(Cycles);
-        //2 cycles
-        const auto OldAddress = address;
-        address += cpu_reg.IRY.get();
-        if ((address >> 8) != (OldAddress>>8))
-            --Cycles; // 1 cycles if page crossed
-        cpu_reg.ACU.set(read_byte(address, Cycles));
+        const auto fetched = fetch<AddressingMode::AbsoluteY>(Cycles);
+
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
     }
 
     void CPU::LDAindirectx(u32& Cycles) noexcept
     {
-        // 5 cycles
-        Byte address = fetch_byte(Cycles);
-        // 4 cycles
-        address += cpu_reg.IRX.get();
-        --Cycles;
-        // 3 cycles
-        const Word TargetAddress = read_word(address, Cycles);
-        // 1 cycles
-        cpu_reg.ACU.set(read_byte(TargetAddress, Cycles));
+        const auto fetched = fetch<AddressingMode::IndirectX>(Cycles);
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
 
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
     }
 
     void CPU::LDAindirecty(u32& Cycles) noexcept
     {
-        // 5 cycles
-        const Byte address = fetch_byte(Cycles);
-        // 4 cycles
-        Word TargetAddress = read_word(address, Cycles);
-        // 2 cycles
-        const auto OldAddress = TargetAddress;
-        TargetAddress += cpu_reg.IRY.get();
-        if ((TargetAddress >> 8) != (OldAddress>>8))
-            --Cycles; // 1 cycles if page crossed
-
-        cpu_reg.ACU.set(read_byte(TargetAddress, Cycles));
+        const auto fetched = fetch<AddressingMode::IndirectY>(Cycles);
+        cpu_reg.ACU.set(fetched);
         // 0 cycles
 
-        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-        cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+        cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(fetched));
+        cpu_reg.PS.set(PSFlags::NegativeFlag, fetched & 0x80);
     }
 
 }

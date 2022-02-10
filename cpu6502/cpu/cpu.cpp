@@ -2,6 +2,86 @@
 #include "exceptions/cpu_except.hpp"
 
 namespace cpu6502{
+    cpu6502::Byte CPU::fetch_immediate(cpu6502::u32& Cycles) noexcept
+    {
+        return fetch_byte(Cycles); // 1 cycles
+    }
+
+    cpu6502::Byte CPU::fetch_absolute(cpu6502::u32& Cycles) noexcept
+    {
+        const Word address = fetch_word(Cycles);
+        return read_byte(address, Cycles);
+    }
+
+    cpu6502::Byte CPU::fetch_absolutex(cpu6502::u32& Cycles) noexcept
+    {
+        Word address = fetch_word(Cycles);
+        const auto OldAddress = address;
+        address += cpu_reg.IRX.get();
+        if ((address >> 8) != (OldAddress>>8))
+                --Cycles; // 1 cycles if page crossed
+        return read_byte(address, Cycles);
+    }
+
+    cpu6502::Byte CPU::fetch_absolutey(cpu6502::u32& Cycles) noexcept
+    {
+        Word address = fetch_word(Cycles);
+        const auto OldAddress = address;
+        address += cpu_reg.IRY.get();
+        if ((address >> 8) != (OldAddress>>8))
+                --Cycles; // 1 cycles if page crossed
+        return read_byte(address, Cycles);
+    }
+
+    cpu6502::Byte CPU::fetch_indirectx(cpu6502::u32& Cycles) noexcept
+    {
+        Byte address = fetch_byte(Cycles);
+        address += cpu_reg.IRX.get();
+        --Cycles;
+        const Word TargetAddress = read_word(address, Cycles);
+        return read_byte(TargetAddress, Cycles);
+    }
+
+    cpu6502::Byte CPU::fetch_indirecty(cpu6502::u32& Cycles) noexcept
+    {
+        const Byte address = fetch_byte(Cycles);
+        Word TargetAddress = read_word(address, Cycles);
+        const auto OldAddress = TargetAddress;
+        TargetAddress += cpu_reg.IRY.get();
+        if ((TargetAddress >> 8) != (OldAddress>>8))
+            --Cycles; // 1 cycles if page crossed
+        return  read_byte(TargetAddress, Cycles);
+    }
+
+    cpu6502::Byte CPU::fetch_zeropage(cpu6502::u32& Cycles) noexcept
+    {
+        // 2 cycles
+        const auto ZeroPageAddress = fetch_byte(Cycles);
+        // 1 cycles
+        return read_byte(ZeroPageAddress, Cycles);
+    }
+
+    cpu6502::Byte CPU::fetch_zeropagex(cpu6502::u32& Cycles) noexcept
+    {
+        // 3 cycles
+        Byte ZeroPageAddress = fetch_byte(Cycles);
+        // 2 cycles;
+        ZeroPageAddress += cpu_reg.IRX.get();
+        --Cycles;
+        // 1 cycles
+        return read_byte(ZeroPageAddress, Cycles);
+    }
+
+    cpu6502::Byte CPU::fetch_zeropagey(cpu6502::u32& Cycles) noexcept
+    {
+        // 3 cycles
+        Byte ZeroPageAddress = fetch_byte(Cycles);
+        // 2 cycles;
+        ZeroPageAddress += cpu_reg.IRY.get();
+        --Cycles;
+        // 1 cycles
+        return read_byte(ZeroPageAddress, Cycles);
+    }
 
     void CPU::reset() noexcept
     {

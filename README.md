@@ -22,6 +22,7 @@ TODO
     - [ ] Add test to `CPX`
     - [ ] Add test to `CPY`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
+- [X] Implement better addressing type
 - [X] Remove `LUT`
 - [X] Impement `Branches`
     - [X] Add test to `Branches`

@@ -14,6 +14,21 @@ namespace cpu6502
     using SWord = int16_t;
     using u32 = uint32_t;
     using u64 = uint64_t;
+
+    enum class AddressingMode : Byte
+    {
+        Immediate,
+        ZeroPage,
+        ZeroPageX,
+        ZeroPageY,
+        Absolute,
+        AbsoluteX,
+        AbsoluteY,
+        Indirect,
+        IndirectX,
+        IndirectY
+    };
+
 }
 
 #endif
