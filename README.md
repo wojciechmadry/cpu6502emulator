@@ -16,7 +16,23 @@ TODO
 
 - [ ] Add all `instruction set`
 - [ ] Add implementation of decimal flag
-- [ ] Implement `Arithmetic` set
+- [ ] Implement `System Functions` instructions
+    - [ ] Add test to `BRK` 
+    - [ ] Add test to `NOP` 
+    - [ ] Add test to `RTI` 
+- [ ] Implement `Shifts` instructions
+    - [ ] Add test to `ASL` 
+    - [ ] Add test to `LSR` 
+    - [ ] Add test to `ROL` 
+    - [ ] Add test to `ROR` 
+- [ ] Implement `Increments & Decrements` instructions
+    - [ ] Add test to `INC` 
+    - [ ] Add test to `INX` 
+    - [ ] Add test to `INY` 
+    - [ ] Add test to `DEC` 
+    - [ ] Add test to `DEX` 
+    - [ ] Add test to `DEY` 
+- [ ] Implement `Arithmetic` instructions
     - [X] Add test to `ADC`
     - [X] Add test to `SBC`
     - [X] Add test to `CMP`
