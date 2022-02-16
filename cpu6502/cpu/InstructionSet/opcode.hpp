@@ -8,19 +8,19 @@ namespace cpu6502::opcode{
     // Force an interrupt
     enum class BRK
     {
-        Implied = 0x00
+        Implied = 0x00 // 7 cycles
     };
 
     // No operaion
     enum class NOP
     {
-        Implied = 0xEA
+        Implied = 0xEA // 2 cycles
     };
 
     // Return from Interrupt
     enum class RTI
     {
-        Implied = 0x40
+        Implied = 0x40 // 6 cycles
     };
 
     // *** SYSTEM FUNCTIONS ***

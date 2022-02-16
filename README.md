@@ -17,10 +17,6 @@ TODO
 - [ ] Add all `instruction set`
 - [ ] Add implementation of decimal flag
 - [ ] Implementing `RTS` - Working - But I think something is wrong
-- [ ] Implement `System Functions` instructions
-    - [ ] Add test to `BRK` 
-    - [X] Add test to `NOP` 
-    - [ ] Add test to `RTI` 
 - [ ] Implement `Shifts` instructions
     - [ ] Add test to `ASL` 
     - [ ] Add test to `LSR` 
@@ -33,12 +29,8 @@ TODO
     - [ ] Add test to `DEC` 
     - [ ] Add test to `DEX` 
     - [ ] Add test to `DEY` 
-- [X] Implement `Arithmetic` instructions
-    - [X] Add test to `ADC`
-    - [X] Add test to `SBC`
-    - [X] Add test to `CMP`
-    - [X] Add test to `CPX`
-    - [X] Add test to `CPY`
+- [X] Implement `System Functions` instructions (`BRK`, `NOP`, `RTI`)
+- [X] Implement `Arithmetic` instructions (`ADC`, `SBC`, `CMP`, `CPX`, `CPY`)
 - [X] Implement better addressing mode
 - [X] Remove `LUT`
 - [X] Impement `Branches`

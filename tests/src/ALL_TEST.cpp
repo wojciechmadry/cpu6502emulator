@@ -21,11 +21,15 @@ namespace CPU6502_TEST
 
         if (ALL_GOOD)
         {
-            log_message("All test pass in : ");
+            log_message("All test ");
+            log_message("pass", Colors::GREEN);
+            log_message(" in :");
         }
         else
         {
-            log_message("Tests fail in : ");
+            log_message("Tests ");
+            log_message("fail", Colors::RED);
+            log_message(" in : ");
         }    
         log_message(std::to_string(Time));
         log_message(" seconds.\n");
