@@ -300,12 +300,25 @@ namespace cpu6502
         //      -- SEI --
         void SEIimplied(u32& Cycles) noexcept;
 
+        // --- System Functions ---
 
+        //      -- BRK --
+        void BRKimplied(u32& Cycles) noexcept;
+
+        //      -- RTI --
+        void RTIimplied(u32& Cycles) noexcept;
+
+        //      -- NOP --
+        void NOPimplied(u32& Cycles) noexcept;
 
     public:
         //Processor Status flags
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
-         
+        
+        // 0xFFFE - Addres of interrupt vector
+        // IRQ - Interrupt request
+        static constexpr Word IRQ = 0xFFFE;
+
         CPU() = delete;
         CPU(const CPU&) = delete;
         CPU(CPU&&) = delete;

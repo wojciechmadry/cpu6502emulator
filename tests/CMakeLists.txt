@@ -27,6 +27,9 @@ add_library(
         src/instruction/CMP.cpp
         src/instruction/CPX.cpp
         src/instruction/CPY.cpp
+        src/instruction/NOP.cpp
+        src/instruction/BRK.cpp
+        src/instruction/RTI.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})

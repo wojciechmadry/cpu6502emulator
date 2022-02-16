@@ -16,9 +16,10 @@ TODO
 
 - [ ] Add all `instruction set`
 - [ ] Add implementation of decimal flag
+- [ ] Implementing `RTS` - Working - But I think something is wrong
 - [ ] Implement `System Functions` instructions
     - [ ] Add test to `BRK` 
-    - [ ] Add test to `NOP` 
+    - [X] Add test to `NOP` 
     - [ ] Add test to `RTI` 
 - [ ] Implement `Shifts` instructions
     - [ ] Add test to `ASL` 
@@ -38,7 +39,6 @@ TODO
     - [X] Add test to `CMP`
     - [X] Add test to `CPX`
     - [X] Add test to `CPY`
-- [ ] Implementing `RTS` - Working - But I think something is wrong
 - [X] Implement better addressing mode
 - [X] Remove `LUT`
 - [X] Impement `Branches`

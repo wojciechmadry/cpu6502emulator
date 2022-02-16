@@ -68,6 +68,12 @@ namespace CPU6502_TEST::inner
 
         all_pass &= run_test(CPY_TEST, "CPY");
 
+        all_pass &= run_test(NOP_TEST, "NOP");
+
+        all_pass &= run_test(RTI_TEST, "RTI");
+
+        all_pass &= run_test(BRK_TEST, "BRK");
+
         return all_pass;
     }
 }

@@ -704,7 +704,22 @@ namespace cpu6502{
                 {
                     SEIimplied(Cycles);
                     break;
-                }                                                                                                                                          
+                }    
+                case op(opcode::BRK::Implied):
+                {
+                    BRKimplied(Cycles);
+                    break;
+                }     
+                case op(opcode::NOP::Implied):
+                {
+                    NOPimplied(Cycles);
+                    break;
+                }    
+                case op(opcode::RTI::Implied):
+                {
+                    RTIimplied(Cycles);
+                    break;
+                }                                                                                                                                           
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};

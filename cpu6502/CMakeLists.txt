@@ -43,6 +43,9 @@ add_library(
         cpu/InstructionSet/Arithmetic/CMP.cpp
         cpu/InstructionSet/Arithmetic/CPX.cpp
         cpu/InstructionSet/Arithmetic/CPY.cpp
+        cpu/InstructionSet/SystemFunctions/BRK.cpp
+        cpu/InstructionSet/SystemFunctions/NOP.cpp
+        cpu/InstructionSet/SystemFunctions/RTI.cpp
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
         cpu/InstructionSet/opcode.hpp

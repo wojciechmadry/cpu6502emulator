@@ -3,6 +3,28 @@
 
 namespace cpu6502::opcode{
 
+    // *** SYSTEM FUNCTIONS ***
+
+    // Force an interrupt
+    enum class BRK
+    {
+        Implied = 0x00
+    };
+
+    // No operaion
+    enum class NOP
+    {
+        Implied = 0xEA
+    };
+
+    // Return from Interrupt
+    enum class RTI
+    {
+        Implied = 0x40
+    };
+
+    // *** SYSTEM FUNCTIONS ***
+
     // *** ARITHMETIC ***
 
     // Add with Carry
