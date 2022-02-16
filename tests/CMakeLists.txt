@@ -25,6 +25,8 @@ add_library(
         src/instruction/ADC.cpp
         src/instruction/SBC.cpp
         src/instruction/CMP.cpp
+        src/instruction/CPX.cpp
+        src/instruction/CPY.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})

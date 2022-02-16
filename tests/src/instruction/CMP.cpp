@@ -71,8 +71,6 @@ namespace CPU6502_TEST::inner{
                 mem[PC++] = opcode;
                 mem[PC++] = static_cast<cpu6502::Byte>(j);
                 cpu.execute(2);
-                // Check ACU value after add
-                all_good &= cpu.get_registers().ACU.get() == result;
 
                 // Check Negative flag
                 all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == negative_flag;
@@ -100,7 +98,6 @@ namespace CPU6502_TEST::inner{
         mem[0xFF] = 40;
         cpu.execute(3);
 
-        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(37 - 40);
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -112,7 +109,6 @@ namespace CPU6502_TEST::inner{
         mem[0xFF] = 0x5;
         cpu.execute(3);
 
-        all_good &= cpu.get_registers().ACU.get() == 0x00;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
@@ -124,7 +120,6 @@ namespace CPU6502_TEST::inner{
         mem[0xFF] = 0;
         cpu.execute(3);
 
-        all_good &= cpu.get_registers().ACU.get() == 0xFF;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -143,7 +138,6 @@ namespace CPU6502_TEST::inner{
         mem[0x0F + 15] = 40;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -156,7 +150,6 @@ namespace CPU6502_TEST::inner{
         cpu.execute(4);
 
 
-        all_good &= cpu.get_registers().ACU.get() == 0x00;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
@@ -168,7 +161,6 @@ namespace CPU6502_TEST::inner{
         mem[0xBA + 15] = 0;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == 0xFF;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -188,7 +180,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741] = 40;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -201,7 +192,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741] = 0x5;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == 0x00;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
@@ -214,7 +204,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741] = 0;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == 0xFF;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -235,7 +224,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741 + 10] = 40;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -248,7 +236,6 @@ namespace CPU6502_TEST::inner{
         mem[0x00FF + 10] = 0x5;
         cpu.execute(5);
 
-        all_good &= cpu.get_registers().ACU.get() == 0x00;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
@@ -261,7 +248,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741 + 10] = 0;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == 0xFF;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -281,7 +267,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741 + 10] = 40;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -294,7 +279,6 @@ namespace CPU6502_TEST::inner{
         mem[0x00FF + 10] = 0x5;
         cpu.execute(5);
 
-        all_good &= cpu.get_registers().ACU.get() == 0x00;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
@@ -307,7 +291,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741 + 10] = 0;
         cpu.execute(4);
 
-        all_good &= cpu.get_registers().ACU.get() == 0xFF;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -327,7 +310,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741] = 40;
         cpu.execute(6);
         
-        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -341,7 +323,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741] = 0x5;
         cpu.execute(6);
 
-        all_good &= cpu.get_registers().ACU.get() == 0x00;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
@@ -355,7 +336,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741] = 0;
         cpu.execute(6);
 
-        all_good &= cpu.get_registers().ACU.get() == 0xFF;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -376,7 +356,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741 + 10] = 40;
         cpu.execute(5);
         
-        all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(30 - 40);
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
@@ -390,7 +369,6 @@ namespace CPU6502_TEST::inner{
         mem[0x00FF + 10] = 0x5;
         cpu.execute(6);
 
-        all_good &= cpu.get_registers().ACU.get() == 0x00;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
@@ -404,7 +382,6 @@ namespace CPU6502_TEST::inner{
         mem[0x4741 + 10] = 0;
         cpu.execute(5);
 
-        all_good &= cpu.get_registers().ACU.get() == 0xFF;
         all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;

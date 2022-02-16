@@ -32,12 +32,12 @@ TODO
     - [ ] Add test to `DEC` 
     - [ ] Add test to `DEX` 
     - [ ] Add test to `DEY` 
-- [ ] Implement `Arithmetic` instructions
+- [X] Implement `Arithmetic` instructions
     - [X] Add test to `ADC`
     - [X] Add test to `SBC`
     - [X] Add test to `CMP`
-    - [ ] Add test to `CPX`
-    - [ ] Add test to `CPY`
+    - [X] Add test to `CPX`
+    - [X] Add test to `CPY`
 - [ ] Implementing `RTS` - Working - But I think something is wrong
 - [X] Implement better addressing mode
 - [X] Remove `LUT`

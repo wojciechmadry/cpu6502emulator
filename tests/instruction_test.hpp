@@ -40,6 +40,10 @@ namespace CPU6502_TEST::inner{
     bool SBC_TEST();
 
     bool CMP_TEST();
+
+    bool CPX_TEST();
+    
+    bool CPY_TEST();
 }
 
 #endif  // INSTRUCTION_TEST_HPP

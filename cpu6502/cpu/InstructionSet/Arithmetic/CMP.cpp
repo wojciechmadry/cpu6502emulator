@@ -1,13 +1,6 @@
 #include "cpu.hpp"
 
 namespace cpu6502{
-    
-    void set_flags(cpu6502::Registers& reg, const bool carry, const bool zero, const bool negative) noexcept
-    {
-        reg.PS.set(CPU::PSFlags::CarryFlag, carry);
-        reg.PS.set(CPU::PSFlags::ZeroFlag, zero);
-        reg.PS.set(CPU::PSFlags::NegativeFlag, negative);
-    }
 
     void cmp_operation(CPU& cpu, const Byte fetched) noexcept
     {
@@ -15,8 +8,9 @@ namespace cpu6502{
         const auto acu = reg.ACU.get();
         const auto result = static_cast<Byte>(acu - fetched);
 
-        set_flags(reg, acu >= fetched, acu == fetched, static_cast<bool>(result & 0x80));
-        reg.ACU.set(result);
+        reg.PS.set(CPU::PSFlags::CarryFlag, acu >= fetched);
+        reg.PS.set(CPU::PSFlags::ZeroFlag, acu == fetched);
+        reg.PS.set(CPU::PSFlags::NegativeFlag, static_cast<bool>(result & 0x80));
     }
 
     void CPU::CMPimmediate(u32& Cycles) noexcept

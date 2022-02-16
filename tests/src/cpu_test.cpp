@@ -64,6 +64,10 @@ namespace CPU6502_TEST::inner
 
         all_pass &= run_test(CMP_TEST, "CMP");
 
+        all_pass &= run_test(CPX_TEST, "CPX");
+
+        all_pass &= run_test(CPY_TEST, "CPY");
+
         return all_pass;
     }
 }
