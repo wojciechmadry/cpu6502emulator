@@ -46,6 +46,16 @@ add_library(
         cpu/InstructionSet/SystemFunctions/BRK.cpp
         cpu/InstructionSet/SystemFunctions/NOP.cpp
         cpu/InstructionSet/SystemFunctions/RTI.cpp
+        cpu/InstructionSet/Shifts/ASL.cpp
+        cpu/InstructionSet/Shifts/LSR.cpp
+        cpu/InstructionSet/Shifts/ROL.cpp
+        cpu/InstructionSet/Shifts/ROR.cpp
+        cpu/InstructionSet/IncrementsDecrements/DEC.cpp
+        cpu/InstructionSet/IncrementsDecrements/DEX.cpp
+        cpu/InstructionSet/IncrementsDecrements/DEY.cpp
+        cpu/InstructionSet/IncrementsDecrements/INC.cpp
+        cpu/InstructionSet/IncrementsDecrements/INX.cpp
+        cpu/InstructionSet/IncrementsDecrements/INY.cpp
         cpu/WriteRead/read.cpp
         cpu/WriteRead/write.cpp
         cpu/InstructionSet/opcode.hpp

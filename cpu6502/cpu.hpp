@@ -245,6 +245,62 @@ namespace cpu6502
         void ORAindirectx(u32& Cycles) noexcept; 
         void ORAindirecty(u32& Cycles) noexcept;
 
+        // --- Increments & Decrements ---
+
+        //      -- DEC --
+        void DECzeropage(u32& Cycles) noexcept;
+        void DECzeropagex(u32& Cycles) noexcept;
+        void DECabsolute(u32& Cycles) noexcept;
+        void DECabsolutex(u32& Cycles) noexcept;
+
+        //      -- DEX --
+        void DEXimplied(u32& Cycles) noexcept;
+
+        //      -- DEY --
+        void DEYimplied(u32& Cycles) noexcept;
+
+        //      -- INC --
+        void INCzeropage(u32& Cycles) noexcept;
+        void INCzeropagex(u32& Cycles) noexcept;
+        void INCabsolute(u32& Cycles) noexcept;
+        void INCabsolutex(u32& Cycles) noexcept;
+    
+        //      -- INX --
+        void INXimplied(u32& Cycles) noexcept;
+       
+        //      -- INY --
+        void INYimplied(u32& Cycles) noexcept;
+
+        // --- Shifts ---
+
+        //      -- ROR --
+        void RORaccumulator(u32& Cycles) noexcept;
+        void RORzeropage(u32& Cycles) noexcept;
+        void RORzeropagex(u32& Cycles) noexcept;
+        void RORabsolute(u32& Cycles) noexcept;
+        void RORabsolutex(u32& Cycles) noexcept;
+
+        //      -- ROL --
+        void ROLaccumulator(u32& Cycles) noexcept;
+        void ROLzeropage(u32& Cycles) noexcept;
+        void ROLzeropagex(u32& Cycles) noexcept;
+        void ROLabsolute(u32& Cycles) noexcept;
+        void ROLabsolutex(u32& Cycles) noexcept;
+
+        //      -- LSR --
+        void LSRaccumulator(u32& Cycles) noexcept;
+        void LSRzeropage(u32& Cycles) noexcept;
+        void LSRzeropagex(u32& Cycles) noexcept;
+        void LSRabsolute(u32& Cycles) noexcept;
+        void LSRabsolutex(u32& Cycles) noexcept;
+
+        //      -- ASL --
+        void ASLaccumulator(u32& Cycles) noexcept;
+        void ASLzeropage(u32& Cycles) noexcept;
+        void ASLzeropagex(u32& Cycles) noexcept;
+        void ASLabsolute(u32& Cycles) noexcept;
+        void ASLabsolutex(u32& Cycles) noexcept;
+
         // --- Register Transfer --- 
         //      -- TAX --
         void TAXimplied(u32& Cycles) noexcept;

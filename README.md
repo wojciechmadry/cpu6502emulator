@@ -17,12 +17,13 @@ TODO
 - [ ] Add all `instruction set`
 - [ ] Add implementation of decimal flag
 - [ ] Implementing `RTS` - Working - But I think something is wrong
-- [ ] Implement `Shifts` instructions
+- [ ] Better organise code in `Shifts` and `Increments & Decrements`
+- [X] Implement `Shifts` instructions
     - [ ] Add test to `ASL` 
     - [ ] Add test to `LSR` 
     - [ ] Add test to `ROL` 
     - [ ] Add test to `ROR` 
-- [ ] Implement `Increments & Decrements` instructions
+- [X] Implement `Increments & Decrements` instructions
     - [ ] Add test to `INC` 
     - [ ] Add test to `INX` 
     - [ ] Add test to `INY` 

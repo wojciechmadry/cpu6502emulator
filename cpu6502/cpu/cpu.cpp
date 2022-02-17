@@ -719,7 +719,167 @@ namespace cpu6502{
                 {
                     RTIimplied(Cycles);
                     break;
-                }                                                                                                                                           
+                }
+                case op(opcode::LSR::Accumulator):
+                {
+                    LSRaccumulator(Cycles);
+                    break;
+                }
+                case op(opcode::LSR::ZeroPage):
+                {
+                    LSRzeropage(Cycles);
+                    break;
+                }
+                case op(opcode::LSR::ZeroPageX):
+                {
+                    LSRzeropagex(Cycles);
+                    break;
+                }          
+                case op(opcode::LSR::Absolute):
+                {
+                    LSRabsolute(Cycles);
+                    break;
+                }      
+                case op(opcode::LSR::AbsoluteX):
+                {
+                    LSRabsolutex(Cycles);
+                    break;
+                }             
+                case op(opcode::ROL::Accumulator):
+                {
+                    ROLaccumulator(Cycles);
+                    break;
+                }   
+                case op(opcode::ROL::ZeroPage):
+                {
+                    ROLzeropage(Cycles);
+                    break;
+                }  
+                case op(opcode::ROL::ZeroPageX):
+                {
+                    ROLzeropagex(Cycles);
+                    break;
+                }            
+                case op(opcode::ROL::Absolute):
+                {
+                    ROLabsolute(Cycles);
+                    break;
+                }       
+                case op(opcode::ROL::AbsoluteX):
+                {
+                    ROLabsolutex(Cycles);
+                    break;
+                }          
+                case op(opcode::ROR::Accumulator):
+                {
+                    RORaccumulator(Cycles);
+                    break;
+                }   
+                case op(opcode::ROR::ZeroPage):
+                {
+                    RORzeropage(Cycles);
+                    break;
+                }  
+                case op(opcode::ROR::ZeroPageX):
+                {
+                    RORzeropagex(Cycles);
+                    break;
+                }            
+                case op(opcode::ROR::Absolute):
+                {
+                    RORabsolute(Cycles);
+                    break;
+                }       
+                case op(opcode::ROR::AbsoluteX):
+                {
+                    RORabsolutex(Cycles);
+                    break;
+                }    
+                case op(opcode::ASL::Accumulator):
+                {
+                    ASLaccumulator(Cycles);
+                    break;
+                } 
+                case op(opcode::ASL::ZeroPage):
+                {
+                    ASLzeropage(Cycles);
+                    break;
+                }     
+                case op(opcode::ASL::ZeroPageX):
+                {
+                    ASLzeropagex(Cycles);
+                    break;
+                }           
+                case op(opcode::ASL::Absolute):
+                {
+                    ASLabsolute(Cycles);
+                    break;
+                }             
+                case op(opcode::ASL::AbsoluteX):
+                {
+                    ASLabsolutex(Cycles);
+                    break;
+                }   
+                case op(opcode::INC::Absolute):
+                {
+                    INCabsolute(Cycles);
+                    break;
+                } 
+                case op(opcode::INC::AbsoluteX):
+                {
+                    INCabsolutex(Cycles);
+                    break;
+                }         
+                case op(opcode::INC::ZeroPage):
+                {
+                    INCzeropage(Cycles);
+                    break;
+                } 
+                case op(opcode::INC::ZeroPageX):
+                {
+                    INCzeropagex(Cycles);
+                    break;
+                }     
+                case op(opcode::DEC::Absolute):
+                {
+                    DECabsolute(Cycles);
+                    break;
+                } 
+                case op(opcode::DEC::AbsoluteX):
+                {
+                    DECabsolutex(Cycles);
+                    break;
+                }         
+                case op(opcode::DEC::ZeroPage):
+                {
+                    DECzeropage(Cycles);
+                    break;
+                } 
+                case op(opcode::DEC::ZeroPageX):
+                {
+                    DECzeropagex(Cycles);
+                    break;
+                } 
+                case op(opcode::INX::Implied):
+                {
+                    INXimplied(Cycles);
+                    break;
+                }  
+                case op(opcode::INY::Implied):
+                {
+                    INYimplied(Cycles);
+                    break;
+                }   
+                case op(opcode::DEX::Implied):
+                {
+                    DEXimplied(Cycles);
+                    break;
+                }                                                                              
+                case op(opcode::DEY::Implied):
+                {
+                    DEYimplied(Cycles);
+                    break;
+                }   
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};

@@ -3,6 +3,96 @@
 
 namespace cpu6502::opcode{
 
+    // *** INCREMENTS & DECREMENTS ***
+
+    // Increment Memory
+    enum class INC
+    {
+        ZeroPage = 0xE6, // 5 cycles
+        ZeroPageX = 0xF6, // 6 cycles
+        Absolute = 0xEE, // 6 cycles
+        AbsoluteX = 0xFE // 7 cycles
+    };
+
+    // Increment X Regsiter
+    enum class INX
+    {
+        Implied = 0xE8, // 2 cycles
+    };
+
+    // Increment Y Regsiter
+    enum class INY
+    {
+        Implied = 0xC8, // 2 cycles
+    };
+
+    // Decrement Memory
+    enum class DEC
+    {
+        ZeroPage = 0xC6, // 5 cycles
+        ZeroPageX = 0xD6, // 6 cycles
+        Absolute = 0xCE, // 6 cycles
+        AbsoluteX = 0xDE // 7 cycles
+    };
+
+    // Decrement X Regsiter
+    enum class DEX
+    {
+        Implied = 0xCA, // 2 cycles
+    };
+
+    // Decrement Y Regsiter
+    enum class DEY
+    {
+        Implied = 0x88, // 2 cycles
+    };
+
+    // *** INCREMENTS & DECREMENTS ***
+
+    // *** SHIFTS ***
+
+    // Logical shift right
+    enum class LSR
+    {
+        Accumulator = 0x4A, // 2 cycles
+        ZeroPage = 0x46, // 5 cycles
+        ZeroPageX = 0x56, // 6 cycles
+        Absolute = 0x4E, // 6 cycles
+        AbsoluteX = 0x5E // 7 cycles
+    };
+
+    // Arithmetic shift left
+    enum class ASL
+    {
+        Accumulator = 0x0A, // 2 cycles
+        ZeroPage = 0x06, // 5 cycles
+        ZeroPageX = 0x16, // 6 cycles
+        Absolute = 0x0E, // 6 cycles
+        AbsoluteX = 0x1E // 7 cycles
+    };
+
+    // Rotate left
+    enum class ROL
+    {
+        Accumulator = 0x2A, // 2 cycles
+        ZeroPage = 0x26, // 5 cycles
+        ZeroPageX = 0x36, // 6 cycles
+        Absolute = 0x2E, // 6 cycles
+        AbsoluteX = 0x3E // 7 cycles
+    };
+
+    // Rotate left
+    enum class ROR
+    {
+        Accumulator = 0x6A, // 2 cycles
+        ZeroPage = 0x66, // 5 cycles
+        ZeroPageX = 0x76, // 6 cycles
+        Absolute = 0x6E, // 6 cycles
+        AbsoluteX = 0x7E // 7 cycles
+    };
+
+    // *** SHIFTS ***
+
     // *** SYSTEM FUNCTIONS ***
 
     // Force an interrupt
