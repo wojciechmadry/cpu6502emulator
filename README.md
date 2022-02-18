@@ -20,11 +20,7 @@ TODO
 - [ ] Better organise code in `Shifts` and `Increments & Decrements`
 - [ ] Read about non-maskable irq (0xFFFA/B) and reset location (0xFFFC/D)
 - [ ] Move stack memory to diffrent range -> 0x100 - 0x1FF (Now its 0 - 255 whereas it is zero page memory location)
-- [X] Implement `Shifts` instructions
-    - [ ] Add test to `ASL` 
-    - [ ] Add test to `LSR` 
-    - [ ] Add test to `ROL` 
-    - [ ] Add test to `ROR` 
+- [X] Implement `Shifts` instructions (`ASL`, `LSR`, `ROL`, `ROR`)
 - [X] Implement `Increments & Decrements` instructions
     - [ ] Add test to `INC` 
     - [ ] Add test to `INX` 
