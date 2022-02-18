@@ -371,7 +371,7 @@ namespace cpu6502
         //Processor Status flags
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
         
-        // 0xFFFE - Addres of interrupt vector
+        // 0xFFFE - 0xFFFF - Addres of interrupt vector
         // IRQ - Interrupt request
         static constexpr Word IRQ = 0xFFFE;
 

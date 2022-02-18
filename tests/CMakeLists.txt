@@ -30,6 +30,10 @@ add_library(
         src/instruction/NOP.cpp
         src/instruction/BRK.cpp
         src/instruction/RTI.cpp
+        src/instruction/ASL.cpp
+        src/instruction/LSR.cpp
+        src/instruction/ROL.cpp
+        src/instruction/ROR.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})

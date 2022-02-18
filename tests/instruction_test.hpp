@@ -50,6 +50,14 @@ namespace CPU6502_TEST::inner{
     bool BRK_TEST();
 
     bool RTI_TEST();
+
+    bool ROR_TEST();
+    
+    bool ROL_TEST();
+
+    bool ASL_TEST();
+
+    bool LSR_TEST();
 }
 
 #endif  // INSTRUCTION_TEST_HPP

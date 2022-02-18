@@ -18,6 +18,8 @@ TODO
 - [ ] Add implementation of decimal flag
 - [ ] Implementing `RTS` - Working - But I think something is wrong
 - [ ] Better organise code in `Shifts` and `Increments & Decrements`
+- [ ] Read about non-maskable irq (0xFFFA/B) and reset location (0xFFFC/D)
+- [ ] Move stack memory to diffrent range -> 0x100 - 0x1FF (Now its 0 - 255 whereas it is zero page memory location)
 - [X] Implement `Shifts` instructions
     - [ ] Add test to `ASL` 
     - [ ] Add test to `LSR` 

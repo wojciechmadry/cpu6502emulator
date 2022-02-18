@@ -74,6 +74,14 @@ namespace CPU6502_TEST::inner
 
         all_pass &= run_test(BRK_TEST, "BRK");
 
+        all_pass &= run_test(ASL_TEST, "ASL");
+        
+        all_pass &= run_test(LSR_TEST, "LSR");
+
+        all_pass &= run_test(ROL_TEST, "ROL");
+
+        all_pass &= run_test(ROR_TEST, "ROR");
+
         return all_pass;
     }
 }
