@@ -82,6 +82,18 @@ namespace CPU6502_TEST::inner
 
         all_pass &= run_test(ROR_TEST, "ROR");
 
+        all_pass &= run_test(INC_TEST, "INC");
+
+        all_pass &= run_test(INX_TEST, "INX");
+
+        all_pass &= run_test(INY_TEST, "INY");
+
+        all_pass &= run_test(DEC_TEST, "DEC");
+
+        all_pass &= run_test(DEX_TEST, "DEX");
+        
+        all_pass &= run_test(DEY_TEST, "DEY");
+
         return all_pass;
     }
 }

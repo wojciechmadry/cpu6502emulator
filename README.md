@@ -21,13 +21,7 @@ TODO
 - [ ] Read about non-maskable irq (0xFFFA/B) and reset location (0xFFFC/D)
 - [ ] Move stack memory to diffrent range -> 0x100 - 0x1FF (Now its 0 - 255 whereas it is zero page memory location)
 - [X] Implement `Shifts` instructions (`ASL`, `LSR`, `ROL`, `ROR`)
-- [X] Implement `Increments & Decrements` instructions
-    - [ ] Add test to `INC` 
-    - [ ] Add test to `INX` 
-    - [ ] Add test to `INY` 
-    - [ ] Add test to `DEC` 
-    - [ ] Add test to `DEX` 
-    - [ ] Add test to `DEY` 
+- [X] Implement `Increments & Decrements` instructions (`INC`, `INX`, `INY`, `DEC`, `DEX`, `DEY`)
 - [X] Implement `System Functions` instructions (`BRK`, `NOP`, `RTI`)
 - [X] Implement `Arithmetic` instructions (`ADC`, `SBC`, `CMP`, `CPX`, `CPY`)
 - [X] Implement better addressing mode

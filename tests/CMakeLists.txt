@@ -34,6 +34,12 @@ add_library(
         src/instruction/LSR.cpp
         src/instruction/ROL.cpp
         src/instruction/ROR.cpp
+        src/instruction/INC.cpp
+        src/instruction/INX.cpp
+        src/instruction/INY.cpp
+        src/instruction/DEC.cpp
+        src/instruction/DEX.cpp
+        src/instruction/DEY.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})

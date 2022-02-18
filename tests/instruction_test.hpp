@@ -58,6 +58,18 @@ namespace CPU6502_TEST::inner{
     bool ASL_TEST();
 
     bool LSR_TEST();
+
+    bool INC_TEST();
+
+    bool INX_TEST();
+
+    bool INY_TEST();
+    
+    bool DEC_TEST();
+
+    bool DEX_TEST();
+    
+    bool DEY_TEST();
 }
 
 #endif  // INSTRUCTION_TEST_HPP
