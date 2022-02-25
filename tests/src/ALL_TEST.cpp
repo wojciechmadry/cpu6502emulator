@@ -4,6 +4,7 @@
 #include "register_test.hpp"
 #include "cpu_test.hpp"
 #include "test_logger.hpp"
+#include "stack_test.hpp"
 #include "time.hpp"
 #include <string>
 
@@ -14,8 +15,9 @@ namespace CPU6502_TEST
         babel::TIME::timer T;
         T.start();
         bool ALL_GOOD = true;
-        ALL_GOOD &= CPU6502_TEST::inner::RUN_REGISTER_TEST();
-        ALL_GOOD &= CPU6502_TEST::inner::RUN_CPU_TEST();
+        ALL_GOOD &= run_test(CPU6502_TEST::inner::RUN_REGISTER_TEST, "Register");
+        ALL_GOOD &= run_test(CPU6502_TEST::inner::RUN_CPU_TEST, "All cpu instruction set");
+        ALL_GOOD &= run_test(CPU6502_TEST::inner::RUN_STACK_TEST, "Stack");
         
         auto Time = T.get_time();
 

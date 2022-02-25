@@ -19,7 +19,7 @@ namespace cpu6502{
         {
             throw std::out_of_range("Cant push word to stack (stack full).");
         }
-        write_word(Data, cpu_reg.SP.get(), Cycles);
+        write_word(Data, static_cast<u32>(cpu_reg.SP.get()) + STACK_BEGIN, Cycles);
         cpu_reg.SP.decrement(2);
     }
 
@@ -29,7 +29,7 @@ namespace cpu6502{
         {
             throw std::out_of_range("Cant push byte to stack (stack full).");
         }
-        write_byte(Data, cpu_reg.SP.get(), Cycles);
+        write_byte(Data, static_cast<u32>(cpu_reg.SP.get()) + STACK_BEGIN, Cycles);
         cpu_reg.SP.decrement();
         --Cycles;
     }

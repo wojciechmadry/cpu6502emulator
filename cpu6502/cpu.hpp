@@ -375,6 +375,11 @@ namespace cpu6502
         // IRQ - Interrupt request
         static constexpr Word IRQ = 0xFFFE;
 
+        // Stack memory begin
+        static constexpr u32 STACK_BEGIN = 0x0100;
+        // Stack memory end
+        static constexpr u32 STACK_END = 0x01FF;
+
         CPU() = delete;
         CPU(const CPU&) = delete;
         CPU(CPU&&) = delete;

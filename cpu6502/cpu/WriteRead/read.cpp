@@ -38,7 +38,7 @@ namespace cpu6502{
         {
             throw std::out_of_range("Cant pop word from stack. (stack empty).");
         }
-        const Word Data = read_word(cpu_reg.SP.get() + 2,Cycles);
+        const Word Data = read_word(static_cast<u32>(cpu_reg.SP.get()) + 2 + STACK_BEGIN, Cycles);
         cpu_reg.SP.increment(2);
         --Cycles;
         return Data;
@@ -50,7 +50,7 @@ namespace cpu6502{
         {
             throw std::out_of_range("Cant pop byte from stack. (stack empty).");
         }
-        const Byte Data = read_byte(cpu_reg.SP.get() + 1,Cycles);
+        const Byte Data = read_byte(static_cast<u32>(cpu_reg.SP.get()) + 1 + STACK_BEGIN, Cycles);
         cpu_reg.SP.increment();
         --Cycles;
         return Data;

@@ -6,6 +6,7 @@ add_library(
         src/register_test.cpp
         src/cpu_test.cpp
         src/ALL_TEST.cpp
+        src/stack_test.cpp
         src/instruction/AND.cpp
         src/instruction/BIT.cpp
         src/instruction/BRANCHES.cpp

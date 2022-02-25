@@ -7,7 +7,7 @@
 namespace CPU6502_TEST::inner{
     bool INY_TEST()
     {
-       bool all_good = true;
+        bool all_good = true;
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);

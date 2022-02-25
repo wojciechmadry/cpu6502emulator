@@ -1,7 +1,5 @@
 #include "cpu_test.hpp"
 
-
-#include "test_logger.hpp"
 #include "instruction_test.hpp"
 
 namespace CPU6502_TEST::inner
@@ -9,22 +7,6 @@ namespace CPU6502_TEST::inner
     bool RUN_CPU_TEST()
     {
         bool all_pass = true;
-
-        auto run_test = []<typename Func>(Func func, const std::string& test_name)
-        {
-            bool test_pass;
-            try
-            {
-                test_pass = func();
-            }
-            catch(std::exception& e)
-            {
-                test_pass = false;
-                log_messages("Test : ", test_name, " -> exception : ", e.what() , "\n");
-            }
-            log_test(test_name, test_pass);
-            return test_pass;
-        };
 
         all_pass &= run_test(LDA_TEST, "LDA");
 

@@ -2,8 +2,6 @@
 
 #include "registers/registers.hpp"
 
-#include "test_logger.hpp"
-
 namespace CPU6502_TEST::inner
 {
     bool RUN_REGISTER_TEST()
@@ -61,8 +59,6 @@ namespace CPU6502_TEST::inner
                 ps.get(flags::NegativeFlag) == false &&
                 ps.get(flags::ZeroFlag) == false
         );
-
-        log_test("REGISTER", all_good);
 
         return all_good;
     }

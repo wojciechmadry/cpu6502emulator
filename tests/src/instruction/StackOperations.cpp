@@ -63,7 +63,7 @@ namespace CPU6502_TEST::inner{
 
         mem[PC++] = cast(cpu6502::opcode::PHA::Implied); // 3 cycles
         cpu.execute(3);
-        all_good &= mem[cpu.get_registers().SP.get() + 1] == 0x33;
+        all_good &= mem[cpu.get_registers().SP.get() + 1 + cpu6502::CPU::STACK_BEGIN] == 0x33;
 
         // END Push accumulator on stack
 
@@ -92,7 +92,7 @@ namespace CPU6502_TEST::inner{
 
         mem[PC++] = cast(cpu6502::opcode::PHP::Implied); // 3 cycles
         cpu.execute(3);
-        auto PS = mem[cpu.get_registers().SP.get() + 1];
+        auto PS = mem[cpu.get_registers().SP.get() + 1 + cpu6502::CPU::STACK_BEGIN];
         cpu6502::registers::ProcessorStatus ps;
         ps.put_byte(PS);
         all_good &= ps.get(PSFlags::CarryFlag)
@@ -118,6 +118,7 @@ namespace CPU6502_TEST::inner{
                     && ps.get(PSFlags::InterruptDisable);
 
         // END Pull processor status from stack
+        
         return all_good;
     }
 }
