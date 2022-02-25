@@ -1,6 +1,7 @@
 #include "instruction_test.hpp"
 
 #include "cpu.hpp"
+#include "utility/utility.hpp"
 
 namespace CPU6502_TEST::inner{
     bool AND_TEST()
@@ -19,7 +20,6 @@ namespace CPU6502_TEST::inner{
         mem[PC++]=0x20;
         mem[PC++]=0x20;
         cpu.execute(3);
-        PC = cpu.get_registers().PC.get();
 
         const cpu6502::Byte ACU = 0x33;
         const cpu6502::Byte IRX = 0x10;
@@ -27,29 +27,10 @@ namespace CPU6502_TEST::inner{
         const cpu6502::Byte AND = 0xF0;
         const auto Res = ACU & AND;
 
-        auto LoadACU = [&]() mutable {
-            mem[PC++]=cast(cpu6502::opcode::LDA::Immediate); // 2 cycles
-            mem[PC++] = ACU;
-            cpu.execute(2);
-            all_good &= cpu.get_registers().ACU.get() == ACU;
-        };
-
-        auto LoadIRX = [&]() mutable {
-            mem[PC++]=cast(cpu6502::opcode::LDX::Immediate); // 2 cycles
-            mem[PC++] = IRX;
-            cpu.execute(2);
-            all_good &= cpu.get_registers().IRX.get() == IRX;
-        };
-
-        auto LoadIRY = [&]() mutable {
-            mem[PC++]=cast(cpu6502::opcode::LDY::Immediate); // 2 cycles
-            mem[PC++] = IRY;
-            cpu.execute(2);
-            all_good &= cpu.get_registers().IRY.get() == IRY;
-        };
-        LoadIRX();
-        LoadIRY();
-        LoadACU();
+        utils::load_to_xreg(cpu, IRX);
+        utils::load_to_yreg(cpu, IRY);
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
 
         // Immediate
         mem[PC++] = cast(cpu6502::opcode::AND::Immediate); // 2 cycles
@@ -59,7 +40,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() != ACU
                 && cpu.get_registers().ACU.get() == Res;
 
-        LoadACU();
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
         // END Immediate
 
         // ZeroPage
@@ -71,7 +53,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
 
-        LoadACU();
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
         // END ZeroPage
 
         // ZeroPageX
@@ -83,7 +66,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
 
-        LoadACU();
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
         // END ZeroPageX
 
         // Absolute
@@ -96,7 +80,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
 
-        LoadACU();
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
         // END Absolute
 
         // AbsoluteX
@@ -109,7 +94,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
 
-        LoadACU();
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
         // END AbsoluteX
 
         // AbsoluteY
@@ -118,11 +104,13 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = 0x30;
         mem[0x3030 + IRY] = AND;
         cpu.execute(4);
+        PC = cpu.get_registers().PC.get();
 
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
 
-        LoadACU();
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
         // END AbsoluteY
 
         // IndirectX
@@ -136,7 +124,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;
 
-        LoadACU();
+        utils::load_to_acu(cpu, ACU);
+        PC = cpu.get_registers().PC.get();
         // END IndirectX
 
         // IndirectY

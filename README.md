@@ -14,12 +14,12 @@ Additional guides:
 TODO
 ---
 
-- [ ] Add all `instruction set`
 - [ ] Add implementation of decimal flag
-- [ ] Implementing `RTS` - Working - But I think something is wrong
 - [ ] Better organise code in `Shifts` and `Increments & Decrements`
 - [ ] Read about non-maskable irq (0xFFFA/B) and reset location (0xFFFC/D)
-- [ ] Move functions in test to some utility file
+- [X] Move functions in test to some utility file
+- [X] Implementing `RTS` - Working - But I think something is wrong
+- [X] Add all `instruction set`
 - [X] Move stack memory to diffrent range -> 0x100 - 0x1FF (Now its 0 - 255 whereas it is zero page memory location)
 - [X] Implement `Shifts` instructions (`ASL`, `LSR`, `ROL`, `ROR`)
 - [X] Implement `Increments & Decrements` instructions (`INC`, `INX`, `INY`, `DEC`, `DEX`, `DEY`)

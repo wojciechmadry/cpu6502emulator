@@ -1,6 +1,7 @@
 #include "instruction_test.hpp"
 
 #include "cpu.hpp"
+#include "utility/utility.hpp"
 
 namespace CPU6502_TEST::inner{
     bool CPY_TEST()
@@ -12,44 +13,8 @@ namespace CPU6502_TEST::inner{
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
 
-
+        utils::jump_to_2020(cpu) ;
         auto PC = cpu.get_registers().PC.get();
-
-        auto JUMP_TO_2020 = [&]()
-        {
-            PC = cpu.get_registers().PC.get();
-            mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute);
-            mem[PC++] = 0x20;
-            mem[PC++] = 0x20;
-            cpu.execute(3);
-            cpu.get_registers().PS.put_byte(0x00);
-            PC = cpu.get_registers().PC.get();
-            all_good &= PC == 0x2020;
-        };
-
-        auto load_to_acu = [&]<typename INT, typename OPCODE = cpu6502::opcode::LDA>(INT value, OPCODE op = cpu6502::opcode::LDA::Immediate)
-        {
-            const auto set_ACU_opcode = static_cast<decltype(opcode)>(op); // 2 cycles
-            PC = cpu.get_registers().PC.get();
-            mem[PC++] = set_ACU_opcode;
-            const auto value_casted = static_cast<cpu6502::Byte>(value);
-            mem[PC++] = value_casted;
-            cpu.execute(2);
-        };
-
-        auto load_to_xreg = [&]<typename INT>(INT value)
-        {
-            load_to_acu(value, cpu6502::opcode::LDX::Immediate);
-        };
-
-        auto load_to_yreg = [&]<typename INT>(INT value)
-        {
-            load_to_acu(value, cpu6502::opcode::LDY::Immediate);
-        };
-        load_to_yreg(5);
-        load_to_xreg(5);
-
-        JUMP_TO_2020();
 
         //ASSERT CPY - Immediate
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::CPY::Immediate); // 2 cycles
@@ -65,7 +30,8 @@ namespace CPU6502_TEST::inner{
                 const auto result = static_cast<cpu6502::Byte>(i - j);
                 const auto negative_flag = static_cast<bool>(result & 0x80);
                 // Load i to X register
-                load_to_yreg(i);
+                utils::load_to_yreg(cpu, static_cast<cpu6502::Byte>(i));
+                PC = cpu.get_registers().PC.get();
 
                 // Compare ACU with J (memory)
                 mem[PC++] = opcode;
@@ -81,17 +47,18 @@ namespace CPU6502_TEST::inner{
                 // Check Zero Flag
                 all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == zero_flag;
 
-                JUMP_TO_2020();
+                utils::jump_to_2020(cpu) ;
             }
         }
         //END ASSERT CPY - Immediate
 
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu) ;
 
         //ASSERT CPY - Zero Page
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::CPY::ZeroPage); // 3 Cycles
 
-        load_to_yreg(37);
+        utils::load_to_yreg(cpu, 37);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0xFF;
@@ -102,7 +69,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
 
-        load_to_yreg(0x5);
+        utils::load_to_yreg(cpu, 0x5);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0xFF;
@@ -113,7 +81,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
 
-        load_to_yreg(0xFF);
+        utils::load_to_yreg(cpu, 0xFF);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0xFF;
@@ -126,12 +95,13 @@ namespace CPU6502_TEST::inner{
 
         //END ASSERT CPX - Zero Page
 
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu) ;
 
         //ASSERT CPY - Absolute
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::CPY::Absolute);
         
-        load_to_yreg(30);
+        utils::load_to_yreg(cpu, 30);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0x41;
@@ -143,7 +113,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == false;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == true;
 
-        load_to_yreg(0x5);
+        utils::load_to_yreg(cpu, 0x5);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0x41;
@@ -155,7 +126,8 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == true;
         all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == false;
 
-        load_to_yreg(0xFF);
+        utils::load_to_yreg(cpu, 0xFF);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0x41;

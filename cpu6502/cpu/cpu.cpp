@@ -2,6 +2,17 @@
 #include "exceptions/cpu_except.hpp"
 
 namespace cpu6502{
+
+    [[nodiscard]] Memory& CPU::get_memory() noexcept
+    {
+        return mem.get();
+    }
+
+    [[nodiscard]] const Memory& CPU::get_memory() const noexcept
+    {
+        return mem.get();
+    }
+
     cpu6502::Byte CPU::fetch_immediate(cpu6502::u32& Cycles) noexcept
     {
         return fetch_byte(Cycles); // 1 cycles

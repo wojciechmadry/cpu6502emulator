@@ -1,5 +1,6 @@
 #include "instruction_test.hpp"
 
+#include "utility/utility.hpp"
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
@@ -7,22 +8,12 @@ namespace CPU6502_TEST::inner{
     {
         bool all_good = true;
 
-        using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
-        auto p = PSFlags::BreakCommand;
-        (void) p;
+        using PSFlags = cpu6502::CPU::PSFlags;
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);
-        auto PC = cpu.get_registers().PC.get();
 
-        auto JUMP_TO_2020 = [&]() {
-            PC = cpu.get_registers().PC.get();
-            mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute);
-            mem[PC++] = 0x20;
-            mem[PC++] = 0x20;
-            cpu.execute(3);
-            PC = cpu.get_registers().PC.get();
-        };
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
+        auto PC = cpu.get_registers().PC.get();
         auto cast = []<typename T>(T OPCODE) -> cpu6502::Byte
         {
             return static_cast<cpu6502::Byte>(OPCODE);

@@ -391,6 +391,10 @@ namespace cpu6502
 
         [[nodiscard]] cpu6502::Registers& get_registers() noexcept;
         
+        [[nodiscard]] Memory& get_memory() noexcept;
+
+        [[nodiscard]] const Memory& get_memory() const noexcept;
+        
         void reset() noexcept;
 
         void execute(u32 Cycles);

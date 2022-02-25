@@ -1,12 +1,13 @@
 set(CMAKE_CXX_STANDARD 20)
 add_library(
         cpu6502_tests STATIC
-        src/time.cpp
-        src/test_logger.cpp
-        src/register_test.cpp
+        src/utility/time.cpp
+        src/utility/test_logger.cpp
+        src/utility/utility.cpp
         src/cpu_test.cpp
         src/ALL_TEST.cpp
-        src/stack_test.cpp
+        src/other_tests/register_test.cpp
+        src/other_tests/stack_test.cpp
         src/instruction/AND.cpp
         src/instruction/BIT.cpp
         src/instruction/BRANCHES.cpp

@@ -1,6 +1,7 @@
 #include "instruction_test.hpp"
 
 #include "cpu.hpp"
+#include "utility/utility.hpp"
 
 #include <limits>
 
@@ -16,41 +17,7 @@ namespace CPU6502_TEST::inner{
 
         auto PC = cpu.get_registers().PC.get();
 
-        auto JUMP_TO_2020 = [&]()
-        {
-            PC = cpu.get_registers().PC.get();
-            mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute);
-            mem[PC++] = 0x20;
-            mem[PC++] = 0x20;
-            cpu.execute(3);
-            cpu.get_registers().PS.put_byte(0x00);
-            PC = cpu.get_registers().PC.get();
-            all_good &= PC == 0x2020;
-        };
-
-        auto load_to_acu = [&]<typename INT, typename OPCODE = cpu6502::opcode::LDA>(INT value, OPCODE op = cpu6502::opcode::LDA::Immediate)
-        {
-            const auto set_ACU_opcode = static_cast<decltype(opcode)>(op); // 2 cycles
-            PC = cpu.get_registers().PC.get();
-            mem[PC++] = set_ACU_opcode;
-            const auto value_casted = static_cast<cpu6502::Byte>(value);
-            mem[PC++] = value_casted;
-            cpu.execute(2);
-        };
-
-        auto load_to_xreg = [&]<typename INT>(INT value)
-        {
-            load_to_acu(value, cpu6502::opcode::LDX::Immediate);
-        };
-
-        auto load_to_yreg = [&]<typename INT>(INT value)
-        {
-            load_to_acu(value, cpu6502::opcode::LDY::Immediate);
-        };
-        load_to_yreg(5);
-        load_to_xreg(5);
-
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
 
         //ASSERT ADC - Immediate
 
@@ -63,7 +30,8 @@ namespace CPU6502_TEST::inner{
             {
                 const auto add_res = i + j;
                 // Load i to ACU
-                load_to_acu(i);
+                utils::load_to_acu(cpu, static_cast<cpu6502::Byte>(i));
+                PC = cpu.get_registers().PC.get();
 
                 // Add ACU + j
                 mem[PC++] = opcode;
@@ -86,7 +54,7 @@ namespace CPU6502_TEST::inner{
                 mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::CLC::Implied);
                 cpu.execute(4);
 
-                JUMP_TO_2020();
+                utils::jump_to_2020(cpu);
             }
         }
 
@@ -97,7 +65,8 @@ namespace CPU6502_TEST::inner{
             {
                 const auto add_res = i + j;
                 // Load i to ACU
-                load_to_acu(i);
+                utils::load_to_acu(cpu, static_cast<cpu6502::Byte>(i));
+                PC = cpu.get_registers().PC.get();
 
                 // Add ACU + j
                 mem[PC++] = opcode;
@@ -120,17 +89,19 @@ namespace CPU6502_TEST::inner{
                 mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::CLC::Implied);
                 cpu.execute(4);
 
-                JUMP_TO_2020();
+                utils::jump_to_2020(cpu);
             }
         }
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
 
         //END ASSERT ADC - Immediate
 
         //ASSERT ADC - Zero Page
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::ZeroPage); // 3 Cycles
 
-        load_to_acu(37);
+        utils::load_to_acu(cpu, 37);
+        PC = cpu.get_registers().PC.get();
+
 
         mem[PC++] = opcode;
         mem[PC++] = 0xFF;
@@ -155,12 +126,14 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(40 + 37 + 0x5 + 128);
         //END ASSERT ADC - Zero Page
 
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
 
         //ASSERT ADC - Zero Page X
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::ZeroPageX); // 4 Cycles
-        load_to_xreg(15);
-        load_to_acu(30);
+        utils::load_to_xreg(cpu, 15);
+        utils::load_to_acu(cpu, 30);
+        PC = cpu.get_registers().PC.get();
+
 
         mem[PC++] = opcode;
         mem[PC++] = 0x0F;
@@ -185,12 +158,13 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(40 + 30 + 0x5 + 120);
         //END ASSERT ADC - Zero Page X
 
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
         
         //ASSERT ADC - Absolute
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::Absolute);
         
-        load_to_acu(30);
+        utils::load_to_acu(cpu, 30);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0x41;
@@ -217,12 +191,13 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() == 70 + 0x15 + 1;
         //END ASSERT ADC - Absolute
 
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
 
         //ASSERT ADC - Absolute X
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::AbsoluteX);
-        load_to_xreg(10);
-        load_to_acu(15);
+        utils::load_to_xreg(cpu, 10);
+        utils::load_to_acu(cpu, 15);
+        PC = cpu.get_registers().PC.get();
 
         mem[PC++] = opcode;
         mem[PC++] = 0x41;
@@ -249,12 +224,14 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() == 40 + 15 + 5 + 128;
         //END ASSERT ADC - Absolute X
         
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
 
         //ASSERT ADC - Absolute Y
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::AbsoluteY);
-        load_to_yreg(10);
-        load_to_acu(15);
+        utils::load_to_yreg(cpu, 10);
+        utils::load_to_acu(cpu, 15);
+        PC = cpu.get_registers().PC.get();
+
 
         mem[PC++] = opcode;
         mem[PC++] = 0x41;
@@ -281,12 +258,14 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() == 40 + 15 + 5 + 128;
         //END ASSERT ADC - Absolute Y
 
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
 
         //ASSERT ADC - Indirect X
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::IndirectX);
-        load_to_xreg(10);
-        load_to_acu(15);
+        utils::load_to_xreg(cpu, 10);
+        utils::load_to_acu(cpu, 15);
+        PC = cpu.get_registers().PC.get();
+
 
         mem[PC++] = opcode;
         mem[PC++] = 0x20;
@@ -314,12 +293,14 @@ namespace CPU6502_TEST::inner{
         all_good &= cpu.get_registers().ACU.get() == 15 + 40 + 2 + 128;
         //END ASSERT ADC - Indirect X
 
-        JUMP_TO_2020();
+        utils::jump_to_2020(cpu);
         
         //ASSERT ADC - Indirect Y
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ADC::IndirectY);
-        load_to_yreg(10);
-        load_to_acu(15);
+        utils::load_to_yreg(cpu, 10);
+        utils::load_to_acu(cpu, 15);
+        PC = cpu.get_registers().PC.get();
+
 
         mem[PC++] = opcode;
         mem[PC++] = 0x20;

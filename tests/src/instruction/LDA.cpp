@@ -1,5 +1,6 @@
 #include "instruction_test.hpp"
 
+#include "utility/utility.hpp"
 #include "cpu.hpp"
 
 namespace CPU6502_TEST::inner{
@@ -13,16 +14,9 @@ namespace CPU6502_TEST::inner{
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
 
-
+        utils::jump_to_2020(cpu);
         auto PC = cpu.get_registers().PC.get();
-        mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::JMP::Absolute);
-        mem[PC++] = 0x20;
-        mem[PC++] = 0x20;
-
-        cpu.execute(3);
         
-        PC = cpu.get_registers().PC.get();
-
         //ASSERT LDA - Immediate
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::Immediate);
 
@@ -51,7 +45,7 @@ namespace CPU6502_TEST::inner{
                     && cpu.get_registers().PS.get(PSFlags::NegativeFlag));
         //END ASSERT LDA - Immediate
 
-//ASSERT LDA - Zero Page
+        //ASSERT LDA - Zero Page
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LDA::ZeroPage);
 
         mem[PC++] = opcode;

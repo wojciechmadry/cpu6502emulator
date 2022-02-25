@@ -2,6 +2,8 @@
 
 #include "cpu.hpp"
 
+#include "utility/utility.hpp"
+
 namespace CPU6502_TEST::inner{
     bool BRANCHES_TEST()
     {
@@ -9,7 +11,6 @@ namespace CPU6502_TEST::inner{
         using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);
-        auto PC = cpu.get_registers().PC.get();
         auto cast = []<typename T>(const T Opcode) -> cpu6502::Byte
         {
             return static_cast<cpu6502::Byte>(Opcode);
@@ -20,11 +21,9 @@ namespace CPU6502_TEST::inner{
             cpu.cpu_reg.PS.set(flags, value);
         };
 
-        mem[PC++]=cast(cpu6502::opcode::JMP::Absolute); // 3 cycles
-        mem[PC++]=0x20;
-        mem[PC++]=0x20;
-        cpu.execute(3);
-        PC = cpu.get_registers().PC.get();
+        utils::jump_to_2020(cpu);
+        
+        auto PC = cpu.get_registers().PC.get();
 
         // BCC
         mem[PC++] = cast(cpu6502::opcode::BCC::Relative); // 3 cycles
