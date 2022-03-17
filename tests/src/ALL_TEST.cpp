@@ -1,5 +1,8 @@
 #include "ALL_TEST.HPP"
 
+#include <string>
+#include <fmt/core.h>       
+#include <fmt/color.h>   
 
 #include "register_test.hpp"
 #include "cpu_test.hpp"
@@ -7,7 +10,6 @@
 #include "utility/time.hpp"
 #include "utility/utility.hpp"
 #include "stack_test.hpp"
-#include <string>
 
 namespace CPU6502_TEST
 {
@@ -16,25 +18,21 @@ namespace CPU6502_TEST
         babel::TIME::timer T;
         T.start();
         bool ALL_GOOD = true;
-        ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_REGISTER_TEST, "Register");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_CPU_TEST, "All cpu instruction set");
+        ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_REGISTER_TEST, "Register");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_STACK_TEST, "Stack");
         
-        auto Time = T.get_time();
+        const auto Time = T.get_time();
 
-        if (ALL_GOOD)
-        {
-            log_message("All test ");
-            log_message("pass", Colors::GREEN);
-            log_message(" in :");
-        }
-        else
-        {
-            log_message("Tests ");
-            log_message("fail", Colors::RED);
-            log_message(" in : ");
-        }    
-        log_message(std::to_string(Time));
-        log_message(" seconds.\n");
+        fmt::print("All test ");
+
+        static constexpr const char* PASS = "PASS";
+        static constexpr const char* FAIL = "FAIL";
+        const char* const is_pass = ALL_GOOD ? PASS : FAIL;
+        fmt::print(
+            (ALL_GOOD ? fg(fmt::color::green) : fg(fmt::color::red)),
+            "{} ", is_pass);
+
+        fmt::print(" in {} seconds.\n", Time);
     }
 }

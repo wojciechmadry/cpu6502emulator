@@ -6,10 +6,6 @@
 #include "cpu/InstructionSet/opcode.hpp"
 #include "required.hpp"
 
-namespace CPU6502_TEST::inner{
-    bool BRANCHES_TEST();  // remove this
-}
-
 namespace cpu6502
 {
     class CPU
@@ -102,9 +98,6 @@ namespace cpu6502
          *  BVS - Branch if overflow flag set
          */
 
-
-        //FIREND'S FUNCTION
-        friend bool CPU6502_TEST::inner::BRANCHES_TEST(); // remove this
 
         // Instruction set functions
 

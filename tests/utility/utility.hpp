@@ -2,8 +2,11 @@
 #define UTILITY_HPP
 
 #include <string_view>
-#include "cpu.hpp"
+#include <fmt/core.h>
+
 #include "test_logger.hpp"
+#include "cpu.hpp"
+
 
 namespace CPU6502_TEST::utils
 {
@@ -18,7 +21,7 @@ namespace CPU6502_TEST::utils
         catch(std::exception& e)
         {
             test_pass = false;
-            log_messages("Test : ", test_name, " -> exception : ", e.what() , "\n");
+            fmt::print("Test : {} throw an exception : {}\n", test_name, e.what());
         }
         log_test(test_name, test_pass);
         return test_pass;

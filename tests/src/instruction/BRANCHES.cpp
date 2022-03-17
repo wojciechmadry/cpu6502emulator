@@ -18,7 +18,7 @@ namespace CPU6502_TEST::inner{
 
         auto set_flag = [&](PSFlags flags, bool value) mutable
         {
-            cpu.cpu_reg.PS.set(flags, value);
+            cpu.get_registers().PS.set(flags, value);
         };
 
         utils::jump_to_2020(cpu);

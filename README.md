@@ -11,6 +11,10 @@ Additional guides:
 2. https://sta.c64.org/cbm64mem.html
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
 
+SUBMODULES
+---
+- fmt [`https://github.com/fmtlib/fmt`]
+
 TODO
 ---
 

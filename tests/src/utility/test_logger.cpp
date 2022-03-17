@@ -1,22 +1,17 @@
 #include "utility/test_logger.hpp"
 
-#include <iostream>
-
-void log_message(const std::string_view message, const std::string_view color) noexcept
-{
-    std::cout << color << message << Colors::RESET;
-}
+#include <fmt/core.h>       
+#include <fmt/color.h>       
 
 void log_test(const std::string_view test_name, bool is_test_passed) noexcept
 {
-    std::cout << "Test '" << test_name << "' : ";
-    if (is_test_passed)
-    {
-        std::cout << Colors::GREEN << "PASS";
-    }
-    else
-    {
-        std::cout << Colors::RED << "FAIL";
-    }
-    std::cout << Colors::RESET << '\n';
+    static constexpr const char* PASS = "PASS";
+    static constexpr const char* FAIL = "FAIL";
+    fmt::print("Test {} : ", test_name);
+    fmt::print(
+        (is_test_passed ? fg(fmt::color::green) : fg(fmt::color::red)),
+        "{}\n",
+        (is_test_passed ? PASS : FAIL)
+        );
+
 }

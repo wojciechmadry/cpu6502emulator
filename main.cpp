@@ -1,7 +1,7 @@
-#include <iostream>
-
 #include "cpu.hpp"
 #include "ALL_TEST.HPP"
+
+#include <fmt/core.h>
 
 int main(){
   CPU6502_TEST::RUN_ALL_TEST();
@@ -20,15 +20,7 @@ int main(){
   cpu.get_registers().PS.put_byte(0x00);
 
   pc = cpu.get_registers().PC.get();
-/*  memory[pc] = 0xA9; // 2
-  memory[pc + 1] = 19;
-  memory[pc + 2] = 0xE9; // 2
-  memory[pc + 3] = 10;
-  cpu.execute(4);
-  std::cout << (int)cpu.get_registers().ACU.get() << '\n';
-  */
   
-  // std::cout << std::hex << (int)pc << '\n'; 
   memory[pc] = 0xA9; // Load to accumulator register  value 222 (2 cycles)
   memory[pc + 1] = 222; // value in accumulator
   memory[pc + 2] = 0x48; // Push accumulator on stack (3 cycles)
@@ -58,11 +50,9 @@ int main(){
 
   //END program
   cpu.execute(36); // 36
-  std::cout << "ACU : " << static_cast<int>(cpu.get_registers().ACU.get()) << '\n';
-  std::cout << "LDX : " << static_cast<int>(cpu.get_registers().IRX.get()) << '\n';
-  std::cout << "LDY : " << static_cast<int>(cpu.get_registers().IRY.get()) << '\n';
-
-
+  fmt::print("ACU : {}\n", static_cast<int>(cpu.get_registers().ACU.get()));
+  fmt::print("LDX : {}\n", static_cast<int>(cpu.get_registers().IRX.get()));
+  fmt::print("LDY : {}\n", static_cast<int>(cpu.get_registers().IRY.get()));
 
   return 0;
 }
