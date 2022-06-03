@@ -21,5 +21,10 @@ namespace cpu6502::registers{
     {
         ++m_reg;
     }
+    void ProgramCounter::decrement() noexcept
+    {
+        --m_reg;
+    }
+
 
 }

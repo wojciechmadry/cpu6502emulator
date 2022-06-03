@@ -13,7 +13,7 @@ namespace cpu6502{
     void Memory::initialise() noexcept {
         for (auto &MemoryCell : m_memory)
         {
-            MemoryCell = 0;    
+            MemoryCell = 0xFF;    
         }
     }
 

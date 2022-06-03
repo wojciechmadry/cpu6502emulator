@@ -8,8 +8,8 @@ namespace cpu6502::registers
     class IndexRegisterX
     {
         Byte m_reg = 0;
-        using RegisterStroedType = decltype(m_reg);
     public:
+        using RegisterStroedType = decltype(m_reg);
         IndexRegisterX() = default;
         ~IndexRegisterX() = default;
 

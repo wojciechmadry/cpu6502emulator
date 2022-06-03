@@ -18,9 +18,12 @@ SUBMODULES
 TODO
 ---
 
+
 - [ ] Add implementation of decimal flag
 - [ ] Better organise code in `Shifts` and `Increments & Decrements`
 - [ ] Read about non-maskable irq (0xFFFA/B) and reset location (0xFFFC/D)
+- [X] Implement interpreter
+    - [X] Add test to interpreter
 - [X] Move functions in test to some utility file
 - [X] Implementing `RTS` - Working - But I think something is wrong
 - [X] Add all `instruction set`

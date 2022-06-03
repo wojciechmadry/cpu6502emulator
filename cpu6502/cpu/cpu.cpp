@@ -891,6 +891,13 @@ namespace cpu6502{
                     DEYimplied(Cycles);
                     break;
                 }   
+                case 0xFF:
+                {   
+                    // There is no instruction left, end executing
+                    Cycles = 0;
+                    cpu_reg.PC.decrement();
+                    break;
+                }
                 default:
                 {
                     throw cpu6502::exceptions::bad_instruction{ins};

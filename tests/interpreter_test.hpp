@@ -1,0 +1,39 @@
+#ifndef INTERPRETER_TEST_HPP
+#define INTERPRETER_TEST_HPP
+
+namespace CPU6502_TEST::interpreter_test::inner
+{
+    bool ADDRESSING_IMMEDIATE_TEST();
+
+    bool ADDRESSING_ZERO_PAGE_TEST();
+
+    bool ADDRESSING_ZERO_PAGE_X_TEST();
+    
+    bool ADDRESSING_ZERO_PAGE_Y_TEST();
+
+    bool ADDRESSING_ABSOLUTE_TEST();
+
+    bool ADDRESSING_ABSOLUTE_X_TEST();
+
+    bool ADDRESSING_ABSOLUTE_Y_TEST();
+
+    bool ADDRESSING_IMPLICIT_TEST();
+    
+    bool ADDRESSING_ACCUMULATOR_TEST();
+
+    bool ADDRESSING_RELATIVE_TEST();
+    
+    bool ADDRESSING_INDIRECT_TEST();
+
+    bool ADDRESSING_INDIRECT_X_TEST();
+    
+    bool ADDRESSING_INDIRECT_Y_TEST();
+}
+
+namespace CPU6502_TEST::interpreter_test
+{
+    bool RUN_INTERPRETER_TEST();
+}
+
+
+#endif  // INTERPRETER_TEST_HPP

@@ -1,4 +1,5 @@
 #include "cpu.hpp"
+#include "interpreter/interpreter.hpp"
 #include "ALL_TEST.HPP"
 
 #include <fmt/core.h>
@@ -54,5 +55,52 @@ int main(){
   fmt::print("LDX : {}\n", static_cast<int>(cpu.get_registers().IRX.get()));
   fmt::print("LDY : {}\n", static_cast<int>(cpu.get_registers().IRY.get()));
 
+  fmt::print("--- Interpreter ---\n");
+  cpu6502::interpreter::Interpreter interp(cpu);
+  fmt::print("Number of addresing type: {}\n", static_cast<int>(cpu6502::interpreter::Addressing::NUM_OF_ADDRESSING));
+
+  // Immediate adc
+  const std::string ins_im_adc = {"adc #10"}; // can be ADC etc...
+  const std::string ins_im_hi_adc = {"adc #HI TEST"}; // can be hi test
+  const std::string ins_im_lo_adc = {"adc #LO TEST"}; // can be lo test
+  // Zero page adc
+  
+  const std::string ins_zp_adc = {"adc $55"};
+  const std::string ins_zp_adc_label = {"adc ZP_LABEL"};
+  
+  // Zero Page X adc
+
+  const std::string ins_zpx_adc = {"adc $55, X"};
+  const std::string ins_zpx_adc_label = {"adc ZP_LABEL, X"};
+
+  // Absolute adc
+
+  // Absolute X adc
+
+  // Absolute Y adc
+
+  // Indirect X adc
+
+  // Indirect Y adc
+
+  /*
+  interp.add_label("test", 1234);
+  interp.add_label("zp_label", 12);
+  fmt::print("-----------------\n");
+  interp.interprete(ins_im_adc);
+  fmt::print("-----------------\n");
+  interp.interprete(ins_im_hi_adc);
+  fmt::print("-----------------\n");
+  interp.interprete(ins_im_lo_adc);
+  fmt::print("-----------------\n");
+  interp.interprete(ins_zp_adc);
+  fmt::print("-----------------\n");
+  interp.interprete(ins_zp_adc_label);
+  fmt::print("-----------------\n");
+  interp.interprete(ins_zpx_adc);
+  fmt::print("-----------------\n");
+  interp.interprete(ins_zpx_adc_label);
+  fmt::print("-----------------\n");
+  */
   return 0;
 }

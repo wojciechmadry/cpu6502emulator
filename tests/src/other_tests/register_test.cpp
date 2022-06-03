@@ -1,4 +1,4 @@
-#include "register_test.hpp"
+#include "cpu_test.hpp"
 
 #include "registers/registers.hpp"
 

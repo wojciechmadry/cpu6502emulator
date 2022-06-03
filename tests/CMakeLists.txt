@@ -8,6 +8,7 @@ add_library(
         src/ALL_TEST.cpp
         src/other_tests/register_test.cpp
         src/other_tests/stack_test.cpp
+        src/other_tests/memory_test.cpp
         src/instruction/AND.cpp
         src/instruction/BIT.cpp
         src/instruction/BRANCHES.cpp
@@ -42,11 +43,25 @@ add_library(
         src/instruction/DEC.cpp
         src/instruction/DEX.cpp
         src/instruction/DEY.cpp
+        src/interpreter/interpreter_test.cpp
+        src/interpreter/addressing/immediate.cpp
+        src/interpreter/addressing/zero_page.cpp
+        src/interpreter/addressing/zero_page_x.cpp
+        src/interpreter/addressing/zero_page_y.cpp
+        src/interpreter/addressing/absolute.cpp
+        src/interpreter/addressing/absolute_x.cpp
+        src/interpreter/addressing/absolute_y.cpp
+        src/interpreter/addressing/implicit.cpp
+        src/interpreter/addressing/accumulator.cpp
+        src/interpreter/addressing/relative.cpp
+        src/interpreter/addressing/indirect.cpp
+        src/interpreter/addressing/indirect_x.cpp
+        src/interpreter/addressing/indirect_y.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})
 
 target_include_directories(cpu6502_tests PRIVATE "../cpu6502")
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)
-target_link_libraries(cpu6502_tests PRIVATE cpu6502 fmt)
+target_link_libraries(cpu6502_tests PRIVATE cpu6502 fmt cpu6502_interpreter)
 target_include_directories(cpu6502_tests PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")

@@ -8,8 +8,8 @@ namespace cpu6502::registers
     class ProgramCounter
     {
         Word m_reg = 0;
-        using RegisterStroedType = decltype(m_reg);
     public:
+        using RegisterStroedType = decltype(m_reg);
         ProgramCounter() = default;
         ~ProgramCounter() = default;
 
@@ -20,6 +20,8 @@ namespace cpu6502::registers
         void set(RegisterStroedType NewRegValue) noexcept;
 
         void increment() noexcept;
+
+        void decrement() noexcept;
     };
 }
 #endif

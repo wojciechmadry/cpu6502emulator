@@ -9,6 +9,8 @@ namespace CPU6502_TEST::inner
     {
         bool all_pass = true;
 
+        all_pass &= utils::run_test(MEMORY_TEST, "Memory");
+
         all_pass &= utils::run_test(LDA_TEST, "LDA");
 
         all_pass &= utils::run_test(LDX_TEST, "LDX");

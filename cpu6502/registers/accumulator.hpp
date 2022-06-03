@@ -8,8 +8,8 @@ namespace cpu6502::registers
     class Accumulator
     {
         Byte m_reg = 0;
-        using RegisterStroedType = decltype(m_reg);
     public:
+        using RegisterStroedType = decltype(m_reg);
         Accumulator() = default;
         ~Accumulator() = default;
 
