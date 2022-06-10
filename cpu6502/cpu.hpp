@@ -27,8 +27,8 @@ namespace cpu6502
         // Write CPU
         void write_word(Word Data, u32 Address, u32& Cycles) noexcept;
         void write_byte(Byte Data, u32 Address, u32& Cycles) noexcept;
-        void push_word_to_stack(Word Data, u32& Cycles);
-        void push_byte_to_stack(Byte Data, u32& Cycles);
+        void push_word_to_stack(Word Data, u32& Cycles) noexcept;
+        void push_byte_to_stack(Byte Data, u32& Cycles) noexcept;
 
         // Operation
         // Add value to  Acumulator
