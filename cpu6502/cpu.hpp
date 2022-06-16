@@ -377,8 +377,11 @@ namespace cpu6502
         CPU(const CPU&) = delete;
         CPU(CPU&&) = delete;
         explicit CPU(cpu6502::Memory& memory) noexcept;
-
         ~CPU() = default;
+
+        CPU& operator=(const CPU&) = delete;
+        CPU& operator=(CPU&&) = delete;
+
 
         [[nodiscard]] const cpu6502::Registers& get_registers() const noexcept;
 

@@ -153,8 +153,6 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = 8;
         cpu.execute(3);
         all_good &= cpu.get_registers().PC.get() == PC + 8;
-        PC = cpu.get_registers().PC.get();
-
 
         return all_good;
     }

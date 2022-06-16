@@ -7,7 +7,7 @@
 
 namespace cpu6502::interpreter
 {
-Interpreter::Interpreter(Interpreter& other) noexcept : m_cpu(other.m_cpu)
+Interpreter::Interpreter(Interpreter& other) noexcept : m_cpu(other.m_cpu), m_labels(other.m_labels)
 {
 
 }

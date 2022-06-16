@@ -16,7 +16,7 @@ namespace CPU6502_TEST::inner{
 
 
         utils::jump_to_2020(cpu);
-        auto PC = cpu.get_registers().PC.get();
+        cpu6502::registers::ProgramCounter::RegisterStroedType PC;
 
         // ASSERT ROR - Accumulator
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::ROR::Accumulator); // 2 cycles

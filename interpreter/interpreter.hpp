@@ -25,9 +25,17 @@ namespace cpu6502::interpreter
 
         Interpreter(Interpreter& other) noexcept;
 
+        Interpreter(Interpreter&& other) noexcept = delete;
+
+        Interpreter(const Interpreter& other) noexcept = delete;
+
         Interpreter(cpu6502::CPU& cpu) noexcept;
 
         ~Interpreter() noexcept = default;
+
+        Interpreter& operator=(Interpreter&&) = delete;
+
+        Interpreter& operator=(const Interpreter&) = delete;
 
         cpu6502::CPU& get_cpu() noexcept;
 

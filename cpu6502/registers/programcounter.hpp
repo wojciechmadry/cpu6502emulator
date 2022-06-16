@@ -10,8 +10,6 @@ namespace cpu6502::registers
         Word m_reg = 0;
     public:
         using RegisterStroedType = decltype(m_reg);
-        ProgramCounter() = default;
-        ~ProgramCounter() = default;
 
         [[nodiscard]] RegisterStroedType get() const noexcept;
 

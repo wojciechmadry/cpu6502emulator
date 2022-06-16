@@ -12,10 +12,18 @@ namespace cpu6502{
 
     public:
         Memory() = delete;
-        
-        explicit Memory(const u64 BYTES_MEMORY) noexcept : m_memory(BYTES_MEMORY) {}
 
+        Memory(Memory&&);
+
+        Memory(const Memory&);
+
+        explicit Memory(const u64 BYTES_MEMORY) noexcept : m_memory(BYTES_MEMORY) {}
+    
         ~Memory() = default;
+
+        Memory& operator=(Memory&&);
+
+        Memory& operator=(const Memory&);
 
         void initialise() noexcept;
 

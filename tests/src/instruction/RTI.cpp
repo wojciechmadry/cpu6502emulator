@@ -27,9 +27,6 @@ namespace CPU6502_TEST::inner{
         mem[cpu6502::CPU::IRQ] = 0x10;
         mem[cpu6502::CPU::IRQ + 1] = 0x10;
 
-
-        PC = cpu.get_registers().PC.get();
-
         const auto register_before = cpu.get_registers();
 
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::BRK::Implied); // 7 cycles

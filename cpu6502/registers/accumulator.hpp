@@ -10,8 +10,6 @@ namespace cpu6502::registers
         Byte m_reg = 0;
     public:
         using RegisterStroedType = decltype(m_reg);
-        Accumulator() = default;
-        ~Accumulator() = default;
 
         [[nodiscard]] RegisterStroedType get() const noexcept;
 

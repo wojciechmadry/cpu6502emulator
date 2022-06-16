@@ -9,8 +9,6 @@ namespace cpu6502::registers
     {
         Byte m_reg = 0x00;
     public:
-        ProcessorStatus() = default;
-        ~ProcessorStatus() = default;
 
         enum class Flags : Byte
         {

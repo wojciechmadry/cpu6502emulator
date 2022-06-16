@@ -15,7 +15,7 @@ namespace CPU6502_TEST::inner{
         cpu6502::Byte opcode;
 
         utils::jump_to_2020(cpu);
-        auto PC = cpu.get_registers().PC.get();
+        cpu6502::registers::ProgramCounter::RegisterStroedType PC;
 
         // ASSERT INX - Implied
         {
