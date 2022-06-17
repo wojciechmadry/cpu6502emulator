@@ -21,4 +21,4 @@ build:
 test:
   stage: test
   script:
-    - ./cpu_6502_emulator
+    - ./build/cpu_6502_emulator
