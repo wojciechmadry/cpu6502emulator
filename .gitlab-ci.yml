@@ -1,0 +1,19 @@
+image: gcc
+
+build:
+  stage: build
+  before_script:
+    - apt update && apt -y install make autoconf cmake
+  script:
+    - mkdir build
+    - cd build
+    - cmake ../
+    - cmake --build . -j16
+    - cd ..
+
+test:
+  stage: test
+  script:
+    - cd build
+    - ./cpu_6502_emulator
+    - cd ..
