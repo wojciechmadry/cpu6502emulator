@@ -4,6 +4,8 @@ build:
   stage: build
   before_script:
     - apt update && apt -y install make autoconf cmake
+    - git submodule init
+    - git submodule update
   script:
     - mkdir build
     - cd build
