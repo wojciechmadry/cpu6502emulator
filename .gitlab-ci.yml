@@ -13,9 +13,12 @@ build:
     - cmake --build . -j16
     - cd ..
 
+  artifacts:
+    paths:
+      - build/cpu_6502_emulator
+
+
 test:
   stage: test
   script:
-    - cd build
     - ./cpu_6502_emulator
-    - cd ..
