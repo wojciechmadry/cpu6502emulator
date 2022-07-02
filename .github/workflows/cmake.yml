@@ -11,15 +11,15 @@ on:
 jobs:
   build:
 
-    runs-on: gcc
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
-   # - name: Install Dependencies
-   #   run: |
-   #     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-   #     sudo apt -y install g++-11
+    - name: Install Dependencies
+      run: |
+        sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+        sudo apt -y install g++-11
     
     - name: FetchSubmodules
       run: |
@@ -28,6 +28,8 @@ jobs:
         
     - name: Build
       run: |
+        export CXX=g++-11
+        export CC=gcc-11
         mkdir -p build
         cd build
         cmake ../
