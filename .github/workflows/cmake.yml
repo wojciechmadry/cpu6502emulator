@@ -33,7 +33,7 @@ jobs:
         mkdir -p build
         cd build
         cmake ../
-        cmake -build . -j
+        cmake --build . -j
 
 #    - name: Test
 #     run: TEST_HERE
