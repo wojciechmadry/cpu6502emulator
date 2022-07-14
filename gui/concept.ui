@@ -593,13 +593,13 @@
       <x>10</x>
       <y>150</y>
       <width>511</width>
-      <height>281</height>
+      <height>241</height>
      </rect>
     </property>
     <property name="title">
      <string>Memory</string>
     </property>
-    <widget class="QGroupBox" name="ACU_group_2">
+    <widget class="QGroupBox" name="MemorySP0">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -611,7 +611,7 @@
      <property name="title">
       <string>0xFFFF</string>
      </property>
-     <widget class="QLineEdit" name="lineEdit_13">
+     <widget class="QLineEdit" name="MemorySPEdit0">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -624,6 +624,315 @@
        <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
       </property>
      </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemorySP1">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>30</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemorySPEdit1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemorySP2">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemorySPEdit2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemorySP3">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>30</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemorySPEdit3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemorySP4">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>30</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemorySPEdit4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemorySP5">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>30</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemorySPEdit5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemoryStart0">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>158</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemoryStartEdit0">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemoryStart1">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>158</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemoryStartEdit1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemoryStart5">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>158</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemoryStartEdit5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemoryStart3">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>158</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemoryStartEdit3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemoryStart4">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>158</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemoryStartEdit4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="MemoryStart2">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>158</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>0xFFFF</string>
+     </property>
+     <widget class="QLineEdit" name="MemoryStartEdit2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>128</y>
+       <width>101</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start from:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ShowMemoryStartAt">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>120</y>
+       <width>113</width>
+       <height>31</height>
+      </rect>
+     </property>
     </widget>
    </widget>
   </widget>

@@ -3,7 +3,7 @@ GUI requirements:
 - Text box to input command [X]
 - Button to execute command(accept command from text box)(Clear text box input) [X]
 - Small label under input box, that shows error [X]
-- Show some range of memory start at XXX, where XXX is input from user. (All memory should be edited texbox, you can put your value here!, on above each textbox should be hex address) [ ]
+- Show some range of memory start at XXX, where XXX is input from user. (All memory should be edited texbox, you can put your value here!, on above each textbox should be hex address) [X]
 - Possibility to load .asm file and execute it. (Show label if loaded was sucess or not)(Clear text box input) [X]
 - If text box command is empty, execute button execute current memory (Program Counter) [ ]
 - Button to reset program to default value [X]
