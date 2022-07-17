@@ -15,9 +15,4 @@ add_subdirectory(fmt)
 add_subdirectory(cpu6502)
 add_subdirectory(interpreter)
 add_subdirectory(tests)
-
-add_executable(cpu_6502_emulator main.cpp)
-
-target_link_libraries(cpu_6502_emulator PUBLIC cpu6502 fmt cpu6502_tests cpu6502_interpreter)
-
-target_compile_options(cpu_6502_emulator PRIVATE ${CXX_COMPILER_FLAGS})
+add_subdirectory(gui)

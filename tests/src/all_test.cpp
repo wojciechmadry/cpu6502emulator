@@ -1,4 +1,4 @@
-#include "ALL_TEST.HPP"
+#include "all_test.hpp"
 
 #include <string>
 #include <fmt/core.h>       
@@ -12,7 +12,7 @@
 
 namespace CPU6502_TEST
 {
-    void RUN_ALL_TEST() noexcept
+    TEST_RESULT RUN_ALL_TEST() noexcept
     {
         babel::TIME::timer T;
         T.start();
@@ -34,5 +34,6 @@ namespace CPU6502_TEST
             "{} ", is_pass);
 
         fmt::print(" in {} seconds.\n", Time);
+        return ALL_GOOD ? TEST_RESULT::ALL_PASS : TEST_RESULT::FAILED;
     }
 }
