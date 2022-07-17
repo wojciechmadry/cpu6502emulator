@@ -50,3 +50,12 @@ TODO
 - [x] `Register Transfers` instruction set (`TAX`, `TAY`, `TXA`, `TYA`)
     - [x] Add test to `Register Transfers`
 - [x] `Status Flag Changes` instruction set (`CLC`, `CLD`, `CLI`, `CLV`, `SEC`, `SED`, `SEI`)
+
+Docker
+---
+- Docker contain minimal setup to compile cpu 6502 emulator.
+- You can run test on it (You can't run cpu emulator with gui)
+ - How to run docker:
+    1. `sudo docker build -t cpu_docker .`
+    2. `sudo docker run -it cpu_docker`
+
