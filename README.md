@@ -11,6 +11,8 @@ Additional guides:
 2. https://sta.c64.org/cbm64mem.html
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
 
+![Ubuntu22.04 - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22.yml/badge.svg)
+
 SUBMODULES
 ---
 - fmt [`https://github.com/fmtlib/fmt`]
