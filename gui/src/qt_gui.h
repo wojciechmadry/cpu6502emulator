@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'conceptPrcZXg.ui'
+** Form generated from reading UI file 'concept.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef CONCEPTPRCZXG_H
-#define CONCEPTPRCZXG_H
+#ifndef UI_CONCEPT_H
+#define UI_CONCEPT_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -16,6 +16,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -100,6 +101,10 @@ public:
     QLineEdit *MemoryStartEdit2;
     QLabel *label_5;
     QLineEdit *ShowMemoryStartAt;
+    QGroupBox *LoadASM_group;
+    QPushButton *ScanASM;
+    QPushButton *LoadASM;
+    QListWidget *listWidget;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QStatusBar *statusbar;
@@ -140,10 +145,10 @@ public:
         centralwidget->setSizePolicy(sizePolicy1);
         ExecuteButton = new QPushButton(centralwidget);
         ExecuteButton->setObjectName(QString::fromUtf8("ExecuteButton"));
-        ExecuteButton->setGeometry(QRect(10, 520, 831, 34));
+        ExecuteButton->setGeometry(QRect(10, 510, 831, 41));
         CpuCommandLine = new QPlainTextEdit(centralwidget);
         CpuCommandLine->setObjectName(QString::fromUtf8("CpuCommandLine"));
-        CpuCommandLine->setGeometry(QRect(10, 440, 831, 41));
+        CpuCommandLine->setGeometry(QRect(10, 450, 831, 41));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Minimum);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
@@ -169,7 +174,7 @@ public:
         label_error_message->setStyleSheet(QString::fromUtf8("color: rgb(165, 29, 45);"));
         DebugModeMox = new QGroupBox(centralwidget);
         DebugModeMox->setObjectName(QString::fromUtf8("DebugModeMox"));
-        DebugModeMox->setGeometry(QRect(520, 0, 311, 141));
+        DebugModeMox->setGeometry(QRect(530, 0, 311, 141));
         label_debug_where_i_am = new QLabel(DebugModeMox);
         label_debug_where_i_am->setObjectName(QString::fromUtf8("label_debug_where_i_am"));
         label_debug_where_i_am->setGeometry(QRect(140, 100, 41, 20));
@@ -183,7 +188,7 @@ public:
         label_2->setGeometry(QRect(90, 60, 61, 20));
         spinCommandToRemember = new QSpinBox(DebugModeMox);
         spinCommandToRemember->setObjectName(QString::fromUtf8("spinCommandToRemember"));
-        spinCommandToRemember->setGeometry(QRect(230, 30, 51, 21));
+        spinCommandToRemember->setGeometry(QRect(230, 20, 51, 31));
         CommandGoLeft = new QToolButton(DebugModeMox);
         CommandGoLeft->setObjectName(QString::fromUtf8("CommandGoLeft"));
         CommandGoLeft->setGeometry(QRect(100, 80, 32, 34));
@@ -199,42 +204,42 @@ public:
         label_4->setGeometry(QRect(150, 80, 61, 18));
         PC_group = new QGroupBox(centralwidget);
         PC_group->setObjectName(QString::fromUtf8("PC_group"));
-        PC_group->setGeometry(QRect(10, 10, 151, 61));
+        PC_group->setGeometry(QRect(10, 0, 151, 61));
         PC_value = new QLineEdit(PC_group);
         PC_value->setObjectName(QString::fromUtf8("PC_value"));
         PC_value->setGeometry(QRect(40, 20, 61, 23));
         PC_value->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         SP_group = new QGroupBox(centralwidget);
         SP_group->setObjectName(QString::fromUtf8("SP_group"));
-        SP_group->setGeometry(QRect(30, 80, 121, 61));
+        SP_group->setGeometry(QRect(10, 70, 121, 61));
         SP_value = new QLineEdit(SP_group);
         SP_value->setObjectName(QString::fromUtf8("SP_value"));
         SP_value->setGeometry(QRect(20, 20, 61, 23));
         SP_value->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         ACU_group = new QGroupBox(centralwidget);
         ACU_group->setObjectName(QString::fromUtf8("ACU_group"));
-        ACU_group->setGeometry(QRect(190, 80, 121, 61));
+        ACU_group->setGeometry(QRect(170, 70, 121, 61));
         ACU_value = new QLineEdit(ACU_group);
         ACU_value->setObjectName(QString::fromUtf8("ACU_value"));
         ACU_value->setGeometry(QRect(30, 20, 61, 23));
         ACU_value->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         IRX_group = new QGroupBox(centralwidget);
         IRX_group->setObjectName(QString::fromUtf8("IRX_group"));
-        IRX_group->setGeometry(QRect(340, 10, 161, 61));
+        IRX_group->setGeometry(QRect(340, 0, 161, 61));
         IRX_value = new QLineEdit(IRX_group);
         IRX_value->setObjectName(QString::fromUtf8("IRX_value"));
         IRX_value->setGeometry(QRect(40, 20, 61, 23));
         IRX_value->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         IRY_group = new QGroupBox(centralwidget);
         IRY_group->setObjectName(QString::fromUtf8("IRY_group"));
-        IRY_group->setGeometry(QRect(170, 10, 161, 61));
+        IRY_group->setGeometry(QRect(170, 0, 161, 61));
         IRY_value = new QLineEdit(IRY_group);
         IRY_value->setObjectName(QString::fromUtf8("IRY_value"));
         IRY_value->setGeometry(QRect(40, 20, 61, 23));
         IRY_value->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         PS_group = new QGroupBox(centralwidget);
         PS_group->setObjectName(QString::fromUtf8("PS_group"));
-        PS_group->setGeometry(QRect(530, 150, 301, 281));
+        PS_group->setGeometry(QRect(530, 150, 311, 281));
         CarryFlag_Group = new QGroupBox(PS_group);
         CarryFlag_Group->setObjectName(QString::fromUtf8("CarryFlag_Group"));
         CarryFlag_Group->setGeometry(QRect(10, 20, 131, 61));
@@ -286,7 +291,7 @@ public:
         ID_value->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         memory_group = new QGroupBox(centralwidget);
         memory_group->setObjectName(QString::fromUtf8("memory_group"));
-        memory_group->setGeometry(QRect(10, 150, 511, 241));
+        memory_group->setGeometry(QRect(10, 130, 511, 211));
         MemorySP0 = new QGroupBox(memory_group);
         MemorySP0->setObjectName(QString::fromUtf8("MemorySP0"));
         MemorySP0->setGeometry(QRect(10, 30, 71, 61));
@@ -331,52 +336,64 @@ public:
         MemorySPEdit5->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         MemoryStart0 = new QGroupBox(memory_group);
         MemoryStart0->setObjectName(QString::fromUtf8("MemoryStart0"));
-        MemoryStart0->setGeometry(QRect(10, 158, 71, 61));
+        MemoryStart0->setGeometry(QRect(10, 138, 71, 61));
         MemoryStartEdit0 = new QLineEdit(MemoryStart0);
         MemoryStartEdit0->setObjectName(QString::fromUtf8("MemoryStartEdit0"));
         MemoryStartEdit0->setGeometry(QRect(10, 20, 41, 23));
         MemoryStartEdit0->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         MemoryStart1 = new QGroupBox(memory_group);
         MemoryStart1->setObjectName(QString::fromUtf8("MemoryStart1"));
-        MemoryStart1->setGeometry(QRect(90, 158, 71, 61));
+        MemoryStart1->setGeometry(QRect(90, 138, 71, 61));
         MemoryStartEdit1 = new QLineEdit(MemoryStart1);
         MemoryStartEdit1->setObjectName(QString::fromUtf8("MemoryStartEdit1"));
         MemoryStartEdit1->setGeometry(QRect(10, 20, 41, 23));
         MemoryStartEdit1->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         MemoryStart5 = new QGroupBox(memory_group);
         MemoryStart5->setObjectName(QString::fromUtf8("MemoryStart5"));
-        MemoryStart5->setGeometry(QRect(410, 158, 71, 61));
+        MemoryStart5->setGeometry(QRect(410, 138, 71, 61));
         MemoryStartEdit5 = new QLineEdit(MemoryStart5);
         MemoryStartEdit5->setObjectName(QString::fromUtf8("MemoryStartEdit5"));
         MemoryStartEdit5->setGeometry(QRect(10, 20, 41, 23));
         MemoryStartEdit5->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         MemoryStart3 = new QGroupBox(memory_group);
         MemoryStart3->setObjectName(QString::fromUtf8("MemoryStart3"));
-        MemoryStart3->setGeometry(QRect(250, 158, 71, 61));
+        MemoryStart3->setGeometry(QRect(250, 138, 71, 61));
         MemoryStartEdit3 = new QLineEdit(MemoryStart3);
         MemoryStartEdit3->setObjectName(QString::fromUtf8("MemoryStartEdit3"));
         MemoryStartEdit3->setGeometry(QRect(10, 20, 41, 23));
         MemoryStartEdit3->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         MemoryStart4 = new QGroupBox(memory_group);
         MemoryStart4->setObjectName(QString::fromUtf8("MemoryStart4"));
-        MemoryStart4->setGeometry(QRect(330, 158, 71, 61));
+        MemoryStart4->setGeometry(QRect(330, 138, 71, 61));
         MemoryStartEdit4 = new QLineEdit(MemoryStart4);
         MemoryStartEdit4->setObjectName(QString::fromUtf8("MemoryStartEdit4"));
         MemoryStartEdit4->setGeometry(QRect(10, 20, 41, 23));
         MemoryStartEdit4->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         MemoryStart2 = new QGroupBox(memory_group);
         MemoryStart2->setObjectName(QString::fromUtf8("MemoryStart2"));
-        MemoryStart2->setGeometry(QRect(170, 158, 71, 61));
+        MemoryStart2->setGeometry(QRect(170, 138, 71, 61));
         MemoryStartEdit2 = new QLineEdit(MemoryStart2);
         MemoryStartEdit2->setObjectName(QString::fromUtf8("MemoryStartEdit2"));
         MemoryStartEdit2->setGeometry(QRect(10, 20, 41, 23));
         MemoryStartEdit2->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         label_5 = new QLabel(memory_group);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(10, 128, 101, 18));
+        label_5->setGeometry(QRect(10, 108, 101, 18));
         ShowMemoryStartAt = new QLineEdit(memory_group);
         ShowMemoryStartAt->setObjectName(QString::fromUtf8("ShowMemoryStartAt"));
-        ShowMemoryStartAt->setGeometry(QRect(100, 120, 113, 31));
+        ShowMemoryStartAt->setGeometry(QRect(100, 100, 113, 31));
+        LoadASM_group = new QGroupBox(centralwidget);
+        LoadASM_group->setObjectName(QString::fromUtf8("LoadASM_group"));
+        LoadASM_group->setGeometry(QRect(10, 350, 511, 91));
+        ScanASM = new QPushButton(LoadASM_group);
+        ScanASM->setObjectName(QString::fromUtf8("ScanASM"));
+        ScanASM->setGeometry(QRect(400, 20, 88, 28));
+        LoadASM = new QPushButton(LoadASM_group);
+        LoadASM->setObjectName(QString::fromUtf8("LoadASM"));
+        LoadASM->setGeometry(QRect(400, 50, 88, 28));
+        listWidget = new QListWidget(LoadASM_group);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setGeometry(QRect(10, 20, 371, 60));
         cpu6502_mainwindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(cpu6502_mainwindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -389,8 +406,6 @@ public:
         cpu6502_mainwindow->setStatusBar(statusbar);
 
         menubar->addAction(menuMenu->menuAction());
-        menuMenu->addAction(actionLoad_asm);
-        menuMenu->addSeparator();
         menuMenu->addAction(actionDebug_mode);
         menuMenu->addSeparator();
         menuMenu->addAction(actionReset_program);
@@ -459,6 +474,9 @@ public:
         MemoryStart4->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "0xFFFF", nullptr));
         MemoryStart2->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "0xFFFF", nullptr));
         label_5->setText(QCoreApplication::translate("cpu6502_mainwindow", "Start from:", nullptr));
+        LoadASM_group->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Load .asm", nullptr));
+        ScanASM->setText(QCoreApplication::translate("cpu6502_mainwindow", "Scan", nullptr));
+        LoadASM->setText(QCoreApplication::translate("cpu6502_mainwindow", "Load", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Menu", nullptr));
     } // retranslateUi
 
@@ -470,4 +488,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // CONCEPTPRCZXG_H
+#endif // UI_CONCEPT_H
