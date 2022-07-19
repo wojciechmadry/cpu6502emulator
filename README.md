@@ -14,9 +14,9 @@ Additional guides:
 WORKFLOWS
 ---
 
-![Ubuntu 22.04 - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22.yml/badge.svg)
-![Ubuntu 22.04 - Docker file](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22_docker.yml/badge.svg)
-
+| Build and test | Docker build | 
+| --------------- | --------------|
+| ![Ubuntu 22.04 - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22.yml/badge.svg)|![Ubuntu 22.04 - Docker file](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22_docker.yml/badge.svg)  
 
 SUBMODULES
 ---
