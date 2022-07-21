@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'concept.ui'
+** Form generated from reading UI file 'conceptfsguER.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_CONCEPT_H
-#define UI_CONCEPT_H
+#ifndef CONCEPTFSGUER_H
+#define CONCEPTFSGUER_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -488,4 +488,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_CONCEPT_H
+#endif // CONCEPTFSGUER_H
