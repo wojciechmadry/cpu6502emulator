@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(cpu_6502_emulator)
 
+# TODO: Remember to remove some of those flag when everything be ready.
 set(CXX_COMPILER_FLAGS -g -O3 -Wextra -Werror -W
 -Wno-unused-parameter
 -Wshadow -Wdouble-promotion -Wformat=2 
