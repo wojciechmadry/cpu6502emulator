@@ -4,6 +4,36 @@
 
 namespace cpu6502{
 
+    Memory::Memory(Memory&& mem)
+    {
+        m_memory = std::move(mem.m_memory);
+    }
+
+    Memory::Memory(const Memory& mem)
+    {
+        m_memory = mem.m_memory;
+    }
+
+    Memory& Memory::operator=(Memory&& mem)
+    {
+        if(this == &mem)
+        {
+            return *this;
+        }
+        m_memory = std::move(mem.m_memory);
+        return *this;
+    }
+
+    Memory& Memory::operator=(const Memory& mem)
+    {
+        if(this == &mem)
+        {
+            return *this;
+        }
+        m_memory = mem.m_memory;
+        return *this;
+    }
+
     void Memory::throw_out_of_range(const u64 Address) const
     {
         const std::string msg = std::string("Address : ") + std::to_string(Address) + " is out of memory range.";

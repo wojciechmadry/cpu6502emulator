@@ -14,7 +14,7 @@ namespace CPU6502_TEST::inner{
         cpu6502::Byte opcode;
 
         utils::jump_to_2020(cpu);
-        auto PC = cpu.get_registers().PC.get();
+        cpu6502::registers::ProgramCounter::RegisterStroedType PC;
 
         //ASSERT CMP - Immediate
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::CMP::Immediate); // 2 cycles

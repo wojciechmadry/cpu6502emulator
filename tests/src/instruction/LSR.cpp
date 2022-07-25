@@ -15,7 +15,7 @@ namespace CPU6502_TEST::inner{
         cpu6502::Byte opcode;
 
         utils::jump_to_2020(cpu);
-        auto PC = cpu.get_registers().PC.get();
+        cpu6502::registers::ProgramCounter::RegisterStroedType PC;
 
         // ASSERT LSR - Accumulator
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::LSR::Accumulator); // 2 cycles
@@ -75,7 +75,6 @@ namespace CPU6502_TEST::inner{
         // END ASSERT LSR - Zero Page
 
         utils::jump_to_2020(cpu);
-        PC = cpu.get_registers().PC.get();
 
         // ASSERT LSR - Zero Page X
         {

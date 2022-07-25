@@ -11,6 +11,13 @@ Additional guides:
 2. https://sta.c64.org/cbm64mem.html
 3. https://www.c64-wiki.com/wiki/Reset_(Process)
 
+WORKFLOWS
+---
+
+| Build and test | Docker build | 
+| --------------- | --------------|
+| ![Ubuntu 22.04 - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22.yml/badge.svg)|![Ubuntu 22.04 - Docker file](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22_docker.yml/badge.svg)  
+
 SUBMODULES
 ---
 - fmt [`https://github.com/fmtlib/fmt`]
@@ -50,3 +57,12 @@ TODO
 - [x] `Register Transfers` instruction set (`TAX`, `TAY`, `TXA`, `TYA`)
     - [x] Add test to `Register Transfers`
 - [x] `Status Flag Changes` instruction set (`CLC`, `CLD`, `CLI`, `CLV`, `SEC`, `SED`, `SEI`)
+
+Docker
+---
+- Docker contain minimal setup to compile cpu 6502 emulator.
+- You can run test on it (You can't run cpu emulator with gui)
+ - How to run docker:
+    1. `sudo docker build -t cpu_docker .`
+    2. `sudo docker run -it cpu_docker`
+

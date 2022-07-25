@@ -28,7 +28,7 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = cast(cpu6502::opcode::TXS::Implied); // 2cycles
         cpu.execute(2);
 
-        all_good = cpu.get_registers().IRX.get() == cpu.get_registers().SP.get();
+        all_good &= cpu.get_registers().IRX.get() == cpu.get_registers().SP.get();
         // END Transfer X to stack pointer
 
         // Transfer stack pointer to X
@@ -41,7 +41,7 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = cast(cpu6502::opcode::TSX::Implied); // 2cycles
         cpu.execute(2);
 
-        all_good = cpu.get_registers().IRX.get() == cpu.get_registers().SP.get()
+        all_good &= cpu.get_registers().IRX.get() == cpu.get_registers().SP.get()
                 && cpu.get_registers().IRX.get() == 0x21;
 
         // END Transfer stack pointer to X

@@ -22,7 +22,9 @@ namespace cpu6502::interpreter::utils
         // Init map of addressing opcode
         if(MAP_IS_INITIALISED == false)
         {
-            auto safe_insert = [&](std::string&& key, auto&& val)
+            auto safe_insert = [&]<typename INSTRUCTION_INFO>
+            (std::string key, INSTRUCTION_INFO&& val)
+            requires (std::is_same_v<std::decay_t<INSTRUCTION_INFO>, InstructionInfo>)
             {
                 for(auto& c : key)
                 {
@@ -32,11 +34,10 @@ namespace cpu6502::interpreter::utils
                 if(found != map_of_operations.end())
                 {
                     fmt::print("Instruction '{}' already exist!\n", key);
-                    exit(2);
                 }
                 else
                 {
-                    map_of_operations[std::move(key)] = std::move(val);
+                    map_of_operations[std::move(key)] = std::forward<INSTRUCTION_INFO>(val);
                 }
             };
 

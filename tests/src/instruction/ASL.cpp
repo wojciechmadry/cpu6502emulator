@@ -15,8 +15,8 @@ namespace CPU6502_TEST::inner{
         cpu6502::Byte opcode;
 
         utils::jump_to_2020(cpu);
-
-        auto PC = cpu.get_registers().PC.get();
+        
+        cpu6502::registers::ProgramCounter::RegisterStroedType PC;
 
 
         // ASSERT ASL - Accumulator
@@ -78,7 +78,6 @@ namespace CPU6502_TEST::inner{
         // END ASSERT ASL - Zero Page
 
         utils::jump_to_2020(cpu);
-        PC = cpu.get_registers().PC.get();
 
         // ASSERT ASL - Zero Page X
         {
@@ -137,7 +136,6 @@ namespace CPU6502_TEST::inner{
         // END ASSERT ASL - Absolute
 
         utils::jump_to_2020(cpu);
-        PC = cpu.get_registers().PC.get();
 
         // ASSERT ASL - Absolute X
         {

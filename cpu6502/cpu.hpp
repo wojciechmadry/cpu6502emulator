@@ -27,8 +27,8 @@ namespace cpu6502
         // Write CPU
         void write_word(Word Data, u32 Address, u32& Cycles) noexcept;
         void write_byte(Byte Data, u32 Address, u32& Cycles) noexcept;
-        void push_word_to_stack(Word Data, u32& Cycles);
-        void push_byte_to_stack(Byte Data, u32& Cycles);
+        void push_word_to_stack(Word Data, u32& Cycles) noexcept;
+        void push_byte_to_stack(Byte Data, u32& Cycles) noexcept;
 
         // Operation
         // Add value to  Acumulator
@@ -377,8 +377,11 @@ namespace cpu6502
         CPU(const CPU&) = delete;
         CPU(CPU&&) = delete;
         explicit CPU(cpu6502::Memory& memory) noexcept;
-
         ~CPU() = default;
+
+        CPU& operator=(const CPU&) = delete;
+        CPU& operator=(CPU&&) = delete;
+
 
         [[nodiscard]] const cpu6502::Registers& get_registers() const noexcept;
 
