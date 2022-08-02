@@ -1,6 +1,10 @@
 #include "cpu.hpp"
 #include "gui_manager.hpp"
-#include "constant.hpp"
+#include "memory.hpp"
+#include "utils.hpp"
+#include <cstdint>
+#include <limits>
+#include <qgroupbox.h>
 
 void GuiManager::refreshMenu()
 {
@@ -50,4 +54,66 @@ void GuiManager::refreshMenu()
     // Load Zero Flag
     this->ZF_value->setText(QString{boolToString(reg.PS.get(cpu6502::CPU::PSFlags::ZeroFlag))});
 
+    // Show Memory started from Program Counter
+    showProgramCounterMemory();
+
+    // Show memory started from 'ShowMemoryStartAt' QLineEdit
+    showStartFromMemory();
+}
+
+
+void setMemoryBox(QGroupBox* group_box, QLineEdit* qline_edit, std::uint32_t idx, const cpu6502::Memory& mem)
+{
+    if (group_box == nullptr || qline_edit == nullptr)
+    {
+        return;
+    }
+
+    if (idx > std::numeric_limits<std::uint16_t>::max())
+    {
+        idx = std::numeric_limits<std::uint16_t>::max();
+    }
+
+    group_box->setTitle(utils::toHex(idx));
+    qline_edit->setText(QString::number(mem[idx]));
+}
+
+void GuiManager::showProgramCounterMemory()
+{
+    const auto& mem = m_memory.get();
+    auto PC = static_cast<std::uint32_t>(m_cpu.get().get_registers().PC.get());
+    setMemoryBox(MemorySP0, MemorySPEdit0, PC, mem);
+    ++PC;
+    setMemoryBox(MemorySP1, MemorySPEdit1, PC, mem);
+    ++PC;
+    setMemoryBox(MemorySP2, MemorySPEdit2, PC, mem);
+    ++PC;
+    setMemoryBox(MemorySP3, MemorySPEdit3, PC, mem);
+    ++PC;
+    setMemoryBox(MemorySP4, MemorySPEdit4, PC, mem);
+    ++PC;
+    setMemoryBox(MemorySP5, MemorySPEdit5, PC, mem);
+}
+
+void GuiManager::showStartFromMemory()
+{
+    const auto& mem = m_memory.get();
+    bool numIsOk;
+    auto At = static_cast<std::uint32_t>(ShowMemoryStartAt->text().toInt(&numIsOk));
+    if ( !numIsOk ) 
+    {
+        return;
+    }
+    
+    setMemoryBox(MemoryStart0, MemoryStartEdit0, At, mem);
+    ++At;
+    setMemoryBox(MemoryStart1, MemoryStartEdit1, At, mem);
+    ++At;
+    setMemoryBox(MemoryStart2, MemoryStartEdit2, At, mem);
+    ++At;
+    setMemoryBox(MemoryStart3, MemoryStartEdit3, At, mem);
+    ++At;
+    setMemoryBox(MemoryStart4, MemoryStartEdit4, At, mem);
+    ++At;
+    setMemoryBox(MemoryStart5, MemoryStartEdit5, At, mem);
 }

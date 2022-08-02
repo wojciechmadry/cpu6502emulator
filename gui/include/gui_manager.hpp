@@ -21,6 +21,8 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
     private:
 
     void refreshMenu();
+    void showProgramCounterMemory();
+    void showStartFromMemory();
     
     std::reference_wrapper<cpu6502::CPU> m_cpu;
     std::reference_wrapper<cpu6502::interpreter::Interpreter> m_interpreter;
