@@ -1,6 +1,10 @@
 add_library(
     cpu6502_gui_lib STATIC
     gui_manager.cpp
+    debug_mode.cpp
+    setup_interface.cpp
+    execute.cpp
+    refresh_menu.cpp
 )
 
 

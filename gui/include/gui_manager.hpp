@@ -8,12 +8,20 @@
 #include "cpu.hpp"
 #include "interpreter.hpp"
 
-class GuiManager : public Ui::cpu6502_mainwindow
+class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
 {
     public:
     GuiManager(cpu6502::CPU& cpu, cpu6502::interpreter::Interpreter& interpreter, cpu6502::Memory& memory) noexcept;
+    void setupInterface(QMainWindow *cpu6502_mainwindow);
+
+    private slots:
+    void debugMode();
+    void execute();
 
     private:
+
+    void refreshMenu();
+    
     std::reference_wrapper<cpu6502::CPU> m_cpu;
     std::reference_wrapper<cpu6502::interpreter::Interpreter> m_interpreter;
     std::reference_wrapper<cpu6502::Memory> m_memory;

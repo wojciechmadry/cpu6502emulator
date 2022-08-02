@@ -13,11 +13,11 @@ int main(int argc, char** argv)
   cpu6502::CPU cpu(mem);
   cpu6502::interpreter::Interpreter interpreter(cpu);
 
+  QApplication app(argc, argv);
   // Create GUI and attach mem,cpu,interpreter to gui manager.
   GuiManager ui(cpu, interpreter, mem);
-  QApplication app(argc, argv);
   QMainWindow window;
-  ui.setupUi(&window);
+  ui.setupInterface(&window);
   window.show();
   return app.exec();
 }
