@@ -18,6 +18,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        sudo apt update
         sudo apt -y install g++ gcc qt6-base-dev build-essential libgl1-mesa-dev
     
     - name: FetchSubmodules
