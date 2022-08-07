@@ -45,6 +45,7 @@ namespace cpu6502::interpreter
 
         void add_label(std::string label_name, const std::uint32_t address) noexcept;
 
+        void clear_labels() noexcept;
 
     };
 

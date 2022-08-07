@@ -17,9 +17,9 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
     private slots:
     void debugMode();
     void execute();
+    void resetProgram();
 
     private:
-
     void refreshMenu();
     void showMemory();
     

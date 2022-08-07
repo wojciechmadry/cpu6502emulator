@@ -100,3 +100,15 @@ void GuiManager::showMemory()
     setMemoryBox(MemoryStart4, MemoryStartEdit4, At + 4);
     setMemoryBox(MemoryStart5, MemoryStartEdit5, At + 5);
 }
+
+void GuiManager::resetProgram()
+{
+    // Reset CPU & Memory
+    m_cpu.get().reset();
+
+    // Reset interpreter
+    m_interpreter.get().clear_labels();
+
+    // Refresh GUI
+    this->refreshMenu();
+}

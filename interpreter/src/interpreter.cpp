@@ -36,6 +36,11 @@ void Interpreter::add_label(std::string label_name, const std::uint32_t address)
     m_labels[label_name] = address;
 }
 
+void Interpreter::clear_labels() noexcept
+{
+    m_labels.clear();
+}
+
 Addressing Interpreter::interprete(std::string_view line)
 {
     if (line.empty())
