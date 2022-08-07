@@ -18,6 +18,9 @@ void GuiManager::setupInterface(QMainWindow* main_window)
     // Showing memory by defaul start from program counter value
     this->ShowMemoryStartAt->setText(QString::number(this->m_cpu.get().get_registers().PC.get()));
 
+    // Editing value in Start From by default refresh value
+    QObject::connect(this->ShowMemoryStartAt, &QLineEdit::textChanged, this, &GuiManager::refreshMenu);
+
     // Connect "Reset program" button to function
     QObject::connect(this->actionReset_program, &QAction::triggered, this, &GuiManager::resetProgram);
 

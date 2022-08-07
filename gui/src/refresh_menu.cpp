@@ -91,7 +91,11 @@ void GuiManager::showMemory()
     auto At = static_cast<std::uint32_t>(ShowMemoryStartAt->text().toInt(&numIsOk));
     if ( !numIsOk ) 
     {
-        return;
+        At = static_cast<std::uint32_t>(ShowMemoryStartAt->text().toInt(&numIsOk, 16));
+        if ( !numIsOk ) 
+        {
+            return;
+        }
     }
     setMemoryBox(MemoryStart0, MemoryStartEdit0, At);
     setMemoryBox(MemoryStart1, MemoryStartEdit1, At + 1);
