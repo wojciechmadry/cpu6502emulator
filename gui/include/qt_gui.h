@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'conceptHxSnrT.ui'
+** Form generated from reading UI file 'conceptCAbATE.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef CONCEPTHXSNRT_H
-#define CONCEPTHXSNRT_H
+#ifndef CONCEPTCABATE_H
+#define CONCEPTCABATE_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -36,6 +36,8 @@ public:
     QAction *actionReset_program;
     QAction *actionDebug_mode;
     QAction *actionClear_file;
+    QAction *actionRefresh_program;
+    QAction *actionHex_mode;
     QWidget *centralwidget;
     QPushButton *ExecuteButton;
     QPlainTextEdit *CpuCommandLine;
@@ -136,6 +138,11 @@ public:
         actionDebug_mode->setCheckable(true);
         actionClear_file = new QAction(cpu6502_mainwindow);
         actionClear_file->setObjectName(QString::fromUtf8("actionClear_file"));
+        actionRefresh_program = new QAction(cpu6502_mainwindow);
+        actionRefresh_program->setObjectName(QString::fromUtf8("actionRefresh_program"));
+        actionHex_mode = new QAction(cpu6502_mainwindow);
+        actionHex_mode->setObjectName(QString::fromUtf8("actionHex_mode"));
+        actionHex_mode->setCheckable(true);
         centralwidget = new QWidget(cpu6502_mainwindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -407,8 +414,11 @@ public:
 
         menubar->addAction(menuMenu->menuAction());
         menuMenu->addAction(actionDebug_mode);
+        menuMenu->addAction(actionHex_mode);
+        menuMenu->addAction(actionRefresh_program);
         menuMenu->addSeparator();
         menuMenu->addAction(actionReset_program);
+        menuMenu->addSeparator();
 
         retranslateUi(cpu6502_mainwindow);
 
@@ -422,6 +432,8 @@ public:
         actionReset_program->setText(QCoreApplication::translate("cpu6502_mainwindow", "Reset program", nullptr));
         actionDebug_mode->setText(QCoreApplication::translate("cpu6502_mainwindow", "Debug mode", nullptr));
         actionClear_file->setText(QCoreApplication::translate("cpu6502_mainwindow", "Clear file", nullptr));
+        actionRefresh_program->setText(QCoreApplication::translate("cpu6502_mainwindow", "Refresh program", nullptr));
+        actionHex_mode->setText(QCoreApplication::translate("cpu6502_mainwindow", "Hex mode", nullptr));
         ExecuteButton->setText(QCoreApplication::translate("cpu6502_mainwindow", "Execute", nullptr));
 #if QT_CONFIG(tooltip)
         CpuCommandLine->setToolTip(QCoreApplication::translate("cpu6502_mainwindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
@@ -488,4 +500,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // CONCEPTHXSNRT_H
+#endif // CONCEPTCABATE_H

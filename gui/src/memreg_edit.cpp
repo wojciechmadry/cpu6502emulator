@@ -9,7 +9,7 @@ void GuiManager::changeMemory(QGroupBox* groupbox)
     if(qLineOpt.has_value())
     {
         const auto& qLine = (*qLineOpt).get();
-        const auto newValue = utils::toUint32(qLine.text()); 
+        const auto newValue = utils::toUint32BaseX(qLine.text(), getBase()); 
         const auto address = utils::toUint32(groupbox->title());
         if (newValue.has_value() && address.has_value())
         {
@@ -38,7 +38,7 @@ void GuiManager::changeRegister(QGroupBox* groupbox, cpu6502::RegistersName regN
         }
         else if (!isProcessorStatus)
         {
-            newValueOpt = utils::toUint32(qLine.text());
+            newValueOpt = utils::toUint32BaseX(qLine.text(), getBase());
         }
         else
         {

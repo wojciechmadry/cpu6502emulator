@@ -18,20 +18,22 @@ void GuiManager::refreshMenu()
         return b ? constant::true_str : constant::false_str;
     };
 
+    const auto base = getBase();
+
     // Load Program Counter
-    this->PC_value->setText(QString::number(reg.PC.get()));
+    this->PC_value->setText(QString::number(reg.PC.get(), base));
 
     // Load Index Register Y
-    this->IRY_value->setText(QString::number(reg.IRY.get()));
+    this->IRY_value->setText(QString::number(reg.IRY.get(), base));
 
     // Load Index Register X
-    this->IRX_value->setText(QString::number(reg.IRX.get()));
+    this->IRX_value->setText(QString::number(reg.IRX.get(), base));
 
     // Load Stack Pointer
-    this->SP_value->setText(QString::number(reg.SP.get()));
+    this->SP_value->setText(QString::number(reg.SP.get(), base));
 
     // Load Accumulator
-    this->ACU_value->setText(QString::number(reg.ACU.get()));
+    this->ACU_value->setText(QString::number(reg.ACU.get(), base));
 
     // Load Carry Flag
     this->CF_value->setText(QString{boolToString(reg.PS.get(cpu6502::CPU::PSFlags::CarryFlag))});
@@ -60,6 +62,7 @@ void GuiManager::refreshMenu()
 
 void GuiManager::showMemory()
 {
+    const auto base = getBase();
     const auto& mem = m_memory.get();
 
     auto setMemoryBox = [&](QGroupBox* group_box, QLineEdit* qline_edit, std::uint32_t idx)
@@ -75,7 +78,7 @@ void GuiManager::showMemory()
         }
 
         group_box->setTitle(utils::toHex(idx));
-        qline_edit->setText(QString::number(mem[idx]));
+        qline_edit->setText(QString::number(mem[idx], base));
     };
 
     auto PC = static_cast<std::uint32_t>(m_cpu.get().get_registers().PC.get());
@@ -100,16 +103,4 @@ void GuiManager::showMemory()
         setMemoryBox(MemoryStart4, MemoryStartEdit4, *At + 4);
         setMemoryBox(MemoryStart5, MemoryStartEdit5, *At + 5);
     }
-}
-
-void GuiManager::resetProgram()
-{
-    // Reset CPU & Memory
-    m_cpu.get().reset();
-
-    // Reset interpreter
-    m_interpreter.get().clear_labels();
-
-    // Refresh GUI
-    this->refreshMenu();
 }

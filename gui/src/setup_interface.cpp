@@ -28,6 +28,12 @@ void GuiManager::setupInterface(QMainWindow* main_window)
 
     // Connect "Reset program" button to function
     QObject::connect(this->actionReset_program, &QAction::triggered, this, &GuiManager::resetProgram);
+    
+    // Connect Refresh action
+    QObject::connect(this->actionRefresh_program, &QAction::triggered, this, &GuiManager::refreshMenu);
+
+    // Connect change base action
+    QObject::connect(this->actionHex_mode, &QAction::triggered, this, &GuiManager::changeBaseSystem);
 
     // Connect Memory/Register to edit action
     auto MemConnect = [&](QGroupBox* groupBox)
@@ -76,6 +82,8 @@ void GuiManager::setupInterface(QMainWindow* main_window)
     RegConnect(ZeroFlag_group, cpu6502::RegistersName::ProcessorStatusZeroFlag, true);
     RegConnect(InterruptDisable_group, cpu6502::RegistersName::ProcessorStatusInterruptDisable, true);
 
+
+    
     // TODO: Connect all textbox, they should change register value in CPU
     // ...
     

@@ -999,8 +999,11 @@
      <string>Menu</string>
     </property>
     <addaction name="actionDebug_mode"/>
+    <addaction name="actionHex_mode"/>
+    <addaction name="actionRefresh_program"/>
     <addaction name="separator"/>
     <addaction name="actionReset_program"/>
+    <addaction name="separator"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
@@ -1026,6 +1029,19 @@
   <action name="actionClear_file">
    <property name="text">
     <string>Clear file</string>
+   </property>
+  </action>
+  <action name="actionRefresh_program">
+   <property name="text">
+    <string>Refresh program</string>
+   </property>
+  </action>
+  <action name="actionHex_mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Hex mode</string>
    </property>
   </action>
  </widget>
