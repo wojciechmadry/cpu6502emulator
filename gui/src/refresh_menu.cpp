@@ -88,21 +88,18 @@ void GuiManager::showMemory()
 
 
     bool numIsOk;
-    auto At = static_cast<std::uint32_t>(ShowMemoryStartAt->text().toInt(&numIsOk));
-    if ( !numIsOk ) 
+
+    auto At = utils::toUint32(ShowMemoryStartAt->text());
+
+    if (At.has_value())
     {
-        At = static_cast<std::uint32_t>(ShowMemoryStartAt->text().toInt(&numIsOk, 16));
-        if ( !numIsOk ) 
-        {
-            return;
-        }
+        setMemoryBox(MemoryStart0, MemoryStartEdit0, *At);
+        setMemoryBox(MemoryStart1, MemoryStartEdit1, *At + 1);
+        setMemoryBox(MemoryStart2, MemoryStartEdit2, *At + 2);
+        setMemoryBox(MemoryStart3, MemoryStartEdit3, *At + 3);
+        setMemoryBox(MemoryStart4, MemoryStartEdit4, *At + 4);
+        setMemoryBox(MemoryStart5, MemoryStartEdit5, *At + 5);
     }
-    setMemoryBox(MemoryStart0, MemoryStartEdit0, At);
-    setMemoryBox(MemoryStart1, MemoryStartEdit1, At + 1);
-    setMemoryBox(MemoryStart2, MemoryStartEdit2, At + 2);
-    setMemoryBox(MemoryStart3, MemoryStartEdit3, At + 3);
-    setMemoryBox(MemoryStart4, MemoryStartEdit4, At + 4);
-    setMemoryBox(MemoryStart5, MemoryStartEdit5, At + 5);
 }
 
 void GuiManager::resetProgram()
