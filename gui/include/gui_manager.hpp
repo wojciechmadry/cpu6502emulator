@@ -2,6 +2,7 @@
 #define GUI_MANAGER_HPP
 
 #include <functional>
+#include <qgroupbox.h>
 
 #include "memory.hpp"
 #include "qt_gui.h"
@@ -18,6 +19,7 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
     void debugMode();
     void execute();
     void resetProgram();
+    void changeMemory(QGroupBox* groupbox);
 
     private:
     void refreshMenu();
