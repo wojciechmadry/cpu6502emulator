@@ -1,7 +1,7 @@
 add_library(
     cpu6502_gui_lib STATIC
     gui_manager.cpp
-    memory_edit.cpp
+    memreg_edit.cpp
     debug_mode.cpp
     setup_interface.cpp
     execute.cpp

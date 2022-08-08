@@ -1,4 +1,7 @@
 #include "gui_manager.hpp"
+#include "registers.hpp"
+#include "utils.hpp"
+
 #include <functional>
 #include <qgroupbox.h>
 #include <qlineedit.h>
@@ -26,26 +29,52 @@ void GuiManager::setupInterface(QMainWindow* main_window)
     // Connect "Reset program" button to function
     QObject::connect(this->actionReset_program, &QAction::triggered, this, &GuiManager::resetProgram);
 
-    // Connect Memory to edit action
-    auto memoryConnect = [&](QLineEdit* textBox, QGroupBox* groupBox)
+    // Connect Memory/Register to edit action
+    auto MemConnect = [&](QGroupBox* groupBox)
     {
-        QObject::connect(textBox, &QLineEdit::textChanged, std::bind(&GuiManager::changeMemory, this, groupBox));
+        auto textBoxOpt = utils::searchGroupBox<QLineEdit>(groupBox);
+        if (textBoxOpt.has_value())
+        {
+            QObject::connect(&(*textBoxOpt).get(), &QLineEdit::textChanged, std::bind(&GuiManager::changeMemory, this, groupBox));
+        }
+    };
+    auto RegConnect = [&](QGroupBox* groupBox, cpu6502::RegistersName regName, bool isProcessorStatus)
+    {
+        auto textBoxOpt = utils::searchGroupBox<QLineEdit>(groupBox);
+        if (textBoxOpt.has_value())
+        {
+            QObject::connect(&(*textBoxOpt).get(), &QLineEdit::textChanged, std::bind(&GuiManager::changeRegister, this, groupBox, regName, isProcessorStatus));
+        }
     };
     // Program Counter memory
-    memoryConnect(MemorySPEdit0, MemorySP0);
-    memoryConnect(MemorySPEdit1, MemorySP1);
-    memoryConnect(MemorySPEdit2, MemorySP2);
-    memoryConnect(MemorySPEdit3, MemorySP3);
-    memoryConnect(MemorySPEdit4, MemorySP4);
-    memoryConnect(MemorySPEdit5, MemorySP5);
+    MemConnect(MemorySP0);
+    MemConnect(MemorySP1);
+    MemConnect(MemorySP2);
+    MemConnect(MemorySP3);
+    MemConnect(MemorySP4);
+    MemConnect(MemorySP5);
     // Start from memory
-    memoryConnect(MemoryStartEdit0, MemoryStart0);
-    memoryConnect(MemoryStartEdit1, MemoryStart1);
-    memoryConnect(MemoryStartEdit2, MemoryStart2);
-    memoryConnect(MemoryStartEdit3, MemoryStart3);
-    memoryConnect(MemoryStartEdit4, MemoryStart4);
-    memoryConnect(MemoryStartEdit5, MemoryStart5);
+    MemConnect(MemoryStart0);
+    MemConnect(MemoryStart1);
+    MemConnect(MemoryStart2);
+    MemConnect(MemoryStart3);
+    MemConnect(MemoryStart4);
+    MemConnect(MemoryStart5);
 
+    // Connect register to edit action
+    RegConnect(PC_group, cpu6502::RegistersName::ProgramCounter, false);
+    RegConnect(IRY_group, cpu6502::RegistersName::IndexRegisterY, false);
+    RegConnect(IRX_group, cpu6502::RegistersName::IndexRegisterX, false);
+    RegConnect(SP_group, cpu6502::RegistersName::StackPointer, false);
+    RegConnect(ACU_group, cpu6502::RegistersName::Accumulator, false);
+    // Processor status
+    RegConnect(CarryFlag_Group, cpu6502::RegistersName::ProcessorStatusCarryFlag, true);
+    RegConnect(DecimalMode_group, cpu6502::RegistersName::ProcessorStatusDecimalMode, true);
+    RegConnect(OverflowFlag_group, cpu6502::RegistersName::ProcessorStatusOverflowFlag, true);
+    RegConnect(BreakCommand_group, cpu6502::RegistersName::ProcessorStatusBreakCommand, true);
+    RegConnect(NegativeFlag_group, cpu6502::RegistersName::ProcessorStatusNegativeFlag, true);
+    RegConnect(ZeroFlag_group, cpu6502::RegistersName::ProcessorStatusZeroFlag, true);
+    RegConnect(InterruptDisable_group, cpu6502::RegistersName::ProcessorStatusInterruptDisable, true);
 
     // TODO: Connect all textbox, they should change register value in CPU
     // ...

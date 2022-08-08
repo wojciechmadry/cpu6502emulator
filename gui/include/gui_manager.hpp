@@ -20,6 +20,7 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
     void execute();
     void resetProgram();
     void changeMemory(QGroupBox* groupbox);
+    void changeRegister(QGroupBox* groupbox, cpu6502::RegistersName regName, bool isProcessorStatus);
 
     private:
     void refreshMenu();
