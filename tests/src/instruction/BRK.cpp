@@ -2,6 +2,7 @@
 
 #include "cpu.hpp"
 #include "utility/utility.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool BRK_TEST()

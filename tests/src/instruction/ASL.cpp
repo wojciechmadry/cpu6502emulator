@@ -1,9 +1,10 @@
 #include "instruction_test.hpp"
 
+#include <limits>
 #include "cpu.hpp"
 #include "utility/utility.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
-#include <limits>
 
 namespace CPU6502_TEST::inner{
     bool ASL_TEST()

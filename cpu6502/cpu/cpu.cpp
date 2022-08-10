@@ -1,5 +1,6 @@
 #include "cpu.hpp"
 #include "exceptions/cpu_except.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace cpu6502{
 
@@ -890,7 +891,47 @@ namespace cpu6502{
                 {
                     DEYimplied(Cycles);
                     break;
-                }   
+                }
+                 case op(opcode::MUL::Immediate):
+                {
+                    MULimmediate(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::ZeroPage):
+                {
+                    MULzeropage(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::ZeroPageX):
+                {
+                    MULzeropagex(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::Absolute):
+                {
+                    MULabsolute(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::AbsoluteX):
+                {
+                    MULabsolutex(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::AbsoluteY):
+                {
+                    MULabsolutey(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::IndirectX):
+                {
+                    MULindirectx(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::IndirectY):
+                {
+                    MULindirecty(Cycles);
+                    break;
+                }
                 case 0xFF:
                 {   
                     // There is no instruction left, end executing

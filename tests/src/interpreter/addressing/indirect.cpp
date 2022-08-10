@@ -5,6 +5,7 @@
 #include "required.hpp"
 #include "utility/utility.hpp"
 #include "interpreter.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 #include <limits>
 #include <string>

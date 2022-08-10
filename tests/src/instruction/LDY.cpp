@@ -2,6 +2,7 @@
 
 #include "utility/utility.hpp"
 #include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool LDY_TEST()

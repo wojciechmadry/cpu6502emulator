@@ -27,6 +27,7 @@ add_library(
         src/instruction/STX.cpp
         src/instruction/STY.cpp
         src/instruction/ADC.cpp
+        src/instruction/MUL.cpp
         src/instruction/SBC.cpp
         src/instruction/CMP.cpp
         src/instruction/CPX.cpp

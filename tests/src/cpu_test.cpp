@@ -45,6 +45,8 @@ namespace CPU6502_TEST::inner
 
         all_pass &= utils::run_test(ADC_TEST, "ADC");
 
+        all_pass &= utils::run_test(MUL_TEST, "MUL");
+
         all_pass &= utils::run_test(SBC_TEST, "SBC");
 
         all_pass &= utils::run_test(CMP_TEST, "CMP");

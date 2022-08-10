@@ -1,6 +1,7 @@
 #include "instruction_test.hpp"
 
 #include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool JMP_TEST()
