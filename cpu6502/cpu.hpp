@@ -3,7 +3,6 @@
 
 #include "memory/memory.hpp"
 #include "registers/registers.hpp"
-#include "cpu/InstructionSet/opcode.hpp"
 #include "required.hpp"
 
 namespace cpu6502
@@ -31,8 +30,10 @@ namespace cpu6502
         void push_byte_to_stack(Byte Data, u32& Cycles) noexcept;
 
         // Operation
-        // Add value to  Acumulator
+        // Add memory value to Acumulator
         void ADC(const Byte value) noexcept;
+        // Multiply memory value by Acumulator
+        void MUL(const Byte value) noexcept;
 
         // Fetch data from memory
         cpu6502::Byte fetch_immediate(cpu6502::u32& Cycles) noexcept;
@@ -111,6 +112,15 @@ namespace cpu6502
         void ADCabsolutey(u32& Cycles) noexcept;
         void ADCindirectx(u32& Cycles) noexcept;
         void ADCindirecty(u32& Cycles) noexcept;
+        //      -- MUL --
+        void MULimmediate(u32& Cycles) noexcept;
+        void MULzeropage(u32& Cycles) noexcept;
+        void MULzeropagex(u32& Cycles) noexcept;
+        void MULabsolute(u32& Cycles) noexcept;
+        void MULabsolutex(u32& Cycles) noexcept;
+        void MULabsolutey(u32& Cycles) noexcept;
+        void MULindirectx(u32& Cycles) noexcept;
+        void MULindirecty(u32& Cycles) noexcept;
         //      -- CMP --
         void CMPimmediate(u32& Cycles) noexcept;
         void CMPzeropage(u32& Cycles) noexcept;

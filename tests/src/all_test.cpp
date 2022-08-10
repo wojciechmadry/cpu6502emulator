@@ -17,7 +17,7 @@ namespace CPU6502_TEST
         babel::TIME::timer T;
         T.start();
         bool ALL_GOOD = true;
-        ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_CPU_TEST, "All CPU instruction set");
+        ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_CPU_TEST, "CPU instruction summary");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_REGISTER_TEST, "CPU Register");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_STACK_TEST, "CPU Stack");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::interpreter_test::RUN_INTERPRETER_TEST, "Interpreter");

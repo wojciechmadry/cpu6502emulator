@@ -1,9 +1,9 @@
 #include "instruction_test.hpp"
 
+#include <limits>
 #include "utility/utility.hpp"
 #include "cpu.hpp"
-
-#include <limits>
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool ROR_TEST()

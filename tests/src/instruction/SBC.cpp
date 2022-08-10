@@ -2,6 +2,7 @@
 
 #include "utility/utility.hpp"
 #include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 #include <limits>
 

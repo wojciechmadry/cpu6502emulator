@@ -168,6 +168,20 @@ namespace cpu6502::interpreter::utils
                 safe_insert("ADC", std::move(ii));
             }
 
+            // Init MUL
+            {
+                InstructionInfo ii;
+                push_address(ii, Addressing::Immediate, 0x89);
+                push_address(ii, Addressing::ZeroPage, 0x77);
+                push_address(ii, Addressing::ZeroPageX, 0x74);
+                push_address(ii, Addressing::Absolute, 0x6F);
+                push_address(ii, Addressing::AbsoluteX, 0x7F);
+                push_address(ii, Addressing::AbsoluteY, 0x7A);
+                push_address(ii, Addressing::IndirectX, 0x62);
+                push_address(ii, Addressing::IndirectY, 0x63);
+                safe_insert("MUL", std::move(ii));
+            }
+
             // Init SBC
             {
                 InstructionInfo ii;

@@ -1,4 +1,5 @@
 #include "utility/utility.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::utils
 {

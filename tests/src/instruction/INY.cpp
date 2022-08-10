@@ -1,9 +1,9 @@
 #include "instruction_test.hpp"
 
+#include <limits>
 #include "cpu.hpp"
 #include "utility/utility.hpp"
-
-#include <limits>
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool INY_TEST()
