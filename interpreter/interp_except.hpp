@@ -26,5 +26,12 @@ class bad_addressing_mode : public std::exception
     const char * what () const noexcept override;
 };
 
+class bad_label_value : public std::exception
+{
+    public:
+    bad_label_value() noexcept;
+    const char * what () const noexcept override;
+};
+
 }  // ns cpu6502::interpreter::exceptions
 #endif  // INTERPRETER_EXCEPTIONS

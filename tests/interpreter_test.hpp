@@ -28,6 +28,8 @@ namespace CPU6502_TEST::interpreter_test::inner
     bool ADDRESSING_INDIRECT_X_TEST();
     
     bool ADDRESSING_INDIRECT_Y_TEST();
+
+    bool LABEL_AND_COMMENT_TEST();
 }
 
 namespace CPU6502_TEST::interpreter_test

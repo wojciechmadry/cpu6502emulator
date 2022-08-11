@@ -45,6 +45,8 @@ namespace cpu6502::interpreter
 
         void add_label(std::string label_name, const std::uint32_t address) noexcept;
 
+        const std::unordered_map<std::string, std::uint32_t>& get_labels() const noexcept;
+
         void clear_labels() noexcept;
 
     };
