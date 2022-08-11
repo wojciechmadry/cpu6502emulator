@@ -29,4 +29,13 @@ const char * bad_addressing_mode::what () const noexcept
     return "Cant match any addressing mode";
 }
 
+bad_label_value::bad_label_value() noexcept
+{
+}
+
+const char * bad_label_value::what () const noexcept
+{
+    return "Label value is not a number";
+}
+
 } // ns cpu6502::interpreter::exceptions

@@ -33,6 +33,8 @@ namespace CPU6502_TEST::interpreter_test
 
         all_pass &= utils::run_test(CPU6502_TEST::interpreter_test::inner::ADDRESSING_INDIRECT_Y_TEST, "INTERPRETER_ADDRESSING_INDIRECT_Y");
         
+        all_pass &= utils::run_test(CPU6502_TEST::interpreter_test::inner::LABEL_AND_COMMENT_TEST, "INTERPRETER_CREATE_LABEL_AND_COMMENTS");
+        
         return all_pass;
     }
 }
