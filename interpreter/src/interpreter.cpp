@@ -186,7 +186,11 @@ void Interpreter::load_asm(const std::string& filename) noexcept
         }
         bool isLabel = false;
         try {
-            isLabel = create_label_instruction(line);
+            const auto foundLabel = line.find(":=");
+            if (foundLabel != std::string::npos)
+            {
+                isLabel = create_label_instruction(line);
+            }
         } catch (const std::exception&) {
         }
         
