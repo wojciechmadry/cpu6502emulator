@@ -19,6 +19,8 @@ namespace cpu6502::interpreter
 
         Addressing load_instruction(std::string_view address, const InstructionInfo& info);
         
+        bool create_label_instruction(std::string_view command);
+
         public:
 
         Interpreter() = delete;
@@ -43,7 +45,7 @@ namespace cpu6502::interpreter
 
         Addressing interprete(std::string_view line);
 
-        void add_label(std::string label_name, const std::uint32_t address) noexcept;
+        void add_label(std::string label_name, const std::uint32_t address);
 
         const std::unordered_map<std::string, std::uint32_t>& get_labels() const noexcept;
 
