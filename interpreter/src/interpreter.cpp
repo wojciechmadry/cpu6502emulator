@@ -7,6 +7,7 @@
 #include <limits>
 #include <optional>
 #include <stdexcept>
+#include <fstream>
 
 namespace cpu6502::interpreter
 {
@@ -67,8 +68,7 @@ Addressing Interpreter::interprete(std::string_view line)
         throw exceptions::empty_instruction{};
     }
 
-    // This is comment
-    if (line[0] == '#')
+    if (this->is_comment(line))
     {
         return Addressing::Comment;
     }
@@ -90,6 +90,15 @@ Addressing Interpreter::interprete(std::string_view line)
     m_cpu.get().execute(std::numeric_limits<u32>::max());
 
     return address_type;
+}
+
+bool Interpreter::is_comment(std::string_view line) const noexcept
+{
+    if (line[0] == '#')
+    {
+        return true;
+    }
+    return false;
 }
 
 bool Interpreter::create_label_instruction(std::string_view command)
@@ -158,5 +167,53 @@ bool Interpreter::create_label_instruction(std::string_view command)
     return true;
 }
 
+// Load .asm file
+void Interpreter::load_asm(const std::string& filename) noexcept
+{
+    m_asm_commands.clear();
+    std::ifstream file(filename, std::ios::in | std::ios::binary);
+    if(!(file.good() && file.is_open()))
+    {
+        return;
+    }
+    std::string line;
+
+    while(std::getline(file, line))
+    {
+        if(this->is_comment(line))
+        {
+            continue;
+        }
+        bool isLabel = false;
+        try {
+            isLabel = create_label_instruction(line);
+        } catch (const std::exception&) {
+        }
+        
+        if (isLabel)
+        {
+            continue;
+        }
+        m_asm_commands.emplace_back(std::move(line));
+    }
+
+    file.close();
+}
+
+// Execute previously loaded .asm file
+void Interpreter::execute_asm()
+{
+    if (m_asm_commands.empty())
+    {
+        return;
+    }
+
+    for(const auto& command : m_asm_commands)
+    {
+        this->interprete(command);
+    }
+
+    m_asm_commands.clear();
+}
 
 } // namespace cpu6502

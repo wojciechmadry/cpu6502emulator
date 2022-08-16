@@ -9,6 +9,7 @@
 #include <string_view>
 #include <unordered_map>
 #include <cstdint>
+#include <vector>
 
 namespace cpu6502::interpreter
 {
@@ -16,10 +17,13 @@ namespace cpu6502::interpreter
     {
         std::reference_wrapper<cpu6502::CPU> m_cpu;
         std::unordered_map<std::string, std::uint32_t> m_labels;
+        std::vector<std::string> m_asm_commands;
 
         Addressing load_instruction(std::string_view address, const InstructionInfo& info);
         
         bool create_label_instruction(std::string_view command);
+
+        bool is_comment(std::string_view line) const noexcept;
 
         public:
 
@@ -50,6 +54,10 @@ namespace cpu6502::interpreter
         const std::unordered_map<std::string, std::uint32_t>& get_labels() const noexcept;
 
         void clear_labels() noexcept;
+
+        void load_asm(const std::string& filename) noexcept;
+
+        void execute_asm();
 
     };
 
