@@ -63,11 +63,6 @@ void Interpreter::clear_labels() noexcept
 
 Addressing Interpreter::interprete(std::string_view line)
 {
-    if (line.empty())
-    {
-        throw exceptions::empty_instruction{};
-    }
-
     if (this->is_comment(line))
     {
         return Addressing::Comment;
@@ -94,7 +89,19 @@ Addressing Interpreter::interprete(std::string_view line)
 
 bool Interpreter::is_comment(std::string_view line) const noexcept
 {
-    if (line[0] == '#')
+    auto has_only_spaces = [=]()
+    {
+        for(auto ch : line)
+        {
+            if (ch != ' ')
+            {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    if (line.empty() || line[0] == '#' || has_only_spaces())
     {
         return true;
     }

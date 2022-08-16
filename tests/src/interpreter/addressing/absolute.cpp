@@ -114,7 +114,36 @@ bool ADDRESSING_ABSOLUTE_TEST()
     // add label_name_bad
     run_bad_cmd("add label_name_bad");
 
-    
+    // Test CMP TODO: Implement test to Absolute CMP (It doesnt work)
+    auto run_test_cmp = [&](const std::string& command, bool carry_flag, bool zero_flag) 
+    {
+        bool test_result = true;
+        const auto addressing = interp.interprete(command);
+        test_result &= addressing == cpu6502::interpreter::Addressing::Absolute;
+        auto& PS = cpu.get_registers().PS;
+        const auto carry = PS.get(cpu6502::registers::ProcessorStatus::Flags::CarryFlag);
+        const auto zero = PS.get(cpu6502::registers::ProcessorStatus::Flags::ZeroFlag);
+        all_good &= carry == carry_flag;
+        all_good &= zero == zero_flag;
+        all_good &= test_result;
+    };
+
+    utils::jump_to_2020(cpu);
+    static constexpr cpu6502::Word my_memory_address = 666;
+    interp.add_label("mymemory", my_memory_address);
+
+    for(int memory_value = -25 ; memory_value <= 25 ; ++memory_value)
+    {
+        for(int acu_value = -25 ; acu_value <= 25 ; ++acu_value)
+        {
+            const bool carry_flag = acu_value >= memory_value; 
+            const bool zero_flag = acu_value == memory_value;
+            utils::load_to_acu(cpu, static_cast<cpu6502::Byte>(acu_value));
+            mem[my_memory_address] = static_cast<cpu6502::Byte>(memory_value);
+            std::string custom_command = "cmp mymemory";
+            run_test_cmp(custom_command, carry_flag, zero_flag);
+        }   
+    }
 
     return all_good;
 }

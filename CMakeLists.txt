@@ -22,3 +22,6 @@ add_subdirectory(cpu6502)
 add_subdirectory(interpreter)
 add_subdirectory(tests)
 add_subdirectory(gui)
+
+# Copy asm examples file to build folder
+file(COPY examples/ DESTINATION examples)

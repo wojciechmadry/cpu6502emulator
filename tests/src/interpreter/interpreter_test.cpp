@@ -35,6 +35,8 @@ namespace CPU6502_TEST::interpreter_test
         
         all_pass &= utils::run_test(CPU6502_TEST::interpreter_test::inner::LABEL_AND_COMMENT_TEST, "INTERPRETER_CREATE_LABEL_AND_COMMENTS");
         
+        all_pass &= utils::run_test(CPU6502_TEST::interpreter_test::inner::FIBONACCI_TEST, "INTERPRETER_FIBONACCI_EXAMPLE_TEST");
+        
         return all_pass;
     }
 }
