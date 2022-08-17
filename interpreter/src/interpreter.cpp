@@ -227,4 +227,14 @@ void Interpreter::execute_asm()
     m_asm_commands.clear();
 }
 
+std::vector<std::string>& Interpreter::get_commands()
+{
+    return m_asm_commands;
+}
+
+const std::vector<std::string>& Interpreter::get_commands() const
+{
+    return m_asm_commands;
+}
+
 } // namespace cpu6502

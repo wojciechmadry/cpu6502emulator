@@ -145,9 +145,9 @@ namespace CPU6502_TEST::inner{
         //ASSERT CMP - Absolute
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::CMP::Absolute);
 
-        for(std::int16_t i = -15 ; i <= 15 ; ++i)
+        for(std::int16_t i = -50 ; i <= 50 ; ++i)
         {
-            for(std::int16_t j = -15; j <= 15 ; ++j)
+            for(std::int16_t j = -50; j <= 50 ; ++j)
             {
                 // i -> acu
                 // j -> memory

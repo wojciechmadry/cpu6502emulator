@@ -59,6 +59,10 @@ namespace cpu6502::interpreter
 
         void execute_asm();
 
+        std::vector<std::string>& get_commands();
+
+        const std::vector<std::string>& get_commands() const;
+
     };
 
 } // namespace cpu6502::interpreter
