@@ -43,11 +43,15 @@ bool LABEL_AND_COMMENT_TEST()
     };
     const std::string goodComment1 = "#Comment1";
     const std::string goodComment2 = "#Agh";
+    const std::string goodComment3 = " ";
+    const std::string goodComment4 = "";
     const std::string badComment1 = " #SomeComment";
     const std::string badComment2 = "!#SomeComment";
 
     testComment(goodComment1, true);
     testComment(goodComment2, true);
+    testComment(goodComment3, true);
+    testComment(goodComment4, true);
     testComment(badComment1, false);
     testComment(badComment2, false);
 
@@ -114,8 +118,7 @@ bool LABEL_AND_COMMENT_TEST()
     const std::string badLabel6 = "abc::";
     const std::string badLabel7 = ":";
     const std::string badLabel8 = ":=";
-    const std::string badLabel9 = " ";
-    const std::string badLabel10 = "";
+
 
     testCreateLabel(badLabel1, false);
     testCreateLabel(badLabel2, false);
@@ -125,8 +128,6 @@ bool LABEL_AND_COMMENT_TEST()
     testCreateLabel(badLabel6, false);
     testCreateLabel(badLabel7, false);
     testCreateLabel(badLabel8, false);
-    testCreateLabel(badLabel9, false);
-    testCreateLabel(badLabel10, false);
 
     return all_good;
 }

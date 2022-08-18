@@ -60,6 +60,8 @@ add_library(
         src/interpreter/addressing/indirect_x.cpp
         src/interpreter/addressing/indirect_y.cpp
         src/interpreter/label_comment.cpp
+        src/interpreter/fibonacci.cpp
+        src/interpreter/factorial.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})

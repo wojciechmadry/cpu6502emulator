@@ -114,8 +114,6 @@ bool ADDRESSING_ABSOLUTE_TEST()
     // add label_name_bad
     run_bad_cmd("add label_name_bad");
 
-    
-
     return all_good;
 }
 
