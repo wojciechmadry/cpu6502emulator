@@ -3,6 +3,7 @@
 
 #include "cpu.hpp"
 #include "interpreter.hpp"
+#include "utility/utility.hpp"
 
 #include <exception>
 #include <string>
@@ -15,6 +16,7 @@ bool LABEL_AND_COMMENT_TEST()
     cpu6502::Memory mem(64 * 1024);
     cpu6502::CPU cpu(mem);
     cpu6502::interpreter::Interpreter interp(cpu);
+    auto& PC = cpu.get_registers().PC;
 
     // Test comment
     auto testComment = [&](const std::string& comment, bool isGood)
@@ -41,11 +43,15 @@ bool LABEL_AND_COMMENT_TEST()
     };
     const std::string goodComment1 = "#Comment1";
     const std::string goodComment2 = "#Agh";
+    const std::string goodComment3 = " ";
+    const std::string goodComment4 = "";
     const std::string badComment1 = " #SomeComment";
     const std::string badComment2 = "!#SomeComment";
 
     testComment(goodComment1, true);
     testComment(goodComment2, true);
+    testComment(goodComment3, true);
+    testComment(goodComment4, true);
     testComment(badComment1, false);
     testComment(badComment2, false);
 
@@ -96,16 +102,32 @@ bool LABEL_AND_COMMENT_TEST()
 
     const std::string goodLabel5 = "LAb5:=ab";
     testCreateLabel(goodLabel5, true, "LAB5", 0xab);
+
+    const std::string goodLabel6 = "Lab6:";
+    testCreateLabel(goodLabel6, true, "LAB6", PC.get());
+
+    utils::jump_to_2020(cpu);
+    const std::string goodLabel7 = "LaB7:";
+    testCreateLabel(goodLabel7, true, "LAB7", 0x2020);
     
     const std::string badLabel1 = "xx:==12";
     const std::string badLabel2 = "xx:=!12";
     const std::string badLabel3 = "abc:=??";
     const std::string badLabel4 = "abc:=j";
+    const std::string badLabel5 = "abc:j";
+    const std::string badLabel6 = "abc::";
+    const std::string badLabel7 = ":";
+    const std::string badLabel8 = ":=";
+
 
     testCreateLabel(badLabel1, false);
     testCreateLabel(badLabel2, false);
     testCreateLabel(badLabel3, false);
     testCreateLabel(badLabel4, false);
+    testCreateLabel(badLabel5, false);
+    testCreateLabel(badLabel6, false);
+    testCreateLabel(badLabel7, false);
+    testCreateLabel(badLabel8, false);
 
     return all_good;
 }

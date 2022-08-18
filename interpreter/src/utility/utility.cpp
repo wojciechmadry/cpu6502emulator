@@ -142,7 +142,11 @@ bool is_propper_label(std::string_view label)
     for(const auto ch : label)
     {
         const auto ch_up = std::toupper(ch);
-        if(!((ch_up >= 'A' && ch_up <= 'Z') || ch == '_' || ch == ' '))
+        const auto is_letter = ch_up >= 'A' && ch_up <= 'Z';
+        const auto is_number = ch_up >= '0' && ch_up <= '9';
+        const auto is_space = ch == ' ';
+        const auto is_underscore = ch == '_';
+        if(!is_letter && !is_space && !is_underscore && !is_number)
         {
             return false;
         }
