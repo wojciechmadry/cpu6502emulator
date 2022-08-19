@@ -17,6 +17,8 @@ namespace cpu6502{
 
         Memory(const Memory&);
 
+        Memory clone() const noexcept;
+
         explicit Memory(const u64 BYTES_MEMORY) noexcept : m_memory(BYTES_MEMORY) {}
     
         ~Memory() = default;

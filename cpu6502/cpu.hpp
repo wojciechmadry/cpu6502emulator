@@ -5,6 +5,9 @@
 #include "registers/registers.hpp"
 #include "required.hpp"
 
+#include <memory>
+#include <utility>
+
 namespace cpu6502
 {
     class CPU
@@ -404,6 +407,10 @@ namespace cpu6502
         void reset() noexcept;
 
         void execute(u32 Cycles);
+
+        using CPU_CLONE_PAIR_TYPE = std::pair<std::unique_ptr<CPU>, std::unique_ptr<Memory>>;
+
+        CPU_CLONE_PAIR_TYPE clone() const noexcept;
     };
 
 

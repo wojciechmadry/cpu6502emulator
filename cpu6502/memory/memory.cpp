@@ -4,6 +4,11 @@
 
 namespace cpu6502{
 
+    Memory Memory::clone() const noexcept
+    {
+        return Memory{*this};
+    }
+
     Memory::Memory(Memory&& mem)
     {
         m_memory = std::move(mem.m_memory);
