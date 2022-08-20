@@ -27,6 +27,8 @@ namespace cpu6502{
 
         Memory& operator=(const Memory&);
 
+        bool operator==(const Memory& other) const noexcept;
+
         void initialise() noexcept;
 
         [[nodiscard]] Word read_word(u64 Address) const;

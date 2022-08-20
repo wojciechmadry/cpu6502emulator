@@ -28,4 +28,9 @@ namespace cpu6502::registers{
         return m_reg;
     }
 
+    bool ProcessorStatus::operator==(const ProcessorStatus& other) const noexcept
+    {
+        return m_reg == other.m_reg;
+    }
+
 }

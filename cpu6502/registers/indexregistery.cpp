@@ -2,6 +2,12 @@
 
 namespace cpu6502::registers{
 
+    bool IndexRegisterY::operator==(const IndexRegisterY& other) const noexcept
+    {
+        return m_reg == other.m_reg;
+    }
+
+
     [[nodiscard]] IndexRegisterY::RegisterStroedType IndexRegisterY::get() const noexcept
     {
         return m_reg;

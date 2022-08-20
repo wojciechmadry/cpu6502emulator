@@ -394,7 +394,7 @@ namespace cpu6502
 
         CPU& operator=(const CPU&) = delete;
         CPU& operator=(CPU&&) = delete;
-
+        bool operator==(const CPU& other) const noexcept;
 
         [[nodiscard]] const cpu6502::Registers& get_registers() const noexcept;
 

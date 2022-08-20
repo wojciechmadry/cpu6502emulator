@@ -12,19 +12,29 @@
 namespace cpu6502::interpreter
 {
 
+void Interpreter::reset()
+{
+    m_cpu.get().reset();
+    m_labels.clear();
+    m_asm_commands.clear();
+    m_debug_state_to_remember = 0;
+    m_debug_actual_state = m_debug_states.end();
+    m_debug_states.clear();
+}
+
 Interpreter::INTERPRETER_CLONE_TYPE Interpreter::clone() const noexcept
 {
-    return std::make_pair( this->m_labels, m_cpu.get().clone());
+    return std::make_pair(this->m_labels, m_cpu.get().clone());
 }
 
 Interpreter::Interpreter(Interpreter& other) noexcept : m_cpu(other.m_cpu), m_labels(other.m_labels)
 {
-    
+    m_debug_actual_state = m_debug_states.end();
 }
 
 Interpreter::Interpreter(cpu6502::CPU& cpu) noexcept : m_cpu(cpu)
 {
-
+    m_debug_actual_state = m_debug_states.end();
 }
 
 cpu6502::CPU& Interpreter::get_cpu() noexcept

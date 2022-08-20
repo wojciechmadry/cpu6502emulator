@@ -4,9 +4,14 @@
 
 namespace cpu6502{
 
+    bool CPU::operator==(const CPU& other) const noexcept
+    {
+        return cpu_reg == other.cpu_reg && mem.get() == other.mem.get();
+    }
+
     CPU::CPU_CLONE_PAIR_TYPE CPU::clone() const noexcept
     {
-        auto mem_cpy = std::make_unique<Memory>(this->mem.get());
+        auto mem_cpy = std::make_unique<Memory>(this->mem.get().clone());
         auto cpu_cpy = std::make_unique<CPU>(*mem_cpy);
         cpu_cpy->cpu_reg = this->cpu_reg;
         return std::make_pair(std::move(cpu_cpy), std::move(mem_cpy));

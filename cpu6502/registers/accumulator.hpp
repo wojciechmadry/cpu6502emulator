@@ -16,6 +16,9 @@ namespace cpu6502::registers
         [[nodiscard]] RegisterStroedType& get() noexcept;
 
         void set(RegisterStroedType NewRegValue) noexcept;
+
+        bool operator==(const Accumulator& other) const noexcept;
+
     };
 }
 

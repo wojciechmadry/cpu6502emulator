@@ -11,12 +11,17 @@
 #include <unordered_map>
 #include <cstdint>
 #include <vector>
+#include <list>
+#include <optional>
 
 namespace cpu6502::interpreter
 {
     class Interpreter
     {
         public:
+
+        using INTERPRETER_CLONE_TYPE = std::pair<std::unordered_map<std::string, std::uint32_t>, CPU::CPU_CLONE_PAIR_TYPE>;
+
         Interpreter() = delete;
 
         Interpreter(Interpreter& other) noexcept;
@@ -32,6 +37,8 @@ namespace cpu6502::interpreter
         Interpreter& operator=(Interpreter&&) = delete;
 
         Interpreter& operator=(const Interpreter&) = delete;
+
+        void reset();
 
         cpu6502::CPU& get_cpu() noexcept;
 
@@ -54,20 +61,20 @@ namespace cpu6502::interpreter
         const std::vector<std::string>& get_commands() const;
 
         void set_states_to_remember(std::uint32_t state_to_remember) noexcept;
-        
-        void load_state(std::uint32_t state_number);
 
-        std::uint32_t get_current_state() const noexcept;
+        std::uint32_t get_states_to_remember() const noexcept;
+        
+        void load_state(std::list<INTERPRETER_CLONE_TYPE>::iterator it_state);
+
+        std::optional<std::list<INTERPRETER_CLONE_TYPE>::iterator> get_current_state() const noexcept;
 
         void debug_go_right();
 
         void debug_go_left();
 
-        using INTERPRETER_CLONE_TYPE = std::pair<std::unordered_map<std::string, std::uint32_t>, CPU::CPU_CLONE_PAIR_TYPE>;
-
         INTERPRETER_CLONE_TYPE clone() const noexcept;
         
-        const std::vector<INTERPRETER_CLONE_TYPE>& get_debug_states() const noexcept;
+        const std::list<INTERPRETER_CLONE_TYPE>& get_debug_states() const noexcept;
         
         private:
         
@@ -83,11 +90,11 @@ namespace cpu6502::interpreter
         // How many state should be remembered
         std::uint32_t m_debug_state_to_remember{0};
 
-        // Actual state
-        std::uint32_t m_debug_actual_state{0};
-
         // All remembered state
-        std::vector<INTERPRETER_CLONE_TYPE> m_debug_states;
+        std::list<INTERPRETER_CLONE_TYPE> m_debug_states;
+
+        // Actual state
+        std::list<INTERPRETER_CLONE_TYPE>::iterator m_debug_actual_state;
 
         void insert_new_state();
 
