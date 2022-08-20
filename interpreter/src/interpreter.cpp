@@ -11,6 +11,12 @@
 
 namespace cpu6502::interpreter
 {
+
+Interpreter::INTERPRETER_CLONE_TYPE Interpreter::clone() const noexcept
+{
+    return std::make_pair( this->m_labels, m_cpu.get().clone());
+}
+
 Interpreter::Interpreter(Interpreter& other) noexcept : m_cpu(other.m_cpu), m_labels(other.m_labels)
 {
     
@@ -71,6 +77,7 @@ Addressing Interpreter::interprete(std::string_view line)
     const auto isLabel = create_label_instruction(line);
     if (isLabel)
     {
+        this->insert_new_state(); // Remember state before creating new label
         return Addressing::CreateLabel;
     }
 
@@ -79,6 +86,7 @@ Addressing Interpreter::interprete(std::string_view line)
     {
         throw exceptions::bad_instruction_size{};
     }
+    this->insert_new_state(); // Remember state before execute instruction
 
     const auto instruction_info = cpu6502::interpreter::utils::get_instruction(line.substr(0, 3));
     const auto address_type = load_instruction(line.substr(3), instruction_info);

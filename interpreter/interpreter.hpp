@@ -55,10 +55,19 @@ namespace cpu6502::interpreter
 
         void set_states_to_remember(std::uint32_t state_to_remember) noexcept;
         
-        // TODO: implement this
         void load_state(std::uint32_t state_number);
 
         std::uint32_t get_current_state() const noexcept;
+
+        void debug_go_right();
+
+        void debug_go_left();
+
+        using INTERPRETER_CLONE_TYPE = std::pair<std::unordered_map<std::string, std::uint32_t>, CPU::CPU_CLONE_PAIR_TYPE>;
+
+        INTERPRETER_CLONE_TYPE clone() const noexcept;
+        
+        const std::vector<INTERPRETER_CLONE_TYPE>& get_debug_states() const noexcept;
         
         private:
         
@@ -78,9 +87,8 @@ namespace cpu6502::interpreter
         std::uint32_t m_debug_actual_state{0};
 
         // All remembered state
-        std::vector<CPU::CPU_CLONE_PAIR_TYPE> m_debug_states;
+        std::vector<INTERPRETER_CLONE_TYPE> m_debug_states;
 
-        // TODO: implement this
         void insert_new_state();
 
         Addressing load_instruction(std::string_view address, const InstructionInfo& info);
