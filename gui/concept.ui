@@ -556,7 +556,7 @@
       <x>10</x>
       <y>130</y>
       <width>511</width>
-      <height>211</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="title">
@@ -902,9 +902,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>350</y>
+      <y>330</y>
       <width>511</width>
-      <height>91</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="title">
@@ -942,8 +942,34 @@
        <x>10</x>
        <y>20</y>
        <width>371</width>
-       <height>60</height>
+       <height>61</height>
       </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_time_to_execute">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Execution time:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_to_execute">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>80</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0 ns</string>
      </property>
     </widget>
    </widget>

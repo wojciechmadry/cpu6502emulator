@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'conceptNydiTA.ui'
+** Form generated from reading UI file 'conceptrFtApy.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef CONCEPTNYDITA_H
-#define CONCEPTNYDITA_H
+#ifndef CONCEPTRFTAPY_H
+#define CONCEPTRFTAPY_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -105,6 +105,8 @@ public:
     QPushButton *ScanASM;
     QPushButton *LoadASM;
     QListWidget *listWidget;
+    QLabel *label_time_to_execute;
+    QLabel *time_to_execute;
     QLineEdit *CpuCommandLine;
     QMenuBar *menubar;
     QMenu *menuMenu;
@@ -284,7 +286,7 @@ public:
         ID_value->setInputMethodHints(Qt::ImhDigitsOnly|Qt::ImhPreferNumbers);
         memory_group = new QGroupBox(centralwidget);
         memory_group->setObjectName(QString::fromUtf8("memory_group"));
-        memory_group->setGeometry(QRect(10, 130, 511, 211));
+        memory_group->setGeometry(QRect(10, 130, 511, 201));
         MemorySP0 = new QGroupBox(memory_group);
         MemorySP0->setObjectName(QString::fromUtf8("MemorySP0"));
         MemorySP0->setGeometry(QRect(10, 30, 71, 61));
@@ -377,7 +379,7 @@ public:
         ShowMemoryStartAt->setGeometry(QRect(100, 100, 113, 31));
         LoadASM_group = new QGroupBox(centralwidget);
         LoadASM_group->setObjectName(QString::fromUtf8("LoadASM_group"));
-        LoadASM_group->setGeometry(QRect(10, 350, 511, 91));
+        LoadASM_group->setGeometry(QRect(10, 330, 511, 111));
         ScanASM = new QPushButton(LoadASM_group);
         ScanASM->setObjectName(QString::fromUtf8("ScanASM"));
         ScanASM->setGeometry(QRect(400, 20, 88, 28));
@@ -386,10 +388,17 @@ public:
         LoadASM->setGeometry(QRect(400, 50, 88, 28));
         listWidget = new QListWidget(LoadASM_group);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(10, 20, 371, 60));
+        listWidget->setGeometry(QRect(10, 20, 371, 61));
+        label_time_to_execute = new QLabel(LoadASM_group);
+        label_time_to_execute->setObjectName(QString::fromUtf8("label_time_to_execute"));
+        label_time_to_execute->setGeometry(QRect(10, 80, 131, 31));
+        time_to_execute = new QLabel(LoadASM_group);
+        time_to_execute->setObjectName(QString::fromUtf8("time_to_execute"));
+        time_to_execute->setGeometry(QRect(140, 80, 71, 31));
         CpuCommandLine = new QLineEdit(centralwidget);
         CpuCommandLine->setObjectName(QString::fromUtf8("CpuCommandLine"));
         CpuCommandLine->setGeometry(QRect(10, 450, 821, 41));
+        CpuCommandLine->setFocusPolicy(Qt::StrongFocus);
         cpu6502_mainwindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(cpu6502_mainwindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -472,6 +481,8 @@ public:
         LoadASM_group->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Load .asm", nullptr));
         ScanASM->setText(QCoreApplication::translate("cpu6502_mainwindow", "Scan", nullptr));
         LoadASM->setText(QCoreApplication::translate("cpu6502_mainwindow", "Load", nullptr));
+        label_time_to_execute->setText(QCoreApplication::translate("cpu6502_mainwindow", "Execution time:", nullptr));
+        time_to_execute->setText(QCoreApplication::translate("cpu6502_mainwindow", "0 ns", nullptr));
 #if QT_CONFIG(statustip)
         CpuCommandLine->setStatusTip(QString());
 #endif // QT_CONFIG(statustip)
@@ -489,4 +500,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // CONCEPTNYDITA_H
+#endif // CONCEPTRFTAPY_H

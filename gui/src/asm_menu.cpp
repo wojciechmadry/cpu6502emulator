@@ -4,6 +4,7 @@
 #include <list>
 #include <vector>
 #include <filesystem>
+#include <chrono>
 
 void GuiManager::scanButton()
 {
@@ -58,7 +59,17 @@ void GuiManager::loadButton()
     }
     auto asmFile = selected.first();
     auto asmFileStr = asmFile->text().toStdString();
+
+    // Load .asm file
     this->m_interpreter.get().load_asm(asmFileStr);
+
+    // Execute .asm file
+    const auto start = std::chrono::high_resolution_clock::now();
     this->m_interpreter.get().execute_asm();
+    const auto stop = std::chrono::high_resolution_clock::now();
+
+    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
+    this->time_to_execute->setText(QString::number(elapsed) + " ns");
+
     this->refreshMenu();
 }
