@@ -20,6 +20,9 @@ namespace cpu6502::registers
         void increment(Byte i = 1) noexcept;
 
         void decrement(Byte i = 1) noexcept;
+
+        bool operator==(const StackPointer& other) const noexcept;
+
     };
 }
 

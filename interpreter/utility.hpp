@@ -42,6 +42,7 @@ namespace cpu6502::interpreter::utils
     bool is_propper_label(std::string_view label);
 
     void remove_space_front_end(std::string& str);
+
 }
 
 #endif  // INTERPRETER_UTILITY

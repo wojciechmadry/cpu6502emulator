@@ -7,25 +7,20 @@
 #include <functional>
 #include <string>
 #include <string_view>
+#include <cstdint>
 #include <unordered_map>
 #include <cstdint>
 #include <vector>
+#include <list>
+#include <optional>
 
 namespace cpu6502::interpreter
 {
     class Interpreter
     {
-        std::reference_wrapper<cpu6502::CPU> m_cpu;
-        std::unordered_map<std::string, std::uint32_t> m_labels;
-        std::vector<std::string> m_asm_commands;
-
-        Addressing load_instruction(std::string_view address, const InstructionInfo& info);
-        
-        bool create_label_instruction(std::string_view command);
-
-        bool is_comment(std::string_view line) const noexcept;
-
         public:
+
+        using INTERPRETER_CLONE_TYPE = std::pair<std::unordered_map<std::string, std::uint32_t>, CPU::CPU_CLONE_PAIR_TYPE>;
 
         Interpreter() = delete;
 
@@ -42,6 +37,8 @@ namespace cpu6502::interpreter
         Interpreter& operator=(Interpreter&&) = delete;
 
         Interpreter& operator=(const Interpreter&) = delete;
+
+        void reset();
 
         cpu6502::CPU& get_cpu() noexcept;
 
@@ -62,6 +59,50 @@ namespace cpu6502::interpreter
         std::vector<std::string>& get_commands();
 
         const std::vector<std::string>& get_commands() const;
+
+        void set_states_to_remember(std::uint32_t state_to_remember) noexcept;
+
+        std::uint32_t get_states_to_remember() const noexcept;
+        
+        void load_state(std::list<INTERPRETER_CLONE_TYPE>::iterator it_state);
+
+        std::optional<std::list<INTERPRETER_CLONE_TYPE>::iterator> get_current_state() const noexcept;
+
+        void debug_go_right();
+
+        void debug_go_left();
+
+        INTERPRETER_CLONE_TYPE clone() const noexcept;
+        
+        const std::list<INTERPRETER_CLONE_TYPE>& get_debug_states() const noexcept;
+        
+        private:
+        
+        // CPU 6502 reference
+        std::reference_wrapper<cpu6502::CPU> m_cpu;
+        
+        // Created labels
+        std::unordered_map<std::string, std::uint32_t> m_labels;
+        
+        // Loaded .asm commands
+        std::vector<std::string> m_asm_commands;
+
+        // How many state should be remembered
+        std::uint32_t m_debug_state_to_remember{0};
+
+        // All remembered state
+        std::list<INTERPRETER_CLONE_TYPE> m_debug_states;
+
+        // Actual state
+        std::list<INTERPRETER_CLONE_TYPE>::iterator m_debug_actual_state;
+
+        void insert_new_state();
+
+        Addressing load_instruction(std::string_view address, const InstructionInfo& info);
+        
+        bool create_label_instruction(std::string_view command);
+
+        bool is_comment(std::string_view line) const noexcept;
 
     };
 

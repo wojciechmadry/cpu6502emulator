@@ -20,6 +20,8 @@ namespace cpu6502::registers
         void increment() noexcept;
 
         void decrement() noexcept;
+
+        bool operator==(const ProgramCounter& other) const noexcept;
     };
 }
 #endif

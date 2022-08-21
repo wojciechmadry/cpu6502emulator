@@ -28,6 +28,9 @@ namespace cpu6502::registers
         void put_byte(Byte NewRegValue) noexcept;
 
         [[nodiscard]] Byte pull_byte() const noexcept;
+
+        bool operator==(const ProcessorStatus& other) const noexcept;
+
     };
 
 }

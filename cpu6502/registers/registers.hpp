@@ -39,6 +39,8 @@ namespace cpu6502{
 
         void setRegister(RegistersName regName, std::uint32_t value) noexcept;
 
+        bool operator==(const Registers& other) const noexcept;
+
     };
     
 

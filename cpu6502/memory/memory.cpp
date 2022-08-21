@@ -4,6 +4,16 @@
 
 namespace cpu6502{
 
+    bool Memory::operator==(const Memory& other) const noexcept
+    {
+        return m_memory == other.m_memory;
+    }
+
+    Memory Memory::clone() const noexcept
+    {
+        return Memory{*this};
+    }
+
     Memory::Memory(Memory&& mem)
     {
         m_memory = std::move(mem.m_memory);

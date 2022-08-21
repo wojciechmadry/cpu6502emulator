@@ -11,14 +11,30 @@
 
 namespace cpu6502::interpreter
 {
+
+void Interpreter::reset()
+{
+    m_cpu.get().reset();
+    m_labels.clear();
+    m_asm_commands.clear();
+    m_debug_state_to_remember = 0;
+    m_debug_actual_state = m_debug_states.end();
+    m_debug_states.clear();
+}
+
+Interpreter::INTERPRETER_CLONE_TYPE Interpreter::clone() const noexcept
+{
+    return std::make_pair(this->m_labels, m_cpu.get().clone());
+}
+
 Interpreter::Interpreter(Interpreter& other) noexcept : m_cpu(other.m_cpu), m_labels(other.m_labels)
 {
-    
+    m_debug_actual_state = m_debug_states.end();
 }
 
 Interpreter::Interpreter(cpu6502::CPU& cpu) noexcept : m_cpu(cpu)
 {
-
+    m_debug_actual_state = m_debug_states.end();
 }
 
 cpu6502::CPU& Interpreter::get_cpu() noexcept
@@ -71,6 +87,7 @@ Addressing Interpreter::interprete(std::string_view line)
     const auto isLabel = create_label_instruction(line);
     if (isLabel)
     {
+        this->insert_new_state(); // Remember state before creating new label
         return Addressing::CreateLabel;
     }
 
@@ -83,6 +100,8 @@ Addressing Interpreter::interprete(std::string_view line)
     const auto instruction_info = cpu6502::interpreter::utils::get_instruction(line.substr(0, 3));
     const auto address_type = load_instruction(line.substr(3), instruction_info);
     m_cpu.get().execute(std::numeric_limits<u32>::max());
+    
+    this->insert_new_state(); // Remember state after execute instruction
 
     return address_type;
 }

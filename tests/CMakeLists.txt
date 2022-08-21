@@ -62,6 +62,7 @@ add_library(
         src/interpreter/label_comment.cpp
         src/interpreter/fibonacci.cpp
         src/interpreter/factorial.cpp
+        src/interpreter/debug_mode.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})

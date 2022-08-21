@@ -34,6 +34,8 @@ namespace CPU6502_TEST::interpreter_test::inner
     bool FIBONACCI_TEST();
     
     bool FACTORIAL_TEST();
+
+    bool DEBUG_MODE_TEST();
 }
 
 namespace CPU6502_TEST::interpreter_test

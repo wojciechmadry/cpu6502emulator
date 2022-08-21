@@ -15,4 +15,10 @@ namespace cpu6502::registers{
     {
         m_reg = NewRegValue;
     }
+
+    bool Accumulator::operator==(const Accumulator& other) const noexcept
+    {
+        return m_reg == other.m_reg;
+    }
+
 }

@@ -7,6 +7,16 @@
 
 namespace cpu6502{
 
+bool Registers::operator==(const Registers& other) const noexcept
+{
+    return this->ACU == other.ACU &&
+           this->IRX == other.IRX &&
+           this->IRY == other.IRY &&
+           this->PC == other.PC &&
+           this->SP == other.SP &&
+           this->PS == other.PS;
+}
+
 void Registers::setRegister(RegistersName regName, std::uint32_t value) noexcept
 {
     switch(regName)

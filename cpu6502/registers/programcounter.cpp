@@ -26,5 +26,9 @@ namespace cpu6502::registers{
         --m_reg;
     }
 
+    bool ProgramCounter::operator==(const ProgramCounter& other) const noexcept
+    {
+        return m_reg == other.m_reg;
+    }
 
 }
