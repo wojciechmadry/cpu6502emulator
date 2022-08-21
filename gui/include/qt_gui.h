@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'conceptCAbATE.ui'
+** Form generated from reading UI file 'conceptNydiTA.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef CONCEPTCABATE_H
-#define CONCEPTCABATE_H
+#ifndef CONCEPTNYDITA_H
+#define CONCEPTNYDITA_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -20,7 +20,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
@@ -40,7 +39,6 @@ public:
     QAction *actionHex_mode;
     QWidget *centralwidget;
     QPushButton *ExecuteButton;
-    QPlainTextEdit *CpuCommandLine;
     QLabel *label_error_message;
     QGroupBox *DebugModeBox;
     QLabel *label_debug_where_i_am;
@@ -107,6 +105,7 @@ public:
     QPushButton *ScanASM;
     QPushButton *LoadASM;
     QListWidget *listWidget;
+    QLineEdit *CpuCommandLine;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QStatusBar *statusbar;
@@ -153,31 +152,18 @@ public:
         ExecuteButton = new QPushButton(centralwidget);
         ExecuteButton->setObjectName(QString::fromUtf8("ExecuteButton"));
         ExecuteButton->setGeometry(QRect(10, 510, 831, 41));
-        CpuCommandLine = new QPlainTextEdit(centralwidget);
-        CpuCommandLine->setObjectName(QString::fromUtf8("CpuCommandLine"));
-        CpuCommandLine->setGeometry(QRect(10, 450, 831, 41));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Minimum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(CpuCommandLine->sizePolicy().hasHeightForWidth());
-        CpuCommandLine->setSizePolicy(sizePolicy2);
-        QFont font;
-        font.setPointSize(14);
-        font.setBold(true);
-        CpuCommandLine->setFont(font);
-        CpuCommandLine->setInputMethodHints(Qt::ImhNone);
-        CpuCommandLine->setMaximumBlockCount(1);
+        ExecuteButton->setAutoDefault(true);
         label_error_message = new QLabel(centralwidget);
         label_error_message->setObjectName(QString::fromUtf8("label_error_message"));
         label_error_message->setGeometry(QRect(20, 490, 811, 18));
-        QFont font1;
-        font1.setPointSize(12);
-        font1.setBold(false);
-        font1.setItalic(false);
-        font1.setUnderline(false);
-        font1.setKerning(true);
-        font1.setStyleStrategy(QFont::PreferDefault);
-        label_error_message->setFont(font1);
+        QFont font;
+        font.setPointSize(12);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setUnderline(false);
+        font.setKerning(true);
+        font.setStyleStrategy(QFont::PreferDefault);
+        label_error_message->setFont(font);
         label_error_message->setStyleSheet(QString::fromUtf8("color: rgb(165, 29, 45);"));
         DebugModeBox = new QGroupBox(centralwidget);
         DebugModeBox->setObjectName(QString::fromUtf8("DebugModeBox"));
@@ -401,6 +387,9 @@ public:
         listWidget = new QListWidget(LoadASM_group);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(10, 20, 371, 60));
+        CpuCommandLine = new QLineEdit(centralwidget);
+        CpuCommandLine->setObjectName(QString::fromUtf8("CpuCommandLine"));
+        CpuCommandLine->setGeometry(QRect(10, 450, 821, 41));
         cpu6502_mainwindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(cpu6502_mainwindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -422,6 +411,9 @@ public:
 
         retranslateUi(cpu6502_mainwindow);
 
+        ExecuteButton->setDefault(true);
+
+
         QMetaObject::connectSlotsByName(cpu6502_mainwindow);
     } // setupUi
 
@@ -435,15 +427,6 @@ public:
         actionRefresh_program->setText(QCoreApplication::translate("cpu6502_mainwindow", "Refresh program", nullptr));
         actionHex_mode->setText(QCoreApplication::translate("cpu6502_mainwindow", "Hex mode", nullptr));
         ExecuteButton->setText(QCoreApplication::translate("cpu6502_mainwindow", "Execute", nullptr));
-#if QT_CONFIG(tooltip)
-        CpuCommandLine->setToolTip(QCoreApplication::translate("cpu6502_mainwindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(whatsthis)
-        CpuCommandLine->setWhatsThis(QCoreApplication::translate("cpu6502_mainwindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
-#endif // QT_CONFIG(whatsthis)
-        CpuCommandLine->setDocumentTitle(QString());
-        CpuCommandLine->setPlainText(QString());
-        CpuCommandLine->setPlaceholderText(QCoreApplication::translate("cpu6502_mainwindow", "Type your command here!", nullptr));
         label_error_message->setText(QCoreApplication::translate("cpu6502_mainwindow", "Error message here!", nullptr));
 #if QT_CONFIG(tooltip)
         DebugModeBox->setToolTip(QCoreApplication::translate("cpu6502_mainwindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
@@ -489,6 +472,12 @@ public:
         LoadASM_group->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Load .asm", nullptr));
         ScanASM->setText(QCoreApplication::translate("cpu6502_mainwindow", "Scan", nullptr));
         LoadASM->setText(QCoreApplication::translate("cpu6502_mainwindow", "Load", nullptr));
+#if QT_CONFIG(statustip)
+        CpuCommandLine->setStatusTip(QString());
+#endif // QT_CONFIG(statustip)
+        CpuCommandLine->setInputMask(QString());
+        CpuCommandLine->setText(QString());
+        CpuCommandLine->setPlaceholderText(QCoreApplication::translate("cpu6502_mainwindow", "Enter your command here!", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Menu", nullptr));
     } // retranslateUi
 
@@ -500,4 +489,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // CONCEPTCABATE_H
+#endif // CONCEPTNYDITA_H

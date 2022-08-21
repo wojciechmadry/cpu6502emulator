@@ -7,3 +7,8 @@ GuiManager::GuiManager(cpu6502::CPU& cpu, cpu6502::interpreter::Interpreter& int
     
 }
 
+void GuiManager::executeAndClear()
+{
+    this->ExecuteButton->click();
+    this->CpuCommandLine->clear();
+}

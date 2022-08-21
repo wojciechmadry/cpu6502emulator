@@ -3,7 +3,7 @@
 
 void GuiManager::execute()
 {
-    auto command = this->CpuCommandLine->toPlainText().toStdString();
+    auto command = this->CpuCommandLine->text().toStdString();
 
     // Execute command
     try 

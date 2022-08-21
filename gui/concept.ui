@@ -63,48 +63,11 @@
     <property name="text">
      <string>Execute</string>
     </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="CpuCommandLine">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>450</y>
-      <width>831</width>
-      <height>41</height>
-     </rect>
+    <property name="autoDefault">
+     <bool>true</bool>
     </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="whatsThis">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="inputMethodHints">
-     <set>Qt::ImhNone</set>
-    </property>
-    <property name="documentTitle">
-     <string/>
-    </property>
-    <property name="plainText">
-     <string/>
-    </property>
-    <property name="maximumBlockCount">
-     <number>1</number>
-    </property>
-    <property name="placeholderText">
-     <string>Type your command here!</string>
+    <property name="default">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_error_message">
@@ -983,6 +946,28 @@
       </rect>
      </property>
     </widget>
+   </widget>
+   <widget class="QLineEdit" name="CpuCommandLine">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>450</y>
+      <width>821</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string/>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Enter your command here!</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
