@@ -956,6 +956,9 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
     <property name="statusTip">
      <string/>
     </property>

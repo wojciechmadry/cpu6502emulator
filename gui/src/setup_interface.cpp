@@ -89,7 +89,7 @@ void GuiManager::setupInterface(QMainWindow* main_window)
     QObject::connect(this->LoadASM, &QPushButton::clicked, this, &GuiManager::loadButton);
 
     // Connect "CpuCommandLine" returnPressed to "ExecuteButton" press
-    QAction::connect(this->CpuCommandLine, &QLineEdit::returnPressed, this, &GuiManager::executeAndClear);
+    QObject::connect(this->CpuCommandLine, &QLineEdit::returnPressed, this, &GuiManager::executeAndClear);
 
     // Display all registers
     this->refreshMenu();
