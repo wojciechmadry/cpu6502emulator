@@ -8,8 +8,6 @@
 #include <random>
 #include <cstdint>
 
-#include <fmt/core.h> // TODO: Delete this
-
 namespace CPU6502_TEST::interpreter_test::inner{
 
 bool DEBUG_MODE_TEST()
@@ -40,6 +38,16 @@ bool DEBUG_MODE_TEST()
     cpu6502::CPU cpu(mem);
     cpu6502::interpreter::Interpreter interp(cpu);
     std::list<cpu6502::interpreter::Interpreter ::INTERPRETER_CLONE_TYPE> all_states;
+
+    // Interpreter shouldnt remember any command after creation
+    {
+        add_test();
+        interp.interprete(get_command());
+        test(interp.get_states_to_remember() == 0);
+        test(interp.get_debug_states().empty());
+        test(!interp.get_current_state().has_value());
+    }
+
 
     auto compare_iterator = [](const auto& lhs, const auto& rhs) -> bool
     {
@@ -255,7 +263,6 @@ bool DEBUG_MODE_TEST()
             ++it_all_states;
         }
     }
-
 
     for(auto test_result : all_tests)
     {
