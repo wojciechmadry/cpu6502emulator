@@ -156,9 +156,7 @@ bool DEBUG_MODE_TEST()
             std::uint32_t count_to_i = 0u;
             for(auto j = static_cast<std::int32_t>(states.size() - 1) ; j >= 0 ; --j)
             {
-                test(it_states->first == it_all_states->first);
-                test(*it_states->second.first == *it_all_states->second.first);
-                test(*it_states->second.second == *it_all_states->second.second);
+                test(compare_iterator(it_states, it_all_states));
                 ++it_states;
                 ++it_all_states;
                 ++count_to_i;
@@ -166,9 +164,7 @@ bool DEBUG_MODE_TEST()
                 test(current_state.has_value());
                 if (current_state.has_value() && count_to_i == i + 1u)
                 {
-                    test((*current_state)->first == it_all_states->first);
-                    test(*(*current_state)->second.first == *it_all_states->second.first);
-                    test(*(*current_state)->second.second == *it_all_states->second.second);
+                    test(compare_iterator(*current_state, it_all_states));
                 }
             }
             
@@ -177,16 +173,87 @@ bool DEBUG_MODE_TEST()
     
     // Test 4 - Go right for N states
     {
-        interp.reset();
-        //add_test();
-        //test(false);
+        const auto& states = interp.get_debug_states();
+        add_test();
+        test(states.size() == X);
+        test(states.size() == all_states.size());
+        test(compare_iterator(states.rbegin(), all_states.rbegin()));
+        test(compare_iterator(states.begin(), all_states.begin()));
+
+        // Go max left
+        for(std::uint32_t i = 0 ; i <= X ; ++i)
+        {
+            interp.debug_go_left();
+        }
+
+        auto current_state = interp.get_current_state();
+        test(current_state.has_value());
+        if(current_state.has_value())
+        {
+            test(compare_iterator(*current_state, all_states.begin()));
+        }
+
+
+        for(std::uint32_t i = 0u ; i < N ; ++i)
+        {
+            interp.debug_go_right();
+            auto it_states = states.begin();
+            auto it_all_states = all_states.begin();
+            std::uint32_t count_to_i = 0u;
+            for(auto j = 0u ; j < states.size() ; ++j)
+            {
+                test(compare_iterator(it_states, it_all_states));
+                ++it_states;
+                ++it_all_states;
+                ++count_to_i;
+                current_state = interp.get_current_state();
+                test(current_state.has_value());
+                if (current_state.has_value() && count_to_i == i + 1u)
+                {
+                    test(compare_iterator(*current_state, it_all_states));
+                }
+            }
+        }
+
+        // Go max right
+        for(std::uint32_t i = 0 ; i <= X ; ++i)
+        {
+            interp.debug_go_right();
+        }
+        current_state = interp.get_current_state();
+        test(current_state.has_value());
+        if (current_state.has_value())
+        {
+            test(compare_iterator(*current_state, all_states.rbegin()));
+        }
     }
     
     // Test 5 - Go left for N states and execute new command
     {
-        interp.reset();
-        //add_test();
-        //test(false);
+        const auto& states = interp.get_debug_states();
+        add_test();
+        test(states.size() == X);
+        test(states.size() == all_states.size());
+        test(compare_iterator(states.rbegin(), all_states.rbegin()));
+        test(compare_iterator(states.begin(), all_states.begin()));
+        for(auto i = 0u ; i < N ; ++i)
+        {
+            interp.debug_go_left();
+        }
+        interp.interprete(get_command());
+        test(states.size() < X);
+        test(states.size() < all_states.size());
+        test(states.size() > (X - N));
+        test(!compare_iterator(states.rbegin(), all_states.rbegin()));
+        auto it_states = states.begin();
+        auto it_all_states = all_states.begin();
+
+        for(std::size_t i = 0u ; i < states.size() - 1 ; ++i)
+        {
+            test(compare_iterator(it_states, it_all_states));
+            ++it_states;
+            ++it_all_states;
+        }
     }
 
 
