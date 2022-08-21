@@ -96,11 +96,12 @@ Addressing Interpreter::interprete(std::string_view line)
     {
         throw exceptions::bad_instruction_size{};
     }
-    this->insert_new_state(); // Remember state before execute instruction
 
     const auto instruction_info = cpu6502::interpreter::utils::get_instruction(line.substr(0, 3));
     const auto address_type = load_instruction(line.substr(3), instruction_info);
     m_cpu.get().execute(std::numeric_limits<u32>::max());
+    
+    this->insert_new_state(); // Remember state after execute instruction
 
     return address_type;
 }

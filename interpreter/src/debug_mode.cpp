@@ -17,12 +17,28 @@ const std::list<Interpreter::INTERPRETER_CLONE_TYPE>& Interpreter::get_debug_sta
 
 void Interpreter::debug_go_right()
 {
-    this->load_state(++m_debug_actual_state);
+    auto it_copy = m_debug_actual_state;
+    ++it_copy;
+    if (it_copy == m_debug_states.end())
+    {
+        this->load_state(m_debug_actual_state);
+    }
+    else
+    {
+        this->load_state(++m_debug_actual_state);
+    }
 }
 
 void Interpreter::debug_go_left()
 {
-    this->load_state(--m_debug_actual_state);
+    if (m_debug_actual_state == m_debug_states.begin())
+    {
+        this->load_state(m_debug_actual_state);
+    }
+    else
+    {
+        this->load_state(--m_debug_actual_state);
+    }
 }
 
 // TODO: Simplify and optimize this
