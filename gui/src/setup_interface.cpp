@@ -82,11 +82,12 @@ void GuiManager::setupInterface(QMainWindow* main_window)
     RegConnect(ZeroFlag_group, cpu6502::RegistersName::ProcessorStatusZeroFlag, true);
     RegConnect(InterruptDisable_group, cpu6502::RegistersName::ProcessorStatusInterruptDisable, true);
 
+    // Connect Scan button
+    QObject::connect(this->ScanASM, &QPushButton::clicked, this, &GuiManager::scanButton);
 
-    
-    // TODO: Connect all textbox, they should change register value in CPU
-    // ...
-    
+    // Connect Load button
+    QObject::connect(this->LoadASM, &QPushButton::clicked, this, &GuiManager::loadButton);
+
     // Display all registers
     this->refreshMenu();
 }

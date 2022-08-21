@@ -24,6 +24,8 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
     void changeBaseSystem();
     void changeMemory(QGroupBox* groupbox);
     void changeRegister(QGroupBox* groupbox, cpu6502::RegistersName regName, bool isProcessorStatus);
+    void scanButton();
+    void loadButton();
 
     private:
     void refreshMenu();

@@ -32,7 +32,10 @@ bool FIBONACCI_TEST()
     };
 
     static constexpr auto fibArray = generate_array(); 
-
+    static_assert(fibArray[13] == 233);
+    static_assert(fibArray[12] == 144);
+    static_assert(fibArray[11] == 89);
+    
     bool all_good = true;
     cpu6502::Memory mem(64 * 1024);
     cpu6502::CPU cpu(mem);

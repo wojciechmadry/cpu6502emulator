@@ -10,10 +10,10 @@ I:=5040
 # Jump to main
 JMP MAIN
 
-# Load 6 to accumulator Factorial(5) == 120
-LDA #6
+# Load 5 to accumulator Factorial(5) == 120
+LDA #5
 
-# Store 6 to N
+# Store 5 to N
 STA N
 
 # Add 1 to N (Because our loop should interate until i <= N, without that it will be i < N)

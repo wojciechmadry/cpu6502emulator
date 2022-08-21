@@ -7,6 +7,7 @@ add_library(
     execute.cpp
     refresh_menu.cpp
     utils.cpp
+    asm_menu.cpp
 )
 
 

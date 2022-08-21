@@ -29,6 +29,12 @@ bool FACTORIAL_TEST()
     };
 
     static constexpr auto factorialArray = generate_array(); 
+    static_assert(factorialArray[0] == 1);
+    static_assert(factorialArray[1] == 1);
+    static_assert(factorialArray[2] == 2);
+    static_assert(factorialArray[3] == 6);
+    static_assert(factorialArray[4] == 24);
+    static_assert(factorialArray[5] == 120);
 
     bool all_good = true;
     cpu6502::Memory mem(64 * 1024);
@@ -57,7 +63,7 @@ bool FACTORIAL_TEST()
         
         
         auto& commands = interp.get_commands();
-        auto nSetCommand = std::find(commands.begin(), commands.end(), "LDA #6");
+        auto nSetCommand = std::find(commands.begin(), commands.end(), "LDA #5");
         if (nSetCommand == commands.end())
         {
             all_good &= false;

@@ -79,3 +79,6 @@ CMP N
 BCC LOOP_BEGIN
 
 # End loop
+
+# Load F1 to Accumulator
+lda F1
