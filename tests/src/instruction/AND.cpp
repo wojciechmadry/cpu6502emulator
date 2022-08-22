@@ -1,7 +1,8 @@
 #include "instruction_test.hpp"
 
 #include "cpu.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool AND_TEST()
@@ -104,7 +105,6 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = 0x30;
         mem[0x3030 + IRY] = AND;
         cpu.execute(4);
-        PC = cpu.get_registers().PC.get();
 
         all_good &= cpu.get_registers().ACU.get() != ACU
                     && cpu.get_registers().ACU.get() == Res;

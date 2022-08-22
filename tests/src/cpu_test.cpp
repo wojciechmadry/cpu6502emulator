@@ -1,7 +1,7 @@
 #include "cpu_test.hpp"
 
 #include "instruction_test.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 
 namespace CPU6502_TEST::inner
 {
@@ -44,6 +44,8 @@ namespace CPU6502_TEST::inner
         all_pass &= utils::run_test(BRANCHES_TEST, "BRANCHES");
 
         all_pass &= utils::run_test(ADC_TEST, "ADC");
+
+        all_pass &= utils::run_test(MUL_TEST, "MUL");
 
         all_pass &= utils::run_test(SBC_TEST, "SBC");
 

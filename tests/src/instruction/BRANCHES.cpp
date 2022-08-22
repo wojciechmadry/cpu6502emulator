@@ -2,7 +2,8 @@
 
 #include "cpu.hpp"
 
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool BRANCHES_TEST()
@@ -153,8 +154,6 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = 8;
         cpu.execute(3);
         all_good &= cpu.get_registers().PC.get() == PC + 8;
-        PC = cpu.get_registers().PC.get();
-
 
         return all_good;
     }

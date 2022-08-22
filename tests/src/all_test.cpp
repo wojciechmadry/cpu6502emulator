@@ -1,4 +1,4 @@
-#include "ALL_TEST.HPP"
+#include "all_test.hpp"
 
 #include <string>
 #include <fmt/core.h>       
@@ -7,17 +7,17 @@
 #include "cpu_test.hpp"
 #include "utility/test_logger.hpp"
 #include "utility/time.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "interpreter_test.hpp"
 
 namespace CPU6502_TEST
 {
-    void RUN_ALL_TEST() noexcept
+    TEST_RESULT RUN_ALL_TEST() noexcept
     {
         babel::TIME::timer T;
         T.start();
         bool ALL_GOOD = true;
-        ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_CPU_TEST, "All CPU instruction set");
+        ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_CPU_TEST, "CPU instruction summary");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_REGISTER_TEST, "CPU Register");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::inner::RUN_STACK_TEST, "CPU Stack");
         ALL_GOOD &= utils::run_test(CPU6502_TEST::interpreter_test::RUN_INTERPRETER_TEST, "Interpreter");
@@ -34,5 +34,6 @@ namespace CPU6502_TEST
             "{} ", is_pass);
 
         fmt::print(" in {} seconds.\n", Time);
+        return ALL_GOOD ? TEST_RESULT::ALL_PASS : TEST_RESULT::FAILED;
     }
 }

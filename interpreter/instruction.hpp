@@ -23,7 +23,9 @@ namespace cpu6502::interpreter
         IndirectX,
         IndirectY,
         NUM_OF_ADDRESSING,
-        BAD_ADDRESING_MODE
+        BAD_ADDRESING_MODE,
+        Comment,
+        CreateLabel
     };
 
     std::string_view address_enum_to_str(const Addressing addressing_mode);

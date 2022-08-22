@@ -1,7 +1,8 @@
 #include "instruction_test.hpp"
 
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool STY_TEST()

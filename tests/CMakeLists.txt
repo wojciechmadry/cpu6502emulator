@@ -1,11 +1,12 @@
 set(CMAKE_CXX_STANDARD 20)
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 add_library(
         cpu6502_tests STATIC
         src/utility/time.cpp
         src/utility/test_logger.cpp
-        src/utility/utility.cpp
+        src/utility/test_utils.cpp
         src/cpu_test.cpp
-        src/ALL_TEST.cpp
+        src/all_test.cpp
         src/other_tests/register_test.cpp
         src/other_tests/stack_test.cpp
         src/other_tests/memory_test.cpp
@@ -26,6 +27,7 @@ add_library(
         src/instruction/STX.cpp
         src/instruction/STY.cpp
         src/instruction/ADC.cpp
+        src/instruction/MUL.cpp
         src/instruction/SBC.cpp
         src/instruction/CMP.cpp
         src/instruction/CPX.cpp
@@ -57,6 +59,10 @@ add_library(
         src/interpreter/addressing/indirect.cpp
         src/interpreter/addressing/indirect_x.cpp
         src/interpreter/addressing/indirect_y.cpp
+        src/interpreter/label_comment.cpp
+        src/interpreter/fibonacci.cpp
+        src/interpreter/factorial.cpp
+        src/interpreter/debug_mode.cpp
 )
 
 target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})
@@ -65,3 +71,9 @@ target_include_directories(cpu6502_tests PRIVATE "../cpu6502")
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(cpu6502_tests PRIVATE cpu6502 fmt cpu6502_interpreter)
 target_include_directories(cpu6502_tests PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+
+add_executable(cpu_6502_test test_main.cpp)
+
+target_link_libraries(cpu_6502_test PUBLIC cpu6502 fmt cpu6502_tests cpu6502_interpreter )
+
+target_compile_options(cpu_6502_test PRIVATE ${CXX_COMPILER_FLAGS})

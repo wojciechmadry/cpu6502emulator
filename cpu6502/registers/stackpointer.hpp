@@ -10,8 +10,6 @@ namespace cpu6502::registers
         Byte m_reg = 0;
     public:
         using RegisterStroedType = decltype(m_reg);
-        StackPointer() = default;
-        ~StackPointer() = default;
 
         [[nodiscard]] RegisterStroedType get() const noexcept;
 
@@ -22,6 +20,9 @@ namespace cpu6502::registers
         void increment(Byte i = 1) noexcept;
 
         void decrement(Byte i = 1) noexcept;
+
+        bool operator==(const StackPointer& other) const noexcept;
+
     };
 }
 

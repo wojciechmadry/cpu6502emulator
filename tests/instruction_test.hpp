@@ -37,6 +37,8 @@ namespace CPU6502_TEST::inner{
 
     bool ADC_TEST();
 
+    bool MUL_TEST();
+
     bool SBC_TEST();
 
     bool CMP_TEST();

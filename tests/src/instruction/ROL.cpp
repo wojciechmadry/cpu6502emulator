@@ -1,9 +1,9 @@
 #include "instruction_test.hpp"
 
-#include "utility/utility.hpp"
-#include "cpu.hpp"
-
 #include <limits>
+#include "utility/test_utils.hpp"
+#include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool ROL_TEST()
@@ -16,7 +16,7 @@ namespace CPU6502_TEST::inner{
 
 
         utils::jump_to_2020(cpu);
-        auto PC = cpu.get_registers().PC.get();
+        cpu6502::registers::ProgramCounter::RegisterStroedType PC;
 
 
         // ASSERT ROL - Accumulator

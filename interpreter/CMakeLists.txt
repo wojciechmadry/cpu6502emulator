@@ -5,7 +5,8 @@ add_library(
         cpu6502_interpreter STATIC
         src/interpreter.cpp
         src/interpreter_load_ins.cpp
-        src/utility/utility.cpp
+        src/debug_mode.cpp
+        src/utility/interp_utils.cpp
         src/utility/opcode_map.cpp
         src/utility/is_accumulator.cpp
         src/utility/is_implicit.cpp

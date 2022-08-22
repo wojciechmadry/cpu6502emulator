@@ -2,7 +2,7 @@
 #include <limits>
 #include "instruction.hpp"
 #include "interpreter.hpp"
-#include "utility.hpp"
+#include "interp_utils.hpp"
 #include "interp_except.hpp"
 
 namespace cpu6502::interpreter

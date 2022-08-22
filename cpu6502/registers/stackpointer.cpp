@@ -25,4 +25,10 @@ namespace cpu6502::registers{
     {
         m_reg -= i;
     }
+
+    bool StackPointer::operator==(const StackPointer& other) const noexcept
+    {
+        return m_reg == other.m_reg;
+    }
+
 }

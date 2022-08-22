@@ -1,7 +1,21 @@
 #include "cpu.hpp"
 #include "exceptions/cpu_except.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace cpu6502{
+
+    bool CPU::operator==(const CPU& other) const noexcept
+    {
+        return cpu_reg == other.cpu_reg && mem.get() == other.mem.get();
+    }
+
+    CPU::CPU_CLONE_PAIR_TYPE CPU::clone() const noexcept
+    {
+        auto mem_cpy = std::make_unique<Memory>(this->mem.get().clone());
+        auto cpu_cpy = std::make_unique<CPU>(*mem_cpy);
+        cpu_cpy->cpu_reg = this->cpu_reg;
+        return std::make_pair(std::move(cpu_cpy), std::move(mem_cpy));
+    }
 
     [[nodiscard]] Memory& CPU::get_memory() noexcept
     {
@@ -890,7 +904,47 @@ namespace cpu6502{
                 {
                     DEYimplied(Cycles);
                     break;
-                }   
+                }
+                 case op(opcode::MUL::Immediate):
+                {
+                    MULimmediate(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::ZeroPage):
+                {
+                    MULzeropage(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::ZeroPageX):
+                {
+                    MULzeropagex(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::Absolute):
+                {
+                    MULabsolute(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::AbsoluteX):
+                {
+                    MULabsolutex(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::AbsoluteY):
+                {
+                    MULabsolutey(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::IndirectX):
+                {
+                    MULindirectx(Cycles);
+                    break;
+                }
+                case op(opcode::MUL::IndirectY):
+                {
+                    MULindirecty(Cycles);
+                    break;
+                }
                 case 0xFF:
                 {   
                     // There is no instruction left, end executing

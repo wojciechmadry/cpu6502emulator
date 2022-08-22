@@ -20,18 +20,14 @@ namespace cpu6502{
 
     void CPU::LSRzeropage(u32& Cycles) noexcept
     {
-        // 4 cycles;
         const auto ZeroPageAddress = fetch_byte(Cycles);
-        // 3 cycles
         const auto fetched = read_byte(ZeroPageAddress, Cycles);
         const auto shifted = static_cast<Byte>(fetched >> 1);
         --Cycles;
-        // 1 cycles
         write_byte(shifted, ZeroPageAddress, Cycles);
-        // 0 cycles
 
         const auto old_zero_bit = static_cast<bool>(fetched & 0x1);
-        const auto new_seventh_bit = static_cast<bool>(shifted & 0x80);;
+        const auto new_seventh_bit = static_cast<bool>(shifted & 0x80);
 
         cpu_reg.PS.set(PSFlags::CarryFlag, old_zero_bit);
         cpu_reg.PS.set(PSFlags::ZeroFlag, shifted == 0);

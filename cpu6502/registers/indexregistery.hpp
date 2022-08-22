@@ -10,14 +10,15 @@ namespace cpu6502::registers
         Byte m_reg = 0;
     public:
         using RegisterStroedType = decltype(m_reg);
-        IndexRegisterY() = default;
-        ~IndexRegisterY() = default;
 
         [[nodiscard]] RegisterStroedType get() const noexcept;
 
         [[nodiscard]] RegisterStroedType& get() noexcept;
 
         void set(RegisterStroedType NewRegValue) noexcept;
+
+        bool operator==(const IndexRegisterY& other) const noexcept;
+
     };
 
 }

@@ -1,4 +1,4 @@
-#include "utility.hpp"
+#include "interp_utils.hpp"
 #include "fmt/core.h"
 
 #include <set>
@@ -22,7 +22,9 @@ namespace cpu6502::interpreter::utils
         // Init map of addressing opcode
         if(MAP_IS_INITIALISED == false)
         {
-            auto safe_insert = [&](std::string&& key, auto&& val)
+            auto safe_insert = [&]<typename INSTRUCTION_INFO>
+            (std::string key, INSTRUCTION_INFO&& val)
+            requires (std::is_same_v<std::decay_t<INSTRUCTION_INFO>, InstructionInfo>)
             {
                 for(auto& c : key)
                 {
@@ -32,11 +34,10 @@ namespace cpu6502::interpreter::utils
                 if(found != map_of_operations.end())
                 {
                     fmt::print("Instruction '{}' already exist!\n", key);
-                    exit(2);
                 }
                 else
                 {
-                    map_of_operations[std::move(key)] = std::move(val);
+                    map_of_operations[std::move(key)] = std::forward<INSTRUCTION_INFO>(val);
                 }
             };
 
@@ -165,6 +166,20 @@ namespace cpu6502::interpreter::utils
                 push_address(ii, Addressing::IndirectX, 0x61);
                 push_address(ii, Addressing::IndirectY, 0x71);
                 safe_insert("ADC", std::move(ii));
+            }
+
+            // Init MUL
+            {
+                InstructionInfo ii;
+                push_address(ii, Addressing::Immediate, 0x89);
+                push_address(ii, Addressing::ZeroPage, 0x77);
+                push_address(ii, Addressing::ZeroPageX, 0x74);
+                push_address(ii, Addressing::Absolute, 0x6F);
+                push_address(ii, Addressing::AbsoluteX, 0x7F);
+                push_address(ii, Addressing::AbsoluteY, 0x7A);
+                push_address(ii, Addressing::IndirectX, 0x62);
+                push_address(ii, Addressing::IndirectY, 0x63);
+                safe_insert("MUL", std::move(ii));
             }
 
             // Init SBC

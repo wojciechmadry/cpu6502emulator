@@ -1,7 +1,8 @@
 #include "instruction_test.hpp"
 
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool EOR_TEST()
@@ -10,14 +11,12 @@ namespace CPU6502_TEST::inner{
         //using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
         cpu6502::Memory mem(64 * 1024);
         cpu6502::CPU cpu(mem);
-        auto PC = cpu.get_registers().PC.get();
         auto cast = []<typename T>(const T Opcode) -> cpu6502::Byte
         {
             return static_cast<cpu6502::Byte>(Opcode);
         };
 
         utils::jump_to_2020(cpu);
-        PC = cpu.get_registers().PC.get();
 
         const cpu6502::Byte ACU = 0x33;
         const cpu6502::Byte IRX = 0x10;
@@ -28,7 +27,7 @@ namespace CPU6502_TEST::inner{
         utils::load_to_xreg(cpu, IRX) ;
         utils::load_to_yreg(cpu, IRY) ;
         utils::load_to_acu(cpu, ACU) ;
-        PC = cpu.get_registers().PC.get();
+        auto PC = cpu.get_registers().PC.get();
 
         // Immediate
         mem[PC++] = cast(cpu6502::opcode::EOR::Immediate); // 2 cycles

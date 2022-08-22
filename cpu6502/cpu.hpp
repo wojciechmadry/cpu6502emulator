@@ -3,8 +3,10 @@
 
 #include "memory/memory.hpp"
 #include "registers/registers.hpp"
-#include "cpu/InstructionSet/opcode.hpp"
 #include "required.hpp"
+
+#include <memory>
+#include <utility>
 
 namespace cpu6502
 {
@@ -27,12 +29,14 @@ namespace cpu6502
         // Write CPU
         void write_word(Word Data, u32 Address, u32& Cycles) noexcept;
         void write_byte(Byte Data, u32 Address, u32& Cycles) noexcept;
-        void push_word_to_stack(Word Data, u32& Cycles);
-        void push_byte_to_stack(Byte Data, u32& Cycles);
+        void push_word_to_stack(Word Data, u32& Cycles) noexcept;
+        void push_byte_to_stack(Byte Data, u32& Cycles) noexcept;
 
         // Operation
-        // Add value to  Acumulator
+        // Add memory value to Acumulator
         void ADC(const Byte value) noexcept;
+        // Multiply memory value by Acumulator
+        void MUL(const Byte value) noexcept;
 
         // Fetch data from memory
         cpu6502::Byte fetch_immediate(cpu6502::u32& Cycles) noexcept;
@@ -111,6 +115,15 @@ namespace cpu6502
         void ADCabsolutey(u32& Cycles) noexcept;
         void ADCindirectx(u32& Cycles) noexcept;
         void ADCindirecty(u32& Cycles) noexcept;
+        //      -- MUL --
+        void MULimmediate(u32& Cycles) noexcept;
+        void MULzeropage(u32& Cycles) noexcept;
+        void MULzeropagex(u32& Cycles) noexcept;
+        void MULabsolute(u32& Cycles) noexcept;
+        void MULabsolutex(u32& Cycles) noexcept;
+        void MULabsolutey(u32& Cycles) noexcept;
+        void MULindirectx(u32& Cycles) noexcept;
+        void MULindirecty(u32& Cycles) noexcept;
         //      -- CMP --
         void CMPimmediate(u32& Cycles) noexcept;
         void CMPzeropage(u32& Cycles) noexcept;
@@ -377,8 +390,11 @@ namespace cpu6502
         CPU(const CPU&) = delete;
         CPU(CPU&&) = delete;
         explicit CPU(cpu6502::Memory& memory) noexcept;
-
         ~CPU() = default;
+
+        CPU& operator=(const CPU&) = delete;
+        CPU& operator=(CPU&&) = delete;
+        bool operator==(const CPU& other) const noexcept;
 
         [[nodiscard]] const cpu6502::Registers& get_registers() const noexcept;
 
@@ -391,6 +407,10 @@ namespace cpu6502
         void reset() noexcept;
 
         void execute(u32 Cycles);
+
+        using CPU_CLONE_PAIR_TYPE = std::pair<std::unique_ptr<CPU>, std::unique_ptr<Memory>>;
+
+        CPU_CLONE_PAIR_TYPE clone() const noexcept;
     };
 
 

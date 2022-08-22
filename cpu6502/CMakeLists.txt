@@ -39,6 +39,7 @@ add_library(
         cpu/InstructionSet/Logical/BIT.cpp
         cpu/InstructionSet/Branches/BRANCHES.cpp
         cpu/InstructionSet/Arithmetic/ADC.cpp
+        cpu/InstructionSet/Arithmetic/MUL.cpp
         cpu/InstructionSet/Arithmetic/SBC.cpp
         cpu/InstructionSet/Arithmetic/CMP.cpp
         cpu/InstructionSet/Arithmetic/CPX.cpp

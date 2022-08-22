@@ -1,7 +1,7 @@
 #include "interpreter_test.hpp"
 
 #include "cpu.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "interpreter.hpp"
 
 #include <limits>
@@ -113,8 +113,6 @@ bool ADDRESSING_ABSOLUTE_TEST()
 
     // add label_name_bad
     run_bad_cmd("add label_name_bad");
-
-    
 
     return all_good;
 }

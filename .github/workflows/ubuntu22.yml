@@ -1,4 +1,4 @@
-name: CMake
+name: ubuntu22
 
 on:
   push:
@@ -18,7 +18,8 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sudo apt -y install g++ gcc
+        sudo apt update
+        sudo apt -y install g++ gcc qt6-base-dev build-essential libgl1-mesa-dev
     
     - name: FetchSubmodules
       run: |
@@ -32,6 +33,8 @@ jobs:
         cmake ../
         cmake --build . -j
 
-#    - name: Test
-#     run: TEST_HERE
+    - name: Test
+      run: |
+        cd build
+        ./cpu_6502_test
       

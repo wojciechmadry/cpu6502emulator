@@ -1,7 +1,8 @@
 #include "instruction_test.hpp"
 
 #include "cpu.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool CPX_TEST()
@@ -16,7 +17,7 @@ namespace CPU6502_TEST::inner{
 
 
         utils::jump_to_2020(cpu);
-        auto PC = cpu.get_registers().PC.get();
+        cpu6502::registers::ProgramCounter::RegisterStroedType PC;
 
         //ASSERT CPX - Immediate
         opcode = static_cast<decltype(opcode)>(cpu6502::opcode::CPX::Immediate); // 2 cycles

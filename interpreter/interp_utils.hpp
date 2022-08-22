@@ -11,6 +11,12 @@
 
 namespace cpu6502::interpreter::utils
 {
+    enum class DebugModeNextCommand
+    {
+        GoLeft,
+        GoRight
+    };
+
     cpu6502::interpreter::InstructionInfo get_instruction(std::string_view ins);
 
     std::vector<cpu6502::interpreter::AddressInfo> get_address_info(std::string_view address);
@@ -42,6 +48,7 @@ namespace cpu6502::interpreter::utils
     bool is_propper_label(std::string_view label);
 
     void remove_space_front_end(std::string& str);
+
 }
 
 #endif  // INTERPRETER_UTILITY

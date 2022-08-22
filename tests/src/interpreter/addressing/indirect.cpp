@@ -3,8 +3,9 @@
 #include "cpu.hpp"
 #include "processorstatus.hpp"
 #include "required.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "interpreter.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 #include <limits>
 #include <string>

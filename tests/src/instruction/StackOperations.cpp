@@ -1,7 +1,8 @@
 #include "instruction_test.hpp"
 
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool STACK_OPERATIONS_TEST()
@@ -28,7 +29,7 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = cast(cpu6502::opcode::TXS::Implied); // 2cycles
         cpu.execute(2);
 
-        all_good = cpu.get_registers().IRX.get() == cpu.get_registers().SP.get();
+        all_good &= cpu.get_registers().IRX.get() == cpu.get_registers().SP.get();
         // END Transfer X to stack pointer
 
         // Transfer stack pointer to X
@@ -41,7 +42,7 @@ namespace CPU6502_TEST::inner{
         mem[PC++] = cast(cpu6502::opcode::TSX::Implied); // 2cycles
         cpu.execute(2);
 
-        all_good = cpu.get_registers().IRX.get() == cpu.get_registers().SP.get()
+        all_good &= cpu.get_registers().IRX.get() == cpu.get_registers().SP.get()
                 && cpu.get_registers().IRX.get() == 0x21;
 
         // END Transfer stack pointer to X

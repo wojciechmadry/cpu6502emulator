@@ -1,7 +1,8 @@
 #include "instruction_test.hpp"
 
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "cpu.hpp"
+#include "cpu/InstructionSet/opcode.hpp"
 
 namespace CPU6502_TEST::inner{
     bool RTI_TEST()
@@ -26,9 +27,6 @@ namespace CPU6502_TEST::inner{
         // Set IRQ address
         mem[cpu6502::CPU::IRQ] = 0x10;
         mem[cpu6502::CPU::IRQ + 1] = 0x10;
-
-
-        PC = cpu.get_registers().PC.get();
 
         const auto register_before = cpu.get_registers();
 
