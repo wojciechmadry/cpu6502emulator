@@ -13,6 +13,18 @@ const std::list<Interpreter::INTERPRETER_CLONE_TYPE>& Interpreter::get_debug_sta
     return this->m_debug_states;
 }
 
+void Interpreter::debug_mode_change_command(utils::DebugModeNextCommand next_command)
+{
+    if (next_command == utils::DebugModeNextCommand::GoLeft)
+    {
+        this->debug_go_left();
+    }
+    else if (next_command == utils::DebugModeNextCommand::GoRight)
+    {
+        this->debug_go_right();
+    }
+}
+
 void Interpreter::debug_go_right()
 {
     auto it_copy = m_debug_actual_state;

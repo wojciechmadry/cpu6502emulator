@@ -1,5 +1,5 @@
 #include "gui_manager.hpp"
-#include "utils.hpp"
+#include "gui_utils.hpp"
 #include <functional>
 #include <qaction.h>
 #include <iostream>

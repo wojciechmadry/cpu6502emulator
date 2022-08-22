@@ -6,8 +6,9 @@ add_library(
     setup_interface.cpp
     execute.cpp
     refresh_menu.cpp
-    utils.cpp
+    gui_utils.cpp
     asm_menu.cpp
+    debug_menu.cpp
 )
 
 

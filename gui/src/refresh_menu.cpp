@@ -1,7 +1,7 @@
 #include "cpu.hpp"
 #include "gui_manager.hpp"
 #include "memory.hpp"
-#include "utils.hpp"
+#include "gui_utils.hpp"
 #include <cstdint>
 #include <limits>
 #include <qgroupbox.h>

@@ -11,6 +11,12 @@
 
 namespace cpu6502::interpreter::utils
 {
+    enum class DebugModeNextCommand
+    {
+        GoLeft,
+        GoRight
+    };
+
     cpu6502::interpreter::InstructionInfo get_instruction(std::string_view ins);
 
     std::vector<cpu6502::interpreter::AddressInfo> get_address_info(std::string_view address);

@@ -1,7 +1,7 @@
 #include "gui_manager.hpp"
 #include "registers.hpp"
 #include "stackpointer.hpp"
-#include "utils.hpp"
+#include "gui_utils.hpp"
 
 void GuiManager::changeMemory(QGroupBox* groupbox)
 {

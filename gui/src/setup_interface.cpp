@@ -1,6 +1,6 @@
 #include "gui_manager.hpp"
 #include "registers.hpp"
-#include "utils.hpp"
+#include "gui_utils.hpp"
 
 #include <functional>
 #include <qgroupbox.h>
@@ -90,6 +90,10 @@ void GuiManager::setupInterface(QMainWindow* main_window)
 
     // Connect "CpuCommandLine" returnPressed to "ExecuteButton" press
     QObject::connect(this->CpuCommandLine, &QLineEdit::returnPressed, this, &GuiManager::executeAndClear);
+
+    // Connect spinner with command to remember
+    QObject::connect(this->spinCommandToRemember, &QSpinBox::valueChanged, this, &GuiManager::debugModeSwitchRemembered);
+
 
     // Display all registers
     this->refreshMenu();

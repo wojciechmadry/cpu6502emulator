@@ -9,7 +9,7 @@
 #include "qt_gui.h"
 #include "cpu.hpp"
 #include "interpreter.hpp"
-#include "utils.hpp"
+#include "gui_utils.hpp"
 
 class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
 {
@@ -19,6 +19,8 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
 
     private slots:
     void debugMode();
+    void debugModeSwitchRemembered(int newValue);
+    //void debugModeGo();
     void execute();
     void resetProgram();
     void changeBaseSystem();

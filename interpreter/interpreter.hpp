@@ -3,6 +3,7 @@
 
 #include "cpu.hpp"
 #include "instruction.hpp"
+#include "utility.hpp"
 
 #include <functional>
 #include <string>
@@ -40,6 +41,8 @@ namespace cpu6502::interpreter
 
         void reset();
 
+        void debug_mode_change_command(utils::DebugModeNextCommand next_command);
+
         cpu6502::CPU& get_cpu() noexcept;
 
         const cpu6502::CPU& get_cpu() const noexcept;
@@ -67,10 +70,6 @@ namespace cpu6502::interpreter
         void load_state(std::list<INTERPRETER_CLONE_TYPE>::iterator it_state);
 
         std::optional<std::list<INTERPRETER_CLONE_TYPE>::iterator> get_current_state() const noexcept;
-
-        void debug_go_right();
-
-        void debug_go_left();
 
         INTERPRETER_CLONE_TYPE clone() const noexcept;
         
@@ -104,6 +103,9 @@ namespace cpu6502::interpreter
 
         bool is_comment(std::string_view line) const noexcept;
 
+        void debug_go_right();
+
+        void debug_go_left();
     };
 
 } // namespace cpu6502::interpreter

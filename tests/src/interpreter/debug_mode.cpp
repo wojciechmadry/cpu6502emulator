@@ -124,7 +124,7 @@ bool DEBUG_MODE_TEST()
 
         for(std::size_t i = 0u ; i <= X * 2 ; ++i)
         {
-            interp.debug_go_left();
+            interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft);
         }
         cur_state = interp.get_current_state();
         test(cur_state.has_value());
@@ -137,7 +137,7 @@ bool DEBUG_MODE_TEST()
         //Go right
         for(std::size_t i = 0u ; i <= X * 2 ; ++i)
         {
-            interp.debug_go_right();
+            interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoRight);
         }
         test(compare_iterator(*interp.get_current_state(), all_states.rbegin()));
     }
@@ -158,7 +158,7 @@ bool DEBUG_MODE_TEST()
 
         for(std::uint32_t i = 0u ; i < N ; ++i)
         {
-            interp.debug_go_left();
+            interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft);
             auto it_states = states.rbegin();
             auto it_all_states = all_states.rbegin();
             std::uint32_t count_to_i = 0u;
@@ -191,7 +191,7 @@ bool DEBUG_MODE_TEST()
         // Go max left
         for(std::uint32_t i = 0 ; i <= X ; ++i)
         {
-            interp.debug_go_left();
+            interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft);
         }
 
         auto current_state = interp.get_current_state();
@@ -204,7 +204,7 @@ bool DEBUG_MODE_TEST()
 
         for(std::uint32_t i = 0u ; i < N ; ++i)
         {
-            interp.debug_go_right();
+            interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoRight);
             auto it_states = states.begin();
             auto it_all_states = all_states.begin();
             std::uint32_t count_to_i = 0u;
@@ -226,7 +226,7 @@ bool DEBUG_MODE_TEST()
         // Go max right
         for(std::uint32_t i = 0 ; i <= X ; ++i)
         {
-            interp.debug_go_right();
+            interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoRight);
         }
         current_state = interp.get_current_state();
         test(current_state.has_value());
@@ -246,7 +246,7 @@ bool DEBUG_MODE_TEST()
         test(compare_iterator(states.begin(), all_states.begin()));
         for(auto i = 0u ; i < N ; ++i)
         {
-            interp.debug_go_left();
+            interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft);
         }
         interp.interprete(get_command());
         test(states.size() < X);
