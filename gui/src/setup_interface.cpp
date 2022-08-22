@@ -94,7 +94,12 @@ void GuiManager::setupInterface(QMainWindow* main_window)
     // Connect spinner with command to remember
     QObject::connect(this->spinCommandToRemember, &QSpinBox::valueChanged, this, &GuiManager::debugModeSwitchRemembered);
 
+    // Connect debug mode go right
+    QObject::connect(this->CommandGoRight, &QToolButton::clicked, std::bind(&GuiManager::debugChangeCommand, this, cpu6502::interpreter::utils::DebugModeNextCommand::GoRight));
 
+    // Connect debug mode go left
+    QObject::connect(this->CommandGoLeft, &QToolButton::clicked, std::bind(&GuiManager::debugChangeCommand, this, cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft));
+    
     // Display all registers
     this->refreshMenu();
 }

@@ -9,6 +9,11 @@ void GuiManager::debugMode()
 {
     const auto debugModeStatus = this->actionDebug_mode->isChecked();
     this->DebugModeBox->setEnabled(debugModeStatus);
+    if (debugModeStatus == false)
+    {
+        m_interpreter.get().set_states_to_remember(0);
+        spinCommandToRemember->setValue(0);
+    }
 }
 
 void GuiManager::changeBaseSystem()

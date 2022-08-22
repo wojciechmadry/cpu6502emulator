@@ -3,6 +3,16 @@
 namespace cpu6502::interpreter
 {
 
+std::uint32_t Interpreter::get_current_state_pose() const noexcept
+{
+    std::uint32_t cur_pose = 0u;
+    for(auto it_begin = m_debug_states.begin() ; it_begin != m_debug_actual_state ; ++it_begin)
+    {
+        ++cur_pose;
+    }
+    return cur_pose;
+}
+
 std::uint32_t Interpreter::get_states_to_remember() const noexcept
 {
     return m_debug_state_to_remember;
@@ -89,7 +99,24 @@ void Interpreter::load_state(std::list<INTERPRETER_CLONE_TYPE>::iterator it_stat
 
 void Interpreter::set_states_to_remember(std::uint32_t state_to_remember) noexcept
 {
+    const auto old_size = m_debug_state_to_remember;
     m_debug_state_to_remember = state_to_remember;
+    if (old_size > m_debug_state_to_remember)
+    {
+        while(m_debug_states.size() > m_debug_state_to_remember)
+        {
+            m_debug_states.pop_front();
+        }
+        if (m_debug_states.empty())
+        {
+            m_debug_actual_state = m_debug_states.end();
+        }
+        else
+        {
+            m_debug_actual_state = --m_debug_states.end();
+        }
+        this->load_state(m_debug_actual_state);
+    }
 }
 
 std::optional<std::list<Interpreter::INTERPRETER_CLONE_TYPE>::iterator> Interpreter::get_current_state() const noexcept

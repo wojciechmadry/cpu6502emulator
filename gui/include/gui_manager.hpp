@@ -10,6 +10,7 @@
 #include "cpu.hpp"
 #include "interpreter.hpp"
 #include "gui_utils.hpp"
+#include "interp_utils.hpp"
 
 class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
 {
@@ -20,6 +21,8 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
     private slots:
     void debugMode();
     void debugModeSwitchRemembered(int newValue);
+    void debugChangeCommand(cpu6502::interpreter::utils::DebugModeNextCommand nextCommand);
+
     //void debugModeGo();
     void execute();
     void resetProgram();

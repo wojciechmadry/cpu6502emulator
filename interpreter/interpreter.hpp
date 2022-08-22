@@ -71,6 +71,8 @@ namespace cpu6502::interpreter
 
         std::optional<std::list<INTERPRETER_CLONE_TYPE>::iterator> get_current_state() const noexcept;
 
+        std::uint32_t get_current_state_pose() const noexcept;
+
         INTERPRETER_CLONE_TYPE clone() const noexcept;
         
         const std::list<INTERPRETER_CLONE_TYPE>& get_debug_states() const noexcept;

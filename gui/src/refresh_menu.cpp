@@ -9,6 +9,8 @@
 void GuiManager::refreshMenu()
 {
     this->debugMode();
+    this->label_debug_where_i_am->setText(QString::number(m_interpreter.get().get_current_state_pose()));
+
     const auto& cpu = this->m_cpu.get();
     const auto& reg = cpu.get_registers();
     const auto& mem = cpu.get_memory();
