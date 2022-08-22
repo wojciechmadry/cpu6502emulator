@@ -3,7 +3,7 @@
 
 #include "cpu.hpp"
 #include "interpreter.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 
 #include <exception>
 #include <string>

@@ -1,7 +1,7 @@
 #include "interpreter_test.hpp"
 
 #include "cpu.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "interpreter.hpp"
 
 #include <limits>

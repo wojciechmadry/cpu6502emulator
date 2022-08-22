@@ -1,7 +1,7 @@
 #include "cpu_test.hpp"
 
 #include "cpu.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 
 namespace CPU6502_TEST::inner
 {

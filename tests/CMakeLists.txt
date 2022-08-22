@@ -4,7 +4,7 @@ add_library(
         cpu6502_tests STATIC
         src/utility/time.cpp
         src/utility/test_logger.cpp
-        src/utility/utility.cpp
+        src/utility/test_utils.cpp
         src/cpu_test.cpp
         src/all_test.cpp
         src/other_tests/register_test.cpp

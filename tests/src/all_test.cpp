@@ -7,7 +7,7 @@
 #include "cpu_test.hpp"
 #include "utility/test_logger.hpp"
 #include "utility/time.hpp"
-#include "utility/utility.hpp"
+#include "utility/test_utils.hpp"
 #include "interpreter_test.hpp"
 
 namespace CPU6502_TEST
