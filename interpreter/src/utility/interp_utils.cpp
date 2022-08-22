@@ -4,9 +4,7 @@
 #include <algorithm>
 #include <unordered_map>
 
-#include "utility.hpp"
-
-#include <fmt/core.h> // remove this
+#include "interp_utils.hpp"
 
 namespace cpu6502::interpreter::utils
 {

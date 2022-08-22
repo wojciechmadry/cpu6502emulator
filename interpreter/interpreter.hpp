@@ -3,7 +3,7 @@
 
 #include "cpu.hpp"
 #include "instruction.hpp"
-#include "utility.hpp"
+#include "interp_utils.hpp"
 
 #include <functional>
 #include <string>

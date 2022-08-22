@@ -1,7 +1,8 @@
 #include "interpreter.hpp"
 #include "instruction.hpp"
-#include "utility.hpp"
+#include "interp_utils.hpp"
 #include "interp_except.hpp"
+
 #include <cctype>
 #include <exception>
 #include <limits>
