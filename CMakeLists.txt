@@ -9,7 +9,7 @@ if(${DEBUG_MODE} EQUAL 1)
     -Wshadow -Wdouble-promotion -Wformat=2 
     -Wundef -fno-common -Wconversion -Wpedantic -Wall
     -Wno-unused-result -Wno-unused-variable 
-    -Wno-unused-but-set-variabl)
+    -Wno-unused-but-set-variable)
 else()
     set(CXX_COMPILER_FLAGS -O3)
 endif()
