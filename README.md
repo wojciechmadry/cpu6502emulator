@@ -40,7 +40,7 @@ BUILD
 GUI
 ---
 
-![Alt text](https://github.com/wojciechmadry/cpu6502emulator/tree/master/gui/gui_appearance.png)
+![alt text](https://github.com/wojciechmadry/cpu6502emulator/tree/master/gui/gui_appearance.png)
 
 EXAMPLES
 ---
