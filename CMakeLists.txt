@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(cpu_6502_emulator)
 
-set(DEBUG_MODE 1)
+set(DEBUG_MODE 0)
 
 if(${DEBUG_MODE} EQUAL 1)
     set(CXX_COMPILER_FLAGS -g -O3 -Wextra -Werror -W
