@@ -15,13 +15,11 @@ namespace CPU6502_TEST::inner{
         cpu6502::CPU cpu(mem);
         cpu6502::Byte opcode;
 
-        auto PC = cpu.get_registers().PC.get();
-
         utils::jump_to_2020(cpu);
         utils::load_to_acu(cpu ,10);
         
         all_good &= cpu.get_registers().ACU.get() == 10;
-        PC = cpu.get_registers().PC.get();
+        auto PC = cpu.get_registers().PC.get();
 
         // Set IRQ address
         mem[cpu6502::CPU::IRQ] = 0x10;

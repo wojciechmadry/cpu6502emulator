@@ -16,7 +16,7 @@ bool FIBONACCI_TEST()
     constexpr auto generate_array = []()
     {
         std::array<std::size_t, lastN + 1u> result;
-        for(std::size_t i = 0u ; i <= lastN ; ++i)
+        for(std::size_t i = 0u ; i < result.size() ; ++i)
         {
             std::size_t f0 = 0;
             std::size_t f1 = 1;
