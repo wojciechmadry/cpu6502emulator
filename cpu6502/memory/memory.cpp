@@ -60,13 +60,9 @@ namespace cpu6502{
 
     [[nodiscard]] Word Memory::read_word(const u64 Address) const
     {
-        if(Address >= m_memory.size())
+        if (Address + 1u >= m_memory.size())
         {
             throw_out_of_range(Address);
-        }
-        else if (Address + 1u >= m_memory.size())
-        {
-            throw_out_of_range(Address + 1u);
         }
 
         Word Data = m_memory[Address];
@@ -76,13 +72,9 @@ namespace cpu6502{
 
     void Memory::write_word(const Word Data, const u64 Address)
     {
-        if(Address >= m_memory.size())
+        if(Address + 1u >= m_memory.size())
         {
             throw_out_of_range(Address);
-        }
-        else if (Address + 1u >= m_memory.size())
-        {
-            throw_out_of_range(Address + 1u);
         }
 
         m_memory[Address] = static_cast<Byte>(Data & 0x00FF);
