@@ -30,17 +30,16 @@ namespace cpu6502{
 
     struct Registers
     {
-        cpu6502::registers::ProgramCounter PC; // Program Counter
-        cpu6502::registers::StackPointer SP; //Stack Pointer
+        cpu6502::registers::ProgramCounter PC;  // Program Counter
+        cpu6502::registers::StackPointer SP;    // Stack Pointer
         cpu6502::registers::ProcessorStatus PS; // Processor Status
-        cpu6502::registers::Accumulator ACU; // Accumulator
+        cpu6502::registers::Accumulator ACU;    // Accumulator
         cpu6502::registers::IndexRegisterY IRY; // Index Register Y
         cpu6502::registers::IndexRegisterX IRX; // Index Register X
 
         void setRegister(RegistersName regName, std::uint32_t value) noexcept;
 
-        bool operator==(const Registers& other) const noexcept;
-
+        [[nodiscard]] bool operator==(const Registers& other) const noexcept;
     };
     
 

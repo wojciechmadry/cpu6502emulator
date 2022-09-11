@@ -29,7 +29,7 @@ namespace cpu6502{
 
     cpu6502::Byte CPU::fetch_immediate(cpu6502::u32& Cycles) noexcept
     {
-        return fetch_byte(Cycles); // 1 cycles
+        return fetch_byte(Cycles);
     }
 
     cpu6502::Byte CPU::fetch_absolute(cpu6502::u32& Cycles) noexcept

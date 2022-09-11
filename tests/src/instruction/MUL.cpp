@@ -37,8 +37,10 @@ namespace CPU6502_TEST::inner{
                 mem[PC++] = opcode;
                 mem[PC++] = static_cast<cpu6502::Byte>(j);
                 cpu.execute(2);
+                
                 // Check ACU value after multiplication
                 all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(mul_res);
+                all_good &= static_cast<cpu6502::SByte>(cpu.get_registers().ACU.get()) == static_cast<cpu6502::SByte>(mul_res);
 
                 // Check overflow flag
                 all_good &= cpu.get_registers().PS.get(PSFlags::OverflowFlag) == (mul_res > std::numeric_limits<cpu6502::SByte>::max() || mul_res < std::numeric_limits<cpu6502::SByte>::min());
@@ -62,7 +64,7 @@ namespace CPU6502_TEST::inner{
         {
             for(std::uint16_t j = 0 ; j <= 255 ; ++j)
             {
-                const auto add_res = i * j;
+                const auto mul_res = i * j;
                 // Load i to ACU
                 utils::load_to_acu(cpu, static_cast<cpu6502::Byte>(i));
                 PC = cpu.get_registers().PC.get();
@@ -72,13 +74,13 @@ namespace CPU6502_TEST::inner{
                 mem[PC++] = static_cast<cpu6502::Byte>(j);
                 cpu.execute(2);
                 // Check ACU value after multiplication
-                all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(add_res);
+                all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(mul_res);
 
                 // Check Zero flag
-                all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == static_cast<bool>(static_cast<cpu6502::Byte>(add_res) == 0);
+                all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == static_cast<bool>(static_cast<cpu6502::Byte>(mul_res) == 0);
 
                 // Check Negative flag
-                all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == static_cast<bool>(add_res & 0x80);
+                all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == static_cast<bool>(mul_res & 0x80);
 
                 // Clear overflow flag.
                 mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::CLV::Implied);

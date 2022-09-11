@@ -134,13 +134,13 @@ namespace cpu6502::opcode{
     enum class MUL
     {
         Immediate = 0x89, // 2 cycles
-        ZeroPage = 0x77, // 3 cycles
+        ZeroPage  = 0x77, // 3 cycles
         ZeroPageX = 0x74, // 4 cycles
-        Absolute = 0x6F, // 4 cycles
+        Absolute  = 0x6F, // 4 cycles
         AbsoluteX = 0x7F, // 4 cycles (+1 if page crossed)
         AbsoluteY = 0x7A, // 4 cycles (+1 if page crossed)
         IndirectX = 0x62, // 6 cycles
-        IndirectY = 0x63 // 5 cycles (+1 if page crossed)
+        IndirectY = 0x63  // 5 cycles (+1 if page crossed)
     };
 
     // Subtrack with Carry
