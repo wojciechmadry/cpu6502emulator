@@ -16,11 +16,8 @@ LDA #5
 # Store 5 to N
 STA N
 
-# Add 1 to N (Because our loop should interate until i <= N, without that it will be i < N)
+# Add 1 to N (Since our loop should iterate until i <= N, without that it will be i < N)
 INC N
-
-# Load 0 to Accumulator
-LDA #0
 
 # Load 1 to Accumulator
 LDA #1
@@ -31,7 +28,7 @@ STA I
 # Start do while loop i == 1 ; i <= N ; i += 1
 LOOP_BEGIN:
 
-# Multiply Accumulator * I
+# Multiply Accumulator by I
 MUL I
 
 # Increment I
