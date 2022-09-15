@@ -117,7 +117,7 @@
     <widget class="QLabel" name="label_debug_where_i_am">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>130</x>
        <y>100</y>
        <width>41</width>
        <height>20</height>
@@ -133,7 +133,7 @@
     <widget class="QToolButton" name="CommandGoRight">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>230</x>
        <y>80</y>
        <width>32</width>
        <height>34</height>
@@ -149,7 +149,7 @@
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>50</x>
        <y>60</y>
        <width>61</width>
        <height>20</height>
@@ -172,7 +172,7 @@
     <widget class="QToolButton" name="CommandGoLeft">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>60</x>
        <y>80</y>
        <width>32</width>
        <height>34</height>
@@ -214,14 +214,14 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>110</x>
        <y>80</y>
-       <width>61</width>
-       <height>18</height>
+       <width>111</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string>You are at</string>
+      <string>Command number</string>
      </property>
     </widget>
    </widget>

@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'conceptrFtApy.ui'
+** Form generated from reading UI file 'conceptFGbsFG.ui'
 **
-** Created by: Qt User Interface Compiler version 6.3.1
+** Created by: Qt User Interface Compiler version 6.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef CONCEPTRFTAPY_H
-#define CONCEPTRFTAPY_H
+#ifndef CONCEPTFGBSFG_H
+#define CONCEPTFGBSFG_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
@@ -172,21 +172,21 @@ public:
         DebugModeBox->setGeometry(QRect(530, 0, 311, 141));
         label_debug_where_i_am = new QLabel(DebugModeBox);
         label_debug_where_i_am->setObjectName(QString::fromUtf8("label_debug_where_i_am"));
-        label_debug_where_i_am->setGeometry(QRect(140, 100, 41, 20));
+        label_debug_where_i_am->setGeometry(QRect(130, 100, 41, 20));
         label_debug_where_i_am->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         CommandGoRight = new QToolButton(DebugModeBox);
         CommandGoRight->setObjectName(QString::fromUtf8("CommandGoRight"));
-        CommandGoRight->setGeometry(QRect(220, 80, 32, 34));
+        CommandGoRight->setGeometry(QRect(230, 80, 32, 34));
         CommandGoRight->setArrowType(Qt::RightArrow);
         label_2 = new QLabel(DebugModeBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(90, 60, 61, 20));
+        label_2->setGeometry(QRect(50, 60, 61, 20));
         spinCommandToRemember = new QSpinBox(DebugModeBox);
         spinCommandToRemember->setObjectName(QString::fromUtf8("spinCommandToRemember"));
         spinCommandToRemember->setGeometry(QRect(230, 20, 51, 31));
         CommandGoLeft = new QToolButton(DebugModeBox);
         CommandGoLeft->setObjectName(QString::fromUtf8("CommandGoLeft"));
-        CommandGoLeft->setGeometry(QRect(100, 80, 32, 34));
+        CommandGoLeft->setGeometry(QRect(60, 80, 32, 34));
         CommandGoLeft->setArrowType(Qt::LeftArrow);
         label = new QLabel(DebugModeBox);
         label->setObjectName(QString::fromUtf8("label"));
@@ -196,7 +196,7 @@ public:
         label_3->setGeometry(QRect(210, 60, 71, 18));
         label_4 = new QLabel(DebugModeBox);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(150, 80, 61, 18));
+        label_4->setGeometry(QRect(110, 80, 111, 20));
         PC_group = new QGroupBox(centralwidget);
         PC_group->setObjectName(QString::fromUtf8("PC_group"));
         PC_group->setGeometry(QRect(10, 0, 151, 61));
@@ -450,7 +450,7 @@ public:
         CommandGoLeft->setText(QCoreApplication::translate("cpu6502_mainwindow", "...", nullptr));
         label->setText(QCoreApplication::translate("cpu6502_mainwindow", "Debug command to remember:", nullptr));
         label_3->setText(QCoreApplication::translate("cpu6502_mainwindow", "Go right", nullptr));
-        label_4->setText(QCoreApplication::translate("cpu6502_mainwindow", "You are at", nullptr));
+        label_4->setText(QCoreApplication::translate("cpu6502_mainwindow", "Command number", nullptr));
         PC_group->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Program Counter", nullptr));
         SP_group->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Stack Pointer", nullptr));
         ACU_group->setTitle(QCoreApplication::translate("cpu6502_mainwindow", "Accumulator", nullptr));
@@ -500,4 +500,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // CONCEPTRFTAPY_H
+#endif // CONCEPTFGBSFG_H
