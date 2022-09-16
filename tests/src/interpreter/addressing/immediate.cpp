@@ -29,16 +29,17 @@ bool ADDRESSING_IMMEDIATE_TEST()
 
     auto run_test = [&](const std::string& command, std::uint8_t output, auto& reg) 
     {
-        bool test_result = true;
-        test_result &= reg.get() == 0;
-        auto addressing = interp.interprete(command);
-        test_result &= addressing == cpu6502::interpreter::Addressing::Immediate;
-        test_result &= reg.get() == output;
+        // Check if register is clean
+        all_good &= reg.get() == 0;
+        // Execute command
+        const auto addressing = interp.interprete(command); 
+        // Check if addressing is correct
+        all_good &= addressing == cpu6502::interpreter::Addressing::Immediate;
+        // Check if register is correct 
+        all_good &= reg.get() == output;
+        // Cler register
         reg.get() = 0;
-        all_good &= test_result;
     };
-    // Test correct command
-
     // Test ADC #$AB
     run_test("ADC #$AB", 0xAB, all_reg.ACU);
 

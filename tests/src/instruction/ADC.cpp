@@ -59,36 +59,43 @@ namespace CPU6502_TEST::inner{
             }
         }
 
-        // Unsigned test
-        for(std::uint16_t i = 0 ; i <= 255 ; ++i)
+        // Unsigned ADC test
+        for(std::uint16_t i = 0u ; i <= 255u ; ++i)
         {
-            for(std::uint16_t j = 0 ; j <= 255 ; ++j)
+            for(std::uint16_t j = 0u ; j <= 255u; ++j)
             {
+                // Result of adding
                 const auto add_res = i + j;
-                // Load i to ACU
+
+                // Load `i` value to `Accumulator` register
                 utils::load_to_acu(cpu, static_cast<cpu6502::Byte>(i));
+
+                // Get `Program Counter` register value
                 PC = cpu.get_registers().PC.get();
 
-                // Add ACU + j
-                mem[PC++] = opcode;
+                // Add value of `Accumulator` register with `j`
+                // Write opcode to memory
+                mem[PC++] = static_cast<std::uint8_t>(cpu6502::opcode::ADC::Immediate);
+                // Write `j` value to memory
                 mem[PC++] = static_cast<cpu6502::Byte>(j);
+                // Execute this (Load `j` to `Accumulator` register)
                 cpu.execute(2);
-                // Check ACU value after add
+
+                // Check if `Accumulator` value is correct
                 all_good &= cpu.get_registers().ACU.get() == static_cast<cpu6502::Byte>(add_res);
 
-                // Check carry flag
+                // Check if `Carry flag` is correct
                 all_good &= cpu.get_registers().PS.get(PSFlags::CarryFlag) == (add_res > std::numeric_limits<cpu6502::Byte>::max());
 
-                // Check Zero flag
+                // Check if `Zero flag` is correct
                 all_good &= cpu.get_registers().PS.get(PSFlags::ZeroFlag) == static_cast<bool>(static_cast<cpu6502::Byte>(add_res) == 0);
 
-                // Check Negative flag
+                // Check if `Negative flag` is correct
                 all_good &= cpu.get_registers().PS.get(PSFlags::NegativeFlag) == static_cast<bool>(add_res & 0x80);
 
-                // Clear carry and overflow flag.
-                mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::CLV::Implied);
+                // Clear `Carry flag`.
                 mem[PC++] = static_cast<cpu6502::Byte>(cpu6502::opcode::CLC::Implied);
-                cpu.execute(4);
+                cpu.execute(2);
 
                 utils::jump_to_2020(cpu);
             }
