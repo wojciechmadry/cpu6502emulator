@@ -11,7 +11,7 @@ namespace cpu6502::interpreter::utils
 
 
 
-std::vector<cpu6502::interpreter::AddressInfo> get_address_info(std::string_view address)
+std::vector<cpu6502::interpreter::AddressInfo> get_address_info(std::string_view address, const std::vector<InstructionInfo::SmallAddressInfo>& possible_addressing)
 {
     std::vector<AddressInfo> ai;
     std::vector<std::optional<AddressInfo>> ai_optional;
@@ -36,44 +36,91 @@ std::vector<cpu6502::interpreter::AddressInfo> get_address_info(std::string_view
         }
     }
 
-    // Check 'Implicit' addressing mode
-    ai_optional.emplace_back(is_implicit(address));
+    bool zero_page_absolute_checked = false;
+    bool zero_page_absolute_x_checked = false;
+    bool zero_page_absolute_y_checked = false;
 
-
-    // Check 'Accumulator' addressing mode
-    ai_optional.emplace_back(is_accumulator(address));
-
-    // Check 'Immediate' addressing mode
-    ai_optional.emplace_back(is_immediate(address, found_hash));
-
-
-    // Check 'ZeroPage' or 'Absolute' addressing mode
-    auto zero_page_or_absolute = is_zero_page_or_absolute(address, found_dolar);
-    ai_optional.emplace_back(std::move(zero_page_or_absolute.first));
-    ai_optional.emplace_back(std::move(zero_page_or_absolute.second));
-
-    // Check 'ZeroPageX', 'Absolute X' addressing mode
-    auto zero_page_x_or_absolute_x = is_zero_page_x_or_absolute_x(address, found_dolar, found_comma);
-    ai_optional.emplace_back(std::move(zero_page_x_or_absolute_x.first));
-    ai_optional.emplace_back(std::move(zero_page_x_or_absolute_x.second));
-
-    // Check 'ZeroPageY', 'Absolute Y' addressing mode
-    auto zero_page_y_or_absolute_y = is_zero_page_y_or_absolute_y(address, found_dolar, found_comma);
-    ai_optional.emplace_back(std::move(zero_page_y_or_absolute_y.first));
-    ai_optional.emplace_back(std::move(zero_page_y_or_absolute_y.second));
-
-    // Check 'Relative' addressing mode
-    ai_optional.emplace_back(is_relative(address));
-
-
-    // Check 'Indirect' addressing mode
-    ai_optional.emplace_back(is_indirect(address, value_in_bracekt));
-
-    // Check 'IndirectX' addressing mode
-    ai_optional.emplace_back(is_indirect_x(address, value_in_bracekt));
-
-    // Check 'IndirectY' addressing mode
-    ai_optional.emplace_back(is_indirect_y(address, value_in_bracekt));
+    for(const auto& addressing : possible_addressing)
+    {
+        switch(addressing.get_mode())
+        {
+            case cpu6502::interpreter::Addressing::Implicit:
+            {
+                ai_optional.emplace_back(is_implicit(address));
+                break;
+            }
+            case cpu6502::interpreter::Addressing::Accumulator:
+            {
+                ai_optional.emplace_back(is_accumulator(address));
+                break;
+            }
+            case cpu6502::interpreter::Addressing::Immediate:
+            {
+                ai_optional.emplace_back(is_immediate(address, found_hash));
+                break;
+            }
+            case cpu6502::interpreter::Addressing::Relative:
+            {
+                ai_optional.emplace_back(is_relative(address));
+                break;
+            }
+            case cpu6502::interpreter::Addressing::Indirect:
+            {
+                ai_optional.emplace_back(is_indirect(address, value_in_bracekt));
+                break;
+            }
+            case cpu6502::interpreter::Addressing::IndirectX:
+            {
+                ai_optional.emplace_back(is_indirect_x(address, value_in_bracekt));
+                break;
+            }
+            case cpu6502::interpreter::Addressing::IndirectY:
+            {
+                ai_optional.emplace_back(is_indirect_y(address, value_in_bracekt));
+                break;
+            }
+            case cpu6502::interpreter::Addressing::ZeroPage:
+            case cpu6502::interpreter::Addressing::Absolute:
+            {
+                if (!zero_page_absolute_checked)
+                {
+                    auto zero_page_or_absolute = is_zero_page_or_absolute(address, found_dolar);
+                    ai_optional.emplace_back(std::move(zero_page_or_absolute.first));
+                    ai_optional.emplace_back(std::move(zero_page_or_absolute.second));
+                    zero_page_absolute_checked = true;
+                }
+                break;
+            }
+            case cpu6502::interpreter::Addressing::ZeroPageX:
+            case cpu6502::interpreter::Addressing::AbsoluteX:
+            {
+                if (!zero_page_absolute_x_checked)
+                {
+                    auto zero_page_x_or_absolute_x = is_zero_page_x_or_absolute_x(address, found_dolar, found_comma);
+                    ai_optional.emplace_back(std::move(zero_page_x_or_absolute_x.first));
+                    ai_optional.emplace_back(std::move(zero_page_x_or_absolute_x.second));
+                    zero_page_absolute_x_checked = true;
+                }
+                break;
+            }
+            case cpu6502::interpreter::Addressing::ZeroPageY:
+            case cpu6502::interpreter::Addressing::AbsoluteY:
+            {
+                if (!zero_page_absolute_y_checked)
+                {
+                    auto zero_page_y_or_absolute_y = is_zero_page_y_or_absolute_y(address, found_dolar, found_comma);
+                    ai_optional.emplace_back(std::move(zero_page_y_or_absolute_y.first));
+                    ai_optional.emplace_back(std::move(zero_page_y_or_absolute_y.second));
+                    zero_page_absolute_y_checked = true;
+                }
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        }
+    }
 
     std::for_each(std::begin(ai_optional), std::end(ai_optional), [&](auto& optional_address)
     {
