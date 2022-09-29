@@ -22,10 +22,7 @@ Addressing Interpreter::load_instruction(std::string_view address, const Instruc
 
     const auto& possible_addresing = info.get_addressing_vector();
 
-    // TODO Need to check only proper address info, for example:
-    // If JMP instruction has only Absolute and Indirect addressing mode,
-    // there no need to check other addressing mode
-    const auto addressing_info = utils::get_address_info(address);
+    const auto addressing_info = utils::get_address_info(address, possible_addresing);
 
     Addressing matched = Addressing::BAD_ADDRESING_MODE;
 
