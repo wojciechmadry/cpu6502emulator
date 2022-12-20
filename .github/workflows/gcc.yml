@@ -19,22 +19,34 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt update
-        sudo apt -y install g++ gcc qt6-base-dev build-essential libgl1-mesa-dev
+        sudo apt -y install g++ gcc qt6-base-dev build-essential libgl1-mesa-dev valgrind
     
     - name: FetchSubmodules
       run: |
         git submodule init
         git submodule update
         
-    - name: Build
+    - name: BuildRelease
       run: |
-        mkdir -p build
-        cd build
-        cmake ../
+        mkdir -p build_release
+        cd build_release
+        cmake .. -DCMAKE_BUILD_TYPE=Release
         cmake --build . -j
 
-    - name: Test
+    - name: TestRelease
       run: |
-        cd build
-        ./cpu_6502_test
-      
+        cd build_release
+        valgrind ./cpu_6502_test
+
+    - name: BuildDebug
+      run: |
+        mkdir -p build_debug
+        cd build_debug
+        cmake .. -DCMAKE_BUILD_TYPE=Debug
+        cmake --build . -j
+
+    - name: TestDebug
+      run: |
+        cd build_debug
+        valgrind ./cpu_6502_test
+

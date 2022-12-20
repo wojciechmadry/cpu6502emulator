@@ -1,17 +1,24 @@
 cmake_minimum_required(VERSION 3.17)
 project(cpu_6502_emulator)
 
-set(DEBUG_MODE 0)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
-if(${DEBUG_MODE} EQUAL 1)
+# TODO: Disable: google-readability-namespace-comments and move it to some conditional if
+set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+	message("-- Debug mode build")
     set(CXX_COMPILER_FLAGS -g -O3 -Wextra -Werror -W
     -Wno-unused-parameter
     -Wshadow -Wdouble-promotion -Wformat=2 
     -Wundef -fno-common -Wconversion -Wpedantic -Wall
     -Wno-unused-result -Wno-unused-variable 
     -Wno-unused-but-set-variable)
-else()
-    set(CXX_COMPILER_FLAGS -O3)
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+	message("-- Release mode build")
+	set(CXX_COMPILER_FLAGS -O3)
 endif()
 
 set(CMAKE_CXX_STANDARD 20)
