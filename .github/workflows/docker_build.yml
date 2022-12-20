@@ -1,4 +1,4 @@
-name: Ubuntu22 Docker Image CI
+name: Dockerfile build
 
 on:
   push:

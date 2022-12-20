@@ -8,9 +8,9 @@ All instructions with description: https://www.masswerk.at/6502/6502_instruction
 WORKFLOWS
 ---
 
-| Build and test | Docker build |
+| GCC - Build and test | Docker build |
 | --------------- | --------------|
-| ![Ubuntu 22.04 - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22.yml/badge.svg)|![Ubuntu 22.04 - Docker file](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22_docker.yml/badge.svg)
+| ![GCC - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/gcc.yml/badge.svg)|![Dockerfile build](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/docker_build.yml/badge.svg)
 
 SUBMODULES
 ---
