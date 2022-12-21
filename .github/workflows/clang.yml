@@ -52,5 +52,5 @@ jobs:
     - name: TestDebug
       run: |
         cd build_debug
-        valgrind ./cpu_6502_test
+        ./cpu_6502_test # Disable valgrind: Some problems with clang-14 and valgrind
 
