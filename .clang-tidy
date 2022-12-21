@@ -1,0 +1,13 @@
+Checks: "bugprone-*,\
+		clang-diagnostic-*,\
+		clang-analyzer-*,\
+		modernize-*,\
+		performance-*,\
+		modernize-*,\
+		portability-*,\
+		-readability-uppercase-literal-suffix,\
+		-modernize-use-trailing-return-type,-warnings-as-errors\
+		"
+
+WarningsAsErrors: "*"
+
