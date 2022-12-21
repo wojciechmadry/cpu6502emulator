@@ -122,7 +122,7 @@ bool DEBUG_MODE_TEST()
             test(compare_iterator(*cur_state, all_states.rbegin()));
         }
 
-        for(std::size_t i = 0u ; i <= X * 2 ; ++i)
+        for(std::uint32_t i = 0u ; i <= X * 2u ; ++i)
         {
             interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft);
         }
@@ -135,7 +135,7 @@ bool DEBUG_MODE_TEST()
         }
 
         //Go right
-        for(std::size_t i = 0u ; i <= X * 2 ; ++i)
+        for(std::uint32_t i = 0u ; i <= X * 2u ; ++i)
         {
             interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoRight);
         }

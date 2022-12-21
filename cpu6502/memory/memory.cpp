@@ -14,7 +14,7 @@ namespace cpu6502{
         return Memory{*this};
     }
 
-    Memory::Memory(Memory&& mem)
+    Memory::Memory(Memory&& mem) noexcept
     {
         m_memory = std::move(mem.m_memory);
     }
@@ -24,7 +24,7 @@ namespace cpu6502{
         m_memory = mem.m_memory;
     }
 
-    Memory& Memory::operator=(Memory&& mem)
+    Memory& Memory::operator=(Memory&& mem) noexcept
     {
         if(this == &mem)
         {

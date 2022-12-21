@@ -8,9 +8,9 @@ All instructions with description: https://www.masswerk.at/6502/6502_instruction
 WORKFLOWS
 ---
 
-| GCC - Build and test | Docker build |
-| --------------- | --------------|
-| ![GCC - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/gcc.yml/badge.svg)|![Dockerfile build](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/docker_build.yml/badge.svg)
+| GCC - Build and test | Clang - Build and test | Docker build | Clang-Tidy |
+| --------------- | -------------- | -------------- | -------------- |
+| ![GCC - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/gcc.yml/badge.svg)|![Clang - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/clang.yml/badge.svg)|![Dockerfile build](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/docker_build.yml/badge.svg)|![Clang-tidy check](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/clang-tidy.yml/badge.svg)
 
 SUBMODULES
 ---

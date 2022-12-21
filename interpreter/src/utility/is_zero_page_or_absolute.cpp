@@ -26,7 +26,7 @@ std::pair<std::optional<AddressInfo>, std::optional<AddressInfo>> is_zero_page_o
             std::uint32_t iaddr = 0;
             try
             {
-                iaddr = static_cast<std::uint32_t>(std::stoul(val, 0, 16));
+                iaddr = static_cast<std::uint32_t>(std::stoul(val, nullptr, 16));
             }
             catch(const std::exception&)
             {

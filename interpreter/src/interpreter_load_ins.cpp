@@ -524,7 +524,7 @@ Addressing Interpreter::load_instruction(std::string_view address, const Instruc
                         {
                             try
                             {
-                                const auto iaddr = static_cast<std::uint32_t>(std::stoul(val, 0, 16));
+                                const auto iaddr = static_cast<std::uint32_t>(std::stoul(val, nullptr, 16));
                                 const auto add_irx_offset = iaddr + static_cast<std::uint32_t>(reg.IRX.get());
                                 if(add_irx_offset <= std::numeric_limits<std::uint8_t>::max())
                                 {
@@ -573,7 +573,7 @@ Addressing Interpreter::load_instruction(std::string_view address, const Instruc
                         {
                             try
                             {
-                                const auto iaddr = static_cast<std::uint32_t>(std::stoul(val, 0, 16));
+                                const auto iaddr = static_cast<std::uint32_t>(std::stoul(val, nullptr, 16));
                                 const auto add_iry_offset = iaddr + static_cast<std::uint32_t>(reg.IRY.get());
                                 if(add_iry_offset <= std::numeric_limits<std::uint8_t>::max())
                                 {
@@ -631,3 +631,4 @@ Addressing Interpreter::load_instruction(std::string_view address, const Instruc
 }
 
 }  //namespace
+

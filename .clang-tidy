@@ -6,7 +6,8 @@ Checks: "bugprone-*,\
 		modernize-*,\
 		portability-*,\
 		-readability-uppercase-literal-suffix,\
-		-modernize-use-trailing-return-type,-warnings-as-errors\
+		-modernize-use-trailing-return-type,\
+		-bugprone-easily-swappable-parameters,\
 		"
 
 WarningsAsErrors: "*"

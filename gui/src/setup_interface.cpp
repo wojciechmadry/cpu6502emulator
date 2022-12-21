@@ -41,7 +41,7 @@ void GuiManager::setupInterface(QMainWindow* main_window)
         auto textBoxOpt = utils::searchGroupBox<QLineEdit>(groupBox);
         if (textBoxOpt.has_value())
         {
-            QObject::connect(&(*textBoxOpt).get(), &QLineEdit::textChanged, std::bind(&GuiManager::changeMemory, this, groupBox));
+            QObject::connect(&(*textBoxOpt).get(), &QLineEdit::textChanged, [this, groupBox] { changeMemory(groupBox);});
         }
     };
     auto RegConnect = [&](QGroupBox* groupBox, cpu6502::RegistersName regName, bool isProcessorStatus)
@@ -49,7 +49,7 @@ void GuiManager::setupInterface(QMainWindow* main_window)
         auto textBoxOpt = utils::searchGroupBox<QLineEdit>(groupBox);
         if (textBoxOpt.has_value())
         {
-            QObject::connect(&(*textBoxOpt).get(), &QLineEdit::textChanged, std::bind(&GuiManager::changeRegister, this, groupBox, regName, isProcessorStatus));
+            QObject::connect(&(*textBoxOpt).get(), &QLineEdit::textChanged, [this, groupBox, regName, isProcessorStatus] { changeRegister(groupBox, regName, isProcessorStatus); });
         }
     };
     // Program Counter memory
@@ -95,10 +95,10 @@ void GuiManager::setupInterface(QMainWindow* main_window)
     QObject::connect(this->spinCommandToRemember, &QSpinBox::valueChanged, this, &GuiManager::debugModeSwitchRemembered);
 
     // Connect debug mode go right
-    QObject::connect(this->CommandGoRight, &QToolButton::clicked, std::bind(&GuiManager::debugChangeCommand, this, cpu6502::interpreter::utils::DebugModeNextCommand::GoRight));
+    QObject::connect(this->CommandGoRight, &QToolButton::clicked, [this] { debugChangeCommand(cpu6502::interpreter::utils::DebugModeNextCommand::GoRight); });
 
     // Connect debug mode go left
-    QObject::connect(this->CommandGoLeft, &QToolButton::clicked, std::bind(&GuiManager::debugChangeCommand, this, cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft));
+    QObject::connect(this->CommandGoLeft, &QToolButton::clicked, [this] { debugChangeCommand(cpu6502::interpreter::utils::DebugModeNextCommand::GoLeft); });
     
     // Display all registers
     this->refreshMenu();

@@ -30,11 +30,11 @@ std::optional<AddressInfo> is_indirect_x(std::string_view address, std::string_v
     std::string* access = &value;
     
 
-    for(std::size_t i = 0 ; i < value_in_bracket.size() ; ++i)
+    for(char c : value_in_bracket)
     {
-        if(value_in_bracket[i] != ' ')
+        if(c != ' ')
         {
-            if (value_in_bracket[i] == ',')
+            if (c == ',')
             {
                 if(access == &type)
                 {
@@ -44,7 +44,7 @@ std::optional<AddressInfo> is_indirect_x(std::string_view address, std::string_v
             }
             else
             {
-                (*access) += value_in_bracket[i];
+                (*access) += c;
             }
         }
     }
