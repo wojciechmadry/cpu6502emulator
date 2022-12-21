@@ -1,4 +1,4 @@
-name: ubuntu22
+name: clang-tidy
 
 on:
   push:
@@ -19,22 +19,17 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt update
-        sudo apt -y install g++ gcc qt6-base-dev build-essential libgl1-mesa-dev
+        sudo apt -y install g++ gcc qt6-base-dev build-essential libgl1-mesa-dev clang-tidy
     
     - name: FetchSubmodules
       run: |
         git submodule init
         git submodule update
         
-    - name: Build
+    - name: ClangTidy
       run: |
-        mkdir -p build
-        cd build
-        cmake ../
+        mkdir -p build_debug
+        cd build_debug
+        cmake .. -DCMAKE_BUILD_TYPE=Debug -DUSE_CLANG_TIDY=True
         cmake --build . -j
 
-    - name: Test
-      run: |
-        cd build
-        ./cpu_6502_test
-      

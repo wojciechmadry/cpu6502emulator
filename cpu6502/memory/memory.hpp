@@ -2,6 +2,7 @@
 #define CPU_6502_memory
 
 #include "required.hpp"
+#include <type_traits>
 
 namespace cpu6502{
     class Memory
@@ -13,17 +14,19 @@ namespace cpu6502{
     public:
         Memory() = delete;
 
-        Memory(Memory&&);
+        Memory(Memory&&) noexcept;
 
         Memory(const Memory&);
 
         Memory clone() const noexcept;
 
-        explicit Memory(const u64 BYTES_MEMORY) noexcept : m_memory(BYTES_MEMORY) {}
+		template<typename INTEGER>
+		requires(std::is_integral_v<INTEGER>)
+        explicit Memory(const INTEGER BYTES_MEMORY) noexcept : m_memory(static_cast<u64>(BYTES_MEMORY)) {}
     
         ~Memory() = default;
 
-        Memory& operator=(Memory&&);
+        Memory& operator=(Memory&&) noexcept;
 
         Memory& operator=(const Memory&);
 

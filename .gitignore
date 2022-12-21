@@ -1,5 +1,6 @@
 vgcore*
-
+build_release
+build_debug
 
 # Created by https://www.toptal.com/developers/gitignore/api/cmake,c++,vs,clion
 # Edit at https://www.toptal.com/developers/gitignore?templates=cmake,c++,vs,clion

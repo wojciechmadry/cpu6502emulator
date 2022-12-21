@@ -11,9 +11,9 @@ std::pair<std::optional<AddressInfo>, std::optional<AddressInfo>> is_zero_page_y
         return {};
     }
     // Check if address don't have bracket '(' ')'
-    for(std::size_t i = 0u ; i < address.size() ; ++i)
+    for(auto addres : address)
     {
-        if(address[i] == '(' || address[i] == ')')
+        if(addres == '(' || addres == ')')
         {
             return {};
         }
@@ -21,11 +21,7 @@ std::pair<std::optional<AddressInfo>, std::optional<AddressInfo>> is_zero_page_y
     
     bool is_y_addressing = false;
     const auto Y_found = address.find('Y');
-    if (Y_found != std::string::npos)
-    {
-        is_y_addressing = true;
-    }
-    else if(address.find('y') != std::string::npos)
+    if (Y_found != std::string::npos || address.find('y') != std::string::npos)
     {
         is_y_addressing = true;
     }
@@ -80,7 +76,7 @@ std::pair<std::optional<AddressInfo>, std::optional<AddressInfo>> is_zero_page_y
             std::uint32_t iaddr = 0;
             try
             {
-                iaddr = static_cast<std::uint32_t>(std::stoul(val, 0, 16));
+                iaddr = static_cast<std::uint32_t>(std::stoul(val, nullptr, 16));
             }
             catch(const std::exception&)
             {

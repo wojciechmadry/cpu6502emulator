@@ -3,7 +3,7 @@
 #include <fmt/core.h>       
 #include <fmt/color.h>       
 
-void log_test(const std::string_view test_name, bool is_test_passed) noexcept
+void log_test(const std::string_view test_name, bool is_test_passed)
 {
     static constexpr const char* PASS = "PASS";
     static constexpr const char* FAIL = "FAIL";

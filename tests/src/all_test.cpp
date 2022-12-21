@@ -12,7 +12,7 @@
 
 namespace CPU6502_TEST
 {
-    TEST_RESULT RUN_ALL_TEST() noexcept
+    TEST_RESULT RUN_ALL_TEST()
     {
         babel::TIME::timer T;
         T.start();

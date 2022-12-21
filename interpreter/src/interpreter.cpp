@@ -130,13 +130,13 @@ bool Interpreter::is_comment(std::string_view line) const noexcept
 
 bool Interpreter::create_label_instruction(std::string_view command)
 {
-    const auto foundCreateLabel = command.find(":");
+    const auto foundCreateLabel = command.find(':');
     if (foundCreateLabel == std::string::npos)
     {
         return false;
     }
 
-    const auto foundEqual = command.find("=");
+    const auto foundEqual = command.find('=');
 
     if (foundEqual != std::string::npos)
     {

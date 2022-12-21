@@ -9,7 +9,7 @@ namespace CPU6502_TEST
         FAILED
     };
 
-    TEST_RESULT RUN_ALL_TEST() noexcept;
+    TEST_RESULT RUN_ALL_TEST();
 }
 
 
