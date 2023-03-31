@@ -131,7 +131,7 @@ bool DEBUG_MODE_TEST()
 
         if(cur_state.has_value())
         {
-            test(compare_iterator(*interp.get_current_state(), all_states.begin()));
+            test(compare_iterator(*cur_state, all_states.begin()));
         }
 
         //Go right
@@ -139,7 +139,11 @@ bool DEBUG_MODE_TEST()
         {
             interp.debug_mode_change_command(cpu6502::interpreter::utils::DebugModeNextCommand::GoRight);
         }
-        test(compare_iterator(*interp.get_current_state(), all_states.rbegin()));
+        cur_state = interp.get_current_state();
+        if(cur_state.has_value())
+        {
+            test(compare_iterator(*cur_state, all_states.rbegin()));
+        }
     }
 
     // Test 3 - Go left for N states
