@@ -410,7 +410,7 @@ namespace cpu6502
 
         using CPU_CLONE_PAIR_TYPE = std::pair<std::unique_ptr<CPU>, std::unique_ptr<Memory>>;
 
-        CPU_CLONE_PAIR_TYPE clone() const noexcept;
+        [[nodiscard]] CPU_CLONE_PAIR_TYPE clone() const noexcept;
     };
 
 

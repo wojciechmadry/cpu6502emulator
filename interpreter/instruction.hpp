@@ -64,8 +64,8 @@ namespace cpu6502::interpreter
 
             public:
 
-            int get_op_code() const noexcept;
-            Addressing get_mode() const noexcept;
+            [[nodiscard]] int get_op_code() const noexcept;
+            [[nodiscard]] Addressing get_mode() const noexcept;
             void set_op_code(int op) noexcept;
             void set_mode(Addressing mode) noexcept;
         };
@@ -77,11 +77,11 @@ namespace cpu6502::interpreter
 
         public:
 
-        const std::string& get_instruction_name() const noexcept;
+        [[nodiscard]] const std::string& get_instruction_name() const noexcept;
 
         std::string& get_instruction_name() noexcept;
 
-        const std::vector<SmallAddressInfo>& get_addressing_vector() const noexcept;
+        [[nodiscard]] const std::vector<SmallAddressInfo>& get_addressing_vector() const noexcept;
 
         void add_address(const SmallAddressInfo sAi) noexcept;
         
@@ -105,25 +105,25 @@ namespace cpu6502::interpreter
         
         static AddressInfo create_address(Addressing mode, AVL_type avl = AVL_type::none, std::string_view value = "", VALUE_TYPE value_type = VALUE_TYPE::hex) noexcept;
         
-        std::uint32_t get_val_as_uint32() const;
+        [[nodiscard]] std::uint32_t get_val_as_uint32() const;
 
-        VALUE_TYPE get_value_type() const noexcept;
+        [[nodiscard]] VALUE_TYPE get_value_type() const noexcept;
 
         void set_value_type(const VALUE_TYPE value_type) noexcept;
 
-        AVL_type get_avl() const noexcept;
+        [[nodiscard]] AVL_type get_avl() const noexcept;
 
         void set_avl(AVL_type type) noexcept;
 
-        const std::string& get_value() const noexcept;
+        [[nodiscard]] const std::string& get_value() const noexcept;
 
         void set_value(std::string value) noexcept;
 
-        Addressing get_mode() const noexcept;
+        [[nodiscard]] Addressing get_mode() const noexcept;
 
         void set_mode(Addressing mode) noexcept;
 
-        ADDITIONAL_info get_additional_info() const noexcept;
+        [[nodiscard]] ADDITIONAL_info get_additional_info() const noexcept;
         
         void set_additional_info(ADDITIONAL_info info) noexcept;
     };
