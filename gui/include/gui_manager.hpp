@@ -36,7 +36,7 @@ class GuiManager : public QWidget, public Ui::cpu6502_mainwindow
     private:
     void refreshMenu();
     void showMemory();
-    int getBase() const noexcept;
+    [[nodiscard]] int getBase() const noexcept;
     
     BaseSystem m_base = BaseSystem::Decimal;
     std::reference_wrapper<cpu6502::CPU> m_cpu;

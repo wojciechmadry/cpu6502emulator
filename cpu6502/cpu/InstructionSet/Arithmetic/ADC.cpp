@@ -15,7 +15,7 @@ namespace cpu6502{
         const auto word_data = static_cast<Word>(value + ACU + carry_flag);
         reg.ACU.set(static_cast<Byte>(word_data));
         // 0 cycles
-        
+
         reg.PS.set(CPU::PSFlags::ZeroFlag, reg.ACU.get() == 0);
         reg.PS.set(CPU::PSFlags::NegativeFlag, reg.ACU.get() & 0x80);
 
