@@ -1,12 +1,11 @@
 #include "cpu.hpp"
-#include "interpreter.hpp"
 #include "gui_manager.hpp"
+#include "interpreter.hpp"
 #include "memory.hpp"
 
 #include <fmt/core.h>
 
-int main(int argc, char** argv)
-{
+int main(int argc, char **argv) {
   // Initialise cpu6502 with memory and create interpreter
   static constexpr auto MEM_SIZE = static_cast<std::uint64_t>(1024u * 64u);
   cpu6502::Memory mem(MEM_SIZE);

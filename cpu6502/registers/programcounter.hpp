@@ -3,25 +3,24 @@
 
 #include "../required.hpp"
 
-namespace cpu6502::registers
-{
-    class ProgramCounter
-    {
-        Word m_reg = 0;
-    public:
-        using RegisterStroedType = decltype(m_reg);
+namespace cpu6502::registers {
+class ProgramCounter {
+  Word m_reg = 0;
 
-        [[nodiscard]] RegisterStroedType get() const noexcept;
+public:
+  using RegisterStroedType = decltype(m_reg);
 
-        [[nodiscard]] RegisterStroedType& get() noexcept;
+  [[nodiscard]] RegisterStroedType get() const noexcept;
 
-        void set(RegisterStroedType NewRegValue) noexcept;
+  [[nodiscard]] RegisterStroedType &get() noexcept;
 
-        void increment() noexcept;
+  void set(RegisterStroedType NewRegValue) noexcept;
 
-        void decrement() noexcept;
+  void increment() noexcept;
 
-        bool operator==(const ProgramCounter& other) const noexcept;
-    };
-}
+  void decrement() noexcept;
+
+  bool operator==(const ProgramCounter &other) const noexcept;
+};
+} // namespace cpu6502::registers
 #endif

@@ -5,4 +5,4 @@
 
 void log_test(const std::string_view test_name, bool is_test_passed);
 
-#endif  // TEST_LOGGER_HPP
+#endif // TEST_LOGGER_HPP

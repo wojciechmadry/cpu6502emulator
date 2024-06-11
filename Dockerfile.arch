@@ -1,0 +1,21 @@
+FROM archlinux:latest
+
+WORKDIR /ws
+
+RUN pacman -Syu --noconfirm \
+	git \
+	cmake \
+	gcc \
+	clang \
+	qt6-base \
+	base-devel
+
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g $GID -o cpu6502
+RUN useradd -m -u $UID -g $GID -o -s /bin/bash cpu6502
+
+USER cpu6502
+
+WORKDIR /ws
+
