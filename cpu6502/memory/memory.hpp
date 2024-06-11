@@ -4,44 +4,43 @@
 #include "required.hpp"
 #include <type_traits>
 
-namespace cpu6502{
-    class Memory
-    {
-        std::vector<Byte> m_memory;
+namespace cpu6502 {
+class Memory {
+  std::vector<Byte> m_memory;
 
-        void throw_out_of_range(const u64 Address) const;
+  void throw_out_of_range(const u64 Address) const;
 
-    public:
-        Memory() = delete;
+public:
+  Memory() = delete;
 
-        Memory(Memory&&) noexcept;
+  Memory(Memory &&) noexcept;
 
-        Memory(const Memory&);
+  Memory(const Memory &);
 
-        [[nodiscard]] Memory clone() const noexcept;
+  [[nodiscard]] Memory clone() const noexcept;
 
-	template<typename INTEGER>
-        requires(std::is_integral_v<INTEGER>)
-        explicit Memory(const INTEGER BYTES_MEMORY) noexcept : m_memory(static_cast<u64>(BYTES_MEMORY)) {}
- 
-        ~Memory() = default;
+  template <typename INTEGER>
+  requires(std::is_integral_v<INTEGER>) explicit Memory(
+      const INTEGER BYTES_MEMORY) noexcept
+      : m_memory(static_cast<u64>(BYTES_MEMORY)) {}
 
-        Memory& operator=(Memory&&) noexcept;
+  ~Memory() = default;
 
-        Memory& operator=(const Memory&);
+  Memory &operator=(Memory &&) noexcept;
 
-        bool operator==(const Memory& other) const noexcept;
+  Memory &operator=(const Memory &);
 
-        void initialise() noexcept;
+  bool operator==(const Memory &other) const noexcept;
 
-        [[nodiscard]] Word read_word(u64 Address) const;
+  void initialise() noexcept;
 
-        void write_word(Word Data, u64 Address);
+  [[nodiscard]] Word read_word(u64 Address) const;
 
-        [[nodiscard]] Byte operator[](u64 Address) const;
+  void write_word(Word Data, u64 Address);
 
-        [[nodiscard]] Byte& operator[](u64 Address);
+  [[nodiscard]] Byte operator[](u64 Address) const;
 
-    };
-}
+  [[nodiscard]] Byte &operator[](u64 Address);
+};
+} // namespace cpu6502
 #endif

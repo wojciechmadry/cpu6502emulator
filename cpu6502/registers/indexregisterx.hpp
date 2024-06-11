@@ -3,23 +3,22 @@
 
 #include "../required.hpp"
 
-namespace cpu6502::registers
-{
-    class IndexRegisterX
-    {
-        Byte m_reg = 0;
-    public:
-        using RegisterStroedType = decltype(m_reg);
+namespace cpu6502::registers {
+class IndexRegisterX {
+  Byte m_reg = 0;
 
-        [[nodiscard]] RegisterStroedType get() const noexcept;
+public:
+  using RegisterStroedType = decltype(m_reg);
 
-        [[nodiscard]] RegisterStroedType& get() noexcept;
+  [[nodiscard]] RegisterStroedType get() const noexcept;
 
-        void set(RegisterStroedType NewRegValue) noexcept;
+  [[nodiscard]] RegisterStroedType &get() noexcept;
 
-        bool operator==(const IndexRegisterX& other) const noexcept;
-    };
+  void set(RegisterStroedType NewRegValue) noexcept;
 
-}
+  bool operator==(const IndexRegisterX &other) const noexcept;
+};
+
+} // namespace cpu6502::registers
 
 #endif

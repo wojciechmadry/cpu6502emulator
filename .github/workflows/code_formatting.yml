@@ -1,4 +1,4 @@
-name: Dockerfile build
+name: Code formatting
 
 on:
   push:
@@ -16,5 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag cpu_docker:$(date +%s)
+      run: make build
+
+    - name: Check code formatting
+      run: make check_format
+

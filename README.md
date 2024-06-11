@@ -8,9 +8,10 @@ All instructions with description: https://www.masswerk.at/6502/6502_instruction
 WORKFLOWS
 ---
 
-| GCC - Build and test | Clang - Build and test | Docker build | Clang-Tidy |
+| Ubuntu22| Debian12 | Arch linux | Code formatting |
 | --------------- | -------------- | -------------- | -------------- |
-| ![GCC - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/gcc.yml/badge.svg)|![Clang - Build and test](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/clang.yml/badge.svg)|![Dockerfile build](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/docker_build.yml/badge.svg)|![Clang-tidy check](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/clang-tidy.yml/badge.svg)
+| ![ubuntu22](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22.yml/badge.svg)|![debian12](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/debian12.yml/badge.svg)|![archlinux](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/arch.yml/badge.svg)|![code formatting](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/code_formatting.yml/badge.svg)
+
 
 SUBMODULES
 ---
@@ -23,7 +24,7 @@ BUILD
 **Requirements:**
 
 - `C++20  support`
--  `Qt6`
+- `Qt6`
 
 **Build steps:**
 
@@ -40,7 +41,7 @@ BUILD
 GUI
 ---
 
-![GUI look](https://github.com/wojciechmadry/cpu6502emulator/blob/master/gui/gui_appearance.png)
+![GUI look](gui/gui_appearance.png)
 
 EXAMPLES
 ---
@@ -48,12 +49,14 @@ EXAMPLES
 - `examples/fibonacci.asm` - Calculate Fibonacci
 - `examples/factorial.asm` - Calculate factorial
 
-Docker
+Docker and testing
 ---
 
-- Docker contain minimal setup to compile cpu 6502 emulator.
-- You can run test on it (You can't run cpu emulator with gui)
- - How to run docker:
-    1. `sudo docker build -t cpu_docker .`
-    2. `sudo docker run -it cpu_docker`
-
+```sh
+make build        -	Build docker image
+make test_gcc     -	Build with GCC and run cpu6502 unit/integration tests
+make test_clang   -	Build with clang and run cpu6502 unit/integration tests
+make clang_tidy   -	Run static code analysis
+make check_format -	Check code formatting
+make format       -	Format code
+```
