@@ -13,22 +13,16 @@ WORKFLOWS
 | ![ubuntu22](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/ubuntu22.yml/badge.svg)|![debian12](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/debian12.yml/badge.svg)|![archlinux](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/arch.yml/badge.svg)|![code formatting](https://github.com/wojciechmadry/cpu6502emulator/actions/workflows/code_formatting.yml/badge.svg)
 
 
-SUBMODULES
----
-
-- fmt [`https://github.com/fmtlib/fmt`]
-
 BUILD
 ---
 
 **Requirements:**
 
-- `C++20  support`
+- `C++23  support`
 - `Qt6`
 
 **Build steps:**
 
-- `git submodule init && git submodule update`
 - `mkdir build && cd build`
 - `cmake ../`
 - `cmake --build . -j`

@@ -1,12 +1,10 @@
 #include "utility/test_logger.hpp"
-
-#include <fmt/color.h>
-#include <fmt/core.h>
+#include <print>
 
 void log_test(const std::string_view test_name, bool is_test_passed) {
   static constexpr const char *PASS = "PASS";
   static constexpr const char *FAIL = "FAIL";
-  fmt::print("Test {} : ", test_name);
-  fmt::print((is_test_passed ? fg(fmt::color::green) : fg(fmt::color::red)),
-             "{}\n", (is_test_passed ? PASS : FAIL));
+  std::print("Test {} :", test_name);
+  const char *color = is_test_passed ? "[32m" : "[31m";
+  std::print("\033{}{}\033[0m\n", color, (is_test_passed ? PASS : FAIL));
 }

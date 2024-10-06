@@ -1,11 +1,11 @@
 #ifndef UTILITY_HPP
 #define UTILITY_HPP
 
-#include <fmt/core.h>
 #include <string_view>
 
 #include "cpu.hpp"
 #include "test_logger.hpp"
+#include <print>
 
 namespace CPU6502_TEST::utils {
 template <typename Func>
@@ -15,7 +15,7 @@ inline bool run_test(Func func, std::string_view test_name) noexcept {
     test_pass = func();
   } catch (std::exception &e) {
     test_pass = false;
-    fmt::print("Test : {} throw an exception : {}\n", test_name, e.what());
+    std::print("Test : {} throw an exception : {}\n", test_name, e.what());
   }
   log_test(test_name, test_pass);
   return test_pass;
