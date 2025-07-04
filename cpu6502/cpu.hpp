@@ -5,11 +5,59 @@
 #include "registers/registers.hpp"
 #include "required.hpp"
 
+#include <limits>
 #include <memory>
 #include <utility>
 
 namespace cpu6502 {
 class CPU {
+public:
+  // Processor Status flags
+  using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
+
+  // 0xFFFE - 0xFFFF - Addres of interrupt vector
+  // IRQ - Interrupt request
+  static constexpr Word IRQ = 0xFFFE;
+
+  // Stack memory begin
+  static constexpr u32 STACK_BEGIN = 0x0100;
+  // Stack memory end
+  static constexpr u32 STACK_END = 0x01FF;
+
+  static constexpr u32 STACK_SIZE = std::numeric_limits<
+      cpu6502::registers::StackPointer::RegisterStoredType>::max();
+
+  static_assert((STACK_END - STACK_BEGIN) == STACK_SIZE,
+                "Stack size does not mach memory stack size");
+
+  CPU() = delete;
+  CPU(const CPU &) = delete;
+  CPU(CPU &&) = delete;
+  explicit CPU(cpu6502::Memory &memory) noexcept;
+  ~CPU() = default;
+
+  CPU &operator=(const CPU &) = delete;
+  CPU &operator=(CPU &&) = delete;
+  bool operator==(const CPU &other) const noexcept;
+
+  [[nodiscard]] const cpu6502::Registers &get_registers() const noexcept;
+
+  [[nodiscard]] cpu6502::Registers &get_registers() noexcept;
+
+  [[nodiscard]] Memory &get_memory() noexcept;
+
+  [[nodiscard]] const Memory &get_memory() const noexcept;
+
+  void reset() noexcept;
+
+  void execute(u32 Cycles);
+
+  using CPU_CLONE_PAIR_TYPE =
+      std::pair<std::unique_ptr<CPU>, std::unique_ptr<Memory>>;
+
+  [[nodiscard]] CPU_CLONE_PAIR_TYPE clone() const noexcept;
+
+private:
   // CPU registers
   cpu6502::Registers cpu_reg;
 
@@ -68,7 +116,7 @@ class CPU {
     } else if constexpr (mode == AddressingMode::ZeroPageY) {
       return fetch_zeropagey(Cycles);
     }
-    return static_cast<cpu6502::Byte>(0xFF);
+    std::unreachable();
   }
 
   // BRANCHES
@@ -350,46 +398,6 @@ class CPU {
 
   //      -- NOP --
   void NOPimplied(u32 &Cycles) noexcept;
-
-public:
-  // Processor Status flags
-  using PSFlags = cpu6502::registers::ProcessorStatus::Flags;
-
-  // 0xFFFE - 0xFFFF - Addres of interrupt vector
-  // IRQ - Interrupt request
-  static constexpr Word IRQ = 0xFFFE;
-
-  // Stack memory begin
-  static constexpr u32 STACK_BEGIN = 0x0100;
-  // Stack memory end
-  static constexpr u32 STACK_END = 0x01FF;
-
-  CPU() = delete;
-  CPU(const CPU &) = delete;
-  CPU(CPU &&) = delete;
-  explicit CPU(cpu6502::Memory &memory) noexcept;
-  ~CPU() = default;
-
-  CPU &operator=(const CPU &) = delete;
-  CPU &operator=(CPU &&) = delete;
-  bool operator==(const CPU &other) const noexcept;
-
-  [[nodiscard]] const cpu6502::Registers &get_registers() const noexcept;
-
-  [[nodiscard]] cpu6502::Registers &get_registers() noexcept;
-
-  [[nodiscard]] Memory &get_memory() noexcept;
-
-  [[nodiscard]] const Memory &get_memory() const noexcept;
-
-  void reset() noexcept;
-
-  void execute(u32 Cycles);
-
-  using CPU_CLONE_PAIR_TYPE =
-      std::pair<std::unique_ptr<CPU>, std::unique_ptr<Memory>>;
-
-  [[nodiscard]] CPU_CLONE_PAIR_TYPE clone() const noexcept;
 };
 
 } // namespace cpu6502

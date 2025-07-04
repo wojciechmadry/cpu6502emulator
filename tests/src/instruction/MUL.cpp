@@ -13,7 +13,7 @@ bool MUL_TEST() {
   cpu6502::CPU cpu(mem);
   cpu6502::Byte opcode;
 
-  cpu6502::registers::ProgramCounter::RegisterStroedType PC;
+  cpu6502::registers::ProgramCounter::RegisterStoredType PC;
 
   utils::jump_to_2020(cpu);
 

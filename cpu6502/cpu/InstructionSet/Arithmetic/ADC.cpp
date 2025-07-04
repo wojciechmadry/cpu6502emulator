@@ -1,7 +1,6 @@
 #include "cpu.hpp"
 
 #include <limits>
-#include <type_traits>
 
 namespace cpu6502 {
 
@@ -18,8 +17,9 @@ void CPU::ADC(const Byte value) noexcept {
   reg.PS.set(CPU::PSFlags::ZeroFlag, reg.ACU.get() == 0);
   reg.PS.set(CPU::PSFlags::NegativeFlag, reg.ACU.get() & 0x80);
 
-  bool is_overflow = (!(ACU & 0x80) && !(value & 0x80) && word_data & 0x80) ||
-                     ((ACU & 0x80) && (value & 0x80) && !(word_data & 0x80));
+  const bool is_overflow =
+      (!(ACU & 0x80) && !(value & 0x80) && word_data & 0x80) ||
+      ((ACU & 0x80) && (value & 0x80) && !(word_data & 0x80));
 
   reg.PS.set(CPU::PSFlags::OverflowFlag, is_overflow);
   reg.PS.set(CPU::PSFlags::CarryFlag,
@@ -27,42 +27,34 @@ void CPU::ADC(const Byte value) noexcept {
 }
 
 void CPU::ADCimmediate(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::Immediate>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::Immediate>(Cycles));
 }
 
 void CPU::ADCzeropage(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::ZeroPage>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::ZeroPage>(Cycles));
 }
 
 void CPU::ADCzeropagex(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::ZeroPageX>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::ZeroPageX>(Cycles));
 }
 
 void CPU::ADCabsolute(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::Absolute>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::Absolute>(Cycles));
 }
 
 void CPU::ADCabsolutex(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::AbsoluteX>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::AbsoluteX>(Cycles));
 }
 
 void CPU::ADCabsolutey(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::AbsoluteY>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::AbsoluteY>(Cycles));
 }
 
 void CPU::ADCindirectx(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::IndirectX>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::IndirectX>(Cycles));
 }
 
 void CPU::ADCindirecty(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::IndirectY>(Cycles);
-  ADC(fetched);
+  ADC(fetch<AddressingMode::IndirectY>(Cycles));
 }
 } // namespace cpu6502

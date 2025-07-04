@@ -31,8 +31,8 @@ Memory &Memory::operator=(const Memory &mem) {
 }
 
 void Memory::throw_out_of_range(const u64 Address) const {
-  const std::string msg = std::string("Address : ") + std::to_string(Address) +
-                          " is out of memory range.";
+  std::string msg = std::string("Address : ") + std::to_string(Address) +
+                    " is out of memory range.";
   throw std::out_of_range(msg);
 }
 
@@ -43,22 +43,21 @@ void Memory::initialise() noexcept {
 }
 
 [[nodiscard]] Word Memory::read_word(const u64 Address) const {
-  if (Address + 1u >= m_memory.size()) {
+  if (Address + sizeof(Byte) >= m_memory.size()) {
     throw_out_of_range(Address);
   }
 
   Word Data = m_memory[Address];
-  Data = static_cast<Word>(Data | (m_memory[Address + 1] << 8));
-  return Data;
+  return static_cast<Word>(Data | (m_memory[Address + sizeof(Byte)] << 8));
 }
 
 void Memory::write_word(const Word Data, const u64 Address) {
-  if (Address + 1u >= m_memory.size()) {
+  if (Address + sizeof(Byte) >= m_memory.size()) {
     throw_out_of_range(Address);
   }
 
   m_memory[Address] = static_cast<Byte>(Data & 0x00FF);
-  m_memory[Address + 1] = static_cast<Byte>(Data >> 8);
+  m_memory[Address + sizeof(Byte)] = static_cast<Byte>(Data >> 8);
 }
 
 [[nodiscard]] Byte Memory::operator[](const u64 Address) const {

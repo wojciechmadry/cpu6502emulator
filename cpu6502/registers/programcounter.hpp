@@ -8,17 +8,19 @@ class ProgramCounter {
   Word m_reg = 0;
 
 public:
-  using RegisterStroedType = decltype(m_reg);
+  using RegisterStoredType = decltype(m_reg);
 
-  [[nodiscard]] RegisterStroedType get() const noexcept;
+  [[nodiscard]] RegisterStoredType get() const noexcept;
 
-  [[nodiscard]] RegisterStroedType &get() noexcept;
+  [[nodiscard]] RegisterStoredType &get() noexcept;
 
-  void set(RegisterStroedType NewRegValue) noexcept;
+  void set(RegisterStoredType NewRegValue) noexcept;
 
   void increment() noexcept;
 
   void decrement() noexcept;
+
+  Word getAndIncrement() noexcept;
 
   bool operator==(const ProgramCounter &other) const noexcept;
 };

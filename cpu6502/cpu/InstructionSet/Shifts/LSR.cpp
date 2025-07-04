@@ -4,18 +4,15 @@ namespace cpu6502 {
 
 void CPU::LSRaccumulator(u32 &Cycles) noexcept {
   // 1 cycles
-  const auto ACU = cpu_reg.ACU.get();
-  const auto old_zero_bit = static_cast<bool>(ACU & 0x1);
-  const auto shifted = static_cast<Byte>(ACU >> 1);
-  const auto new_seventh_bit = static_cast<bool>(shifted & 0x80);
-  ;
+  auto &ACU = cpu_reg.ACU.get();
+  cpu_reg.PS.set(PSFlags::CarryFlag, static_cast<bool>(ACU & 0x1));
+  ACU >>= 1;
+  cpu_reg.PS.set(PSFlags::NegativeFlag, static_cast<bool>(ACU & 0x80));
+
   --Cycles;
-  cpu_reg.ACU.set(shifted);
   // 0 cycles
 
-  cpu_reg.PS.set(PSFlags::CarryFlag, old_zero_bit);
-  cpu_reg.PS.set(PSFlags::ZeroFlag, shifted == 0);
-  cpu_reg.PS.set(PSFlags::NegativeFlag, new_seventh_bit);
+  cpu_reg.PS.set(PSFlags::ZeroFlag, ACU == 0);
 }
 
 void CPU::LSRzeropage(u32 &Cycles) noexcept {
@@ -49,7 +46,6 @@ void CPU::LSRzeropagex(u32 &Cycles) noexcept {
 
   const auto old_zero_bit = static_cast<bool>(fetched & 0x1);
   const auto new_seventh_bit = static_cast<bool>(shifted & 0x80);
-  ;
 
   cpu_reg.PS.set(PSFlags::CarryFlag, old_zero_bit);
   cpu_reg.PS.set(PSFlags::ZeroFlag, shifted == 0);
@@ -94,7 +90,6 @@ void CPU::LSRabsolutex(u32 &Cycles) noexcept {
 
   const auto old_zero_bit = static_cast<bool>(fetched & 0x1);
   const auto new_seventh_bit = static_cast<bool>(shifted & 0x80);
-  ;
 
   cpu_reg.PS.set(PSFlags::CarryFlag, old_zero_bit);
   cpu_reg.PS.set(PSFlags::ZeroFlag, shifted == 0);

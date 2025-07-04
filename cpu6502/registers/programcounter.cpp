@@ -1,23 +1,25 @@
 #include "programcounter.hpp"
 
 namespace cpu6502::registers {
-[[nodiscard]] ProgramCounter::RegisterStroedType
+[[nodiscard]] ProgramCounter::RegisterStoredType
 ProgramCounter::get() const noexcept {
   return m_reg;
 }
 
-[[nodiscard]] ProgramCounter::RegisterStroedType &
+[[nodiscard]] ProgramCounter::RegisterStoredType &
 ProgramCounter::get() noexcept {
   return m_reg;
 }
 
 void ProgramCounter::set(
-    const ProgramCounter::RegisterStroedType NewRegValue) noexcept {
+    const ProgramCounter::RegisterStoredType NewRegValue) noexcept {
   m_reg = NewRegValue;
 }
 
 void ProgramCounter::increment() noexcept { ++m_reg; }
 void ProgramCounter::decrement() noexcept { --m_reg; }
+
+Word ProgramCounter::getAndIncrement() noexcept { return m_reg++; }
 
 bool ProgramCounter::operator==(const ProgramCounter &other) const noexcept {
   return m_reg == other.m_reg;

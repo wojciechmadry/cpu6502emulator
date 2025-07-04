@@ -6,8 +6,8 @@ void CPU::JMPabsolute(u32 &Cycles) noexcept {
 }
 
 void CPU::JMPindirect(u32 &Cycles) noexcept {
-  const Word Address = fetch_word(Cycles);
-  cpu_reg.PC.set(read_word(Address, Cycles));
+  const auto address = fetch_word(Cycles);
+  cpu_reg.PC.set(read_word(address, Cycles));
 }
 
 } // namespace cpu6502

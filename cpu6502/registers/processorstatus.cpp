@@ -4,13 +4,12 @@ namespace cpu6502::registers {
 
 [[nodiscard]] bool
 ProcessorStatus::get(const ProcessorStatus::Flags flag) const noexcept {
-  const auto FlagChar = static_cast<uint8_t>(flag);
-  return m_reg & FlagChar;
+  return m_reg & static_cast<Byte>(flag);
 }
 
 void ProcessorStatus::set(const ProcessorStatus::Flags flag,
                           const bool NewFlagValue) noexcept {
-  const auto FlagChar = static_cast<uint8_t>(flag);
+  const auto FlagChar = static_cast<Byte>(flag);
   if (NewFlagValue)
     m_reg |= FlagChar;
   else

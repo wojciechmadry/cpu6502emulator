@@ -15,7 +15,7 @@ bool ASL_TEST() {
 
   utils::jump_to_2020(cpu);
 
-  cpu6502::registers::ProgramCounter::RegisterStroedType PC;
+  cpu6502::registers::ProgramCounter::RegisterStoredType PC;
 
   // ASSERT ASL - Accumulator
   opcode = static_cast<decltype(opcode)>(
