@@ -1,8 +1,7 @@
-set(CMAKE_CXX_STANDARD 20)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets)
-set(GUI_LIBRARIES cpu6502 fmt cpu6502_tests cpu6502_interpreter Qt6::Widgets)
+set(GUI_LIBRARIES cpu6502 cpu6502_tests cpu6502_interpreter Qt6::Widgets)
 
 include_directories(include)
 include_directories(cpu_6502_gui PRIVATE "../cpu6502")

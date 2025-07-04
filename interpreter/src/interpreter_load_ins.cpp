@@ -2,8 +2,8 @@
 #include "interp_except.hpp"
 #include "interp_utils.hpp"
 #include "interpreter.hpp"
-#include <fmt/core.h>
 #include <limits>
+#include <print>
 
 namespace cpu6502::interpreter {
 
@@ -66,7 +66,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
               value = static_cast<std::uint8_t>(uival);
               matched = Addressing::Immediate;
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
 
           } else if (avl == AVL_type::label) {
@@ -110,7 +111,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::ZeroPage;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -147,7 +149,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::ZeroPageX;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -185,7 +188,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::ZeroPageY;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -222,7 +226,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::Absolute;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -261,7 +266,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::AbsoluteX;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -303,7 +309,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::AbsoluteY;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -344,7 +351,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::Relative;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -378,7 +386,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::Indirect;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -418,7 +427,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::IndirectX;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));
@@ -459,7 +469,8 @@ Addressing Interpreter::load_instruction(std::string_view address,
                 matched = Addressing::IndirectY;
               }
             } catch (const std::exception &e) {
-              fmt::print("[ ERROR ] {}", e.what());
+              std::print("Value: {} is not correct. Error: {}\n",
+                         ai.get_value(), e.what());
             }
           } else if (avl == AVL_type::label) {
             auto find_label = m_labels.find(to_upper(val));

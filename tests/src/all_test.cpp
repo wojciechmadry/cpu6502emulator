@@ -1,14 +1,12 @@
 #include "all_test.hpp"
 
-#include <fmt/color.h>
-#include <fmt/core.h>
-#include <string>
-
 #include "cpu_test.hpp"
 #include "interpreter_test.hpp"
 #include "utility/test_logger.hpp"
 #include "utility/test_utils.hpp"
 #include "utility/time.hpp"
+#include <print>
+#include <string>
 
 namespace CPU6502_TEST {
 TEST_RESULT RUN_ALL_TEST() {
@@ -25,15 +23,14 @@ TEST_RESULT RUN_ALL_TEST() {
 
   const auto Time = T.get_time();
 
-  fmt::print("All test ");
+  std::print("All test ");
 
   static constexpr const char *PASS = "PASS";
   static constexpr const char *FAIL = "FAIL";
   const char *const is_pass = ALL_GOOD ? PASS : FAIL;
-  fmt::print((ALL_GOOD ? fg(fmt::color::green) : fg(fmt::color::red)), "{} ",
-             is_pass);
-
-  fmt::print(" in {} seconds.\n", Time);
+  const char *color = is_pass ? "[32m" : "[31m";
+  std::print("\033{}{}\033[0m ", color, is_pass);
+  std::print(" in {} seconds.\n", Time);
   return ALL_GOOD ? TEST_RESULT::ALL_PASS : TEST_RESULT::FAILED;
 }
 } // namespace CPU6502_TEST

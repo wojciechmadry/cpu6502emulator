@@ -37,7 +37,7 @@ void CPU::INCzeropagex(u32 &Cycles) noexcept {
 
 void CPU::INCabsolute(u32 &Cycles) noexcept {
   // 5 cycles
-  const Word address = fetch_word(Cycles);
+  const auto address = fetch_word(Cycles);
   // 3 cycles
   const auto fetched = read_byte(address, Cycles);
   // 2 cycles
@@ -52,7 +52,7 @@ void CPU::INCabsolute(u32 &Cycles) noexcept {
 
 void CPU::INCabsolutex(u32 &Cycles) noexcept {
   // 6 cycles
-  Word address = fetch_word(Cycles);
+  auto address = fetch_word(Cycles);
   // 4 cycles
   address += cpu_reg.IRX.get();
   --Cycles;

@@ -6,18 +6,18 @@ bool IndexRegisterX::operator==(const IndexRegisterX &other) const noexcept {
   return m_reg == other.m_reg;
 }
 
-[[nodiscard]] IndexRegisterX::RegisterStroedType
+[[nodiscard]] IndexRegisterX::RegisterStoredType
 IndexRegisterX::get() const noexcept {
   return m_reg;
 }
 
-[[nodiscard]] IndexRegisterX::RegisterStroedType &
+[[nodiscard]] IndexRegisterX::RegisterStoredType &
 IndexRegisterX::get() noexcept {
   return m_reg;
 }
 
 void IndexRegisterX::set(
-    const IndexRegisterX::RegisterStroedType NewRegValue) noexcept {
+    const IndexRegisterX::RegisterStoredType NewRegValue) noexcept {
   m_reg = NewRegValue;
 }
 

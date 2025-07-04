@@ -1,6 +1,6 @@
-#include "fmt/core.h"
 #include "interp_utils.hpp"
 
+#include <print>
 #include <set>
 
 namespace cpu6502::interpreter::utils {
@@ -28,7 +28,7 @@ const std::unordered_map<std::string, InstructionInfo> &get_opcode_map() {
       }
       const auto found = map_of_operations.find(key);
       if (found != map_of_operations.end()) {
-        fmt::print("Instruction '{}' already exist!\n", key);
+        std::print("Instruction '{}' already exist!\n", key);
       } else {
         map_of_operations[std::move(key)] = std::forward<INSTRUCTION_INFO>(val);
       }
@@ -543,7 +543,7 @@ const std::unordered_map<std::string, InstructionInfo> &get_opcode_map() {
         for (const auto &ai : vec) {
           const auto &opcode = ai.get_op_code();
           if (all_opcodes.contains(opcode)) {
-            fmt::print("Opcode '0x{:X}' of instruction '{}' already exist!\n",
+            std::print("Opcode '0x{:X}' of instruction '{}' already exist!\n",
                        opcode, id);
             exit(1);
           } else {

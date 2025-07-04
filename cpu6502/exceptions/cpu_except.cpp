@@ -1,6 +1,7 @@
 #include "cpu_except.hpp"
 #include <algorithm>
 #include <cctype>
+#include <ranges>
 #include <sstream>
 
 namespace cpu6502::exceptions {
@@ -22,9 +23,9 @@ std::string to_hex(const std::int64_t ins) noexcept {
   std::stringstream stream;
   stream << std::hex << ins;
   auto str = stream.str();
-  std::transform(std::begin(str), std::end(str), std::begin(str),
-                 [](auto a_char) { return std::toupper(a_char); });
-  return std::string("0x") + str;
+  std::ranges::transform(str, std::begin(str),
+                         [](auto a_char) { return std::toupper(a_char); });
+  return std::string{"0x"} + str;
 }
 
 } // namespace cpu6502::exceptions

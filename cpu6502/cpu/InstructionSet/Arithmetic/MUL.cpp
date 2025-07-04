@@ -14,48 +14,40 @@ void CPU::MUL(const Byte value) noexcept {
   reg.PS.set(CPU::PSFlags::ZeroFlag, reg.ACU.get() == 0);
   reg.PS.set(CPU::PSFlags::NegativeFlag, reg.ACU.get() & 0x80);
 
-  bool is_overflow = word_data < std::numeric_limits<SByte>::min() ||
-                     word_data > std::numeric_limits<SByte>::max();
+  const bool is_overflow = word_data < std::numeric_limits<SByte>::min() ||
+                           word_data > std::numeric_limits<SByte>::max();
   reg.PS.set(CPU::PSFlags::OverflowFlag, is_overflow);
 }
 
 void CPU::MULimmediate(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::Immediate>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::Immediate>(Cycles));
 }
 
 void CPU::MULzeropage(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::ZeroPage>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::ZeroPage>(Cycles));
 }
 
 void CPU::MULzeropagex(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::ZeroPageX>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::ZeroPageX>(Cycles));
 }
 
 void CPU::MULabsolute(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::Absolute>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::Absolute>(Cycles));
 }
 
 void CPU::MULabsolutex(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::AbsoluteX>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::AbsoluteX>(Cycles));
 }
 
 void CPU::MULabsolutey(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::AbsoluteY>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::AbsoluteY>(Cycles));
 }
 
 void CPU::MULindirectx(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::IndirectX>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::IndirectX>(Cycles));
 }
 
 void CPU::MULindirecty(u32 &Cycles) noexcept {
-  const auto fetched = fetch<AddressingMode::IndirectY>(Cycles);
-  MUL(fetched);
+  MUL(fetch<AddressingMode::IndirectY>(Cycles));
 }
 } // namespace cpu6502

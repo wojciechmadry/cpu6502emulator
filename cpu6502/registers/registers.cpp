@@ -22,15 +22,15 @@ void Registers::setRegister(RegistersName regName,
     break;
   }
   case cpu6502::RegistersName::Accumulator: {
-    ACU.set(static_cast<registers::Accumulator::RegisterStroedType>(value));
+    ACU.set(static_cast<registers::Accumulator::RegisterStoredType>(value));
     break;
   }
   case cpu6502::RegistersName::IndexRegisterX: {
-    IRX.set(static_cast<registers::IndexRegisterX::RegisterStroedType>(value));
+    IRX.set(static_cast<registers::IndexRegisterX::RegisterStoredType>(value));
     break;
   }
   case cpu6502::RegistersName::IndexRegisterY: {
-    IRY.set(static_cast<registers::IndexRegisterY::RegisterStroedType>(value));
+    IRY.set(static_cast<registers::IndexRegisterY::RegisterStoredType>(value));
     break;
   }
   case cpu6502::RegistersName::ProcessorStatusCarryFlag: {
@@ -64,11 +64,11 @@ void Registers::setRegister(RegistersName regName,
     break;
   }
   case cpu6502::RegistersName::ProgramCounter: {
-    PC.set(static_cast<registers::ProgramCounter::RegisterStroedType>(value));
+    PC.set(static_cast<registers::ProgramCounter::RegisterStoredType>(value));
     break;
   }
   case cpu6502::RegistersName::StackPointer: {
-    SP.set(static_cast<registers::StackPointer::RegisterStroedType>(value));
+    SP.set(static_cast<registers::StackPointer::RegisterStoredType>(value));
     break;
   }
   }

@@ -1,4 +1,3 @@
-#include "fmt/core.h"
 #include "interpreter_test.hpp"
 
 #include "cpu.hpp"

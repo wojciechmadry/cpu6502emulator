@@ -1,5 +1,3 @@
-set(CMAKE_CXX_STANDARD 20)
-
 add_subdirectory(exceptions)
 add_subdirectory(registers)
 add_subdirectory(memory)

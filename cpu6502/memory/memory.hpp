@@ -20,8 +20,8 @@ public:
   [[nodiscard]] Memory clone() const noexcept;
 
   template <typename INTEGER>
-  requires(std::is_integral_v<INTEGER>) explicit Memory(
-      const INTEGER BYTES_MEMORY) noexcept
+  requires(std::is_integral_v<INTEGER>)
+  explicit Memory(const INTEGER BYTES_MEMORY) noexcept
       : m_memory(static_cast<u64>(BYTES_MEMORY)) {}
 
   ~Memory() = default;

@@ -14,7 +14,7 @@ bool INX_TEST() {
   cpu6502::Byte opcode;
 
   utils::jump_to_2020(cpu);
-  cpu6502::registers::ProgramCounter::RegisterStroedType PC;
+  cpu6502::registers::ProgramCounter::RegisterStoredType PC;
 
   // ASSERT INX - Implied
   {

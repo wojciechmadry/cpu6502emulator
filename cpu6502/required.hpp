@@ -7,12 +7,12 @@
 #include <vector>
 
 namespace cpu6502 {
-using SByte = int8_t;
-using Byte = uint8_t;
-using Word = uint16_t;
-using SWord = int16_t;
-using u32 = uint32_t;
-using u64 = uint64_t;
+using SByte = std::int8_t;
+using Byte = std::uint8_t;
+using Word = std::uint16_t;
+using SWord = std::int16_t;
+using u32 = std::uint32_t;
+using u64 = std::uint64_t;
 
 enum class AddressingMode : Byte {
   Immediate,

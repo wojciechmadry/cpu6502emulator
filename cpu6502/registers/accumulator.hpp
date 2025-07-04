@@ -8,13 +8,13 @@ class Accumulator {
   Byte m_reg = 0;
 
 public:
-  using RegisterStroedType = decltype(m_reg);
+  using RegisterStoredType = decltype(m_reg);
 
-  [[nodiscard]] RegisterStroedType get() const noexcept;
+  [[nodiscard]] RegisterStoredType get() const noexcept;
 
-  [[nodiscard]] RegisterStroedType &get() noexcept;
+  [[nodiscard]] RegisterStoredType &get() noexcept;
 
-  void set(RegisterStroedType NewRegValue) noexcept;
+  void set(RegisterStoredType NewRegValue) noexcept;
 
   bool operator==(const Accumulator &other) const noexcept;
 };

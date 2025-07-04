@@ -12,7 +12,7 @@ CPU::CPU_CLONE_PAIR_TYPE CPU::clone() const noexcept {
   auto mem_cpy = std::make_unique<Memory>(this->mem.get().clone());
   auto cpu_cpy = std::make_unique<CPU>(*mem_cpy);
   cpu_cpy->cpu_reg = this->cpu_reg;
-  return std::make_pair(std::move(cpu_cpy), std::move(mem_cpy));
+  return {std::move(cpu_cpy), std::move(mem_cpy)};
 }
 
 [[nodiscard]] Memory &CPU::get_memory() noexcept { return mem.get(); }
@@ -26,7 +26,7 @@ cpu6502::Byte CPU::fetch_immediate(cpu6502::u32 &Cycles) noexcept {
 }
 
 cpu6502::Byte CPU::fetch_absolute(cpu6502::u32 &Cycles) noexcept {
-  const Word address = fetch_word(Cycles);
+  const auto address = fetch_word(Cycles);
   return read_byte(address, Cycles);
 }
 
@@ -49,10 +49,9 @@ cpu6502::Byte CPU::fetch_absolutey(cpu6502::u32 &Cycles) noexcept {
 }
 
 cpu6502::Byte CPU::fetch_indirectx(cpu6502::u32 &Cycles) noexcept {
-  Byte address = fetch_byte(Cycles);
-  address += cpu_reg.IRX.get();
+  const auto address = static_cast<u32>(fetch_byte(Cycles) + cpu_reg.IRX.get());
   --Cycles;
-  const Word TargetAddress = read_word(address, Cycles);
+  const auto TargetAddress = read_word(address, Cycles);
   return read_byte(TargetAddress, Cycles);
 }
 
@@ -75,9 +74,8 @@ cpu6502::Byte CPU::fetch_zeropage(cpu6502::u32 &Cycles) noexcept {
 
 cpu6502::Byte CPU::fetch_zeropagex(cpu6502::u32 &Cycles) noexcept {
   // 3 cycles
-  Byte ZeroPageAddress = fetch_byte(Cycles);
-  // 2 cycles;
-  ZeroPageAddress += cpu_reg.IRX.get();
+  const auto ZeroPageAddress =
+      static_cast<u32>(fetch_byte(Cycles) + cpu_reg.IRX.get());
   --Cycles;
   // 1 cycles
   return read_byte(ZeroPageAddress, Cycles);
@@ -85,9 +83,8 @@ cpu6502::Byte CPU::fetch_zeropagex(cpu6502::u32 &Cycles) noexcept {
 
 cpu6502::Byte CPU::fetch_zeropagey(cpu6502::u32 &Cycles) noexcept {
   // 3 cycles
-  Byte ZeroPageAddress = fetch_byte(Cycles);
-  // 2 cycles;
-  ZeroPageAddress += cpu_reg.IRY.get();
+  const auto ZeroPageAddress =
+      static_cast<u32>(fetch_byte(Cycles) + cpu_reg.IRY.get());
   --Cycles;
   // 1 cycles
   return read_byte(ZeroPageAddress, Cycles);
@@ -113,7 +110,7 @@ cpu6502::Registers &CPU::get_registers() noexcept { return cpu_reg; }
 
 void CPU::execute(u32 Cycles) {
   // Translate opcode to Byte
-  auto op = []<typename Opcode>(const Opcode opcode) {
+  auto op = []<typename Opcode>(const Opcode opcode) consteval {
     return static_cast<Byte>(opcode);
   };
 

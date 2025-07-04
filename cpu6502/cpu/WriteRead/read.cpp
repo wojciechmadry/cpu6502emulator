@@ -4,10 +4,8 @@
 namespace cpu6502 {
 
 Byte CPU::fetch_byte(u32 &Cycles) noexcept {
-  const Byte Data = mem.get()[cpu_reg.PC.get()];
-  cpu_reg.PC.increment();
   --Cycles;
-  return Data;
+  return mem.get()[cpu_reg.PC.getAndIncrement()];
 }
 
 Byte CPU::read_byte(const u32 Address, u32 &Cycles) const noexcept {
@@ -17,9 +15,8 @@ Byte CPU::read_byte(const u32 Address, u32 &Cycles) const noexcept {
 
 Word CPU::fetch_word(u32 &Cycles) noexcept {
   // little endian
-  auto Data = static_cast<Word>(fetch_byte(Cycles));
-  Data = static_cast<Word>(Data | (fetch_byte(Cycles) << 8));
-  return Data;
+  const auto lsb = static_cast<Word>(fetch_byte(Cycles));
+  return static_cast<Word>(lsb | (fetch_byte(Cycles) << 8));
 }
 
 Word CPU::read_word(const u32 Address, u32 &Cycles) noexcept {
@@ -29,24 +26,20 @@ Word CPU::read_word(const u32 Address, u32 &Cycles) noexcept {
 }
 
 Word CPU::pop_word_from_stack(u32 &Cycles) {
-  if (cpu_reg.SP.get() >= 254) {
+  if (cpu_reg.SP.get() > STACK_SIZE - sizeof(Word)) {
     throw std::out_of_range("Cant pop word from stack. (stack empty).");
   }
-  const Word Data =
-      read_word(static_cast<u32>(cpu_reg.SP.get()) + 2 + STACK_BEGIN, Cycles);
-  cpu_reg.SP.increment(2);
+  cpu_reg.SP.increment(sizeof(Word));
   --Cycles;
-  return Data;
+  return read_word(static_cast<u32>(cpu_reg.SP.get()) + STACK_BEGIN, Cycles);
 }
 
 Byte CPU::pop_byte_from_stack(u32 &Cycles) {
-  if (cpu_reg.SP.get() == 255) {
+  if (cpu_reg.SP.get() == STACK_SIZE) {
     throw std::out_of_range("Cant pop byte from stack. (stack empty).");
   }
-  const Byte Data =
-      read_byte(static_cast<u32>(cpu_reg.SP.get()) + 1 + STACK_BEGIN, Cycles);
   cpu_reg.SP.increment();
   --Cycles;
-  return Data;
+  return read_byte(static_cast<u32>(cpu_reg.SP.get()) + STACK_BEGIN, Cycles);
 }
 } // namespace cpu6502

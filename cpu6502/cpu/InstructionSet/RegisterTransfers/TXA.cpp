@@ -6,8 +6,9 @@ void CPU::TXAimplied(u32 &Cycles) noexcept {
   cpu_reg.ACU.set(cpu_reg.IRX.get());
   --Cycles;
   // 0 cycles
-  cpu_reg.PS.set(PSFlags::ZeroFlag, !static_cast<bool>(cpu_reg.ACU.get()));
-  cpu_reg.PS.set(PSFlags::NegativeFlag, cpu_reg.ACU.get() & 0x80);
+  cpu_reg.PS.set(PSFlags::ZeroFlag, cpu_reg.ACU.get() == 0U);
+  cpu_reg.PS.set(PSFlags::NegativeFlag,
+                 static_cast<bool>(cpu_reg.ACU.get() & 0x80));
 }
 
 } // namespace cpu6502

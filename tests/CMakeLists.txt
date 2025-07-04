@@ -1,4 +1,3 @@
-set(CMAKE_CXX_STANDARD 20)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 add_library(
         cpu6502_tests STATIC
@@ -69,11 +68,11 @@ target_compile_options(cpu6502_tests PRIVATE  ${CXX_COMPILER_FLAGS})
 
 target_include_directories(cpu6502_tests PRIVATE "../cpu6502")
 set_target_properties(cpu6502_tests PROPERTIES LINKER_LANGUAGE CXX)
-target_link_libraries(cpu6502_tests PRIVATE cpu6502 fmt cpu6502_interpreter)
+target_link_libraries(cpu6502_tests PRIVATE cpu6502 cpu6502_interpreter)
 target_include_directories(cpu6502_tests PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_executable(cpu_6502_test test_main.cpp)
 
-target_link_libraries(cpu_6502_test PUBLIC cpu6502 fmt cpu6502_tests cpu6502_interpreter )
+target_link_libraries(cpu_6502_test PUBLIC cpu6502 cpu6502_tests cpu6502_interpreter )
 
 target_compile_options(cpu_6502_test PRIVATE ${CXX_COMPILER_FLAGS})

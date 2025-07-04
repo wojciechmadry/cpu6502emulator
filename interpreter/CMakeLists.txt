@@ -1,6 +1,3 @@
-set(CMAKE_CXX_STANDARD 20)
-
-
 add_library(
         cpu6502_interpreter STATIC
         src/interpreter.cpp
@@ -26,5 +23,5 @@ target_compile_options(cpu6502_interpreter PRIVATE  ${CXX_COMPILER_FLAGS})
 
 target_include_directories(cpu6502_interpreter PRIVATE "../cpu6502")
 set_target_properties(cpu6502_interpreter PROPERTIES LINKER_LANGUAGE CXX)
-target_link_libraries(cpu6502_interpreter PRIVATE cpu6502 fmt)
+target_link_libraries(cpu6502_interpreter PRIVATE cpu6502)
 target_include_directories(cpu6502_interpreter PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")

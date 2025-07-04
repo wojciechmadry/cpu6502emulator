@@ -5,10 +5,10 @@
 
 #include <cctype>
 #include <exception>
-#include <fmt/core.h>
 #include <fstream>
 #include <limits>
 #include <optional>
+#include <print>
 #include <stdexcept>
 
 namespace cpu6502::interpreter {
@@ -129,13 +129,15 @@ bool Interpreter::create_label_instruction(std::string_view command) {
       try {
         address = static_cast<std::uint32_t>(std::stoul(StrValue, nullptr, 16));
       } catch (const std::exception &e) {
-        fmt::print("[ ERROR ] {}", e.what());
+        std::print("Address: {} is not correct. Error: {}\n", StrValue,
+                   e.what());
       }
     } else {
       try {
         address = static_cast<std::uint32_t>(std::stoul(StrValue, nullptr, 10));
       } catch (const std::exception &e) {
-        fmt::print("[ ERROR ] {}", e.what());
+        std::print("Address: {} is not correct. Error: {}\n", StrValue,
+                   e.what());
       }
     }
 
@@ -177,7 +179,7 @@ void Interpreter::load_asm(const std::string &filename) noexcept {
         isLabel = create_label_instruction(line);
       }
     } catch (const std::exception &e) {
-      fmt::print("[ ERROR ] {}", e.what());
+      std::print("Instruction: {} is not correct. Error: {}\n", line, e.what());
     }
 
     if (isLabel) {
